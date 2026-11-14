@@ -1,0 +1,5 @@
+# SYNTHETIC excerpt (2026-10-09): a mapping without net.neuralcheck.util.DeviceProfileKey at all (R8 removed it, or the wrong file)
+# - the guard must REJECT it; "class absent" is not "nothing renamed".
+net.neuralcheck.util.SomethingElse -> gf.u:
+# {"id":"sourceFile","fileName":"SomethingElse.kt"}
+    java.lang.String primary -> a

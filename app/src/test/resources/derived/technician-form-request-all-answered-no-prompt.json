@@ -1,0 +1,74 @@
+{
+  "sessionId": "sess-golden-1",
+  "slot": 1,
+  "formContractVersion": 2,
+  "technicianId": "tech-golden-a",
+  "grades": {
+    "battery": "good",
+    "performance": "good",
+    "thermal": "good",
+    "overall": "excellent"
+  },
+  "functional": {
+    "screen_touch": "works",
+    "camera": "works",
+    "audio": "works",
+    "buttons": "works",
+    "charging": "works",
+    "network": "works"
+  },
+  "defects": {
+    "replaced_screen": "works",
+    "water_damage": "not_tested",
+    "prior_repair": "works"
+  },
+  "symptoms": [
+    "none_noticed"
+  ],
+  "symptomOrderShown": [
+    "battery_dies_before_day_end",
+    "battery_jumps_or_shuts_down",
+    "battery_swollen",
+    "hot_while_charging",
+    "charging_slow",
+    "slow_or_freezes_daily",
+    "restarts_under_load",
+    "heats_fast_in_use",
+    "system_heat_warning",
+    "game_stutter_after_minutes",
+    "game_screen_lines_or_flicker",
+    "games_freeze_or_close"
+  ],
+  "known_fault_before_scan": null,
+  "batteryHealth": {
+    "kind": "percent",
+    "percent": 92,
+    "stateKey": null
+  },
+  "gameTried": false,
+  "observedNote": null,
+  "openedAt": 1760000000000,
+  "firstTapAt": 1760000002000,
+  "perAnswerAt": [
+    1760000002000,
+    1760000002900,
+    1760000003800,
+    1760000004700,
+    1760000006000,
+    1760000006700,
+    1760000007400,
+    1760000008100,
+    1760000008800,
+    1760000009500,
+    1760000011000,
+    1760000011600,
+    1760000012200,
+    1760000013000,
+    1760000014000,
+    1760000015000
+  ],
+  "submittedAt": 1760000017000,
+  "answersBeforePrompt": null,
+  "answersAfterPrompt": null,
+  "promptAction": null
+}

@@ -1,0 +1,1155 @@
+{
+  "_meta": {
+    "derived": true,
+    "orderDate": "2026-10-01",
+    "purpose": "A5 (coordinator order 2026-10-01, 'أمر القرارات'): proves AiCategoryRowV7's ATTESTED_ONLY-driven surface tag (ReportScreen.kt) against REAL device exports instead of waiting for a hand-built golden sample. Only the categories field is kept -- no raw device/fingerprint data.",
+    "sources": [
+      {
+        "shortId": "NC-5DYV7N",
+        "sourceFile": "C:\\Users\\Efendi.Tec\\neuralcheck-workspace\\evidence\\device-check-2026-09-30T0546\\v7-report-export-NC-5DYV7N.json",
+        "fieldPath": "document.aiResponse.categories"
+      },
+      {
+        "shortId": "NC-83XL4C",
+        "sourceFile": "C:\\Users\\Efendi.Tec\\neuralcheck-workspace\\evidence\\device-check-2026-09-30T0546\\v7-report-export-NC-83XL4C.json",
+        "fieldPath": "document.aiResponse.categories"
+      },
+      {
+        "shortId": "NC-TM7PDN",
+        "sourceFile": "C:\\Users\\Efendi.Tec\\neuralcheck-workspace\\evidence\\pre-deploy-reads-20260930T2138\\v7-report-export-NC-TM7PDN.json",
+        "fieldPath": "document.aiResponse.categories"
+      }
+    ]
+  },
+  "NC-5DYV7N": {
+    "battery": {
+      "state": "PARTIAL",
+      "letter": null,
+      "letterSource": "DETERMINISTIC",
+      "adjustmentReason": null,
+      "adjustmentEvidence": null,
+      "coverage": 1,
+      "reason": "NO_CALIBRATED_THRESHOLD (PLAN-03 لم يُنجَز — انظر batteryLayer.js)",
+      "letterCeilingReason": null,
+      "testIds": [],
+      "confidence": null,
+      "tag": "ESTIMATED",
+      "indicators": {
+        "BAT-THERMAL-EFF": {
+          "id": "BAT-THERMAL-EFF",
+          "status": "MEASURED",
+          "verdict": "THRESHOLD_NOT_CALIBRATED",
+          "value": 9.183725360588623,
+          "unit": "°C/Wh",
+          "deltaTC": 4.600000000000001,
+          "energyWh": 0.5008860586947221,
+          "gate": {
+            "cadenceWhole": 7,
+            "required": 5,
+            "passes": true
+          },
+          "comparedToModelBaseline": false,
+          "note": "مقارنة الطراز غير مفعّلة — modelBaselines فارغة (§٤-ج)",
+          "socAtWindowStart": 81,
+          "socAtWindowEnd": 77
+        },
+        "BAT-R-APPARENT": {
+          "id": "BAT-R-APPARENT",
+          "status": "MEASURED",
+          "verdict": "THRESHOLD_NOT_CALIBRATED",
+          "value": 1.8081407388800492,
+          "unit": "mΩ",
+          "vFirst10sMv": 3741.714285714286,
+          "vUnderLoadMv": 3738.9626506024097,
+          "iUnderLoadUa": 1521803.6144578313,
+          "gate": {
+            "nSamples": 830,
+            "sourceCadenceUpdates": 5,
+            "required": 5,
+            "passes": true
+          },
+          "unitCaveat": "وحدة التيار المُعلَنة تحمل غموض مضاعف موثَّق (A39) — الرقم المطلق غير موثوق بمعزل عن حسمه",
+          "socAtWindowStart": 81,
+          "socAtWindowEnd": 77
+        },
+        "BAT-FCC": {
+          "id": "BAT-FCC",
+          "status": "MEASURED",
+          "verdict": "THRESHOLD_NOT_CALIBRATED",
+          "value": 3550.0127361111113,
+          "unit": "mAh",
+          "intervalCount": 3,
+          "gate": {
+            "intervalCount": 3,
+            "required": 2,
+            "passes": true
+          },
+          "designCapacityMah": 4400,
+          "ratioToDesign": 0.8068210763888889,
+          "socAtWindowStart": 80,
+          "socAtWindowEnd": 77
+        },
+        "BAT-COULOMB": {
+          "id": "BAT-COULOMB",
+          "status": "MEASURED",
+          "verdict": "THRESHOLD_NOT_CALIBRATED",
+          "value": 132.92044736111112,
+          "unit": "mAh",
+          "gate": {
+            "qIntMah": 132.92044736111112,
+            "required": 80,
+            "passes": true
+          },
+          "consistencyGateNote": "بوّابة الاتّساق المنصوصة (k = ΔCC ÷ ∫I) تحتاج charge_counter (fv68) وغير قابلة للتقييم على fv67 — لم تُستبدَل بتخمين؛ الحقل consistencyK يبقى null.",
+          "consistencyK": null,
+          "socAtWindowStart": 81,
+          "socAtWindowEnd": 77
+        }
+      },
+      "socAtStart": 81,
+      "socAtEnd": 77
+    },
+    "thermal": {
+      "state": "UNMEASURED",
+      "letter": null,
+      "letterSource": "DETERMINISTIC",
+      "adjustmentReason": null,
+      "adjustmentEvidence": null,
+      "coverage": 0,
+      "reason": "DECLARED_BUT_NONE_EXECUTED",
+      "letterCeilingReason": null,
+      "testIds": [
+        "T-01",
+        "T-02",
+        "T-03",
+        "T-04"
+      ]
+    },
+    "cpu": {
+      "state": "MEASURED",
+      "letter": "A",
+      "letterSource": "DETERMINISTIC",
+      "adjustmentReason": null,
+      "adjustmentEvidence": null,
+      "coverage": 1,
+      "reason": null,
+      "letterCeilingReason": null,
+      "testIds": [
+        "C-01",
+        "C-02",
+        "C-03",
+        "C-04",
+        "C-05",
+        "C-06",
+        "C-07"
+      ]
+    },
+    "gpu": {
+      "state": "MEASURED",
+      "letter": "B",
+      "letterSource": "DETERMINISTIC",
+      "adjustmentReason": null,
+      "adjustmentEvidence": null,
+      "coverage": 1,
+      "reason": null,
+      "letterCeilingReason": {
+        "name": "LOW_CATEGORY_COVERAGE",
+        "ceilingLetter": "B",
+        "text": "اختباران من اثنين — حرف مسقوف: لم يُقَس في هذه الفئة أيّ اختبار معتمد قياساً للحالة."
+      },
+      "testIds": [
+        "G-01",
+        "G-02"
+      ]
+    },
+    "display": {
+      "state": "MEASURED",
+      "letter": "B",
+      "letterSource": "DETERMINISTIC",
+      "adjustmentReason": null,
+      "adjustmentEvidence": null,
+      "coverage": 1,
+      "reason": null,
+      "letterCeilingReason": {
+        "name": "LOW_CATEGORY_COVERAGE",
+        "ceilingLetter": "B",
+        "text": "ستة اختبارات من ستة — حرف مسقوف: لم يُقَس في هذه الفئة أيّ اختبار معتمد قياساً للحالة."
+      },
+      "testIds": [
+        "D-01",
+        "D-02",
+        "D-03",
+        "M-01",
+        "M-02",
+        "M-03"
+      ]
+    },
+    "memory": {
+      "state": "MEASURED",
+      "letter": "B",
+      "letterSource": "DETERMINISTIC",
+      "adjustmentReason": null,
+      "adjustmentEvidence": null,
+      "coverage": 1,
+      "reason": null,
+      "letterCeilingReason": {
+        "name": "LOW_CATEGORY_COVERAGE",
+        "ceilingLetter": "B",
+        "text": "اختبار واحد من واحد — حرف مسقوف: لم يُقَس في هذه الفئة أيّ اختبار معتمد قياساً للحالة."
+      },
+      "testIds": [
+        "R-01",
+        "R-02",
+        "R-03"
+      ]
+    },
+    "storage": {
+      "state": "MEASURED",
+      "letter": "C",
+      "letterSource": "DETERMINISTIC",
+      "adjustmentReason": null,
+      "adjustmentEvidence": null,
+      "coverage": 1,
+      "reason": null,
+      "letterCeilingReason": null,
+      "testIds": [
+        "S-01",
+        "S-02",
+        "S-03",
+        "S-04",
+        "S-05",
+        "S-06",
+        "M-15"
+      ]
+    },
+    "camera": {
+      "state": "ATTESTED_ONLY",
+      "letter": null,
+      "letterSource": "DETERMINISTIC",
+      "adjustmentReason": null,
+      "adjustmentEvidence": null,
+      "coverage": 0.2727272727272727,
+      "reason": "MANUAL_ATTESTATION_ONLY",
+      "letterCeilingReason": null,
+      "testIds": [
+        "CM-01",
+        "CM-02",
+        "CM-03",
+        "CM-04",
+        "CM-05",
+        "CM-06",
+        "CM-07",
+        "CM-08",
+        "CM-10",
+        "CM-11",
+        "M-17",
+        "M-18",
+        "M-19"
+      ]
+    },
+    "gps": {
+      "state": "UNMEASURED",
+      "letter": null,
+      "letterSource": "DETERMINISTIC",
+      "adjustmentReason": null,
+      "adjustmentEvidence": null,
+      "coverage": 0,
+      "reason": "DECLARED_BUT_NONE_EXECUTED",
+      "letterCeilingReason": null,
+      "testIds": [
+        "L-01",
+        "L-02",
+        "L-03"
+      ]
+    },
+    "security": {
+      "state": "MEASURED",
+      "letter": "D",
+      "letterSource": "DETERMINISTIC",
+      "adjustmentReason": null,
+      "adjustmentEvidence": null,
+      "coverage": 1,
+      "reason": null,
+      "letterCeilingReason": null,
+      "testIds": [
+        "SEC-01",
+        "SEC-02",
+        "SEC-03",
+        "SEC-04",
+        "SEC-05",
+        "SEC-06",
+        "SEC-07",
+        "SEC-08",
+        "SEC-09",
+        "SEC-10",
+        "SEC-11",
+        "M-20",
+        "M-21"
+      ]
+    },
+    "sensors": {
+      "state": "PARTIAL",
+      "letter": "B",
+      "letterSource": "DETERMINISTIC",
+      "adjustmentReason": null,
+      "adjustmentEvidence": null,
+      "coverage": 0.7692307692307693,
+      "reason": null,
+      "letterCeilingReason": {
+        "name": "LOW_CATEGORY_COVERAGE",
+        "ceilingLetter": "B",
+        "text": "عشرة اختبارات من ثلاثة عشر — حرف مسقوف: لم يُقَس في هذه الفئة أيّ اختبار معتمد قياساً للحالة."
+      },
+      "testIds": [
+        "SN-01",
+        "SN-02",
+        "SN-03",
+        "SN-04",
+        "SN-05",
+        "SN-06",
+        "SN-07",
+        "SN-08",
+        "SN-09",
+        "SN-10",
+        "SN-11",
+        "SN-12",
+        "M-22"
+      ]
+    },
+    "cellular": {
+      "state": "PARTIAL",
+      "letter": "B",
+      "letterSource": "DETERMINISTIC",
+      "adjustmentReason": null,
+      "adjustmentEvidence": null,
+      "coverage": 0.5714285714285714,
+      "reason": null,
+      "letterCeilingReason": {
+        "name": "LOW_CATEGORY_COVERAGE",
+        "ceilingLetter": "B",
+        "text": "تغطية منخفضة — أربعة اختبارات من سبعة، وحرف مسقوف: لم يُقَس في هذه الفئة أيّ اختبار معتمد قياساً للحالة."
+      },
+      "testIds": [
+        "N-01",
+        "N-02",
+        "N-03",
+        "N-04",
+        "N-05",
+        "N-06",
+        "N-07"
+      ]
+    },
+    "wireless": {
+      "state": "MEASURED",
+      "letter": "B",
+      "letterSource": "DETERMINISTIC",
+      "adjustmentReason": null,
+      "adjustmentEvidence": null,
+      "coverage": 1,
+      "reason": null,
+      "letterCeilingReason": {
+        "name": "LOW_CATEGORY_COVERAGE",
+        "ceilingLetter": "B",
+        "text": "ستة اختبارات من ستة — حرف مسقوف: لم يُقَس في هذه الفئة أيّ اختبار معتمد قياساً للحالة."
+      },
+      "testIds": [
+        "N-08",
+        "N-09",
+        "N-10",
+        "N-11",
+        "N-12",
+        "N-13"
+      ]
+    },
+    "audio": {
+      "state": "ATTESTED_ONLY",
+      "letter": null,
+      "letterSource": "DETERMINISTIC",
+      "adjustmentReason": null,
+      "adjustmentEvidence": null,
+      "coverage": 1,
+      "reason": "MANUAL_ATTESTATION_ONLY",
+      "letterCeilingReason": null,
+      "testIds": [
+        "M-04",
+        "M-05",
+        "M-06",
+        "M-08"
+      ]
+    },
+    "input": {
+      "state": "ATTESTED_ONLY",
+      "letter": null,
+      "letterSource": "DETERMINISTIC",
+      "adjustmentReason": null,
+      "adjustmentEvidence": null,
+      "coverage": 1,
+      "reason": "MANUAL_ATTESTATION_ONLY",
+      "letterCeilingReason": null,
+      "testIds": [
+        "M-09",
+        "M-10",
+        "M-11"
+      ]
+    }
+  },
+  "NC-83XL4C": {
+    "battery": {
+      "state": "PARTIAL",
+      "letter": null,
+      "letterSource": "DETERMINISTIC",
+      "adjustmentReason": null,
+      "adjustmentEvidence": null,
+      "coverage": 1,
+      "reason": "NO_CALIBRATED_THRESHOLD (PLAN-03 لم يُنجَز — انظر batteryLayer.js)",
+      "letterCeilingReason": null,
+      "testIds": [],
+      "confidence": null,
+      "tag": "ESTIMATED",
+      "indicators": {
+        "BAT-THERMAL-EFF": {
+          "id": "BAT-THERMAL-EFF",
+          "status": "MEASURED",
+          "verdict": "THRESHOLD_NOT_CALIBRATED",
+          "value": 12.481074162457837,
+          "unit": "°C/Wh",
+          "deltaTC": 6.799999999999997,
+          "energyWh": 0.5448249014058343,
+          "gate": {
+            "cadenceWhole": 10,
+            "required": 5,
+            "passes": true
+          },
+          "comparedToModelBaseline": false,
+          "note": "مقارنة الطراز غير مفعّلة — modelBaselines فارغة (§٤-ج)",
+          "socAtWindowStart": 58,
+          "socAtWindowEnd": 53
+        },
+        "BAT-R-APPARENT": {
+          "id": "BAT-R-APPARENT",
+          "status": "MEASURED",
+          "verdict": "THRESHOLD_NOT_CALIBRATED",
+          "value": 112.10633924575475,
+          "unit": "mΩ",
+          "vFirst10sMv": 3759,
+          "vUnderLoadMv": 3560.6570397111914,
+          "iUnderLoadUa": 1769239.4705174488,
+          "gate": {
+            "nSamples": 831,
+            "sourceCadenceUpdates": 6,
+            "required": 5,
+            "passes": true
+          },
+          "unitCaveat": "وحدة التيار المُعلَنة تحمل غموض مضاعف موثَّق (A39) — الرقم المطلق غير موثوق بمعزل عن حسمه",
+          "socAtWindowStart": 58,
+          "socAtWindowEnd": 54
+        },
+        "BAT-FCC": {
+          "id": "BAT-FCC",
+          "status": "MEASURED",
+          "verdict": "THRESHOLD_NOT_CALIBRATED",
+          "value": 2781.3928611111105,
+          "unit": "mAh",
+          "intervalCount": 4,
+          "gate": {
+            "intervalCount": 4,
+            "required": 2,
+            "passes": true
+          },
+          "designCapacityMah": 4400,
+          "ratioToDesign": 0.632134741161616,
+          "socAtWindowStart": 57,
+          "socAtWindowEnd": 53
+        },
+        "BAT-COULOMB": {
+          "id": "BAT-COULOMB",
+          "status": "MEASURED",
+          "verdict": "THRESHOLD_NOT_CALIBRATED",
+          "value": 151.40527930555555,
+          "unit": "mAh",
+          "gate": {
+            "qIntMah": 151.40527930555555,
+            "required": 80,
+            "passes": true
+          },
+          "consistencyGateNote": "بوّابة الاتّساق المنصوصة (k = ΔCC ÷ ∫I) تحتاج charge_counter (fv68) وغير قابلة للتقييم على fv67 — لم تُستبدَل بتخمين؛ الحقل consistencyK يبقى null.",
+          "consistencyK": null,
+          "socAtWindowStart": 58,
+          "socAtWindowEnd": 53
+        }
+      },
+      "socAtStart": 58,
+      "socAtEnd": 53
+    },
+    "thermal": {
+      "state": "UNMEASURED",
+      "letter": null,
+      "letterSource": "DETERMINISTIC",
+      "adjustmentReason": null,
+      "adjustmentEvidence": null,
+      "coverage": 0,
+      "reason": "DECLARED_BUT_NONE_EXECUTED",
+      "letterCeilingReason": null,
+      "testIds": [
+        "T-01",
+        "T-02",
+        "T-03",
+        "T-04"
+      ]
+    },
+    "cpu": {
+      "state": "MEASURED",
+      "letter": "A",
+      "letterSource": "DETERMINISTIC",
+      "adjustmentReason": null,
+      "adjustmentEvidence": null,
+      "coverage": 1,
+      "reason": null,
+      "letterCeilingReason": null,
+      "testIds": [
+        "C-01",
+        "C-02",
+        "C-03",
+        "C-04",
+        "C-05",
+        "C-06",
+        "C-07"
+      ]
+    },
+    "gpu": {
+      "state": "MEASURED",
+      "letter": "B",
+      "letterSource": "DETERMINISTIC",
+      "adjustmentReason": null,
+      "adjustmentEvidence": null,
+      "coverage": 1,
+      "reason": null,
+      "letterCeilingReason": {
+        "name": "LOW_CATEGORY_COVERAGE",
+        "ceilingLetter": "B",
+        "text": "اختباران من اثنين — حرف مسقوف: لم يُقَس في هذه الفئة أيّ اختبار معتمد قياساً للحالة."
+      },
+      "testIds": [
+        "G-01",
+        "G-02"
+      ]
+    },
+    "display": {
+      "state": "MEASURED",
+      "letter": "B",
+      "letterSource": "DETERMINISTIC",
+      "adjustmentReason": null,
+      "adjustmentEvidence": null,
+      "coverage": 1,
+      "reason": null,
+      "letterCeilingReason": {
+        "name": "LOW_CATEGORY_COVERAGE",
+        "ceilingLetter": "B",
+        "text": "ستة اختبارات من ستة — حرف مسقوف: لم يُقَس في هذه الفئة أيّ اختبار معتمد قياساً للحالة."
+      },
+      "testIds": [
+        "D-01",
+        "D-02",
+        "D-03",
+        "M-01",
+        "M-02",
+        "M-03"
+      ]
+    },
+    "memory": {
+      "state": "MEASURED",
+      "letter": "B",
+      "letterSource": "DETERMINISTIC",
+      "adjustmentReason": null,
+      "adjustmentEvidence": null,
+      "coverage": 1,
+      "reason": null,
+      "letterCeilingReason": {
+        "name": "LOW_CATEGORY_COVERAGE",
+        "ceilingLetter": "B",
+        "text": "اختبار واحد من واحد — حرف مسقوف: لم يُقَس في هذه الفئة أيّ اختبار معتمد قياساً للحالة."
+      },
+      "testIds": [
+        "R-01",
+        "R-02",
+        "R-03"
+      ]
+    },
+    "storage": {
+      "state": "MEASURED",
+      "letter": "B",
+      "letterSource": "DETERMINISTIC",
+      "adjustmentReason": null,
+      "adjustmentEvidence": null,
+      "coverage": 1,
+      "reason": null,
+      "letterCeilingReason": {
+        "name": "LOW_CATEGORY_COVERAGE",
+        "ceilingLetter": "B",
+        "text": "أربعة اختبارات من أربعة — حرف مسقوف: لم يُقَس في هذه الفئة أيّ اختبار معتمد قياساً للحالة."
+      },
+      "testIds": [
+        "S-01",
+        "S-02",
+        "S-03",
+        "S-04",
+        "S-05",
+        "S-06",
+        "M-15"
+      ]
+    },
+    "camera": {
+      "state": "MEASURED",
+      "letter": "B",
+      "letterSource": "DETERMINISTIC",
+      "adjustmentReason": null,
+      "adjustmentEvidence": null,
+      "coverage": 1,
+      "reason": null,
+      "letterCeilingReason": {
+        "name": "LOW_CATEGORY_COVERAGE",
+        "ceilingLetter": "B",
+        "text": "أحد عشر اختباراً من أحد عشر — حرف مسقوف: لم يُقَس في هذه الفئة أيّ اختبار معتمد قياساً للحالة."
+      },
+      "testIds": [
+        "CM-01",
+        "CM-02",
+        "CM-03",
+        "CM-04",
+        "CM-05",
+        "CM-06",
+        "CM-07",
+        "CM-08",
+        "CM-10",
+        "CM-11",
+        "M-17",
+        "M-18",
+        "M-19"
+      ]
+    },
+    "gps": {
+      "state": "UNMEASURED",
+      "letter": null,
+      "letterSource": "DETERMINISTIC",
+      "adjustmentReason": null,
+      "adjustmentEvidence": null,
+      "coverage": 0,
+      "reason": "DECLARED_BUT_NONE_EXECUTED",
+      "letterCeilingReason": null,
+      "testIds": [
+        "L-01",
+        "L-02",
+        "L-03"
+      ]
+    },
+    "security": {
+      "state": "MEASURED",
+      "letter": "D",
+      "letterSource": "DETERMINISTIC",
+      "adjustmentReason": null,
+      "adjustmentEvidence": null,
+      "coverage": 1,
+      "reason": null,
+      "letterCeilingReason": null,
+      "testIds": [
+        "SEC-01",
+        "SEC-02",
+        "SEC-03",
+        "SEC-04",
+        "SEC-05",
+        "SEC-06",
+        "SEC-07",
+        "SEC-08",
+        "SEC-09",
+        "SEC-10",
+        "SEC-11",
+        "M-20",
+        "M-21"
+      ]
+    },
+    "sensors": {
+      "state": "PARTIAL",
+      "letter": "B",
+      "letterSource": "DETERMINISTIC",
+      "adjustmentReason": null,
+      "adjustmentEvidence": null,
+      "coverage": 0.7692307692307693,
+      "reason": null,
+      "letterCeilingReason": {
+        "name": "LOW_CATEGORY_COVERAGE",
+        "ceilingLetter": "B",
+        "text": "عشرة اختبارات من ثلاثة عشر — حرف مسقوف: لم يُقَس في هذه الفئة أيّ اختبار معتمد قياساً للحالة."
+      },
+      "testIds": [
+        "SN-01",
+        "SN-02",
+        "SN-03",
+        "SN-04",
+        "SN-05",
+        "SN-06",
+        "SN-07",
+        "SN-08",
+        "SN-09",
+        "SN-10",
+        "SN-11",
+        "SN-12",
+        "M-22"
+      ]
+    },
+    "cellular": {
+      "state": "PARTIAL",
+      "letter": "B",
+      "letterSource": "DETERMINISTIC",
+      "adjustmentReason": null,
+      "adjustmentEvidence": null,
+      "coverage": 0.7142857142857143,
+      "reason": null,
+      "letterCeilingReason": {
+        "name": "LOW_CATEGORY_COVERAGE",
+        "ceilingLetter": "B",
+        "text": "خمسة اختبارات من سبعة — حرف مسقوف: لم يُقَس في هذه الفئة أيّ اختبار معتمد قياساً للحالة."
+      },
+      "testIds": [
+        "N-01",
+        "N-02",
+        "N-03",
+        "N-04",
+        "N-05",
+        "N-06",
+        "N-07"
+      ]
+    },
+    "wireless": {
+      "state": "MEASURED",
+      "letter": "B",
+      "letterSource": "DETERMINISTIC",
+      "adjustmentReason": null,
+      "adjustmentEvidence": null,
+      "coverage": 1,
+      "reason": null,
+      "letterCeilingReason": {
+        "name": "LOW_CATEGORY_COVERAGE",
+        "ceilingLetter": "B",
+        "text": "ستة اختبارات من ستة — حرف مسقوف: لم يُقَس في هذه الفئة أيّ اختبار معتمد قياساً للحالة."
+      },
+      "testIds": [
+        "N-08",
+        "N-09",
+        "N-10",
+        "N-11",
+        "N-12",
+        "N-13"
+      ]
+    },
+    "audio": {
+      "state": "ATTESTED_ONLY",
+      "letter": null,
+      "letterSource": "DETERMINISTIC",
+      "adjustmentReason": null,
+      "adjustmentEvidence": null,
+      "coverage": 1,
+      "reason": "MANUAL_ATTESTATION_ONLY",
+      "letterCeilingReason": null,
+      "testIds": [
+        "M-04",
+        "M-05",
+        "M-06",
+        "M-08"
+      ]
+    },
+    "input": {
+      "state": "ATTESTED_ONLY",
+      "letter": null,
+      "letterSource": "DETERMINISTIC",
+      "adjustmentReason": null,
+      "adjustmentEvidence": null,
+      "coverage": 1,
+      "reason": "MANUAL_ATTESTATION_ONLY",
+      "letterCeilingReason": null,
+      "testIds": [
+        "M-09",
+        "M-10",
+        "M-11"
+      ]
+    }
+  },
+  "NC-TM7PDN": {
+    "battery": {
+      "state": "PARTIAL",
+      "letter": null,
+      "letterSource": "DETERMINISTIC",
+      "adjustmentReason": null,
+      "adjustmentEvidence": null,
+      "coverage": 0.75,
+      "reason": "NO_CALIBRATED_THRESHOLD (PLAN-03 لم يُنجَز — انظر batteryLayer.js)",
+      "letterCeilingReason": null,
+      "testIds": [],
+      "confidence": null,
+      "tag": "ESTIMATED",
+      "indicators": {
+        "BAT-THERMAL-EFF": {
+          "id": "BAT-THERMAL-EFF",
+          "status": "MEASURED",
+          "verdict": "THRESHOLD_NOT_CALIBRATED",
+          "value": 15.210785861599803,
+          "unit": "°C/Wh",
+          "deltaTC": 8,
+          "energyWh": 0.525942582637778,
+          "gate": {
+            "cadenceWhole": 7,
+            "required": 5,
+            "passes": true
+          },
+          "comparedToModelBaseline": false,
+          "note": "مقارنة الطراز غير مفعّلة — modelBaselines فارغة (§٤-ج)",
+          "socAtWindowStart": 84,
+          "socAtWindowEnd": 80
+        },
+        "BAT-R-APPARENT": {
+          "id": "BAT-R-APPARENT",
+          "status": "ABSTAINED",
+          "reason": "INSUFFICIENT_CADENCE",
+          "verdict": null,
+          "gate": {
+            "nSamples": 834,
+            "sourceCadenceUpdates": 4,
+            "required": 5,
+            "passes": false
+          },
+          "socAtWindowStart": 83,
+          "socAtWindowEnd": 81
+        },
+        "BAT-FCC": {
+          "id": "BAT-FCC",
+          "status": "MEASURED",
+          "verdict": "THRESHOLD_NOT_CALIBRATED",
+          "value": 3405.7169583333334,
+          "unit": "mAh",
+          "intervalCount": 3,
+          "gate": {
+            "intervalCount": 3,
+            "required": 2,
+            "passes": true
+          },
+          "designCapacityMah": 4855,
+          "ratioToDesign": 0.7014865001716444,
+          "socAtWindowStart": 83,
+          "socAtWindowEnd": 80
+        },
+        "BAT-COULOMB": {
+          "id": "BAT-COULOMB",
+          "status": "MEASURED",
+          "verdict": "THRESHOLD_NOT_CALIBRATED",
+          "value": 133.0829261111111,
+          "unit": "mAh",
+          "gate": {
+            "qIntMah": 133.0829261111111,
+            "required": 80,
+            "passes": true
+          },
+          "consistencyGateNote": "بوّابة الاتّساق المنصوصة (k = ΔCC ÷ ∫I) تحتاج charge_counter (fv68) وغير قابلة للتقييم على fv67 — لم تُستبدَل بتخمين؛ الحقل consistencyK يبقى null.",
+          "consistencyK": null,
+          "socAtWindowStart": 84,
+          "socAtWindowEnd": 80
+        }
+      },
+      "socAtStart": 84,
+      "socAtEnd": 80
+    },
+    "thermal": {
+      "state": "UNMEASURED",
+      "letter": null,
+      "letterSource": "DETERMINISTIC",
+      "adjustmentReason": null,
+      "adjustmentEvidence": null,
+      "coverage": 0,
+      "reason": "DECLARED_BUT_NONE_EXECUTED",
+      "letterCeilingReason": null,
+      "testIds": [
+        "T-01",
+        "T-02",
+        "T-03",
+        "T-04"
+      ]
+    },
+    "cpu": {
+      "state": "MEASURED",
+      "letter": "C",
+      "letterSource": "DETERMINISTIC",
+      "adjustmentReason": null,
+      "adjustmentEvidence": null,
+      "coverage": 1,
+      "reason": null,
+      "letterCeilingReason": null,
+      "testIds": [
+        "C-01",
+        "C-02",
+        "C-03",
+        "C-04",
+        "C-05",
+        "C-06",
+        "C-07"
+      ]
+    },
+    "gpu": {
+      "state": "MEASURED",
+      "letter": "B",
+      "letterSource": "DETERMINISTIC",
+      "adjustmentReason": null,
+      "adjustmentEvidence": null,
+      "coverage": 1,
+      "reason": null,
+      "letterCeilingReason": {
+        "name": "LOW_CATEGORY_COVERAGE",
+        "ceilingLetter": "B",
+        "text": "اختباران من اثنين — حرف مسقوف: لم يُقَس في هذه الفئة أيّ اختبار معتمد قياساً للحالة."
+      },
+      "testIds": [
+        "G-01",
+        "G-02"
+      ]
+    },
+    "display": {
+      "state": "MEASURED",
+      "letter": "B",
+      "letterSource": "DETERMINISTIC",
+      "adjustmentReason": null,
+      "adjustmentEvidence": null,
+      "coverage": 1,
+      "reason": null,
+      "letterCeilingReason": {
+        "name": "LOW_CATEGORY_COVERAGE",
+        "ceilingLetter": "B",
+        "text": "ستة اختبارات من ستة — حرف مسقوف: لم يُقَس في هذه الفئة أيّ اختبار معتمد قياساً للحالة."
+      },
+      "testIds": [
+        "D-01",
+        "D-02",
+        "D-03",
+        "M-01",
+        "M-02",
+        "M-03"
+      ]
+    },
+    "memory": {
+      "state": "MEASURED",
+      "letter": "B",
+      "letterSource": "DETERMINISTIC",
+      "adjustmentReason": null,
+      "adjustmentEvidence": null,
+      "coverage": 1,
+      "reason": null,
+      "letterCeilingReason": {
+        "name": "LOW_CATEGORY_COVERAGE",
+        "ceilingLetter": "B",
+        "text": "اختبار واحد من واحد — حرف مسقوف: لم يُقَس في هذه الفئة أيّ اختبار معتمد قياساً للحالة."
+      },
+      "testIds": [
+        "R-01",
+        "R-02",
+        "R-03"
+      ]
+    },
+    "storage": {
+      "state": "MEASURED",
+      "letter": "B",
+      "letterSource": "DETERMINISTIC",
+      "adjustmentReason": null,
+      "adjustmentEvidence": null,
+      "coverage": 1,
+      "reason": null,
+      "letterCeilingReason": {
+        "name": "LOW_CATEGORY_COVERAGE",
+        "ceilingLetter": "B",
+        "text": "أربعة اختبارات من أربعة — حرف مسقوف: لم يُقَس في هذه الفئة أيّ اختبار معتمد قياساً للحالة."
+      },
+      "testIds": [
+        "S-01",
+        "S-02",
+        "S-03",
+        "S-04",
+        "S-05",
+        "S-06",
+        "M-15"
+      ]
+    },
+    "camera": {
+      "state": "MEASURED",
+      "letter": "B",
+      "letterSource": "DETERMINISTIC",
+      "adjustmentReason": null,
+      "adjustmentEvidence": null,
+      "coverage": 1,
+      "reason": null,
+      "letterCeilingReason": {
+        "name": "LOW_CATEGORY_COVERAGE",
+        "ceilingLetter": "B",
+        "text": "أحد عشر اختباراً من أحد عشر — حرف مسقوف: لم يُقَس في هذه الفئة أيّ اختبار معتمد قياساً للحالة."
+      },
+      "testIds": [
+        "CM-01",
+        "CM-02",
+        "CM-03",
+        "CM-04",
+        "CM-05",
+        "CM-06",
+        "CM-07",
+        "CM-08",
+        "CM-10",
+        "CM-11",
+        "M-17",
+        "M-18",
+        "M-19"
+      ]
+    },
+    "gps": {
+      "state": "UNMEASURED",
+      "letter": null,
+      "letterSource": "DETERMINISTIC",
+      "adjustmentReason": null,
+      "adjustmentEvidence": null,
+      "coverage": 0,
+      "reason": "DECLARED_BUT_NONE_EXECUTED",
+      "letterCeilingReason": null,
+      "testIds": [
+        "L-01",
+        "L-02",
+        "L-03"
+      ]
+    },
+    "security": {
+      "state": "MEASURED",
+      "letter": "B",
+      "letterSource": "DETERMINISTIC",
+      "adjustmentReason": null,
+      "adjustmentEvidence": null,
+      "coverage": 1,
+      "reason": null,
+      "letterCeilingReason": {
+        "name": "LOW_CATEGORY_COVERAGE",
+        "ceilingLetter": "B",
+        "text": "ثمانية اختبارات من ثمانية — حرف مسقوف: لم يُقَس في هذه الفئة أيّ اختبار معتمد قياساً للحالة."
+      },
+      "testIds": [
+        "SEC-01",
+        "SEC-02",
+        "SEC-03",
+        "SEC-04",
+        "SEC-05",
+        "SEC-06",
+        "SEC-07",
+        "SEC-08",
+        "SEC-09",
+        "SEC-10",
+        "SEC-11",
+        "M-20",
+        "M-21"
+      ]
+    },
+    "sensors": {
+      "state": "PARTIAL",
+      "letter": "B",
+      "letterSource": "DETERMINISTIC",
+      "adjustmentReason": null,
+      "adjustmentEvidence": null,
+      "coverage": 0.7692307692307693,
+      "reason": null,
+      "letterCeilingReason": {
+        "name": "LOW_CATEGORY_COVERAGE",
+        "ceilingLetter": "B",
+        "text": "عشرة اختبارات من ثلاثة عشر — حرف مسقوف: لم يُقَس في هذه الفئة أيّ اختبار معتمد قياساً للحالة."
+      },
+      "testIds": [
+        "SN-01",
+        "SN-02",
+        "SN-03",
+        "SN-04",
+        "SN-05",
+        "SN-06",
+        "SN-07",
+        "SN-08",
+        "SN-09",
+        "SN-10",
+        "SN-11",
+        "SN-12",
+        "M-22"
+      ]
+    },
+    "cellular": {
+      "state": "PARTIAL",
+      "letter": "B",
+      "letterSource": "DETERMINISTIC",
+      "adjustmentReason": null,
+      "adjustmentEvidence": null,
+      "coverage": 0.2857142857142857,
+      "reason": null,
+      "letterCeilingReason": {
+        "name": "LOW_CATEGORY_COVERAGE",
+        "ceilingLetter": "B",
+        "text": "تغطية منخفضة — اختباران من سبعة، وحرف مسقوف: لم يُقَس في هذه الفئة أيّ اختبار معتمد قياساً للحالة."
+      },
+      "testIds": [
+        "N-01",
+        "N-02",
+        "N-03",
+        "N-04",
+        "N-05",
+        "N-06",
+        "N-07"
+      ]
+    },
+    "wireless": {
+      "state": "MEASURED",
+      "letter": "B",
+      "letterSource": "DETERMINISTIC",
+      "adjustmentReason": null,
+      "adjustmentEvidence": null,
+      "coverage": 1,
+      "reason": null,
+      "letterCeilingReason": {
+        "name": "LOW_CATEGORY_COVERAGE",
+        "ceilingLetter": "B",
+        "text": "ستة اختبارات من ستة — حرف مسقوف: لم يُقَس في هذه الفئة أيّ اختبار معتمد قياساً للحالة."
+      },
+      "testIds": [
+        "N-08",
+        "N-09",
+        "N-10",
+        "N-11",
+        "N-12",
+        "N-13"
+      ]
+    },
+    "audio": {
+      "state": "ATTESTED_ONLY",
+      "letter": null,
+      "letterSource": "DETERMINISTIC",
+      "adjustmentReason": null,
+      "adjustmentEvidence": null,
+      "coverage": 1,
+      "reason": "MANUAL_ATTESTATION_ONLY",
+      "letterCeilingReason": null,
+      "testIds": [
+        "M-04",
+        "M-05",
+        "M-06",
+        "M-08"
+      ]
+    },
+    "input": {
+      "state": "ATTESTED_ONLY",
+      "letter": null,
+      "letterSource": "DETERMINISTIC",
+      "adjustmentReason": null,
+      "adjustmentEvidence": null,
+      "coverage": 1,
+      "reason": "MANUAL_ATTESTATION_ONLY",
+      "letterCeilingReason": null,
+      "testIds": [
+        "M-09",
+        "M-10",
+        "M-11"
+      ]
+    }
+  }
+}

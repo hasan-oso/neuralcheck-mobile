@@ -1,0 +1,1666 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App -->
+    <!-- app_name is generated per flavor via resValue() in app/build.gradle.kts -->
+    <string name="app_tagline">فحص ذكي — ثقة كاملة</string>
+
+    <!-- Default web OAuth client id used by Google Sign-In on LoginScreen.
+         The real value is normally injected by the google-services Gradle
+         plugin when google-services.json contains a `client_type: 3`
+         (web) OAuth client. Our current JSON does not include one, so this
+         placeholder keeps the build green. LoginScreen detects the
+         placeholder at runtime and shows a friendly "not configured"
+         error instead of attempting a broken Google sign-in. Do NOT
+         translate — this is an identifier, not user copy. -->
+    <string name="default_web_client_id" translatable="false">PLACEHOLDER_WEB_CLIENT_ID</string>
+
+    <!-- Login / Register -->
+    <string name="login_tab">تسجيل الدخول</string>
+    <string name="register_tab">حساب جديد</string>
+    <string name="login_name">الاسم</string>
+    <string name="login_phone_optional">رقم الهاتف (اختياري)</string>
+    <string name="login_email">البريد الإلكتروني</string>
+    <string name="login_password">كلمة المرور</string>
+    <!-- Neutral label used by LoginScreen's secure field (same copy as login_password). -->
+    <string name="login_credential">كلمة المرور</string>
+    <string name="login_button">تسجيل الدخول</string>
+    <string name="register_button">إنشاء حساب جديد</string>
+    <string name="login_forgot_password">نسيت كلمة المرور؟</string>
+    <string name="login_password_reset_sent">تم إرسال رابط إعادة التعيين إلى بريدك</string>
+    <string name="login_password_reset_email_required">أدخل بريدك الإلكتروني أولاً</string>
+    <string name="login_or">أو</string>
+    <string name="login_google">الدخول بحساب Google</string>
+    <string name="login_google_not_configured">تسجيل الدخول بـ Google غير مهيّأ</string>
+    <string name="login_google_failed">فشل تسجيل الدخول بـ Google</string>
+    <string name="login_error_email_in_use">هذا البريد مسجّل مسبقاً</string>
+    <string name="login_error_wrong_password">كلمة المرور غير صحيحة</string>
+    <string name="login_error_weak_password">كلمة المرور ضعيفة — استخدم 6 أحرف على الأقل</string>
+    <string name="login_error_user_not_found">لا يوجد حساب بهذا البريد</string>
+    <string name="login_error_network">لا يوجد اتصال بالإنترنت</string>
+    <string name="login_error_invalid_email">صيغة البريد الإلكتروني غير صحيحة</string>
+    <string name="logout">تسجيل الخروج</string>
+    <string name="logout_confirm">هل تريد تسجيل الخروج؟</string>
+    <string name="subscription_no_scans">لا يوجد رصيد فحوصات. يرجى شراء اشتراك.</string>
+
+    <!-- Scan Types -->
+    <string name="scan_general">فحص عام</string>
+    <string name="scan_pre_repair">فحص قبل الصيانة</string>
+    <string name="scan_post_repair">فحص بعد الصيانة</string>
+    <string name="scan_general_desc">فحص شامل لجميع مكونات الجهاز</string>
+    <string name="scan_pre_repair_desc">فحص الجهاز قبل إرساله للصيانة</string>
+    <string name="scan_post_repair_desc">فحص الجهاز بعد الصيانة ومقارنة النتائج</string>
+
+    <!-- Navigation / Screen Titles -->
+    <string name="nav_home">الرئيسية</string>
+    <string name="nav_history">السجل</string>
+    <string name="nav_settings">الإعدادات</string>
+    <string name="title_onboarding">مرحباً</string>
+    <string name="title_home">الرئيسية</string>
+    <string name="title_qr_scanner">مسح رمز QR</string>
+    <string name="title_pre_scan">التحضير للفحص</string>
+    <string name="title_active_scan">الفحص جارٍ</string>
+    <string name="title_report">تقرير الفحص</string>
+    <string name="title_tech_pre_repair">تقرير الفني — قبل الصيانة</string>
+    <string name="title_tech_post_repair">تقرير الفني — بعد الصيانة</string>
+    <string name="title_comparison">مقارنة النتائج</string>
+    <string name="title_peer_survey">استبيان المستخدم</string>
+    <string name="title_history">سجل الفحوصات</string>
+    <string name="title_settings">الإعدادات</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_title_1">فحص شامل</string>
+    <string name="onboarding_desc_1">أكثر من 120 اختبار تلقائي ويدوي لكل مكونات الجهاز</string>
+    <string name="onboarding_title_2">نتائج دقيقة</string>
+    <string name="onboarding_desc_2">تقييم ذكي بأربعة محاور مع تقرير مفصّل وقابل للمشاركة</string>
+    <string name="onboarding_title_3">مقارنة قبل وبعد</string>
+    <string name="onboarding_desc_3">قارن حالة الجهاز قبل وبعد الصيانة بضغطة واحدة</string>
+    <string name="btn_next">التالي</string>
+    <string name="btn_skip">تخطي</string>
+    <string name="btn_start">ابدأ</string>
+
+    <!-- Home Screen -->
+    <string name="home_greeting">اختر نوع الفحص</string>
+    <string name="home_last_scan">آخر فحص</string>
+    <string name="home_no_scans">لا توجد فحوصات سابقة</string>
+
+    <!-- QR Scanner -->
+    <string name="qr_instruction">وجّه الكاميرا نحو رمز QR — كود جلسة أو فحص سابق</string>
+    <string name="qr_error_invalid">رمز QR غير صالح</string>
+    <string name="qr_scan_not_found">لم يتم العثور على الفحص</string>
+    <string name="qr_joining">جارٍ الانضمام للجلسة…</string>
+    <string name="qr_join_failed">تعذّر الانضمام للجلسة</string>
+    <string name="qr_join_success">تم الانضمام — جارٍ بدء الفحص</string>
+
+    <!-- PreScan Conditions -->
+    <string name="prescan_instruction">تأكد من الشروط التالية قبل بدء الفحص:</string>
+    <string name="prescan_battery_low">مستوى البطارية أقل من 20٪ — يجب الشحن أولاً</string>
+    <string name="prescan_charger_connected">الشاحن متصل — افصل الشاحن أولاً</string>
+    <string name="prescan_temp_warning">درجة حرارة الجهاز غير طبيعية</string>
+    <string name="prescan_uptime_warning">تم إعادة تشغيل الجهاز مؤخراً (أقل من ساعة)</string>
+    <string name="prescan_close_apps">أغلق جميع التطبيقات الأخرى</string>
+    <string name="prescan_flat_surface">ضع الجهاز على سطح مستوٍ</string>
+    <string name="btn_start_scan">بدء الفحص</string>
+    <string name="prescan_blocked">لا يمكن بدء الفحص — أصلح المشاكل أعلاه</string>
+
+    <!-- Active Scan -->
+    <string name="scan_phase">المرحلة</string>
+    <string name="scan_phase_unknown">غير معروف</string>
+    <string name="scan_phase_init">التهيئة والاختبارات الأساسية</string>
+    <string name="scan_phase_storage">اختبارات التخزين</string>
+    <string name="scan_phase_intensive">اختبار الضغط المكثف</string>
+    <string name="scan_phase_sustained">اختبار الضغط المستمر</string>
+    <string name="scan_phase_cooldown">مرحلة التبريد</string>
+    <!-- V2 phase names (8 phases). The legacy 5 above are kept for V1 builds. -->
+    <string name="scan_v2_phase_init_profiling">تجهيز وقياس مرجعي</string>
+    <string name="scan_v2_phase_storage_stress">اختبار التخزين</string>
+    <string name="scan_v2_phase_memory_stress">اختبار الذاكرة</string>
+    <string name="scan_v2_phase_cpu_sustained">ضغط المعالج</string>
+    <string name="scan_v2_phase_gpu_sustained">ضغط معالج الرسومات</string>
+    <string name="scan_v2_phase_combined_peak">الذروة المُجمَّعة</string>
+    <string name="scan_v2_phase_burst_pattern">اختبار الاندفاع</string>
+    <string name="scan_v2_phase_cooldown">تبريد</string>
+
+    <!-- feat/technician-evaluation: blind technician questions during QR-session scans -->
+    <string name="eval_title">تقييم الفنّي</string>
+    <string name="eval_skip">تخطّي</string>
+    <string name="eval_subtitle">بخبرتك، وقبل ظهور نتيجة الفحص — كل الأسئلة اختيارية</string>
+    <string name="eval_q_overall">الدرجة الإجمالية للجهاز</string>
+    <string name="eval_grade_excellent">ممتاز</string>
+    <string name="eval_grade_good">جيد</string>
+    <string name="eval_grade_fair">متوسط</string>
+    <string name="eval_grade_weak">ضعيف</string>
+    <string name="eval_q_categories">قيِّم ما فحصتَه بنفسك</string>
+    <string name="eval_cat_battery">البطارية</string>
+    <string name="eval_cat_cpu">المعالج والأداء</string>
+    <string name="eval_cat_memory">الذاكرة</string>
+    <string name="eval_cat_storage">التخزين</string>
+    <string name="eval_not_tested">لم أفحصه</string>
+    <string name="eval_q_defects">عيوب ظاهرة (اختيار متعدد)</string>
+    <string name="eval_defect_weak_battery">بطارية ضعيفة</string>
+    <string name="eval_defect_replaced_screen">شاشة مستبدلة</string>
+    <string name="eval_defect_water_damage">أثر ماء</string>
+    <string name="eval_defect_prior_repair">إصلاح سابق</string>
+    <string name="eval_defect_none">لا شيء ملحوظ</string>
+    <!-- Order 2026-09-30 (أمر «مسار الشريك، والنصوص، وإصلاح الخادم»، البند ٣).
+         Shared/placement-independent failure text only — a separate
+         eval_confirm string was removed: it assumed a dedicated "confirm"
+         button before the coordinator flagged that موضع الإرسال (confirm
+         button vs auto-send on scan end vs per-tap) is still undecided
+         (القاعدة ١٤: الأمر افترض زرّاً لا وجود له في الكود). New string —
+         عرضها على المستخدم قبل الالتزام كما طُلب. -->
+    <string name="eval_submit_failed_generic">تعذّر إرسال التقييم</string>
+    <!-- V2 scan duration + preconditions (UI 6) -->
+    <string name="scan_v2_duration_label">يستغرق الفحص 8 دقائق ويتطلّب:</string>
+    <string name="scan_v2_pre_battery">بطارية 25% أو أكثر</string>
+    <string name="scan_v2_pre_storage">مساحة تخزين 8 GB أو أكثر</string>
+    <string name="scan_v2_pre_no_use">عدم استخدام الجهاز خلال الفحص</string>
+    <!-- V2 scanProfile section (UI 5) -->
+    <string name="scan_profile_section_title">ظروف الفحص</string>
+    <string name="scan_profile_intensity_full">ضغط كامل (جهاز ذو تبريد ممتاز)</string>
+    <string name="scan_profile_intensity_reduced">تمّ تخفيض الضغط لحماية الجهاز</string>
+    <string name="scan_profile_tier_flagship">تبريد ممتاز</string>
+    <string name="scan_profile_tier_mid">تبريد متوسط</string>
+    <string name="scan_profile_tier_budget">تبريد محدود</string>
+    <string name="scan_profile_tier_unknown">غير محدّد</string>
+    <string name="scan_profile_throttle_count">حدث خفض intensity %1$d مرّة</string>
+    <string name="scan_profile_early_terminated">مراحل أُنهيت مبكّراً: %1$s</string>
+    <!-- V2 critical defect alert (UI 4) -->
+    <string name="critical_defect_title">⚠️ تم اكتشاف عيب حرج في السيليكون</string>
+    <string name="critical_defect_body">هذا الجهاز فشل في فحص %1$s verification. لا يُنصح بالشراء.</string>
+    <string name="critical_defect_categories_cpu">المعالج</string>
+    <string name="critical_defect_categories_gpu">معالج الرسومات</string>
+    <string name="critical_defect_categories_memory">الذاكرة</string>
+    <string name="critical_defect_categories_storage">التخزين</string>
+    <!-- V2 expected performance card (UI 2) -->
+    <string name="expected_performance_title">ما يتوقّعه النموذج للجهاز</string>
+    <string name="expected_performance_confidence_high">ثقة عالية</string>
+    <string name="expected_performance_confidence_medium">ثقة متوسطة</string>
+    <string name="expected_performance_confidence_low">ثقة منخفضة</string>
+    <!-- V2 change analysis card -->
+    <string name="change_analysis_title">مقارنة بالفحص السابق</string>
+    <string name="change_analysis_stable">حالة الجهاز مستقرّة</string>
+    <string name="change_analysis_improved">تحسّن الجهاز منذ آخر فحص</string>
+    <string name="change_analysis_deteriorated">تراجع الجهاز منذ آخر فحص</string>
+    <!-- A115: changeDirection null/unrecognized — must not read as "stable" -->
+    <string name="change_analysis_unknown">تعذّر تحديد اتجاه التغيير منذ آخر فحص</string>
+    <string name="scan_progress">التقدم</string>
+    <string name="scan_time_remaining">الوقت المتبقي</string>
+    <string name="scan_battery_temp">حرارة البطارية</string>
+    <string name="scan_cpu_temp">حرارة المعالج</string>
+    <string name="scan_cpu_usage">استخدام المعالج</string>
+    <string name="scan_chart_min_max_pct">أدنى %1$d٪ • أعلى %2$d٪</string>
+    <string name="scan_chart_min_max_temp">أدنى %1$s°C • أعلى %2$s°C</string>
+    <string name="scan_chart_danger_threshold">حد الخطر 45°C</string>
+    <string name="scan_gpu_fps">إطارات GPU</string>
+    <string name="scan_safety_stop">تم إيقاف الفحص لأسباب أمان</string>
+    <string name="scan_safety_battery_temp">حرارة البطارية تجاوزت الحد الآمن (45°م)</string>
+    <string name="scan_safety_cpu_temp">حرارة المعالج تجاوزت الحد الآمن (90°م)</string>
+    <string name="scan_safety_battery_drain">استهلاك البطارية مرتفع جداً</string>
+    <string name="scan_safety_battery_low">مستوى البطارية منخفض جداً</string>
+    <string name="scan_cancel_confirm">هل تريد إلغاء الفحص؟</string>
+
+    <!-- New strings for charts -->
+    <string name="scan_cpu_frequency">تردد المعالج</string>
+    <string name="scan_temp_threshold">عتبة الحرارة</string>
+    <string name="scan_temperature">الحرارة</string>
+    <string name="scan_gpu_temp">حرارة الرسومات</string>
+    <string name="scan_battery_level">مستوى البطارية</string>
+    <string name="btn_cancel_scan">إلغاء الفحص</string>
+
+    <!-- Report -->
+    <string name="report_overall_score">الدرجة الكلية</string>
+    <string name="report_summary">الملخص</string>
+    <string name="report_categories">الفئات</string>
+    <string name="report_ai_error_title">تعذّر الحصول على تحليل AI</string>
+    <!-- fieldsVersion 69 (S-26): ALREADY_EXISTS ("قيد المعالجة") shows these instead of the error card. Proposed, pending approval (decision 90). -->
+    <string name="report_ai_wait_title">انتظر</string>
+    <string name="report_ai_wait_body">التحليل قيد المعالجة على الخادم. انتظر قليلاً ثم اضغط «إعادة المحاولة».</string>
+    <!-- New redesigned report sections (launch flavor) -->
+    <string name="report_section_summary">📋 ملخص التحليل</string>
+    <string name="report_section_details">📝 التحليل التفصيلي</string>
+    <string name="report_section_verdict">⚖️ الحكم</string>
+    <!-- Order 2026-10-01 (A4): renamed from "المشاكل المكتشفة" — not every
+         listed item is a problem (POSITIVE/INFO severities exist too, see
+         IssueSeverity). The count in parentheses is a bare numeral
+         annotation, not a counted noun phrase, so Arabic numeral-noun
+         agreement does not apply and no <plurals> resource is needed. -->
+    <string name="report_section_issues_title_fmt">الملاحظات (%1$d)</string>
+    <!-- Order 2026-10-01 (أمر القرارات، #5/#6 + ملحقه نفس اليوم): shown
+         beside report_section_issues_title_fmt. Counts WARNING + DANGER
+         (DANGER is where IssueSeverity.fromString maps the V7 "fail" string
+         — see that enum's doc) + UNKNOWN (the addendum's explicit correction
+         over this round's earlier WARNING+DANGER-only count) — "والعدد =
+         FAIL + WARNING + unknown، كما هو" (نصّ المستخدم)، و"وإضافة الشدّة
+         غير المعروفة إلى العدّاد كما أمرتُ" (نصّ الملحق). CRITICAL/HIGH/INFO
+         excluded — not named by the order.
+
+         CLDR 'ar' plural categories used AS-IS (zero/one/two/few/many/
+         other) — the addendum: "تُعتمد فئات CLDR للعربية كما هي، فهي قاعدة
+         النحو العربي... ونطاقاتي «3 إلى 10» و«11 فما فوق» تبسيط يصحّ لما دون
+         المئة وحده." few = n%100 in 3..10 (e.g. 103 → few, 103 mod 100 = 3);
+         many = n%100 in 11..99; other = everything else (100, 101, 102 —
+         101%100=1 and 102%100=2 do NOT satisfy CLDR's exact-value one/two
+         rules (n=1 / n=2), so they fall to other, same text as many). These
+         are Android's/ICU's own built-in 'ar' plural-rule selection, not a
+         hand-written range check in this app (rule 37 — the real resource
+         path is exercised, not a copy of the rule: see
+         ReportIssuesNeedingAttentionPluralsTest).
+
+         NO zero item: Android does not reliably select 'zero' for Arabic on
+         every OS version (the addendum's own caution) — this app never
+         relies on it. AiIssuesSection (ReportScreen.kt) hides the whole line
+         in CODE before any pluralStringResource call when the count is 0,
+         so the absent 'zero' item is never reachable to begin with, not a
+         gap. -->
+    <plurals name="report_issues_needing_attention">
+        <item quantity="one">ملاحظة واحدة تحتاج انتباهاً</item>
+        <item quantity="two">ملاحظتان تحتاجان انتباهاً</item>
+        <item quantity="few">%d ملاحظات تحتاج انتباهاً</item>
+        <item quantity="many">%d ملاحظة تحتاج انتباهاً</item>
+        <item quantity="other">%d ملاحظة تحتاج انتباهاً</item>
+    </plurals>
+    <string name="report_section_category_eval">📊 تقييم الفئات</string>
+    <!-- Phase 1.15: depth-vs-surface report framing -->
+    <!-- Unmeasured category: every test came back not_tested/unavailable -->
+    <string name="report_category_unmeasured">غير مقيسة</string>
+    <string name="report_category_coverage_fmt">أُجري %1$d من %2$d اختبار · %3$d لم تُجرَ</string>
+    <string name="report_category_not_run_short">%1$d لم تُجرَ</string>
+    <string name="report_surface_category_tag">إفادة الفاحص — افحصها بنفسك</string>
+    <!-- Order 2026-10-01 (A2): one general line near the overall V7 letter,
+         distinguishing what the letter is computed from vs. what is
+         AI-generated — see AiV7OverallCard. NOT a per-category line: the
+         two existing report_v7_letter_source_deterministic/llm_adjusted
+         strings already cover the per-category DETERMINISTIC/LLM_ADJUSTED
+         distinction and are untouched (see A7). -->
+    <string name="report_v7_letter_basis_note">الحرف محسوب من نتائج القياس، والتحليل والنصائح بالذكاء الاصطناعي.</string>
+    <!-- Order 2026-10-01 (A3): category-level coverage percentage, now
+         labelled (was a bare "%1$d%%" with no text at all — see
+         AiCategoryRowV7). Distinct from report_v7_coverage_fmt below,
+         which is the OVERALL card's differently-worded "تغطية القياس: %1$d%%". -->
+    <string name="report_v7_category_coverage_label_fmt">التغطية %1$d%%</string>
+    <string name="report_buyer_note_title">ماذا يفحص NeuralCheck؟</string>
+    <string name="report_buyer_note_body">نفحص الأعماق التي لا تراها بعينك: المعالج، البطارية، الذاكرة، الأداء تحت الحِمل، والنزاهة — وهذا ما نضمنه. أمّا الفئات الظاهرة (الشاشة، الصوت، الكاميرا، الاهتزاز، المنافذ، الاتصال اللاسلكي) فأفادنا بها الفاحص ولم يتحقّق منها NeuralCheck؛ وهي بسيطة وسريعة، ننصحك بفحصها بنفسك عند الشراء.</string>
+    <string name="report_maintenance_suspected">قد يكون هذا الجهاز خضع لصيانة: تغيّر مكوّن من حالة عطل إلى عمل منذ فحص سابق.</string>
+    <string name="report_section_predicted">🔮 مشاكل متوقعة</string>
+    <!-- Phase 3-b: V7 findings-based report display. report_grade_unavailable
+         is shared by the V6 verdict card (ai.grade) and the V7 overall/
+         category cards (overall.letter / categories.*.letter) — same
+         explicit-absence state, one string. -->
+    <string name="report_grade_unavailable">الحرف غير متوفر</string>
+    <string name="report_v7_overall_title">🧭 التقييم العام</string>
+    <string name="report_v7_coverage_fmt">تغطية القياس: %1$d%%</string>
+    <string name="report_v7_coverage_unavailable">نسبة تغطية القياس غير متوفرة</string>
+    <!-- Order 2026-10-01 (أمر القرارات، A8/S-13) — معتمَد (اعتماد لاحق في
+         نفس اليوم، يحلّ محلّ المقترح الأوّل): "يطابق نصّ الخادم S-13" —
+         نفس نصّ harnessErrorMessage الحالي من الخادم حرفياً، فيظهر مطابقاً
+         له حتى حين يغيب الحقل نفسه. يحلّ محلّ report_v7_harness_error_no_reason
+         (أُزيل — موضعاه الوحيدان استُبدلا بهذا السطر)، ويظهر حين يغيب
+         harnessErrorMessage، بدل عرض الرمز الخام harnessErrorReason كما كان
+         يحدث. -->
+    <string name="report_v7_harness_error_message_unavailable">تعذّر تجهيز نتائج الاختبارات لهذا الفحص، وهذا ليس حكماً على الجهاز.</string>
+    <string name="report_v7_no_data_at_all">لم يُقَس أي شيء في هذا الفحص</string>
+    <string name="report_v7_partial_no_detail">تقييم جزئي — لا تفاصيل إضافية متوفرة</string>
+    <!-- narrativeIncomplete=true banner (order 2026-09-23، القرار ٧٢). نصّ
+         المستخدم حرفياً — لا كلمة "صحيحة": القياس العشاري أنتج تقارير ناقصة
+         قبل إصلاح vsync، ونسبة ما بعده غير مقيسة، فـ"صحيحة" ادّعاء لم يُقَس. -->
+    <string name="report_v7_narrative_incomplete">الشرح غير مكتمل. الحروف والتغطية محسوبة من القياس.</string>
+    <!-- Order 2026-10-07 (A1، إضافة المستخدم ٢): نصّ معتمَد حرفياً، بلا
+         الإيموجي — الأيقونة 🚧 منفصلة في البطاقة (AiV7GateReasonCard) وكانت
+         تظهر مرّتين لأن النصّ القديم كان يبدأ بها أيضاً. قبل: «🚧 سبب تحديد
+         سقف الحرف». -->
+    <string name="report_v7_gate_reason_title">سبب الحرف العامّ</string>
+    <!-- report_v7_gate_reason_fmt («%1$s — سقف الحرف: %2$s») حُذف 2026-10-07
+         (A1 + إضافة المستخدم ١): شارة السقف تُحذف لأن جملة الخادم تقول «أعلى
+         حرف C» نفسها، وخانة %1$s كانت اسم البوّابة الذي لم يعد يُعرض. -->
+    <string name="report_v7_field_unavailable">غير متوفر</string>
+    <!-- Order 2026-10-01 (A5): report_v7_field_unavailable is reused bare
+         ("غير متوفر") at several unrelated sites in ReportScreen.kt with no
+         indication of WHAT is unavailable. The six strings below replace
+         that bare reuse at each site this repo's report screen renders it,
+         each naming its own subject — see ReportScreen.kt call sites for
+         which one applies where. report_v7_field_unavailable itself is kept
+         (still used, unchanged, at report_scan_date's own already-labelled
+         "التاريخ: غير متوفر" concatenation — ReportScreen.kt:504). -->
+    <!-- Order 2026-10-01 (أمر القرارات، #8-13): "<الموضوع>: غير متوفر" —
+         يحلّ محلّ الشكل السابق "غير متوفر (<الموضوع>)" لهذه الجولة نفسها. -->
+    <string name="report_v7_issue_title_unavailable">عنوان الملاحظة: غير متوفر</string>
+    <string name="report_v7_narrative_status_unavailable">اكتمال الشرح: غير متوفر</string>
+    <!-- Reused verbatim by V7OverallSummaryReader.kt (Home/History card) —
+         one string, two call sites, per rule 24. -->
+    <string name="report_v7_overall_status_unavailable">التقييم العامّ: غير متوفر</string>
+    <string name="report_v7_ceiling_reason_unavailable">سبب أعلى حرف للفئة: غير متوفر</string>
+    <!-- "الملاحظات" مؤنّث سماعاً في هذا السياق (جمع مؤنّث)، فالنعت "غير متوفرة". -->
+    <string name="report_v7_issues_list_unavailable">الملاحظات: غير متوفرة</string>
+    <!-- report_v7_gate_reason_name_unavailable (#13، «سبب تحديد الحرف: غير
+         متوفر») حُذف 2026-10-07: كان بديل خانة الاسم في report_v7_gate_reason_fmt
+         المحذوف، ثم صار بلا قارئ لأن المستخدم قرّر أن البطاقة تُخفى كلّها حين
+         يغيب governingGateReason.text (البند ٤) بدل عرض نصّ بديل. -->
+    <string name="report_v7_incomplete">بيانات التقييم غير مكتملة</string>
+    <string name="report_v7_state_partial">قياس جزئي لهذه الفئة</string>
+    <string name="report_v7_state_unknown">حالة قياس هذه الفئة غير معروفة</string>
+    <!-- issues[].severity == IssueSeverity.UNKNOWN (order 2026-09-24، جولة
+         جرد القيم الافتراضية، البند ١، القرار ٧٦): an unrecognised or absent
+         V7 severity string, rendered as its own explicit badge next to the
+         issue's emoji/accent — see ReportScreen.kt's AiIssuesSection and
+         ReportPdfGenerator.kt's severityColors. No matching resource with
+         this exact meaning existed elsewhere in this file to reuse:
+         value_unknown_ar/value_unknown_tr are the hardware-test raw-value
+         pair (a different subsystem, selected in code by literal language
+         suffix, not by Android's locale-qualified resource resolution);
+         scan_phase_unknown and report_v7_state_unknown/report_v7_letter_source_unknown
+         name different fields entirely. New key, Arabic only per the
+         order — see values-tr/strings.xml for why no Turkish translation
+         was added here. -->
+    <string name="report_v7_issue_severity_unknown">غير معروف</string>
+    <string name="report_v7_letter_source_deterministic">حرف محسوب مباشرة من نتائج القياس</string>
+    <!-- Order 2026-10-01 (A7 → #17، أمر القرارات): "النموذج" ⇐ "الذكاء
+         الاصطناعي". نصّ عربي معتمَد بلا تغيير عن الجولة السابقة. -->
+    <string name="report_v7_letter_source_llm_adjusted">حرف عدّله الذكاء الاصطناعي</string>
+    <string name="report_v7_letter_source_unknown">مصدر هذا الحرف غير معروف</string>
+    <string name="report_v7_adjustment_reason_unavailable">عدَّل النموذج الحرف دون سبب مُعلَن</string>
+    <!-- Phase 3-c: categories.*.state values relayed from categoryStates.js
+         (neuralcheck-backend, outside this repo's bounds). ATTESTED_ONLY
+         and HARNESS_ERROR got their own dedicated strings below (order
+         2026-09-24، القرار ٨٢ البند ٤) — this generic template now covers
+         only NO_DATA (its own dedicated "reason" copy is القرار ٨٢ البند
+         ٥, paused this round) and any future/unrecognized value; the raw
+         token is shown verbatim via %1$s. -->
+    <string name="report_v7_state_uninterpreted_fmt">حالة قياس هذه الفئة: %1$s (منقولة من الخادم، لا عرض مخصّص لها بعد)</string>
+    <!-- Order 2026-09-24، القرار ٨٢ البند ٤ (نصّ مُعتمَد من المستخدم).
+         Order 2026-10-01 (A6 → #14، أمر القرارات): استُبدلت الجملة كاملة —
+         حُذفت "نقرة" والأقواس معاً، لا "بلا مدّة مسجَّلة" وحدها كما في
+         الجولة السابقة. -->
+    <string name="report_v7_state_attested_only">بشهادة الفنّي فقط، بلا قياس آلي.</string>
+    <string name="report_v7_state_harness_error">لم تُقَس: تعذّر تشغيل اختبارات هذه الفئة في أداة الفحص. ليس حكماً على الجهاز.</string>
+    <!-- Order 2026-09-25، القرار ٨٧ البند ٤ (نصّ مُعتمَد من المستخدم). يحلّ
+         محلّ report_v7_state_partial لزوج (PARTIAL، NO_CALIBRATED_THRESHOLD)
+         تحديداً — القياس الجزئي هنا حكمٌ (لا حرف بلا معايرة)، لا نقص تغطية؛
+         شريط النسبة المئوية يبقى ظاهراً كما هو، بلا علاقة بهذا النصّ.
+         نفسه أيضاً لزوج (MEASURED، NO_CALIBRATED_THRESHOLD) — جدول الأسباب،
+         القرار ٨٤ البند ١ / القرار ٨٦ البند ٣. -->
+    <!-- Order 2026-10-01 (A6 → #16، أمر القرارات): نصّ كامل جديد، يحلّ محلّ
+         النصّ السابق — "واستبدال الجملة كلّها هو ما أمرتُ به" (نصّ المستخدم).
+         لا مقارنة كودية بمحتوى هذا النصّ الحرفي في أي مكان — AiV7Presentation.
+         NO_CALIBRATED_THRESHOLD_REASON (AiV7Presentation.kt:36-37) رمزٌ خامٌ
+         منفصل من الخادم، وهو ما يُقارَن به فعلياً (classifyCategoryReason)،
+         لا نصّ هذه السلسلة (rule 24 محفوظة: لا نسخة ثانية من قيمة تمييز). -->
+    <string name="report_v7_reason_battery_uncalibrated">تُقاس البطارية ولا يُعطى لها حرف في هذا الإصدار.</string>
+    <!-- جدول الأسباب (القرار ٨٤ البند ١ / القرار ٨٦ البند ٣) — نصوص مُعتمَدة
+         من المستخدم، تحلّ محلّ نصّ الحالة العام حين يظهر رمز السبب المطابق،
+         وتحلّ محلّ عرض رمز السبب الخام الذي كان يظهر على الشاشة سابقاً. -->
+    <string name="report_v7_reason_no_health_bearing_declared">لم تُقَس: لم يصل في هذا الفحص اختبار يُحتسب لحالة هذه الفئة.</string>
+    <!-- Order 2026-10-01 (A6 → #15، أمر القرارات): استُبدلت الجملة كاملة
+         بنصّ أقصر معتمَد من المستخدم — ليست مجرّد حذف "حالة" كما في الجولة
+         السابقة. -->
+    <string name="report_v7_reason_declared_none_executed">لم تُقَس هذه الفئة في هذا الفحص.</string>
+    <string name="report_v7_reason_battery_unmeasured">لم تُقَس صحّة البطارية: لم يستوفِ أيّ من مؤشّراتها شروط القياس في هذا الفحص.</string>
+    <string name="report_v7_reason_harness_error_unmeasured">لم تُقَس: لم تصل بيانات هذه الفئة من أداة الفحص. ليس حكماً على الجهاز.</string>
+    <string name="btn_show_more">عرض المزيد</string>
+    <string name="btn_show_less">إخفاء</string>
+    <string name="report_manual_tests">الاختبارات اليدوية</string>
+    <string name="manual_tests_subtitle">٢٠ اختباراً تتطلب تدخلاً يدوياً</string>
+    <string name="manual_tests_open">فتح</string>
+    <string name="manual_tests_title">الاختبارات اليدوية</string>
+    <string name="manual_tests_instruction">حدِّد نتيجة كل اختبار. ستُحفظ مع الفحص وتُرفع إلى السحابة.</string>
+    <string name="manual_pass">اجتياز</string>
+    <string name="manual_fail">إخفاق</string>
+    <string name="manual_tests_saved">تم حفظ النتائج ومزامنتها</string>
+    <string name="manual_tests_save_failed">تعذّر حفظ النتائج</string>
+    <string name="manual_tests_progress_fmt">%1$d / %2$d</string>
+    <string name="report_share">مشاركة التقرير</string>
+    <string name="report_share_image">مشاركة كصورة</string>
+    <string name="report_qr_code">رمز QR</string>
+    <string name="report_scan_date">تاريخ الفحص</string>
+    <string name="report_scan_duration">مدة الفحص</string>
+    <string name="report_device_info">معلومات الجهاز</string>
+    <string name="report_incomplete">فحص غير مكتمل</string>
+
+    <!-- Scoring Axes -->
+    <string name="axis_performance">الأداء</string>
+    <string name="axis_health">الصحة</string>
+    <string name="axis_functionality">الوظائف</string>
+    <string name="axis_security">الأمان</string>
+
+    <!-- Test Categories -->
+    <string name="category_battery">البطارية</string>
+    <string name="category_cpu">المعالج</string>
+    <string name="category_gpu">معالج الرسومات</string>
+    <string name="category_storage">التخزين</string>
+    <string name="category_thermal">الحرارة</string>
+    <string name="category_memory">الذاكرة</string>
+    <string name="category_cellular">الشبكة الخلوية</string>
+    <string name="category_wireless">الاتصال اللاسلكي</string>
+    <string name="category_gps">نظام تحديد الموقع</string>
+    <string name="category_sensors">المستشعرات</string>
+    <string name="category_camera">الكاميرا والحيوية</string>
+    <string name="category_display">الشاشة</string>
+    <string name="category_security">الأمان</string>
+
+    <!-- Test Status -->
+    <string name="status_pass">ناجح</string>
+    <string name="status_fail">فاشل</string>
+    <string name="status_warning">تحذير</string>
+    <string name="status_unavailable">غير متوفر</string>
+    <string name="status_not_tested">لم يُختبر</string>
+    <string name="status_error">خطأ</string>
+
+    <!-- Battery Tests -->
+    <string name="test_b01">صحة البطارية (BatteryManager)</string>
+    <string name="test_b01_ar">صحة البطارية</string>
+    <string name="test_b01_tr">Pil Sağlığı (BatteryManager)</string>
+    <string name="test_b02">سعة البطارية المصممة</string>
+    <string name="test_b02_ar">سعة البطارية المصممة</string>
+    <string name="test_b02_tr">Tasarım Kapasitesi</string>
+    <string name="test_b03_ar">حرارة البطارية</string>
+    <string name="test_b03_tr">Pil Sıcaklığı</string>
+    <string name="test_b04_ar">جهد البطارية</string>
+    <string name="test_b04_tr">Pil Voltajı</string>
+    <string name="test_b05_ar">تيار الشحن/التفريغ</string>
+    <string name="test_b05_tr">Şarj/Deşarj Akımı</string>
+    <string name="test_b06_ar">معدل الاستنزاف</string>
+    <string name="test_b06_tr">Tahliye Oranı</string>
+    <string name="test_b07_ar">تقنية الشحن</string>
+    <string name="test_b07_tr">Şarj Teknolojisi</string>
+    <string name="test_b08_ar">دورات الشحن</string>
+    <string name="test_b08_tr">Şarj Döngüsü</string>
+
+    <!-- CPU Tests -->
+    <string name="test_c01_ar">عدد الأنوية</string>
+    <string name="test_c01_tr">Çekirdek Sayısı</string>
+    <string name="test_c02_ar">التردد الأقصى</string>
+    <string name="test_c02_tr">Maksimum Frekans</string>
+    <string name="test_c03_ar">التردد الحالي عند الراحة</string>
+    <string name="test_c03_tr">Boşta CPU Frekansı</string>
+    <string name="test_c04_ar">أداء المعالج</string>
+    <string name="test_c04_tr">CPU Performansı</string>
+    <string name="test_c05_ar">طراز المعالج</string>
+    <string name="test_c05_tr">İşlemci Modeli</string>
+    <string name="test_c06_ar">الاختناق الحراري</string>
+    <string name="test_c06_tr">Termal Kısıtlama</string>
+    <string name="test_c07_ar">استقرار الأداء</string>
+    <string name="test_c07_tr">Performans İstikrarı</string>
+
+    <!-- GPU Tests -->
+    <string name="test_g01_ar">معالج الرسومات</string>
+    <string name="test_g01_tr">GPU</string>
+    <string name="test_g02_ar">دعم Vulkan</string>
+    <string name="test_g02_tr">Vulkan Desteği</string>
+    <string name="test_g03_ar">انخفاض FPS</string>
+    <string name="test_g03_tr">FPS Düşüşü</string>
+    <string name="test_g04_ar">اختناق GPU</string>
+    <string name="test_g04_tr">GPU Kısıtlaması</string>
+    <string name="test_g05_ar">أدنى FPS مستدام</string>
+    <string name="test_g05_tr">En düşük FPS</string>
+
+    <!-- Storage Tests -->
+    <string name="test_s01_ar">السعة الكلية</string>
+    <string name="test_s01_tr">Toplam Kapasite</string>
+    <string name="test_s02_ar">المساحة المتاحة</string>
+    <string name="test_s02_tr">Mevcut Alan</string>
+    <string name="test_s03_ar">سرعة الكتابة</string>
+    <string name="test_s03_tr">Yazma Hızı</string>
+    <string name="test_s04_ar">سرعة القراءة</string>
+    <string name="test_s04_tr">Okuma Hızı</string>
+    <string name="test_s05_ar">قراءة عشوائية</string>
+    <string name="test_s05_tr">Rastgele Okuma</string>
+    <string name="test_s06_ar">كتابة عشوائية</string>
+    <string name="test_s06_tr">Rastgele Yazma</string>
+
+    <!-- Thermal Tests -->
+    <string name="test_t01_ar">أقصى حرارة</string>
+    <string name="test_t01_tr">Maksimum Sıcaklık</string>
+    <string name="test_t02_ar">معدل الارتفاع</string>
+    <string name="test_t02_tr">Yükseliş Hızı</string>
+    <string name="test_t03_ar">معدل التبريد</string>
+    <string name="test_t03_tr">Soğutma Hızı</string>
+    <string name="test_t04_ar">مناطق الحرارة</string>
+    <string name="test_t04_tr">Termal Bölgeler</string>
+
+    <!-- Memory Tests -->
+    <string name="test_r01_ar">إجمالي الذاكرة</string>
+    <string name="test_r01_tr">Toplam Bellek</string>
+    <string name="test_r02_ar">الذاكرة المتاحة</string>
+    <string name="test_r02_tr">Mevcut Bellek</string>
+    <string name="test_r03_ar">حالة الذاكرة</string>
+    <string name="test_r03_tr">Bellek Durumu</string>
+
+    <!-- Network Tests -->
+    <string name="test_n01_ar">إصدار مودم الاتصال</string>
+    <string name="test_n01_tr">Modem Sürümü</string>
+    <string name="test_n02_ar">شريحة الاتصال 1</string>
+    <string name="test_n02_tr">SIM 1 Durumu</string>
+    <string name="test_n03_ar">شريحة الاتصال 2</string>
+    <string name="test_n03_tr">SIM 2 Durumu</string>
+    <string name="test_n04_ar">نوع الشبكة</string>
+    <string name="test_n04_tr">Ağ Türü</string>
+    <string name="test_n05_ar">قوة إشارة الشبكة</string>
+    <string name="test_n05_tr">İşaret Gücü</string>
+    <string name="test_n06_ar">مشغّل الشبكة</string>
+    <string name="test_n06_tr">Operatör</string>
+    <string name="test_n07_ar">دعم الشريحة الإلكترونية</string>
+    <string name="test_n07_tr">eSIM</string>
+    <string name="test_n08_ar">الاتصال بالواي فاي</string>
+    <string name="test_n08_tr">Wi-Fi</string>
+    <string name="test_n09_ar">سرعة اتصال Wi-Fi</string>
+    <string name="test_n09_tr">Wi-Fi Bağlantı Hızı</string>
+    <string name="test_n10_ar">قوة إشارة Wi-Fi</string>
+    <string name="test_n10_tr">Wi-Fi İşaret Gücü</string>
+    <string name="test_n11_ar">Bluetooth</string>
+    <string name="test_n11_tr">Bluetooth</string>
+    <string name="test_n12_ar">بلوتوث منخفض الطاقة</string>
+    <string name="test_n12_tr">Düşük Güç Bluetooth</string>
+    <string name="test_n13_ar">الاتصال القريب NFC</string>
+    <string name="test_n13_tr">NFC</string>
+    <string name="value_slot_single">فتحة واحدة فقط</string>
+    <string name="value_slot_single_tr">Tek yuva</string>
+
+    <!-- GPS Tests -->
+    <string name="test_l01_ar">توفر GPS</string>
+    <string name="test_l01_tr">GPS Kullanılabilirliği</string>
+    <string name="test_l02_ar">الأقمار الصناعية</string>
+    <string name="test_l02_tr">Uydu Sayısı</string>
+    <string name="test_l03_ar">دقة الموقع</string>
+    <string name="test_l03_tr">Konum Doğruluğu</string>
+    <string name="gps_permission_denied">إذن الموقع مرفوض</string>
+    <string name="gps_disabled">GPS معطّل</string>
+    <string name="gps_no_signal">لم يُحصل على إشارة — انتهت المهلة</string>
+    <string name="gps_indoor_hint">قد يكون الجهاز في بيئة داخلية</string>
+    <!-- Order 2026-09-30 (أمر «مسار الشريك...»، البند ١): يستبدل
+         gps_permission_denied في فرع L-02 الثاني وحده (GpsTests.kt، فشل
+         registerGnssStatusCallback بعد تأكّد الإذن) — يصف ما وقع فعلاً، ولا
+         يدّعي عطباً في المستشعر ولا يدّعي رفض إذن لم يقع. معتمَد بنصّ
+         المستخدم. -->
+    <string name="gps_satellite_data_unreadable">تعذّرت قراءة بيانات الأقمار الصناعية</string>
+
+    <!-- Sensor Tests -->
+    <string name="test_sn01_ar">مقياس التسارع</string>
+    <string name="test_sn01_tr">İvmeölçer</string>
+    <string name="test_sn02_ar">الجيروسكوب</string>
+    <string name="test_sn02_tr">Jiroskop</string>
+    <string name="test_sn03_ar">مستشعر القرب</string>
+    <string name="test_sn03_tr">Yakınlık Sensörü</string>
+    <string name="test_sn04_ar">مستشعر الضوء</string>
+    <string name="test_sn04_tr">Işık Sensörü</string>
+    <string name="test_sn05_ar">البوصلة</string>
+    <string name="test_sn05_tr">Pusula</string>
+    <string name="test_sn06_ar">مقياس الضغط</string>
+    <string name="test_sn06_tr">Barometr</string>
+    <string name="test_sn07_ar">حرارة محيطة</string>
+    <string name="test_sn07_tr">Ortam Sıcaklığı</string>
+    <string name="test_sn08_ar">كاشف الخطوات</string>
+    <string name="test_sn08_tr">Adım Dedektörü</string>
+    <string name="test_sn09_ar">عداد الخطوات</string>
+    <string name="test_sn09_tr">Adım Sayacı</string>
+    <string name="test_sn10_ar">الجاذبية</string>
+    <string name="test_sn10_tr">Yerçekimi</string>
+    <string name="test_sn11_ar">تسارع خطي</string>
+    <string name="test_sn11_tr">Doğrusal İvme</string>
+    <string name="test_sn12_ar">متجه الدوران</string>
+    <string name="test_sn12_tr">Rotasyon Vektörü</string>
+
+    <!-- Camera & Biometric Tests -->
+    <string name="test_cm01_ar">كاميرا خلفية</string>
+    <string name="test_cm01_tr">Arka Kamera</string>
+    <string name="test_cm02_ar">كاميرا أمامية</string>
+    <string name="test_cm02_tr">Ön Kamera</string>
+    <string name="test_cm03_ar">كاميرات إضافية</string>
+    <string name="test_cm03_tr">Ek Kameralar</string>
+    <string name="test_cm04_ar">الفلاش</string>
+    <string name="test_cm04_tr">Flaş</string>
+    <string name="test_cm05_ar">ضبط تلقائي</string>
+    <string name="test_cm05_tr">Otomatik Odakla</string>
+    <string name="test_cm06_ar">دقة الكاميرا الخلفية</string>
+    <string name="test_cm06_tr">Arka Kamera Çözünürlüğü</string>
+    <string name="test_cm07_ar">دقة الكاميرا الأمامية</string>
+    <string name="test_cm07_tr">Ön Kamera Çözünürlüğü</string>
+    <string name="test_cm08_ar">بصمة الإصبع</string>
+    <string name="test_cm08_tr">Parmak İzi</string>
+    <string name="test_cm09_ar">التعرف على الوجه</string>
+    <string name="test_cm09_tr">Yüz Tanıma</string>
+    <string name="test_cm10_ar">الاهتزاز</string>
+    <string name="test_cm10_tr">Titreşim</string>
+    <string name="test_cm11_ar">LED الإشعارات</string>
+    <string name="test_cm11_tr">Bildirim LED</string>
+
+    <!-- Display Tests -->
+    <string name="test_d01_ar">دقة الشاشة</string>
+    <string name="test_d01_tr">Ekran Çözünürlüğü</string>
+    <string name="test_d02_ar">كثافة البكسل</string>
+    <string name="test_d02_tr">Piksel Yoğunluğu</string>
+    <string name="test_d03_ar">معدل التحديث</string>
+    <string name="test_d03_tr">Tazeleme Hızı</string>
+
+    <!-- Security Tests -->
+    <string name="test_sec01_ar">قفل الشاشة</string>
+    <string name="test_sec01_tr">Ekran Kilidi</string>
+    <string name="test_sec02_ar">التشفير</string>
+    <string name="test_sec02_tr">Şifreleme</string>
+    <string name="test_sec03_ar">تصحيح الأمان</string>
+    <string name="test_sec03_tr">Güvenlik Yaması</string>
+    <string name="test_sec04_ar">صلاحيات الروت</string>
+    <string name="test_sec04_tr">Root Yetkileri</string>
+    <string name="test_sec05_ar">وضع المطور</string>
+    <string name="test_sec05_tr">Geliştirici Modu</string>
+    <string name="test_sec06_ar">تصحيح USB</string>
+    <string name="test_sec06_tr">USB Hata Ayıklaması</string>
+    <string name="test_sec07_ar">مصادر غير معروفة</string>
+    <string name="test_sec07_tr">Bilinmeyen Kaynaklar</string>
+    <string name="test_sec08_ar">Play Protect</string>
+    <string name="test_sec08_tr">Play Protect</string>
+    <string name="test_sec09_ar">نظام التشغيل</string>
+    <string name="test_sec09_tr">İşletim Sistemi</string>
+    <string name="test_sec10_ar">مستوى API</string>
+    <string name="test_sec10_tr">API Seviyesi</string>
+    <string name="test_sec11_ar">محمل الإقلاع</string>
+    <string name="test_sec11_tr">Bootloader</string>
+    <!-- SEC-12 (datacollect-only): bootloader lock state, distinct from
+         SEC-11 which only reports the bootloader version string. -->
+    <string name="test_sec12_ar">حالة قفل المُحمّل</string>
+    <string name="test_sec12_tr">Bootloader Kilit Durumu</string>
+    <string name="value_locked_ar">مقفل</string>
+    <string name="value_locked_tr">Kilitli</string>
+    <string name="value_unlocked_ar">مفتوح</string>
+    <string name="value_unlocked_tr">Kilitsiz</string>
+
+    <!-- INFO-01 (datacollect-only device-info test) -->
+    <string name="test_info01_ar">رمز المنطقة (CSC)</string>
+    <string name="test_info01_tr">Bölge Kodu (CSC)</string>
+
+    <!-- SN-13 (datacollect-only): accelerometer calibration drift -->
+    <string name="test_sn13_ar">معايرة مقياس التسارع</string>
+    <string name="test_sn13_tr">İvmeölçer Kalibrasyonu</string>
+
+    <!-- Manual Tests Section (inline, user-facing) -->
+    <string name="manual_tests_section_title">فحوصات تحتاج تجربتك</string>
+    <!-- Generic "scan failed to start" dialog (covers FGS denial, bind failure, init crash) -->
+    <string name="scan_start_failed_title">تعذّر بدء الفحص</string>
+    <string name="scan_start_failed_body_fmt">حدث خطأ أثناء تشغيل خدمة الفحص. أعد المحاولة بعد إعادة تشغيل التطبيق. (الرمز: %1$s)</string>
+    <string name="scan_error_battery_too_low_fmt">يتطلّب بدء الفحص شحن البطارية %1$d٪ على الأقل — الشحن الحالي %2$d٪. اشحن الجهاز ثم أعد المحاولة.</string>
+    <string name="scan_error_battery_too_low_generic">يتطلّب بدء الفحص شحن البطارية %1$d٪ على الأقل. اشحن الجهاز ثم أعد المحاولة.</string>
+    <string name="scan_error_device_too_hot">الجهاز ساخن — حرارة البطارية تتجاوز 38°م. دَع الجهاز يبرد ثم أعد المحاولة.</string>
+    <string name="scan_error_charger_connected">افصل الشاحن قبل بدء الفحص — الشحن أثناء الفحص يُفسد قياسات البطارية.</string>
+    <string name="scan_error_storage_full">المساحة الخالية غير كافية — يتطلّب الفحص 6 GB خالية على الأقل.</string>
+    <string name="scan_error_ram_insufficient">الذاكرة المتاحة غير كافية — يتطلّب الفحص 1 GB من الذاكرة المتاحة على الأقل.</string>
+    <!-- Dedicated post-scan manual tests screen (between ActiveScan and Report) -->
+    <string name="manual_tests_screen_title">الفحوصات اليدوية</string>
+    <string name="manual_tests_screen_subtitle">أجب عن الفحوصات أدناه قبل عرض التقرير. يمكنك اختيار \"لم أختبر\" لتخطي أي سؤال.</string>
+    <string name="manual_tests_continue_btn">متابعة إلى التقرير</string>
+    <string name="manual_dead_pixels">النقاط الميتة في الشاشة</string>
+    <string name="manual_dead_pixels_instruction">ابحث عن أي نقطة لا تضيء في الشاشة</string>
+    <string name="manual_touch_response">استجابة اللمس</string>
+    <string name="manual_touch_response_instruction">مرّر إصبعك على حواف الشاشة ثم على القطرين</string>
+    <string name="manual_multi_touch">اللمس المتعدد</string>
+    <string name="manual_multi_touch_instruction">المس الشاشة بإصبعين أو أكثر في نفس الوقت</string>
+    <string name="manual_speaker">السماعة الخارجية</string>
+    <string name="manual_speaker_instruction">شغّل مقطعاً صوتياً واستمع</string>
+    <string name="manual_earpiece">سماعة الأذن</string>
+    <string name="manual_earpiece_instruction">ضع الهاتف على أذنك واستمع</string>
+    <string name="manual_main_mic">الميكروفون الأساسي</string>
+    <string name="manual_main_mic_instruction">سجّل صوتك واستمع للتسجيل</string>
+    <string name="manual_headphone_jack">منفذ السماعات</string>
+    <string name="manual_headphone_jack_instruction">أدخل سماعة أذن — هل يكتشفها الجهاز؟</string>
+    <string name="manual_volume_up">زر رفع الصوت</string>
+    <string name="manual_volume_up_instruction">اضغط زر رفع الصوت</string>
+    <string name="manual_volume_down">زر خفض الصوت</string>
+    <string name="manual_volume_down_instruction">اضغط زر خفض الصوت</string>
+    <string name="manual_power_button">زر الطاقة</string>
+    <string name="manual_power_button_instruction">اضغط زر الطاقة ضغطة قصيرة</string>
+    <string name="manual_charging_port">منفذ الشحن</string>
+    <string name="manual_charging_port_instruction">وصّل كابل الشحن</string>
+    <string name="manual_otg">دعم OTG</string>
+    <string name="manual_otg_instruction">وصّل جهاز USB</string>
+    <string name="manual_wireless_charging">الشحن اللاسلكي</string>
+    <string name="manual_wireless_charging_instruction">ضع الجهاز على شاحن لاسلكي</string>
+    <string name="manual_sd_card">فتحة بطاقة الذاكرة</string>
+    <string name="manual_sd_card_instruction">أدخل بطاقة ذاكرة</string>
+    <string name="manual_ir_blaster">الأشعة تحت الحمراء</string>
+    <string name="manual_ir_blaster_instruction">اختبر جهاز التحكم بالأشعة تحت الحمراء</string>
+    <!-- M-17..M-22 — user-perception checks for camera / biometrics / vibration -->
+    <string name="manual_rear_camera">صور الكاميرا الخلفية</string>
+    <string name="manual_rear_camera_instruction">اضغط لفتح الكاميرا الخلفية وتأكد من وضوح الصورة المعروضة</string>
+    <string name="manual_front_camera">صور الكاميرا الأمامية</string>
+    <string name="manual_front_camera_instruction">اضغط لفتح الكاميرا الأمامية وتأكد من وضوح الصورة المعروضة</string>
+    <string name="manual_flash">الفلاش</string>
+    <string name="manual_flash_instruction">اضغط لتشغيل الفلاش وتأكد من إشعاله</string>
+    <string name="manual_fingerprint">بصمة الإصبع</string>
+    <string name="manual_fingerprint_instruction">اضغط ثم ضع إصبعك على المستشعر للتحقق من عمله</string>
+    <string name="manual_face_unlock">التعرف على الوجه</string>
+    <string name="manual_face_unlock_instruction">اضغط ثم وجّه الكاميرا لوجهك للتحقق من عمله</string>
+    <string name="manual_vibration">الاهتزاز</string>
+    <string name="manual_vibration_instruction">اضغط لتشغيل اهتزاز قصير والتأكد من شعورك به</string>
+
+    <!-- M-17 / M-18 camera-preview dialog -->
+    <string name="manual_camera_preview_title_rear">معاينة الكاميرا الخلفية</string>
+    <string name="manual_camera_preview_title_front">معاينة الكاميرا الأمامية</string>
+    <string name="manual_camera_preview_hint">انظر إلى الصورة بالأعلى. هل تبدو واضحة وبلا تشويش؟</string>
+    <string name="manual_camera_open_btn">افتح الكاميرا</string>
+    <string name="manual_camera_close_btn">أغلق الكاميرا</string>
+    <string name="manual_camera_capture_btn">التقط صورة</string>
+    <string name="manual_camera_clear">واضحة</string>
+    <string name="manual_camera_blurry">غير واضحة</string>
+    <string name="manual_camera_open_failed">تعذّر فتح الكاميرا</string>
+    <string name="manual_camera_permission_required">الكاميرا تحتاج إذن الوصول</string>
+
+    <!-- M-19 flash/torch dialog -->
+    <string name="manual_flash_title">اختبار الفلاش</string>
+    <string name="manual_flash_torch_on">شغّل الفلاش</string>
+    <string name="manual_flash_torch_off">أطفئ الفلاش</string>
+    <string name="manual_flash_open_failed">تعذّر تشغيل الفلاش — قد يكون مستخدماً من تطبيق آخر</string>
+    <string name="manual_flash_unsupported">هذا الجهاز لا يحتوي فلاشاً</string>
+
+    <!-- M-20 / M-21 biometric dialogs -->
+    <string name="manual_biometric_fp_title">اختبار البصمة</string>
+    <string name="manual_biometric_fp_subtitle">ضع إصبعك على مستشعر البصمة</string>
+    <string name="manual_biometric_face_title">اختبار التعرف على الوجه</string>
+    <string name="manual_biometric_face_subtitle">وجّه الكاميرا الأمامية لوجهك</string>
+    <string name="manual_face_question">هل التعرف على الوجه يعمل على هذا الجهاز؟</string>
+    <string name="manual_biometric_try_btn">جرّب الآن</string>
+    <string name="manual_biometric_cancel">إلغاء</string>
+    <string name="manual_biometric_no_fp_enrolled">لا توجد بصمة مسجّلة على الجهاز</string>
+    <string name="manual_biometric_no_face_enrolled">لا يوجد وجه مسجّل على الجهاز</string>
+    <string name="manual_biometric_face_unsupported">التعرف على الوجه غير مدعوم على هذا الجهاز</string>
+    <string name="manual_biometric_no_hardware">عتاد البصمة غير متوفر</string>
+    <string name="manual_biometric_failed">لم ينجح التحقق</string>
+
+    <!-- M-22 vibration dialog -->
+    <string name="manual_vibration_title">اختبار الاهتزاز</string>
+    <string name="manual_vibration_try_btn">جرّب الاهتزاز</string>
+    <string name="manual_vibration_unsupported">عتاد الاهتزاز غير متوفر</string>
+    <string name="manual_vibration_open_failed">تعذّر تشغيل الاهتزاز</string>
+
+    <!-- AI-authored extras: root-cause + per-persona buyer advice. The
+         backend emits these on top of the existing summary/details/verdict
+         block; each renders only when its data is present. -->
+    <string name="root_cause_title">السبب الجذري</string>
+    <string name="buyer_advice_title">نصيحة حسب الاستخدام</string>
+    <string name="advice_casual">استخدام يومي</string>
+    <string name="advice_gamer">ألعاب</string>
+    <string name="advice_photographer">تصوير</string>
+    <string name="ai_model_credit_fmt">تم التحليل بواسطة %1$s</string>
+    <string name="manual_works">يعمل</string>
+    <string name="manual_not_works">لا يعمل</string>
+    <string name="manual_not_tested_btn">لم أختبر</string>
+    <string name="manual_start_test">ابدأ الاختبار</string>
+    <string name="manual_next_color">اضغط للون التالي</string>
+    <string name="manual_dead_pixel_title">هل الشاشة سليمة؟</string>
+    <string name="manual_dead_pixel_question">هل رأيت نقطة لا تضيء أو تضيء بلون مختلف؟</string>
+    <string name="manual_screen_ok">سليمة</string>
+    <string name="manual_screen_issue">يوجد مشكلة</string>
+    <string name="manual_touch_title">اختبار اللمس</string>
+    <string name="manual_touch_hint">اسحب إصبعك فوق كل المربعات خلال %1$d ثانية</string>
+    <string name="manual_touch_hint_v2">مرّر إصبعك على حواف الشاشة ثم على القطرين</string>
+    <string name="manual_touch_result">تم لمس %1$d من %2$d</string>
+    <string name="manual_touch_done_btn">انتهيت</string>
+    <string name="manual_touch_pct_fmt">%1$d%% من الشاشة استجاب</string>
+    <string name="manual_touch_result_pass">الشاشة سليمة</string>
+    <string name="manual_touch_result_warn">توجد مناطق ضعيفة — تحتاج انتباه</string>
+    <string name="manual_touch_result_fail">مناطق ميتة كثيرة</string>
+    <string name="manual_audio_title">اختبار الصوت</string>
+    <string name="manual_audio_playing">يتم تشغيل نغمة الاختبار الآن</string>
+    <string name="manual_audio_question">هل سمعت الصوت بوضوح؟</string>
+    <string name="manual_audio_heard">نعم سمعت</string>
+    <string name="manual_audio_not_heard">لم أسمع</string>
+    <string name="manual_button_title">اختبار الزر</string>
+    <string name="manual_button_press_volume_up">اضغط زر رفع الصوت الآن</string>
+    <string name="manual_button_press_volume_down">اضغط زر خفض الصوت الآن</string>
+    <string name="manual_button_press_power">اضغط زر الطاقة ضغطة قصيرة</string>
+    <string name="manual_button_detected">تم اكتشاف الضغط</string>
+    <string name="manual_button_not_detected">لم يتم الضغط</string>
+    <string name="manual_test_result_saved">تم حفظ النتيجة</string>
+
+    <!-- Interactive manual-test dialogs (Phase 1) -->
+    <string name="manual_remaining_sec_fmt">الوقت المتبقي: %1$d ثانية</string>
+    <!-- ONE text for the «unavailable» answer (rule 24): the line under the chip row (ReportScreen.kt, ManualUnavailableLine) and
+         the buttons of the five dialogs read this key and no other. Text decided by the user 2026-10-15 (was «غير متوفر في هذا الجهاز»). -->
+    <string name="manual_mark_unavailable">هذا الجهاز لا يحتوي هذا الجزء</string>
+
+    <!-- Microphone test (M-06 / M-07) -->
+    <string name="manual_mic_title">اختبار الميكروفون</string>
+    <string name="manual_mic_ready">جارٍ التحضير للتسجيل...</string>
+    <string name="manual_mic_permission_required">يحتاج الاختبار إذن الميكروفون</string>
+    <string name="manual_mic_recording">جارٍ التسجيل... تحدّث بصوت واضح</string>
+    <string name="manual_mic_playing">جارٍ تشغيل التسجيل...</string>
+    <string name="manual_mic_question">هل سمعت صوتك بوضوح؟</string>
+    <string name="manual_mic_error">تعذّر الوصول إلى الميكروفون</string>
+
+    <!-- Headphone jack (M-08) -->
+    <string name="manual_headphone_title">اختبار منفذ السماعات</string>
+    <string name="manual_headphone_waiting">أدخل سماعة الأذن في المنفذ</string>
+    <string name="manual_headphone_detected">تم اكتشاف السماعة ✓</string>
+
+    <!-- Charging port (M-12) -->
+    <string name="manual_charging_title">اختبار منفذ الشحن</string>
+    <string name="manual_charging_instructions">وصّل كابل الشحن بالجهاز الآن</string>
+    <string name="manual_charging_waiting">في انتظار توصيل الكابل...</string>
+    <string name="manual_charging_detected">تم توصيل الشاحن ✓</string>
+
+    <!-- OTG (M-13) -->
+    <string name="manual_otg_title">اختبار OTG</string>
+    <string name="manual_otg_instructions">وصّل جهاز USB عبر كابل OTG</string>
+    <string name="manual_otg_waiting">في انتظار جهاز USB...</string>
+    <string name="manual_otg_detected">تم اكتشاف جهاز USB ✓</string>
+
+    <!-- Wireless charging (M-14) -->
+    <string name="manual_wireless_title">اختبار الشحن اللاسلكي</string>
+    <string name="manual_wireless_instructions">ضع الجهاز على الشاحن اللاسلكي</string>
+    <string name="manual_wireless_waiting">في انتظار الشاحن اللاسلكي...</string>
+    <string name="manual_wireless_detected">الشحن اللاسلكي يعمل ✓</string>
+
+    <!-- SD card (M-15) -->
+    <string name="manual_sd_title">اختبار بطاقة الذاكرة</string>
+    <string name="manual_sd_instructions">أدخل بطاقة الذاكرة في الفتحة</string>
+    <string name="manual_sd_waiting">في انتظار البطاقة...</string>
+    <string name="manual_sd_detected">تم اكتشاف البطاقة ✓</string>
+
+    <!-- IR blaster (M-16) -->
+    <string name="manual_ir_title">اختبار الأشعة تحت الحمراء</string>
+    <string name="manual_ir_not_available">لا يحتوي هذا الجهاز على مرسل أشعة تحت الحمراء</string>
+    <string name="manual_ir_transmit">وجّه الجهاز نحو تلفاز ثم اضغط للإرسال</string>
+    <string name="manual_ir_send_btn">إرسال نبضة اختبارية</string>
+    <string name="manual_ir_question">هل استجاب الجهاز المستهدف؟</string>
+
+    <!-- Manual Tests (test IDs in spec) -->
+    <string name="test_m01">اللمس — مناطق ميتة</string>
+    <string name="test_m02">اللمس — متعدد النقاط</string>
+    <string name="test_m03">الشاشة — بكسل ميت</string>
+    <string name="test_m04">الشاشة — تغير اللون</string>
+    <string name="test_m05">الشاشة — حروق</string>
+    <string name="test_m06">السماعة الخارجية</string>
+    <string name="test_m07">سماعة الأذن</string>
+    <string name="test_m08">الميكروفون</string>
+    <string name="test_m09">منفذ الشحن</string>
+    <string name="test_m10">منفذ السماعات</string>
+    <string name="test_m11">الأزرار الفيزيائية</string>
+    <string name="test_m12">الهيكل الخارجي</string>
+    <string name="test_m13">مقاومة الماء</string>
+    <string name="test_m14">الشحن اللاسلكي</string>
+    <string name="test_m15">القلم الإلكتروني</string>
+    <string name="test_m16">منفذ بطاقة الذاكرة</string>
+
+    <!-- Technician -->
+    <string name="tech_fault_categories">فئات الأعطال</string>
+    <string name="tech_confidence">مستوى الثقة بالتشخيص</string>
+    <string name="tech_notes">ملاحظات الفني</string>
+    <string name="tech_parts_replaced">القطع المُستبدلة</string>
+    <string name="tech_repair_type">نوع الإصلاح</string>
+    <string name="tech_submit">إرسال التقرير</string>
+
+    <!-- Peer Survey -->
+    <string name="survey_title">استبيان سريع</string>
+    <string name="survey_battery_drains">هل تنفد البطارية بسرعة؟</string>
+    <string name="survey_overheats">هل يسخن الجهاز بشكل غير طبيعي؟</string>
+    <string name="survey_sluggish">هل الجهاز بطيء أو يتجمّد؟</string>
+    <string name="survey_yes">نعم</string>
+    <string name="survey_no">لا</string>
+
+    <!-- Comparison -->
+    <string name="comparison_before">قبل الصيانة</string>
+    <string name="comparison_after">بعد الصيانة</string>
+    <string name="comparison_improved">تحسّن</string>
+    <string name="comparison_degraded">تراجع</string>
+    <string name="comparison_unchanged">لم يتغير</string>
+    <string name="comparison_overall_change">التغيّر الكلي</string>
+
+    <!-- History -->
+    <string name="history_search">بحث في الفحوصات</string>
+    <string name="history_filter">تصفية</string>
+    <string name="history_filter_all">الكل</string>
+    <string name="history_empty">لا توجد فحوصات محفوظة</string>
+    <string name="history_delete_confirm">هل تريد حذف هذا الفحص؟</string>
+
+    <!-- Settings -->
+    <string name="settings_sync">المزامنة</string>
+    <string name="settings_sync_enabled">المزامنة التلقائية مفعّلة</string>
+    <string name="settings_sync_disabled">المزامنة التلقائية معطّلة</string>
+    <string name="settings_sync_now">مزامنة الآن</string>
+    <string name="settings_language">اللغة</string>
+    <string name="settings_language_ar">العربية</string>
+    <string name="settings_language_tr">Türkçe</string>
+    <string name="settings_theme">المظهر</string>
+    <string name="settings_theme_system">حسب النظام</string>
+    <string name="settings_theme_light">فاتح</string>
+    <string name="settings_theme_dark">داكن</string>
+    <string name="settings_dev_tools">أدوات المطوّر</string>
+    <string name="settings_clear_data">مسح جميع البيانات</string>
+    <string name="settings_clear_confirm">هل أنت متأكد من حذف جميع البيانات؟</string>
+    <string name="settings_export_data">تصدير البيانات</string>
+    <string name="settings_about">حول التطبيق</string>
+    <string name="settings_version">الإصدار</string>
+
+    <!-- General -->
+    <string name="btn_cancel">إلغاء</string>
+    <string name="btn_confirm">تأكيد</string>
+    <string name="btn_ok">موافق</string>
+    <string name="btn_back">رجوع</string>
+    <string name="btn_done">تم</string>
+    <string name="btn_retry">إعادة المحاولة</string>
+    <string name="btn_close">إغلاق</string>
+    <string name="btn_save">حفظ</string>
+    <string name="btn_delete">حذف</string>
+    <string name="error_generic">حدث خطأ غير متوقع</string>
+    <string name="error_permission_denied">تم رفض الإذن المطلوب</string>
+    <string name="loading">جارٍ التحميل…</string>
+    <string name="minutes_short">د</string>
+    <string name="seconds_short">ث</string>
+    <string name="percent">٪</string>
+    <string name="degree_celsius">°م</string>
+
+    <!-- Anti-Tamper -->
+    <string name="tamper_cold_start">بدء بارد — درجة حرارة أولية منخفضة</string>
+    <string name="tamper_recent_reboot">إعادة تشغيل حديثة</string>
+    <string name="tamper_charger_removed">تم فصل الشاحن مؤخراً</string>
+    <string name="tamper_heavy_background">نشاط خلفي مرتفع</string>
+
+    <!-- Notifications -->
+    <string name="notification_channel_scan">فحص جارٍ</string>
+    <string name="notification_scan_title">نيورال تشيك — فحص جارٍ</string>
+    <string name="notification_scan_progress">المرحلة %1$d من 5 — %2$d٪</string>
+    <string name="notification_scan_progress_v2">%1$s — %2$d٪</string>
+    <string name="notification_scan_complete">اكتمل الفحص</string>
+    <string name="notification_safety_stop">تم إيقاف الفحص للأمان</string>
+    <string name="notification_sync_title">مزامنة البيانات</string>
+    <string name="notification_sync_progress">جارٍ رفع البيانات…</string>
+    <string name="notification_sync_complete">تمت المزامنة بنجاح</string>
+    <string name="notification_sync_complete_count">تم مزامنة %1$d فحص</string>
+    <string name="notification_sync_failed">فشلت المزامنة</string>
+    <string name="unit_satellite">قمر</string>
+    <string name="unit_meter_short">م</string>
+    <string name="report_image_title">نيورال تشيك</string>
+    <string name="report_image_subtitle">تقرير الفحص</string>
+    <string name="report_image_grade_label">التقييم</string>
+    <string name="report_image_score_label">الدرجة</string>
+    <string name="comparison_image_title">نيورال تشيك — مقارنة</string>
+    <string name="comparison_image_before">قبل: %1$s (%2$.0f)</string>
+    <string name="comparison_image_after">بعد: %1$s (%2$.0f)</string>
+    <string name="antitamper_cold_start">حرارة بداية منخفضة بشكل مريب</string>
+    <string name="antitamper_recent_reboot">إعادة تشغيل حديثة</string>
+    <string name="antitamper_charger_removed">يُحتمل فصل الشاحن قبل الفحص مباشرة</string>
+    <string name="antitamper_heavy_usage">استخدام كثيف في الخلفية</string>
+
+    <!-- PreScan dynamic conditions -->
+    <string name="prescan_battery_level_fmt">مستوى البطارية: %1$d٪</string>
+    <string name="prescan_charger_status_fmt">حالة الشاحن: %1$s</string>
+    <string name="prescan_charger_connected_lbl">متصل</string>
+    <string name="prescan_charger_disconnected_lbl">غير متصل</string>
+    <string name="prescan_temperature_fmt">درجة الحرارة: %1$s°م</string>
+    <string name="prescan_uptime_fmt">وقت التشغيل: %1$s ساعة</string>
+    <string name="prescan_start_confirm">سيستمر الفحص حوالي 8 دقائق. لا تستخدم الجهاز. هل تريد البدء؟</string>
+    <!-- Phase 1.7.D — pre-scan warnings -->
+    <string name="prescan_warn_title">تحذير قبل الفحص</string>
+    <string name="prescan_warn_charger">افصل الشاحن قبل بدء الفحص للحصول على نتائج دقيقة.</string>
+    <string name="prescan_warn_hot_fmt">حرارة البطّاريّة %1$s°م — يُفضّل الانتظار حتّى تنخفض إلى 32°م أو أقلّ.</string>
+    <string name="prescan_warn_hot_blocking_title">الجهاز ساخن</string>
+    <string name="prescan_warn_hot_blocking_body_fmt">درجة حرارة بطارية الجهاز %1$s°م، أعلى من 35°م. الفحص في هذه الحالة قد يُظهر نتائج غير دقيقة (خفض حراري كاذب). نوصي بانتظار 5–10 دقائق ليبرد الجهاز.</string>
+    <string name="prescan_warn_hot_blocking_wait">انتظر وأعد المحاولة</string>
+    <string name="prescan_warn_hot_blocking_proceed">أجرِ الفحص رغم ذلك</string>
+    <string name="prescan_warn_recently_unplugged_fmt">الجهاز خرج من الشاحن منذ %1$d دقيقة. لنتائج موثوقة، يُفضّل الانتظار 15 دقيقة.</string>
+    <string name="btn_proceed_anyway">متابعة على أيّ حال</string>
+
+    <!-- Active Scan UI -->
+    <string name="scan_progress_minute_fmt">الدقيقة %1$d من 8</string>
+    <string name="scan_collecting">جاري جمع البيانات...</string>
+
+    <!-- Comparison UI -->
+    <string name="comparison_loading">جارٍ تحميل المقارنة...</string>
+
+    <!-- Technician UI -->
+    <string name="tech_complaint_label">شكوى العميل</string>
+    <string name="tech_what_repaired">ماذا تم إصلاحه؟</string>
+    <string name="tech_repair_result">نتيجة الإصلاح</string>
+    <string name="tech_save_and_compare">حفظ وعرض المقارنة</string>
+    <string name="tech_repair_full">تم الإصلاح بالكامل</string>
+    <string name="tech_repair_partial">إصلاح جزئي</string>
+    <string name="tech_repair_none">لم يتم الإصلاح</string>
+    <string name="tech_cat_battery">البطارية</string>
+    <string name="tech_cat_screen">الشاشة</string>
+    <string name="tech_cat_cpu">المعالج</string>
+    <string name="tech_cat_camera">الكاميرا</string>
+    <string name="tech_cat_audio">الصوت</string>
+    <string name="tech_cat_charging">الشحن</string>
+    <string name="tech_cat_other">أخرى</string>
+
+    <!-- Peer survey -->
+    <string name="peer_submit">إرسال</string>
+
+    <!-- Report UI -->
+    <string name="report_share_opened">تم فتح المشاركة</string>
+    <string name="report_share_failed">فشلت المشاركة</string>
+    <string name="report_saved_fmt">تم الحفظ: %1$s</string>
+    <string name="report_save_failed">فشل الحفظ</string>
+    <string name="report_critical_issues_fmt">مشاكل حرجة (%1$d)</string>
+    <string name="report_tamper_penalty_fmt">مؤشرات تلاعب — خصم %1$s نقطة</string>
+    <string name="report_share_subject_fmt">تقرير NeuralCheck — درجة %1$s (%2$s٪)</string>
+    <string name="report_share_chooser">مشاركة التقرير</string>
+
+    <!-- QR Scanner -->
+    <string name="qr_manual_select">اختيار يدوي</string>
+    <string name="qr_permission_denied">يتطلب مسح رمز QR إذن الكاميرا. يُرجى السماح بالوصول من إعدادات التطبيق.</string>
+    <string name="qr_open_settings">فتح الإعدادات</string>
+    <string name="qr_linked_success_fmt">تم الربط — فحص بتاريخ %1$s</string>
+    <string name="qr_select_hint">اختر فحصاً سابقاً للربط به</string>
+
+    <!-- Scan permissions gate — requested as a batch after login, before the
+         scan starts (order 2026-09-30, بند ١). New strings — عرضها على
+         المستخدم قبل الالتزام كما طُلب. -->
+    <string name="scan_permission_label_camera">الكاميرا</string>
+    <string name="scan_permission_label_microphone">الميكروفون</string>
+    <string name="scan_permission_label_location">الموقع الدقيق</string>
+    <string name="scan_permission_label_phone_state">حالة الهاتف</string>
+    <!-- fieldsVersion 68 (S-18): label of the ACTIVITY_RECOGNITION permission in the
+         denied-permissions notice above. Arabic «النشاط البدني» (Android's own name for
+         the permission group) and Turkish «Fiziksel aktivite» (values-tr) are approved by
+         the user, 2026-10-08. The English text, "Physical activity", is recorded in
+         docs/FV68_CONTRACT.md until English is added to the app as a whole. -->
+    <string name="scan_permission_label_activity_recognition">النشاط البدني</string>
+    <string name="scan_permission_denied_title">بعض الأذونات مرفوضة</string>
+    <string name="scan_permission_denied_intro">لن تُقاس الاختبارات التالية لأن الإذن مرفوض:</string>
+    <string name="scan_permission_open_settings">افتح الإعدادات</string>
+    <string name="scan_permission_continue">تابع</string>
+
+    <!-- Location-service (GPS toggle, not permission) notice — order
+         2026-09-30 (فحص NC-TM7PDN، البند ٤). Shown after the permissions
+         notice above, only if GPS_PROVIDER is off. Reuses
+         scan_permission_continue for «تابع» per the order's own text. -->
+    <string name="scan_location_service_off_title">خدمة الموقع مطفأة</string>
+    <string name="scan_location_service_off_body">بعض اختبارات الموقع (GPS) لن تُقاس ما لم تُفعَّل خدمة الموقع في الجهاز.</string>
+    <string name="scan_location_service_open_settings">افتح إعدادات الموقع</string>
+
+    <!-- SEC-08 Play Protect — order 2026-09-30 (فحص NC-TM7PDN، البند ٢).
+         New string — عرضها على المستخدم قبل الالتزام كما طُلب. Single
+         resource name (not the _ar/_tr suffixed pair some other test notes
+         use, in a datacollect-only diagnostic note):
+         that suffixed pattern turned out to leave the _tr half unread by
+         any code (grep confirmed that note's _tr string had zero
+         callers) — dead for a datacollect-only diagnostic string, but not
+         acceptable for SEC-08, which the launch flavor shows real
+         customers. This uses the same locale-resolved single-name pattern
+         as gps_permission_denied (values/ = Arabic default, values-tr/ =
+         Turkish override via LocaleHelper), which GpsTests.kt actually
+         reads correctly in both languages. -->
+    <string name="sec08_status_not_read">لا تُقرأ حالة Play Protect في هذا الإصدار</string>
+
+    <!-- History selection (post-maintenance flow) -->
+    <string name="history_select_title">اختر فحص قبل الصيانة</string>
+    <string name="history_select_hint">اختر الفحص السابق لربطه بفحص ما بعد الصيانة</string>
+
+    <!-- Power save mode block -->
+    <string name="power_save_dialog_title">وضع توفير الطاقة مفعّل</string>
+    <string name="power_save_dialog_message">وضع توفير الطاقة مفعّل — يرجى إيقافه من الإعدادات ثم إعادة المحاولة</string>
+
+    <!-- Test Result Values (Arabic) -->
+    <string name="value_available_ar">متوفر</string>
+    <string name="value_unavailable_ar">غير متوفر</string>
+    <string name="value_supported_ar">مدعوم</string>
+    <string name="value_unsupported_ar">غير مدعوم</string>
+    <string name="value_connected_ar">متصل</string>
+    <string name="value_disconnected_ar">غير متصل</string>
+    <string name="value_enabled_ar">مفعّل</string>
+    <string name="value_disabled_ar">معطّل</string>
+    <string name="value_encrypted_ar">مُشفّر</string>
+    <string name="value_unencrypted_ar">غير مُشفّر</string>
+    <string name="value_detected_ar">مكتشف</string>
+    <string name="value_not_detected_ar">غير مكتشف</string>
+    <string name="value_allowed_ar">مسموح</string>
+    <string name="value_forbidden_ar">محظور</string>
+    <string name="value_low_ar">منخفضة</string>
+    <string name="value_normal_ar">طبيعية</string>
+    <string name="value_unavailable_access_ar">غير متوفرة</string>
+    <string name="value_registered_ar">مسجّلة</string>
+    <string name="value_not_registered_ar">غير مسجّلة</string>
+    <string name="value_no_readings_ar">لا توجد قراءات</string>
+    <string name="value_good_ar">جيد</string>
+    <string name="value_ready_ar">جاهزة</string>
+    <string name="value_not_found_ar">غير موجودة</string>
+    <string name="value_unknown_ar">غير معروف</string>
+
+    <!-- Test Result Values (Turkish) -->
+    <string name="value_available_tr">Mevcut</string>
+    <string name="value_unavailable_tr">Mevcut değil</string>
+    <string name="value_supported_tr">Desteklendi</string>
+    <string name="value_unsupported_tr">Desteklenmiyor</string>
+    <string name="value_connected_tr">Bağlı</string>
+    <string name="value_disconnected_tr">Bağlı değil</string>
+    <string name="value_enabled_tr">Etkinleştirildi</string>
+    <string name="value_disabled_tr">Devre dışı</string>
+    <string name="value_encrypted_tr">Şifrelenmiş</string>
+    <string name="value_unencrypted_tr">Şifrelenmemiş</string>
+    <string name="value_detected_tr">Tespit edildi</string>
+    <string name="value_not_detected_tr">Tespit edilmedi</string>
+    <string name="value_allowed_tr">İzin verildi</string>
+    <string name="value_forbidden_tr">Yasak</string>
+    <string name="value_low_tr">Düşük</string>
+    <string name="value_normal_tr">Normal</string>
+    <string name="value_unavailable_access_tr">Kullanılamıyor</string>
+    <string name="value_registered_tr">Kayıtlı</string>
+    <string name="value_not_registered_tr">Kayıtlı değil</string>
+    <string name="value_no_readings_tr">Okuma yok</string>
+    <string name="value_good_tr">Iyi</string>
+    <string name="value_ready_tr">Hazır</string>
+    <string name="value_not_found_tr">Bulunamadı</string>
+    <string name="value_unknown_tr">Bilinmiyor</string>
+
+    <!-- Thermal source labels (appear in result notes) -->
+    <string name="thermal_source_cpu">مصدر القراءة: المعالج</string>
+    <string name="thermal_source_gpu">مصدر القراءة: GPU</string>
+    <string name="thermal_source_battery">مصدر القراءة: البطارية (تقديري)</string>
+    <string name="thermal_source_none">لا تتوفر قراءات حرارية على هذا الجهاز</string>
+    <string name="thermal_t03_informational_note">ملاحظة: نافذة 60 ثانية قصيرة لقياس معدل التبريد بدقة. القيمة للعلم فقط.</string>
+    <string name="c07_constant_freq_note">تردد المعالج بقي ثابتاً تحت الحمل — التباين الصفري نتيجة لتثبيت الحاكم على الذروة، وليس مؤشراً فعلياً على الاستقرار.</string>
+    <string name="battery_b02_outside_linear_range">أعد الفحص ومستوى البطّاريّة بين 20% و90% لتقدير سعة البطّاريّة الفعليّة.</string>
+
+    <!-- GPU benchmark unavailable note -->
+    <string name="gpu_bench_unavailable">تعذّر قياس أداء الرسوميات على هذا الجهاز</string>
+
+    <!-- PDF Report -->
+    <string name="report_pdf_tagline">فحص ذكي — ثقة كاملة</string>
+    <string name="report_pdf_ai_badge">✦ تحليل بالذكاء الاصطناعي</string>
+    <string name="report_pdf_ai_verdict_label">حكم الذكاء الاصطناعي</string>
+    <string name="report_pdf_issues_title">⚠️ نقاط انتبه لها</string>
+    <string name="report_pdf_root_cause_title">السبب الجذري</string>
+    <string name="report_pdf_buyer_advice_title">نصيحة حسب الاستخدام</string>
+    <string name="report_pdf_predicted_title">🔮 مشاكل متوقعة</string>
+    <string name="report_pdf_categories_title">📊 نتائج الفحص التفصيلية</string>
+    <!-- Phase 3-c: V7 battery indicators (categories.battery.indicators) —
+         PLAN-03's letter lock blocks the LETTER, not the display; hiding
+         these leaves the battery card silent with no explanation. -->
+    <string name="report_pdf_battery_indicators_title">🔋 مؤشّرات البطارية (إرشادي — غير معايَر)</string>
+    <!-- socAtStart/socAtEnd are scan-level (the whole test session), never
+         per-indicator — batteryLayer.js does not produce a per-indicator
+         SoC despite the server contract describing one elsewhere (see
+         AiCategoryV7.socAtStart's doc). Wording says "أثناء الفحص" (during
+         the scan) precisely so it is never misread as belonging to a
+         single indicator — the exact A77 cadence/SoC mix-up this project's
+         findings log cites by name. -->
+    <string name="report_pdf_battery_soc_both_fmt">مستوى شحن البطارية أثناء الفحص كاملاً: من %1$d%% إلى %2$d%%</string>
+    <string name="report_pdf_battery_soc_start_only_fmt">مستوى شحن البطارية عند بداية الفحص: %1$d%% (نهاية الفحص غير متوفرة)</string>
+    <string name="report_pdf_battery_soc_end_only_fmt">مستوى شحن البطارية عند نهاية الفحص: %1$d%% (بداية الفحص غير متوفرة)</string>
+    <!-- indicators.*.verdict / .status — relayed, unverified (batteryLayer.js,
+         neuralcheck-backend). THRESHOLD_NOT_CALIBRATED is the one documented
+         verdict value (PLAN-03 not shipped yet); any other verdict is shown
+         by its raw text, not guessed at. -->
+    <string name="report_pdf_indicator_advisory_tag">إرشادي — غير معايَر (العتبة لم تُحدَّد بعد)</string>
+    <string name="report_pdf_indicator_verdict_unknown_fmt">الحكم: %1$s (قيمة غير معروفة لهذا التطبيق)</string>
+    <string name="report_pdf_indicator_status_measured">قِيس</string>
+    <string name="report_pdf_indicator_status_abstained">امتنع القياس عن إصدار حكم</string>
+    <string name="report_pdf_indicator_status_unknown_fmt">حالة القياس: %1$s (قيمة غير معروفة لهذا التطبيق)</string>
+    <string name="report_pdf_specs_title">📋 أبرز القراءات التقنية</string>
+    <string name="report_pdf_tamper_clean">🛡️ فحص موثوق — لم يتم اكتشاف محاولات تلاعب</string>
+    <string name="report_pdf_tamper_detected">⚠️ تنبيه — رُصدت مؤشرات تلاعب محتملة</string>
+    <string name="report_pdf_qr_label">امسح الكود للتحقق من التقرير</string>
+    <string name="report_pdf_verify_url">neuralcheck.app/verify</string>
+    <string name="report_pdf_scan_id_label">معرّف الفحص</string>
+    <string name="report_pdf_grade_a">ممتاز — لا مشاكل جوهرية</string>
+    <string name="report_pdf_grade_b">جيد — أداء مقبول مع بعض الملاحظات</string>
+    <string name="report_pdf_grade_c">مقبول — مشاكل ملحوظة</string>
+    <string name="report_pdf_grade_d">ضعيف — مشاكل جوهرية</string>
+    <string name="report_pdf_share_subject">تقرير فحص NeuralCheck</string>
+    <string name="report_pdf_copyright">جميع الحقوق محفوظة © NeuralCheck</string>
+    <string name="report_pdf_page_fmt">صفحة %1$d من %2$d</string>
+
+    <!-- PDF auto-detected issues (rule-based fallback) -->
+    <string name="report_pdf_issue_thermal">مشكلة حرارية</string>
+    <string name="report_pdf_issue_thermal_desc">المعالج يفقد جزءاً كبيراً من أدائه تحت الضغط (%1$s). قد يحتاج تغيير المعجون الحراري أو فحص نظام التبريد.</string>
+    <string name="report_pdf_issue_heat_rise">ارتفاع حرارة سريع</string>
+    <string name="report_pdf_issue_heat_rise_desc">حرارة الجهاز ترتفع بسرعة غير طبيعية (%1$s). يُنصح بمتابعة ذلك أثناء الاستخدام المكثف.</string>
+    <string name="report_pdf_issue_battery">استهلاك بطارية مرتفع</string>
+    <string name="report_pdf_issue_battery_desc">معدل التفريغ تحت الضغط (%1$s) أعلى من المستوى الطبيعي — قد تكون البطارية متآكلة.</string>
+    <string name="report_pdf_issue_root">جهاز مُعدّل (Root)</string>
+    <string name="report_pdf_issue_root_desc">تم اكتشاف صلاحيات Root. قد يُضعف ذلك الأمان ويمنع تشغيل بعض التطبيقات البنكية والحكومية.</string>
+    <string name="report_pdf_issue_category_fail">أداء ضعيف في %1$s</string>
+    <string name="report_pdf_issue_category_fail_desc">هذه الفئة حصلت على تقييم D — يُنصح بمراجعة النتائج التفصيلية أعلاه.</string>
+    <string name="report_pdf_issue_storage">تخزين بطيء</string>
+    <string name="report_pdf_issue_storage_desc">سرعة التخزين (%1$s) أقل من المتوقع — قد يؤثر ذلك على سرعة التطبيقات.</string>
+    <string name="report_pdf_verdict_generic_a">مناسب للاستخدام اليومي ولمختلف الأنشطة — الأداء العام ممتاز.</string>
+    <string name="report_pdf_verdict_generic_b">مناسب للاستخدام اليومي مع ملاحظات بسيطة لا تؤثر على التجربة.</string>
+    <string name="report_pdf_verdict_generic_c">مناسب للاستخدام الخفيف. غير موصى به للألعاب أو المهام الثقيلة.</string>
+    <string name="report_pdf_verdict_generic_d">يحتاج صيانة قبل الاعتماد عليه — هناك مشاكل جوهرية مؤثرة.</string>
+    <string name="report_pdf_summary_generic">ملخص فحص مبني على قواعد التقييم الداخلية.</string>
+    <string name="report_pdf_details_generic">راجع الأقسام أدناه للتعرّف على المشاكل المحتملة والنتائج التفصيلية لكل فئة.</string>
+
+    <!-- PDF spec labels -->
+    <string name="report_pdf_spec_read_speed">سرعة القراءة</string>
+    <string name="report_pdf_spec_write_speed">سرعة الكتابة</string>
+    <string name="report_pdf_spec_max_temp">أعلى حرارة</string>
+    <string name="report_pdf_spec_drain_rate">تفريغ البطارية</string>
+    <string name="report_pdf_spec_memory">الذاكرة المتاحة</string>
+    <string name="report_pdf_spec_storage">التخزين المتاح</string>
+    <string name="report_pdf_spec_cpu_throttle">تقليص المعالج</string>
+    <string name="report_pdf_spec_gpu_fps">أداء الرسوميات</string>
+
+    <!-- ========== Account / Profile Screen (launch flavor only) ========== -->
+    <string name="profile_title">حسابي</string>
+    <string name="profile_guest_name">زائر</string>
+    <string name="profile_guest_email">لا يوجد بريد إلكتروني</string>
+    <string name="profile_stat_plan">الخطة الحالية</string>
+    <string name="profile_stat_scans_left">فحوصات متبقية</string>
+    <string name="profile_stat_days_left">أيام متبقية</string>
+    <string name="profile_plan_none">بدون اشتراك</string>
+    <string name="profile_plan_single">فحص واحد</string>
+    <string name="profile_plan_shop_basic">متجر — أساسي</string>
+    <string name="profile_plan_shop_pro">متجر — احترافي</string>
+    <string name="profile_action_upgrade">ترقية الاشتراك</string>
+    <string name="profile_action_upgrade_desc">اشترِ خطة جديدة أو جدّد اشتراكك</string>
+    <string name="profile_action_payment_history">سجل الدفعات</string>
+    <string name="profile_action_payment_history_desc">طلباتك السابقة وحالتها</string>
+    <string name="profile_action_scan_history">سجل فحوصاتي السحابي</string>
+    <string name="profile_action_scan_history_desc">جميع فحوصاتك المحفوظة في السحابة</string>
+
+    <!-- ========== Payment History Screen ========== -->
+    <string name="payment_history_title">سجل الدفعات</string>
+    <string name="payment_history_empty_title">لا توجد دفعات بعد</string>
+    <string name="payment_history_empty_body">ستظهر طلباتك هنا بعد أول عملية دفع.</string>
+    <string name="payment_history_error">تعذّر تحميل الدفعات. حاول مجدداً.</string>
+    <string name="payment_history_retry">إعادة المحاولة</string>
+    <string name="payment_history_status_pending">⏳ بانتظار المراجعة</string>
+    <string name="payment_history_status_confirmed">✅ مؤكدة</string>
+    <string name="payment_history_status_rejected">❌ مرفوضة</string>
+    <string name="payment_history_reason_label">سبب الرفض: %1$s</string>
+    <string name="payment_history_reference_label">رقم الإيصال: %1$s</string>
+    <string name="payment_history_amount_syp">%1$s ل.س</string>
+    <string name="profile_action_language">اللغة</string>
+    <string name="profile_action_about">حول التطبيق</string>
+    <string name="profile_action_about_desc">الإصدار والمعلومات القانونية</string>
+    <string name="profile_action_logout">تسجيل الخروج</string>
+    <string name="profile_about_title">حول NeuralCheck</string>
+    <string name="profile_about_body">NeuralCheck — تطبيق متخصص لفحص الهواتف المستعملة يعتمد على الذكاء الاصطناعي. الإصدار %1$s</string>
+    <string name="profile_loading_subscription">جارٍ تحميل بيانات الاشتراك…</string>
+    <string name="profile_no_expiry">—</string>
+
+    <!-- ========== Subscription Screen ========== -->
+    <string name="subscription_title">الاشتراكات</string>
+    <string name="subscription_subtitle">اختر الخطة المناسبة لك</string>
+    <string name="subscription_popular_badge">الأكثر شيوعاً</string>
+    <string name="subscription_plan_single_name">فحص فردي</string>
+    <string name="subscription_plan_single_price">$0.50</string>
+    <string name="subscription_plan_single_period">دفعة واحدة</string>
+    <string name="subscription_plan_single_scans">فحص واحد كامل</string>
+    <string name="subscription_plan_single_feature_1">تحليل AI كامل</string>
+    <string name="subscription_plan_single_feature_2">تقرير PDF قابل للتنزيل</string>
+    <string name="subscription_plan_single_feature_3">رمز QR للتحقق من التقرير</string>
+    <string name="subscription_plan_single_feature_4">صالح لمدة 30 يوماً</string>
+
+    <string name="subscription_plan_shop_basic_name">متجر أساسي</string>
+    <string name="subscription_plan_shop_basic_price">$10/شهر</string>
+    <string name="subscription_plan_shop_basic_period">شهرياً</string>
+    <string name="subscription_plan_shop_basic_scans">للمحلات الصغيرة</string>
+    <string name="subscription_plan_shop_basic_feature_1">50 فحص شهرياً</string>
+    <string name="subscription_plan_shop_basic_feature_2">تقرير كامل + PDF + QR</string>
+    <string name="subscription_plan_shop_basic_feature_3">سجل الفحوصات السحابي</string>
+    <string name="subscription_plan_shop_basic_feature_4">صفحة متجر على الموقع</string>
+    <string name="subscription_plan_shop_basic_feature_5">فحص جهاز آخر عبر كود</string>
+
+    <string name="subscription_plan_shop_pro_name">متجر احترافي</string>
+    <string name="subscription_plan_shop_pro_price">$20/شهر</string>
+    <string name="subscription_plan_shop_pro_period">شهرياً</string>
+    <string name="subscription_plan_shop_pro_scans">للمحلات الكبيرة والوكلاء</string>
+    <string name="subscription_plan_shop_pro_feature_1">150 فحص شهرياً</string>
+    <string name="subscription_plan_shop_pro_feature_2">كل ميزات الباقة الأساسية</string>
+    <string name="subscription_plan_shop_pro_feature_3">إدارة الأجهزة (أسعار وحالة البيع)</string>
+    <string name="subscription_plan_shop_pro_feature_4">شعار المتجر على التقارير</string>
+    <string name="subscription_plan_shop_pro_feature_5">إحصائيات شهرية</string>
+    <string name="subscription_plan_shop_pro_feature_6">دعم فني بأولوية</string>
+
+    <!-- Free trial — single complimentary scan, surfaced as a PreScanScreen
+         banner rather than a separate plan in SubscriptionScreen. The
+         "isFreeTrial" flag on the AI response gates PDF/QR/Share in the
+         report so the trial result is view-only inside the app. -->
+    <string name="free_trial_banner">لديك فحص مجاني واحد لتجربة التطبيق</string>
+    <string name="free_trial_used">انتهى الفحص المجاني — اشترك للمتابعة</string>
+    <string name="free_trial_report_banner">هذا فحص تجريبي — اشترك للحصول على التقرير الكامل مع PDF و QR</string>
+    <string name="free_trial_no_pdf">PDF غير متاح في الفحص المجاني</string>
+    <string name="subscription_select_button">اختر هذه الخطة</string>
+    <string name="subscription_btn_renew">تجديد</string>
+    <string name="subscription_btn_upgrade">ترقية</string>
+    <string name="subscription_btn_downgrade">تخفيض</string>
+    <string name="subscription_btn_buy_extra">شراء فحص إضافي</string>
+    <string name="subscription_current_badge">✓ خطتك الحالية</string>
+
+    <!-- ========== Payment Screen (ShamCash) ========== -->
+    <string name="payment_title">إتمام الدفع</string>
+    <string name="payment_plan_label">الخطة المختارة</string>
+    <string name="payment_amount_label">المبلغ</string>
+    <string name="payment_method_label">طريقة الدفع</string>
+    <string name="payment_method_value">شام كاش (ShamCash)</string>
+    <string name="payment_instructions_title">تعليمات التحويل</string>
+    <string name="payment_instructions_body">حوّل المبلغ عبر شام كاش إلى الرقم أدناه، ثم انسخ رقم الإيصال (Reference) وألصقه في الحقل أسفل الصفحة.</string>
+    <string name="payment_transfer_to_label">رقم التحويل</string>
+    <string name="payment_transfer_number" translatable="false">0912-345-6789</string>
+    <string name="payment_copy">نسخ</string>
+    <string name="payment_copied">تم نسخ الرقم</string>
+    <string name="payment_reference_label">رقم الإيصال (Reference)</string>
+    <string name="payment_reference_hint">ألصق هنا رقم الإيصال</string>
+    <string name="payment_confirm_button">تأكيد الدفع</string>
+    <string name="payment_success_title">تم استلام طلبك</string>
+    <string name="payment_success_body">سنراجع الإيصال ونفعّل اشتراكك خلال دقائق. ستصلك إشعار عند التفعيل.</string>
+    <string name="payment_success_done">العودة إلى حسابي</string>
+    <string name="payment_error_empty_reference">يرجى إدخال رقم الإيصال</string>
+    <string name="payment_error_generic">تعذّر إرسال طلب الدفع — حاول مجدداً</string>
+
+    <!-- ========== Scan History (cloud) Screen ========== -->
+    <string name="scan_history_title">سجل فحوصاتي</string>
+    <string name="scan_history_empty">لا توجد فحوصات في السحابة بعد</string>
+    <string name="scan_history_loading">جارٍ تحميل الفحوصات…</string>
+    <string name="scan_history_error_generic">تعذّر تحميل السجل — تحقق من الاتصال</string>
+    <string name="scan_history_grade_label">التقييم</string>
+    <string name="scan_history_score_label">الدرجة</string>
+
+    <!-- ========== In-app Notifications ========== -->
+    <string name="notification_channel_account">الحساب والمدفوعات</string>
+    <string name="notification_payment_submitted_title">تم استلام طلب الدفع</string>
+    <string name="notification_payment_submitted_body">سنراجع الإيصال ونفعّل اشتراكك قريباً</string>
+    <string name="in_app_payment_submitted">تم استلام الإيصال — جارٍ المراجعة</string>
+
+    <!-- ========== FCM Push ========== -->
+    <string name="notification_channel_push">التنبيهات الفورية</string>
+    <string name="notification_push_default_title">نيورال تشيك</string>
+    <string name="notification_push_default_body">لديك تحديث جديد</string>
+
+    <!-- ========== Cross-device scan session ========== -->
+    <string name="scan_other_device">فحص جهاز آخر</string>
+    <string name="generate_session_title">فحص جهاز آخر</string>
+    <string name="session_creating">جارٍ إنشاء الجلسة…</string>
+    <string name="session_share_code">أو شارك الكود:</string>
+    <string name="session_copy">نسخ</string>
+    <string name="session_valid_for">صالح لمدة %d دقيقة</string>
+    <string name="session_waiting">بانتظار ربط الجهاز…</string>
+    <string name="session_joined">تم ربط الجهاز! جارٍ الفحص…</string>
+    <string name="session_scanning">جارٍ الفحص…</string>
+    <string name="session_completed">اكتمل الفحص</string>
+    <string name="session_view_report">عرض التقرير</string>
+    <string name="session_expired">انتهت صلاحية الكود</string>
+    <string name="session_new_code">إنشاء كود جديد</string>
+    <!-- Owner-side action button: rotates the displayed code to a fresh
+         sessionId without waiting for the previous one to expire. The
+         previous code stays valid server-side until its 15-min TTL runs
+         out, so a customer who already started joining can still finish
+         on the old code. -->
+    <string name="session_create_new_btn">+ كود جديد لجهاز آخر</string>
+    <string name="session_create_new_hint">السابق يبقى صالحاً حتى انتهاء صلاحيته</string>
+    <string name="session_retry">إعادة المحاولة</string>
+    <string name="session_error_generic">تعذّر إنشاء الجلسة</string>
+
+    <string name="join_session_title">أدخل كود الفحص</string>
+    <string name="join_session_prompt">اطلب من صاحب المحل الكود المعروض على شاشته.</string>
+    <string name="join_session_label">كود الفحص</string>
+    <string name="join_session_placeholder">NC-0000</string>
+    <string name="join_session_or_scan">أو امسح رمز QR</string>
+    <string name="join_session_open_camera">فتح الكاميرا</string>
+    <string name="join_session_start">بدء الفحص</string>
+    <string name="join_session_invalid">الكود غير صالح أو منتهي الصلاحية</string>
+    <!-- Batch 2, item 2 (order 2026-10-15). The user approved every text below, verbatim (decision 90 for 1-6; the order of 2026-10-10 for the four codes): nothing here is awaiting approval. -->
+    <string name="session_cancel_btn">إلغاء الجلسة</string>
+    <string name="session_cancel_confirm_title">إلغاء هذه الجلسة؟</string>
+    <string name="session_cancel_confirm_text">لن يتمكّن العميل من استخدام الرمز بعد الإلغاء، وإن كان فحصه جارياً فسيتوقّف.</string>
+    <string name="session_cancelled_state">أُلغيت الجلسة</string>
+    <!-- Batch 3, item 2 (user decision 5, 2026-10-16): the owner sees this when the customer left the session (cancelReason left_by_customer). Approved verbatim in both languages (decision 90). cancelled_by_owner, consent_declined, and an absent or unknown cancelReason keep session_cancelled_state. -->
+    <string name="session_customer_left_state">غادر العميل الجلسة</string>
+    <string name="session_join_completed">اكتمل فحص هذه الجلسة. اطلب رمزاً جديداً من الفنّي.</string>
+    <string name="session_leave_btn">مغادرة الجلسة</string>
+    <string name="session_leave_confirm_title">مغادرة الجلسة؟</string>
+    <string name="session_leave_confirm_text">ستُلغى هذه الجلسة، وتحتاج رمزاً جديداً من الفنّي إن أردت الفحص لاحقاً.</string>
+    <string name="session_join_already_joined">سبق الانضمام إلى هذه الجلسة. لفحص جديد اطلب رمزاً جديداً من الفنّي.</string>
+    <string name="session_join_cancelled">أُلغيت هذه الجلسة. اطلب رمزاً جديداً من الفنّي.</string>
+    <string name="session_cancel_completed">اكتمل فحص هذه الجلسة ولا يمكن إلغاؤها.</string>
+    <string name="session_cancel_analysis_in_flight">التحليل جارٍ الآن. أعد محاولة الإلغاء بعد انتهائه.</string>
+    <!-- A-SUB wave 1 (order 2026-10-17; user decisions 2, 3 and 7, approved verbatim in both languages - decision 90): the four texts a refused scan or join shows, by details.reasonCode.
+         One resource per key (rule 24); which text each code shows, in which context, is ScanRefusalTexts.kt's matrix (analysis) and SessionMessages.kt's tables (join, create). -->
+    <string name="shop_subscription_expired">اشتراك المحلّ انتهى، تواصل مع الإدارة</string>
+    <string name="subscription_expired">انتهى اشتراكك، يرجى التجديد</string>
+    <string name="shop_no_credit">رصيد فحوصات المحلّ انتهى، تواصل مع الإدارة</string>
+    <string name="free_device_used">سبق استخدام الفحص المجاني لهذا الجهاز</string>
+    <!-- 2026-10-20 (order app-engineer-5; user decision of that date: the Arabic texts approved as they are, the two Turkish ones approved - DECISIONS-FOR-HASAN-2026-10-18.md section 2, rows 1 and 2): the server's two newer refusal texts,
+         shown from here so the language of the app decides, not the server. One resource per key (rule 24): scan_report_not_available is ScanRefusalTexts.kt's (analysis, the account's own scan), shop_plan_required is SessionMessages.kt's (create). -->
+    <string name="scan_report_not_available">تعذّر إتمام الطلب</string>
+    <string name="shop_plan_required">هذه الميزة غير متاحة في باقتك الحالية</string>
+
+    <string name="login_have_code">لدي كود فحص</string>
+    <string name="in_app_welcome_new_user">مرحباً بك في NeuralCheck! 🎉</string>
+
+    <!-- ========== Promo code ========== -->
+    <string name="promo_action_title">لديك كود ترويجي؟</string>
+    <string name="promo_action_subtitle">استخدم كودك لتفعيل عرض</string>
+    <string name="promo_dialog_title">أدخل الكود</string>
+    <string name="promo_code_label">كود الترويج</string>
+    <string name="promo_btn_activate">تفعيل</string>
+    <string name="promo_success_message">تم تفعيل العرض! 🎉</string>
+    <string name="promo_error_invalid">كود غير صالح</string>
+    <string name="promo_error_expired">هذا العرض منتهي</string>
+    <string name="promo_error_already_used">استخدمت هذا الكود مسبقاً</string>
+    <string name="promo_error_generic">تعذّر تفعيل الكود</string>
+
+    <!-- ========== Shop Setup ========== -->
+    <string name="shop_setup_action">إعداد متجري 🏪</string>
+    <string name="shop_setup_action_desc">شعار متجرك ومعلومات التواصل</string>
+    <string name="shop_setup_title">إعداد متجري</string>
+    <string name="shop_setup_pick_logo">اختر شعار</string>
+    <string name="shop_setup_change_logo">تغيير الشعار</string>
+    <string name="shop_setup_name_label">اسم المتجر</string>
+    <string name="shop_setup_name_required">اسم المتجر مطلوب</string>
+    <string name="shop_setup_description_label">وصف مختصر</string>
+    <string name="shop_setup_description_hint">أقصى 200 حرف</string>
+    <string name="shop_setup_city_label">المدينة</string>
+    <string name="shop_setup_city_hint">مثال: حلب، إسطنبول</string>
+    <string name="shop_setup_phone_label">رقم التواصل</string>
+    <string name="shop_setup_address_label">العنوان</string>
+    <string name="shop_setup_save">حفظ</string>
+    <string name="shop_setup_save_success">تم حفظ معلومات المتجر</string>
+    <string name="shop_setup_save_failed">تعذّر حفظ معلومات المتجر</string>
+    <string name="shop_setup_slug_label">رابط المتجر (بالإنجليزي)</string>
+    <string name="shop_setup_slug_placeholder">mobile-house-aleppo</string>
+    <string name="shop_setup_slug_url_preview_fmt">neuralcheck.net/shop/%1$s</string>
+    <string name="shop_setup_slug_helper">اتركه فارغاً وسنُولّد رابطاً تلقائياً من اسم المتجر</string>
+    <string name="shop_setup_slug_invalid">أحرف إنجليزية وأرقام وشرطات فقط (3-30 حرف، بدون شرطة في البداية أو النهاية)</string>
+    <string name="shop_setup_slug_taken">هذا الرابط مأخوذ، اختر آخر</string>
+
+    <!-- ========== Home (launch) ========== -->
+    <string name="home_welcome_fmt">مرحباً %s! 👋</string>
+    <string name="home_scans_left_fmt">لديك %d فحص متبقي</string>
+    <string name="home_view_report">عرض التقرير</string>
+    <string name="home_total_scans">فحوصات كلية</string>
+    <string name="home_this_month">هذا الشهر</string>
+    <string name="home_tip_battery">تأكد أن البطارية فوق 30%% قبل الفحص</string>
+    <string name="home_tip_duration">الفحص يستغرق 8 دقائق — لا تغلق التطبيق</string>
+    <string name="home_tip_share">شارك التقرير مع المشتري لبناء الثقة</string>
+    <string name="home_start_scan">ابدأ الفحص</string>
+    <string name="home_guest_name">زائر</string>
+    <string name="nav_profile">حسابي</string>
+
+    <!-- ========== Short plan names (Profile stat chip) ========== -->
+    <string name="plan_short_single">فردي</string>
+    <string name="plan_short_shop_basic">أساسي</string>
+    <string name="plan_short_shop_pro">احترافي</string>
+    <string name="plan_short_none">—</string>
+
+    <!-- ========== Login hero ========== -->
+    <string name="login_description">فحص شامل للهواتف المستعملة بالذكاء الاصطناعي</string>
+
+    <!-- ========== Report CTA ========== -->
+    <string name="report_new_scan">فحص جديد</string>
+
+    <!-- ========== Subscription ========== -->
+    <string name="subscription_save_fmt">وفّر %d%%</string>
+
+    <!-- ========== Session countdown + waiting ========== -->
+    <string name="session_time_remaining_fmt">⏳ متبقي %s</string>
+    <string name="session_waiting_dots">بانتظار الربط</string>
+
+    <!-- ========== ActiveScan tips ========== -->
+    <string name="scan_tip_no_close">لا تغلق التطبيق أثناء الفحص</string>
+    <string name="scan_tip_no_charger">تأكد أن الجهاز غير موصول بالشاحن</string>
+    <string name="scan_tip_flat">ضع الجهاز على سطح مستوٍ لنتائج أدق</string>
+    <string name="scan_tip_ai">سيتم تحليل النتائج بالذكاء الاصطناعي</string>
+    <!-- fieldsVersion 69 (SN-04): raised while the light sensor is read. Proposed, pending approval (decision 90). -->
+    <string name="scan_cover_light_sensor_prompt">غطِّ أعلى الشاشة بيدك</string>
+
+    <!-- ========== ActiveScan phase names (numeric keys for the new copy) ========== -->
+    <string name="scan_phase_1">قياس الأداء الأساسي</string>
+    <string name="scan_phase_2">اختبار التخزين</string>
+    <string name="scan_phase_3">اختبار الضغط المكثف</string>
+    <string name="scan_phase_4">تخفيف الحمل</string>
+    <string name="scan_phase_5">قياس التعافي والتبريد</string>
+
+    <!-- ========== AI loading overlay (post-scan) ========== -->
+    <!-- A20: real analysis stages (replace the untethered carousel) -->
+    <string name="ai_stage_reading">جارٍ قراءة قياسات الفحص…</string>
+    <string name="ai_stage_preparing">جارٍ تجهيز البيانات للإرسال…</string>
+    <string name="ai_stage_checking">جارٍ التحقّق من تحليل سابق…</string>
+    <string name="ai_stage_analysing">الذكاء الاصطناعي يحلّل جهازك…</string>
+    <string name="ai_stage_building">جارٍ إعداد التقرير…</string>
+    <string name="ai_stage_hint">يستغرق التحليل عادةً من دقيقتين إلى ثلاث. لا تُغلق التطبيق.</string>
+    <string name="ai_stage_elapsed_fmt">مضى %1$d:%2$02d</string>
+    <string name="ai_loading_1">جارٍ تحليل بيانات المعالج…</string>
+    <string name="ai_loading_2">جارٍ فحص سلوك البطارية…</string>
+    <string name="ai_loading_3">جارٍ تقييم الحرارة…</string>
+    <string name="ai_loading_4">جارٍ فحص الأمان…</string>
+    <string name="ai_loading_5">جارٍ إعداد التقرير النهائي…</string>
+
+    <!-- ========== DB destructive-migration one-time notice (order 2026-09-24، القرار ٨٠ البند ١) ========== -->
+    <string name="destructive_migration_alert_title">تنبيه</string>
+    <string name="destructive_migration_alert_body">أُعيد ضبط سجلّ التقارير على هذا الجهاز بعد التحديث. التقارير نفسها محفوظة على الخادم.</string>
+
+    <!-- ========== Maintenance before/after cycle: the purpose chips, the five fault types, the pair list (rows ص1-ص21 of TEXTS-FOR-APPROVAL-MAINTENANCE-PAIRS-2026-10-22.md; approved by Hasan 2026-10-22, written verbatim; ص12 and ص13 are the existing qr_linked_success_fmt and btn_confirm) ========== -->
+    <string name="purpose_chips_title">غرض الفحص</string>
+    <string name="purpose_chip_normal">عادي</string>
+    <string name="purpose_chip_maintenance_before">قبل الصيانة</string>
+    <string name="purpose_chip_maintenance_after">بعد الصيانة</string>
+    <string name="purpose_chips_locked_note">لا يتغيّر الغرض بعد ربط الهاتف</string>
+    <string name="defect_type_battery">بطارية — تبديل بطارية</string>
+    <string name="defect_type_charging_port">منفذ الشحن — المنفذ أو فليكس الشحن</string>
+    <string name="defect_type_thermal">حرارة وتبريد — تنظيف أو معجون حراري</string>
+    <string name="defect_type_motherboard">لوحة أم — إعادة تشغيل عشوائي أو سخونة أو شبكة</string>
+    <string name="defect_type_software">برمجي — فلاش أو إعادة ضبط أو تحديث نظام</string>
+    <string name="defect_type_title">نوع العطل</string>
+    <string name="defect_type_hint">اختر العطل الذي ستصلحه؛ إن لم تجده فافحص «عادي»</string>
+    <string name="defect_type_title_after">نوع العطل الذي أُصلح</string>
+    <string name="defect_type_hint_after">اختر العطل الذي أصلحتَه، ثم اختر فحص «قبل الصيانة» لهذا الهاتف</string>
+    <string name="pair_pick_prompt">اختر فحص «قبل الصيانة» لهذا الهاتف</string>
+    <string name="pair_row_fmt">%1$s · %2$s · الساعة %3$s</string>
+    <string name="pair_empty_fmt">لا فحوص «قبل الصيانة» مفتوحة من هذا النوع في آخر %1$d ساعة</string>
+    <string name="pair_no_device_name">جهاز بلا اسم تجاري</string>
+    <string name="pair_failure_not_available">هذا الفحص غير متاح للربط</string>
+    <string name="pair_failure_already_paired">هذا الفحص مربوط من قبل</string>
+    <string name="pair_failure_expired">انتهت مدّة هذا الفحص ولا يمكن ربطه</string>
+    <string name="pair_failure_wrong_defect_type">نوع العطل في هذا الفحص يختلف عمّا اخترتَ</string>
+    <string name="pair_failure_general">تعذّر الربط. حاول مرة أخرى</string>
+    <string name="pair_failure_not_enabled">ميزة الصيانة غير مفعَّلة لحسابك</string>
+    <string name="purpose_part_not_enabled">الغرض غير مفعَّل لحسابك</string>
+    <!-- BEGIN technician-form + repeat-scan + scan-window texts: Hasan delegated the pending texts on 2026-10-22 (his words: approve the best-judged of every pending text and prepare for delivery); reviewed 2026-10-23, `scratchpad/app-delegated/texts-review.md`. Written verbatim from the table; the technician's texts are Arabic only (no values-tr entry, on purpose); the scanned phone's have both languages (the Turkish is proposed, and needs a speaker). -->
+    <!-- technician's phone: the form (Arabic only) -->
+    <string name="tf_title">تقييم الفنّي — قبل ظهور النتيجة</string>
+    <string name="tf_who_judges">من يقيّم؟</string>
+    <string name="tf_grade_battery">البطارية</string>
+    <string name="tf_grade_performance">الأداء (ومعه الألعاب)</string>
+    <string name="tf_grade_thermal">الحرارة</string>
+    <string name="tf_grade_overall">العامّ</string>
+    <string name="tf_row_screen_touch">الشاشة واللمس</string>
+    <string name="tf_row_camera">الكاميرا</string>
+    <string name="tf_row_audio">الصوت</string>
+    <string name="tf_row_buttons">الأزرار</string>
+    <string name="tf_row_charging">الشحن</string>
+    <string name="tf_row_network">الشبكة</string>
+    <string name="tf_answer_works">يعمل</string>
+    <string name="tf_answer_faulty">معطوب</string>
+    <string name="tf_answer_not_tested">لم أختبر</string>
+    <string name="tf_defect_replaced_screen">شاشة مستبدلة</string>
+    <string name="tf_defect_water_damage">أثر ماء</string>
+    <string name="tf_defect_prior_repair">إصلاح سابق</string>
+    <string name="tf_symptoms_header">ما لاحظته (اختر ما ينطبق)</string>
+    <string name="tf_known_fault">عطب معروف قبل الفحص</string>
+    <string name="tf_battery_health_title">صحّة البطارية (إن فحصتَها)</string>
+    <string name="tf_battery_percent">نسبة من الإعدادات</string>
+    <string name="tf_battery_state_title">حالة</string>
+    <string name="tf_battery_state_normal">طبيعي</string>
+    <string name="tf_battery_state_weak">ضعيف</string>
+    <string name="tf_battery_state_bad">سيّئ</string>
+    <string name="tf_battery_not_shown">لا تظهر</string>
+    <string name="tf_note_label">ما الذي لاحظته؟</string>
+    <string name="tf_prompt_body">إجاباتك تبدو متعارضة. هل هي صحيحة؟</string>
+    <string name="tf_prompt_confirm">نعم، أرسل</string>
+    <string name="tf_prompt_revise">سأراجع</string>
+    <string name="tf_submit">أرسل التقييم</string>
+    <string name="tf_submitted">أُرسل التقييم، ولا يُعدَّل</string>
+    <string name="tf_yes">نعم</string>
+    <string name="tf_no">لا</string>
+    <string name="tf_sending">جارٍ الإرسال…</string>
+    <string name="tf_blocked_no_technician">اختر من يقيّم أولاً</string>
+    <string name="tf_blocked_note_required">اكتب ما لاحظته (مطلوب مع أيّ درجة دون «جيد»)</string>
+    <string name="tf_blocked_no_answers">لم تُجب عن شيء بعد</string>
+    <string name="tf_failure_same_technician">التقييم الثاني يجب أن يكون من فنّي آخر</string>
+    <string name="tf_failure_refused">رفض الخادم الإرسال</string>
+    <string name="tf_failure_not_sent">لم يُرسل التقييم، تحقّق من الاتصال وأعد المحاولة</string>
+    <string name="tf_config_loading">جارٍ تحميل الاستمارة…</string>
+    <string name="tf_config_failed">تعذّر تحميل الاستمارة</string>
+    <string name="tf_no_technicians">لا فنّيين مسجَّلين لهذا المحلّ — يضيفهم المشرف</string>
+    <string name="tf_second_eval_needed">هذا الهاتف يحتاج تقييماً ثانياً من فنّي آخر</string>
+    <string name="tf_hand_over_device">سلّم الجهاز لفنّي آخر</string>
+    <string name="tf_level_excellent">ممتاز</string>
+    <string name="tf_level_good">جيد</string>
+    <string name="tf_level_fair">متوسط</string>
+    <string name="tf_level_weak">ضعيف</string>
+    <string name="tf_level_not_tested">لم أفحصها</string>
+    <string name="tf_desc_battery_excellent">لا انتفاخ، والنسبة تنزل ببطء، ولا يسخن وهو يُشحن. مثال: الغطاء الخلفي مستوٍ، وبعد الفحص كاملاً نزلت النسبة قليلاً فقط.</string>
+    <string name="tf_desc_battery_good" formatted="false">لا انتفاخ ولا قفزات، لكن البطارية ليست في أحسن حالها. مثال: لا علامة ظاهرة، لكن الهاتف يُظهر صحّة 80–89%، أو النسبة نزلت أثناء الفحص أكثر ممّا يتوقّعه الفنّي من خبرته.</string>
+    <string name="tf_desc_battery_fair" formatted="false">النسبة تقفز فجأة، أو تنزل بسرعة واضحة، أو يسخن الهاتف وهو يُشحن. مثال: النسبة نزلت من 40% إلى 25% دفعة واحدة.</string>
+    <string name="tf_desc_battery_weak" formatted="false">انتفاخ، أو ينطفئ قبل أن يصل إلى الصفر، أو لا يشحن كما يجب. تحتاج تغييراً قبل البيع. مثال: الغطاء الخلفي مرتفع من جهة، أو انطفأ والنسبة 15%.</string>
+    <string name="tf_desc_performance_excellent">التطبيقات تفتح فوراً، والتمرير سلس، والكاميرا تفتح بلا انتظار. مثال: التنقّل بين التطبيقات فوري، وإن جرّبت لعبة فهي بلا تقطيع.</string>
+    <string name="tf_desc_performance_good">انتظار قصير أحياناً عند فتح تطبيق أو الكاميرا، والتمرير سلس غالباً. مثال: المعرض يتأخّر ثانية عند الفتح الأوّل، ثم يعمل عادياً.</string>
+    <string name="tf_desc_performance_fair">بطء واضح في فتح التطبيقات أو التمرير، أو الكاميرا تتأخّر بوضوح. مثال: التمرير في قائمة طويلة يتقطّع، أو إن جرّبت لعبة صارت تتقطّع بعد قليل.</string>
+    <string name="tf_desc_performance_weak">تعليق، أو يعيد التشغيل وحده، أو تطبيق يُغلق وحده. مثال: الشاشة تجمّدت أثناء الفحص واحتاج الهاتف إعادة تشغيل، أو إن جرّبت لعبة توقّفت أو أُغلقت.</string>
+    <string name="tf_desc_thermal_excellent">حرارة طبيعية لهاتف سليم بعد إجهاد. مثال: دافئ بوضوح، لكنه مريح في اليد.</string>
+    <string name="tf_desc_thermal_good">أسخن قليلاً ممّا تعرفه بعد إجهاد مثله، لكنه يُمسَك ويبرد خلال دقائق. مثال: تشعر بالحرارة بوضوح، لكنك لا تحتاج أن تضعه.</string>
+    <string name="tf_desc_thermal_fair">ساخن لدرجة تزعج اليد، أو يسخن بسرعة وهو يُشحن. مثال: تبدّله من يد إلى يد بعد قليل.</string>
+    <string name="tf_desc_thermal_weak">ظهر تحذير حرارة من النظام، أو لا يُمسَك من الحرارة، أو أبطأ أو انطفأ بسببها. مثال: رسالة «الهاتف ساخن» على الشاشة.</string>
+    <string name="tf_desc_overall_excellent">يعمل من الداخل كما ينبغي، بلا أيّ ملاحظة. مثال: البطارية والأداء والحرارة والوظائف كلّها بلا ملاحظة.</string>
+    <string name="tf_desc_overall_good">يعمل جيداً، مع ملاحظة صغيرة لا تمسّ الاستعمال اليومي. مثال: البطارية ليست جديدة لكنها سليمة.</string>
+    <string name="tf_desc_overall_fair">يعمل، لكن فيه علّة تمسّ الاستعمال وتُصلَح. مثال: بطارية تحتاج تغييراً، أو سخونة تزعج في الاستعمال الطويل.</string>
+    <string name="tf_desc_overall_weak">علّة كبيرة تمنع الاستعمال العادي. مثال: تعليق متكرّر، أو انطفاء، أو وظيفة أساسية معطّلة مثل الشحن أو الشبكة.</string>
+    <string name="tf_rule_1">احكم بما رأيته بنفسك على الهاتف، قبل أن ترى تقرير التطبيق.</string>
+    <string name="tf_rule_2">إن وقع الهاتف بين مستويين، فاختر الأدنى.</string>
+    <string name="tf_rule_3">إن لم تفحص الفئة، فاختر «لم أفحصها». لا تخمّن.</string>
+    <string name="tf_symptom_battery_dies_before_day_end">تنفد قبل نهاية اليوم بالاستعمال العادي</string>
+    <string name="tf_symptom_battery_jumps_or_shuts_down">تنقص النسبة بقفزات أو ينطفئ قبل الصفر</string>
+    <string name="tf_symptom_battery_swollen">منتفخة أو الغطاء مرتفع</string>
+    <string name="tf_symptom_hot_while_charging">يسخن أثناء الشحن</string>
+    <string name="tf_symptom_charging_slow">الشحن بطيء</string>
+    <string name="tf_symptom_slow_or_freezes_daily">بطء أو تعليق في الاستعمال اليومي</string>
+    <string name="tf_symptom_restarts_under_load">إعادة تشغيل مفاجئة تحت الحمل</string>
+    <string name="tf_symptom_heats_fast_in_use">يسخن سريعاً تحت الاستعمال</string>
+    <string name="tf_symptom_system_heat_warning">يظهر تحذير حرارة من النظام</string>
+    <string name="tf_symptom_game_stutter_after_minutes">تقطيع في الألعاب بعد دقائق</string>
+    <string name="tf_symptom_game_screen_lines_or_flicker">خطوط أو ومضات في الشاشة أثناء الألعاب</string>
+    <string name="tf_symptom_games_freeze_or_close">تتوقّف الألعاب أو تُغلق</string>
+    <string name="tf_symptom_none_noticed">لم ألاحظ شيئاً</string>
+    <string name="tf_game_tried">جُرّبت لعبة</string>
+    <!-- technician's phone: the repeat-scan notice (Arabic only) -->
+    <string name="rp_notice_body">اختير هذا الهاتف لفحص مكرّر بارد. أعده حين يبرد.</string>
+    <string name="rp_not_now">ليس الآن</string>
+    <!-- scanned phone (seen by the customer): the in-session sentence, the cooling screen, the battery window (ar + tr) -->
+    <string name="tf_scan_in_progress">جارٍ الفحص. اترك الهاتف ولا تلمسه.</string>
+    <string name="rp_wait_title">فحص مكرّر: انتظر حتى يبرد الهاتف</string>
+    <string name="rp_ready">جاهز — ابدأ الفحص المكرّر</string>
+    <string name="rp_not_cooled_warning">لم يبرد الهاتف بعد — يُرسَل الفحص على أنه تكرار ساخن</string>
+    <string name="rp_start_anyway">ابدأ رغم ذلك</string>
+    <string name="rp_wait">انتظر</string>
+    <string name="rp_temperature_unreadable">تعذّر قراءة حرارة البطارية</string>
+    <string name="rp_refused_parent_joiner_unknown">تعذّر بدء الفحص المكرّر: لا يمكن تحديد الهاتف المفحوص في هذه الجلسة.</string>
+    <string name="rp_refused_already_started">بدأ الفحص المكرّر لهذا الهاتف من قبل.</string>
+    <string name="rp_refused_not_selected">لم يُختَر هذا الهاتف لفحص مكرّر.</string>
+    <string name="rp_refused_session_not_completed">لم يكتمل الفحص الأوّل بعد.</string>
+    <string name="rp_refused_parent_owner_unknown">تعذّر بدء الفحص المكرّر: لا يمكن تحديد صاحب الجلسة.</string>
+    <string name="rp_refused_record_absent">لا يوجد سجلّ فحص مكرّر لهذا الفحص.</string>
+    <string name="rp_refused_state_unknown">تعذّر قراءة حالة الفحص المكرّر.</string>
+    <string name="rp_start_not_sent">لم يبدأ الفحص المكرّر، تحقّق من الاتصال وأعد المحاولة</string>
+    <string name="scan_error_battery_window_fmt">يجب أن يكون الشحن بين %1$d%% و%2$d%% لبدء الفحص — الآن %3$d%%</string>
+    <!-- END technician-form + repeat-scan + scan-window texts -->
+    <!-- BEGIN consent texts, version 2 (2026-10-23, Hasan's delegation of 2026-10-22; reviewed in texts-review.md). Both languages are written: the customer sees this screen. The Turkish is proposed and needs a speaker. FINAL LEGAL WORDING: pending Hasan, the KVKK lawyer later. -->
+    <string name="consent_title">قبل أن يبدأ الفحص</string>
+    <string name="consent_measures">يقيس هذا الفحص عتاد الهاتف: المعالج، والبطارية، والحرارة، والشاشة، والحسّاسات. ويحسب رمزاً من معرّفات الجهاز بدل المعرّف نفسه.</string>
+    <string name="consent_does_not_read">لا يقرأ الفحص صورك ولا رسائلك ولا ملفّاتك ولا حساباتك، ويختبر استقبال الأقمار الصناعية دون أن يحفظ موقعك.</string>
+    <string name="consent_microphone">واختبار الميكروفون يسجّل مقطعاً قصيراً ليُسمعك إيّاه، ثم يحذفه من الهاتف ولا يرسله.</string>
+    <string name="consent_accept">أوافق وأبدأ الفحص</string>
+    <string name="consent_decline">لا أوافق</string>
+    <string name="consent_record_failed">تعذّر تسجيل الموافقة. أعد المحاولة.</string>
+    <string name="consent_record_session_not_scanning">تعذّر تسجيل الموافقة لأنّ هذه الجلسة لم تعد قيد الفحص.</string>
+    <string name="consent_record_stored_unreadable">تعذّر تسجيل الموافقة على هذه الجلسة. اطلب من الفنّي فتح جلسة جديدة.</string>
+    <!-- END consent texts -->
+</resources>

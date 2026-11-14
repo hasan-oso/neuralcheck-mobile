@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.NeuralCheck" parent="android:Theme.Material.NoActionBar">
+        <item name="android:colorPrimary">@color/neural_green</item>
+        <item name="android:colorPrimaryDark">@color/deep_space</item>
+        <item name="android:colorAccent">@color/sky_cyan</item>
+        <item name="android:windowBackground">@color/deep_space</item>
+        <item name="android:statusBarColor">@color/deep_space</item>
+        <item name="android:navigationBarColor">@color/deep_space</item>
+        <item name="android:textColorPrimary">#F1F5F9</item>
+        <item name="android:textColorSecondary">#94A3B8</item>
+    </style>
+</resources>

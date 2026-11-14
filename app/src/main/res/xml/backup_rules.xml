@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Android 11 and lower: full-backup rules, EXCLUDE EVERYTHING. User decision 2026-10-09 (item 6):
+  backup is off in 1.0.11. Pointed to by android:fullBackupContent in AndroidManifest.xml;
+  pinned by app/src/test/.../hygiene/BackupDisabledManifestTest.kt.
+
+  With android:allowBackup="false" the documentation already says no backup or restore is ever
+  performed (developer.android.com/guide/topics/manifest/application-element); this file is the
+  documented rules mechanism for Android 11 and lower (developer.android.com/identity/data/autobackup,
+  "Control backup on Android 11 and lower") kept as a second, independent layer. On Android 12+
+  it is IGNORED once android:dataExtractionRules is pointed to
+  (developer.android.com/about/versions/12/behavior-changes-12, "Backup and restore");
+  data_extraction_rules.xml covers those.
+
+  path="." with every domain of the OLD format = the whole app storage. There is no <include> anywhere.
+  The old format has five domains (root, file, database, sharedpref, external: the Android 12 behaviour
+  page's own syntax line for <full-backup-content>, and what the lint bundled with AGP 8.2.2 accepts - it reports
+  device_root, device_file, device_database, device_sharedpref here as [FullBackupContent] errors,
+  measured 2026-10-09). The device-protected domains are in data_extraction_rules.xml (Android 12+),
+  where the documentation lists them; this app does not use device-protected storage anyway (no
+  createDeviceProtectedStorageContext, no directBootAware in app/src/main).
+-->
+<full-backup-content>
+    <exclude domain="root" path="." />
+    <exclude domain="file" path="." />
+    <exclude domain="database" path="." />
+    <exclude domain="sharedpref" path="." />
+    <exclude domain="external" path="." />
+</full-backup-content>

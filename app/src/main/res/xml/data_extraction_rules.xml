@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Android 12+ (API 31+) backup and transfer rules: EXCLUDE EVERYTHING, in every mode.
+  User decision 2026-10-09 (item 6): backup is off in 1.0.11. Pointed to by
+  android:dataExtractionRules in AndroidManifest.xml; pinned by
+  app/src/test/.../hygiene/BackupDisabledManifestTest.kt.
+
+  Why every section is written out: "If there are no rules for a particular backup mode, such as
+  if the <device-transfer> section is missing, that mode is fully enabled for all content except
+  for no-backup and cache directories" (developer.android.com/identity/data/autobackup, "XML
+  config syntax"). And allowBackup="false" alone is documented NOT to stop device-to-device
+  transfer on some manufacturers' devices for an app targeting 31+
+  (developer.android.com/guide/topics/manifest/application-element, android:allowBackup).
+
+  tools:ignore="FullBackupContent" on the root: the lint bundled with AGP 8.2.2 checks this file against the OLD
+  list of five domains and reports device_root, device_file, device_database, device_sharedpref as errors
+  (measured 2026-10-09: 12 [FullBackupContent] errors across both rule files), but the documentation lists all
+  nine for the data-extraction-rules format (developer.android.com/identity/data/autobackup, "XML config
+  syntax", Android 12 or higher). The documentation is followed; the lint lags.
+
+  path="." with every domain = the whole app storage: app files (getFilesDir, which holds the
+  Firebase installation ID file), databases, shared preferences, external app files, and the
+  device-protected counterparts. There is no <include> anywhere; <exclude> takes precedence
+  over <include> in any case.
+
+  NOT written: <cross-platform-transfer> (transfer to non-Android devices). The page
+  (developer.android.com/identity/data/autobackup, "Configure Cross-Platform Transfers") says it is
+  available from Android 16 QPR2 (API 36.1), that the platform attribute's only value is "ios",
+  and that the section must carry <platform-specific-params bundleId teamId contentVersion> which
+  match the app to its counterpart on the other platform. NeuralChek has no iOS counterpart, so
+  there is nothing to put in those attributes, and an incomplete section is worse than none. The
+  page does not say what a MISSING <cross-platform-transfer> section means (it says it of a missing
+  <device-transfer> only), so this mode is NOT shown to be closed by this file. Not measured, not
+  documented: left for the coordinator.
+
+  The older android:fullBackupContent file (backup_rules.xml) is IGNORED on Android 12+ once
+  this file is pointed to (developer.android.com/about/versions/12/behavior-changes-12,
+  "Backup and restore"), and is the mechanism for Android 11 and lower.
+-->
+<data-extraction-rules xmlns:tools="http://schemas.android.com/tools" tools:ignore="FullBackupContent">
+    <cloud-backup>
+        <exclude domain="root" path="." />
+        <exclude domain="file" path="." />
+        <exclude domain="database" path="." />
+        <exclude domain="sharedpref" path="." />
+        <exclude domain="external" path="." />
+        <exclude domain="device_root" path="." />
+        <exclude domain="device_file" path="." />
+        <exclude domain="device_database" path="." />
+        <exclude domain="device_sharedpref" path="." />
+    </cloud-backup>
+    <device-transfer>
+        <exclude domain="root" path="." />
+        <exclude domain="file" path="." />
+        <exclude domain="database" path="." />
+        <exclude domain="sharedpref" path="." />
+        <exclude domain="external" path="." />
+        <exclude domain="device_root" path="." />
+        <exclude domain="device_file" path="." />
+        <exclude domain="device_database" path="." />
+        <exclude domain="device_sharedpref" path="." />
+    </device-transfer>
+</data-extraction-rules>

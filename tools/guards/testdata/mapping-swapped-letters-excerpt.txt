@@ -1,0 +1,8 @@
+net.neuralcheck.util.DeviceProfileKey -> cf.i:
+# {"id":"sourceFile","fileName":"DeviceFingerprint.kt"}
+    java.lang.String primary -> b
+    java.lang.String layerA_keystore -> a
+    java.lang.String layerB_firebaseId -> c
+    java.lang.String layerC_androidId -> d
+    java.lang.String layerD_buildSig -> e
+    java.lang.String layerE_sensorSig -> f

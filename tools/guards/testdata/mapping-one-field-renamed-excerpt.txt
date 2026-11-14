@@ -1,0 +1,5 @@
+# SYNTHETIC excerpt (2026-10-09): five fields kept, `primary` renamed to `a` - the guard must REJECT it.
+net.neuralcheck.util.DeviceProfileKey -> gf.t:
+# {"id":"sourceFile","fileName":"DeviceFingerprint.kt"}
+    java.lang.String primary -> a
+    10:25:void <init>(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String):49:49 -> <init>

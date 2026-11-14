@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand — dark identity -->
+    <color name="deep_space">#0A0E1A</color>
+    <color name="card_dark">#111827</color>
+    <color name="surface_dark">#1A2235</color>
+    <color name="neural_green">#4ADE80</color>
+    <color name="core_glow">#A3E635</color>
+    <color name="sky_cyan">#38BDF8</color>
+    <color name="neon_cyan">#22D3EE</color>
+
+    <!-- Material legacy names (kept for XML-based components) -->
+    <color name="primary">#4ADE80</color>
+    <color name="primary_dark">#0A0E1A</color>
+    <color name="primary_light">#A3E635</color>
+    <color name="on_primary">#0A0E1A</color>
+    <color name="secondary">#38BDF8</color>
+    <color name="on_secondary">#0A0E1A</color>
+    <color name="background">#0A0E1A</color>
+    <color name="on_background">#F1F5F9</color>
+    <color name="surface">#111827</color>
+    <color name="on_surface">#F1F5F9</color>
+    <color name="error">#EF4444</color>
+    <color name="on_error">#FFFFFF</color>
+
+    <!-- Grades -->
+    <color name="grade_a">#22C55E</color>
+    <color name="grade_b">#3B82F6</color>
+    <color name="grade_c">#F59E0B</color>
+    <color name="grade_d">#EF4444</color>
+
+    <!-- Status -->
+    <color name="status_pass">#22C55E</color>
+    <color name="status_fail">#EF4444</color>
+    <color name="status_warning">#F59E0B</color>
+    <color name="status_unavailable">#64748B</color>
+
+    <!-- Launcher / splash -->
+    <color name="ic_launcher_background">#111827</color>
+    <color name="splash_background">#0A0E1A</color>
+</resources>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Permissions -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!--
+      fieldsVersion 68 (S-18, order of batch 3 part 2-a): the step detector and
+      step counter (SN-08 / SN-09) deliver nothing on API 29+ unless this runtime
+      permission is granted. It exists from API 29; the scan permission gate
+      asks for it only from API 29 (ScanRuntimePermission.forSdk), and
+      SensorTests records NOT_TESTED when it is denied instead of a
+      "no readings" WARNING that read as a broken sensor.
+    -->
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.BLUETOOTH" android:maxSdkVersion="30" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.NFC" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <!--
+      Switched from FOREGROUND_SERVICE_SPECIAL_USE → FOREGROUND_SERVICE_DATA_SYNC.
+      SPECIAL_USE on Android 14+ targeting SDK 34 requires a Play Console
+      grant ("Foreground service exception"). Sideloaded debug builds get
+      a temporary OS exemption on most devices, but Samsung One UI 6/7 on
+      S24 Ultra rejects it outright with ForegroundServiceStartNotAllowed-
+      Exception, which crashes the activity launcher.
+
+      DATA_SYNC fits our use case naturally — the 8-min scan collects
+      time-series samples that are uploaded to Firestore on completion —
+      and has no Play Console approval requirement. Android 15's 6-hour
+      cumulative daily limit on DATA_SYNC is well above our 8 min/scan.
+    -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!--
+      HIGH_SAMPLING_RATE_SENSORS is needed on Android 12+ for any sensor
+      registration above 200Hz. The sampler falls back to NORMAL when the
+      sensor refuses FASTEST, so the app still works without this permission,
+      but declaring it lets devices that honour the request report their full
+      sample rate. No runtime prompt — declared permission only.
+    -->
+    <uses-permission android:name="android.permission.HIGH_SAMPLING_RATE_SENSORS" />
+
+    <!--
+      Android 11 (API 30) introduced package visibility — by default the
+      app only sees its own packages. Without a <queries> block any code
+      that does packageManager.getInstalledPackages, queryIntentActivities,
+      or resolveActivity gets back filtered/empty results, which on some
+      devices throws SecurityException instead of just returning null.
+      We don't currently iterate the package list at runtime, so a single
+      <intent-filter/> for ACTION_MAIN/CATEGORY_LAUNCHER is enough to keep
+      future code paths happy without granting visibility to anything
+      sensitive. Add specific <package/> entries here if a future feature
+      needs to detect a particular app.
+    -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+        </intent>
+    </queries>
+
+    <!-- Optional hardware features -->
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+    <uses-feature android:name="android.hardware.bluetooth" android:required="false" />
+    <uses-feature android:name="android.hardware.nfc" android:required="false" />
+    <uses-feature android:name="android.hardware.sensor.accelerometer" android:required="false" />
+    <uses-feature android:name="android.hardware.sensor.gyroscope" android:required="false" />
+    <uses-feature android:name="android.hardware.location.gps" android:required="false" />
+    <uses-feature android:name="android.hardware.telephony" android:required="false" />
+    <uses-feature android:name="android.hardware.fingerprint" android:required="false" />
+    <uses-feature android:name="android.hardware.drm" android:required="false" />
+
+    <!--
+      Backup is OFF (user decision 2026-10-09, item 6): the app runs on the customer's phone, and
+      nothing of it may leave through Auto Backup (cloud) or a device-to-device transfer.
+      Three attributes, because no single one is documented to cover every case:
+        allowBackup="false"      Android 11 and lower: no backup and no D2D at all; every version: no cloud backup.
+        fullBackupContent        the Android 11 and lower rules mechanism, exclude everything (belt and braces).
+        dataExtractionRules      Android 12+: for an app TARGETING 31+ the docs say allowBackup="false" may NOT stop
+                                 D2D on some manufacturers' devices, so the D2D (and cloud, and cross-platform)
+                                 sections exclude everything explicitly.
+      Sources and the test that pins this: app/src/test/.../hygiene/BackupDisabledManifestTest.kt.
+      Effect on identifiers: DeviceFingerprint.kt layer B (the Firebase installation ID, in getFilesDir()).
+    -->
+    <application
+        android:name=".NeuralCheckApp"
+        android:allowBackup="false"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.NeuralCheck"
+        tools:targetApi="34">
+
+        <activity
+            android:name=".presentation.MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.NeuralCheck">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".service.stress.StressTestService"
+            android:foregroundServiceType="dataSync"
+            android:exported="false" />
+
+        <service
+            android:name=".service.NeuralCheckMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="${applicationId}.androidx-startup"
+            tools:node="remove" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+    </application>
+</manifest>

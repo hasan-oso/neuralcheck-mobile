@@ -1,0 +1,280 @@
+{
+  "version": "rule_based_v1",
+  "created": "2026-04-19",
+  
+  "check_thresholds": {
+    "B-01": { "type": "binary", "pass_values": ["GOOD"], "fail_values": ["DEAD", "UNSPECIFIED_FAILURE"], "warning_values": ["OVERHEAT", "OVER_VOLTAGE", "COLD", "UNKNOWN"] },
+    "B-02": { "type": "interpolated", "points": [[100, 100], [90, 95], [80, 80], [72, 50], [65, 30], [50, 15], [35, 0]], "unit": "percent", "direction": "higher_better" },
+    "B-03": { "type": "interpolated", "points": [[25, 100], [30, 95], [35, 80], [38, 60], [40, 40], [43, 20], [45, 0]], "unit": "celsius", "direction": "lower_better", "cold_threshold": 15, "cold_score": 50 },
+    "B-04": { "type": "special", "default_score": 100, "low_threshold_mv": 3300, "low_score": 20, "high_threshold_mv": 4450, "high_score": 60 },
+    "B-05": { "type": "special", "normal_negative_score": 100, "anomaly_positive_unplugged_score": 30, "unavailable_score": 100 },
+    "B-06": { "type": "interpolated", "points": [[0.3, 100], [0.5, 90], [0.8, 80], [1.0, 60], [1.2, 40], [1.5, 20], [2.0, 0]], "unit": "percent_per_minute", "direction": "lower_better" },
+    "B-07": { "type": "special", "valid_score": 100, "unknown_score": 50 },
+    "B-08": { "type": "interpolated", "points": [[100, 100], [200, 90], [300, 80], [500, 60], [800, 30], [1000, 10]], "unit": "cycles", "direction": "lower_better", "excludable": true },
+
+    "C-01": { "type": "special", "match_score": 100, "mismatch_score": 50, "single_core_score": 10 },
+    "C-02": { "type": "info", "default_score": 100, "read_fail_score": 80 },
+    "C-03": { "type": "info", "default_score": 100, "read_fail_score": 80 },
+    "C-04": { "type": "interpolated", "points": [[30, 100], [38, 90], [45, 70], [50, 40], [55, 20], [60, 0]], "unit": "celsius", "direction": "lower_better", "excludable": true },
+    "C-05": { "type": "info", "default_score": 100, "read_fail_score": 80 },
+    "C-06": { "type": "interpolated", "points": [[10, 100], [20, 80], [30, 60], [40, 45], [50, 30], [60, 15], [70, 0]], "unit": "percent_throttle", "direction": "lower_better" },
+    "C-07": { "type": "interpolated", "points": [[5, 100], [10, 80], [15, 60], [25, 30], [35, 0]], "unit": "relative_stddev_percent", "direction": "lower_better" },
+
+    "G-01": { "type": "info", "default_score": 100 },
+    "G-02": { "type": "info", "default_score": 100 },
+    "G-03": { "type": "interpolated", "points": [[10, 100], [20, 80], [40, 50], [65, 20], [80, 0]], "unit": "percent_drop", "direction": "lower_better" },
+    "G-04": { "type": "interpolated", "points": [[10, 100], [20, 80], [30, 60], [40, 45], [50, 30], [60, 15], [70, 0]], "unit": "percent_throttle", "direction": "lower_better" },
+    "G-05": { "type": "interpolated", "points": [[30, 100], [38, 90], [45, 70], [50, 40], [55, 20], [60, 0]], "unit": "celsius", "direction": "lower_better", "excludable": true },
+
+    "S-01": { "type": "info", "default_score": 100 },
+    "S-02": { "type": "interpolated", "points": [[20, 100], [10, 75], [5, 40], [0, 10]], "unit": "percent_of_total", "direction": "higher_better" },
+    "S-03": { "type": "interpolated", "points": [[800, 100], [500, 85], [200, 70], [100, 50], [50, 30], [20, 10]], "unit": "mb_per_sec", "direction": "higher_better" },
+    "S-04": { "type": "interpolated", "points": [[400, 100], [250, 85], [100, 65], [50, 40], [20, 10]], "unit": "mb_per_sec", "direction": "higher_better" },
+    "S-05": { "type": "interpolated", "points": [[40000, 100], [30000, 90], [10000, 70], [3000, 40], [1000, 10]], "unit": "iops", "direction": "higher_better" },
+    "S-06": { "type": "interpolated", "points": [[20000, 100], [10000, 85], [5000, 65], [1000, 30], [500, 10]], "unit": "iops", "direction": "higher_better" },
+
+    "T-01": { "type": "interpolated", "points": [[38, 100], [40, 90], [42, 75], [44, 55], [46, 30], [48, 15], [50, 0]], "unit": "celsius", "direction": "lower_better" },
+    "T-02": { "type": "interpolated", "points": [[0.5, 100], [1.0, 85], [1.5, 70], [2.0, 50], [3.0, 25], [4.0, 0]], "unit": "celsius_per_minute", "direction": "lower_better" },
+    "T-03": { "type": "interpolated", "points": [[2.0, 100], [1.5, 90], [1.0, 70], [0.5, 40], [0.2, 10]], "unit": "celsius_per_minute", "direction": "higher_better" },
+    "T-04": { "type": "info", "default_score": 100 },
+
+    "R-01": { "type": "info", "default_score": 100 },
+    "R-02": { "type": "interpolated", "points": [[25, 100], [15, 75], [8, 40], [0, 10]], "unit": "percent_of_total", "direction": "higher_better" },
+    "R-03": { "type": "binary", "pass_value": false, "fail_value": true, "pass_score": 100, "fail_score": 0, "field": "lowMemory" },
+
+    "N-01": { "type": "binary", "pass_condition": "non_null_non_empty", "pass_score": 100, "fail_score": 0 },
+    "N-02": { "type": "special", "SIM_STATE_READY": 100, "SIM_STATE_ABSENT": "exclude", "SIM_STATE_PIN_REQUIRED": 70, "SIM_STATE_PUK_REQUIRED": 70, "SIM_STATE_NETWORK_LOCKED": 0, "SIM_STATE_PERM_DISABLED": 0, "default": 50 },
+    "N-03": { "type": "special", "SIM_STATE_READY": 100, "SIM_STATE_ABSENT": "exclude", "SIM_STATE_PIN_REQUIRED": 70, "SIM_STATE_PUK_REQUIRED": 70, "SIM_STATE_NETWORK_LOCKED": 0, "SIM_STATE_PERM_DISABLED": 0, "dual_sim_unavailable": "exclude", "default": 50 },
+    "N-04": { "type": "special", "5G": 100, "4G": 90, "3G": 70, "2G": 40, "disconnected": "exclude" },
+    "N-05": { "type": "special", "level_4": 100, "level_3": 80, "level_2": 60, "level_1": 30, "level_0_with_sim": 0, "no_sim": "exclude" },
+    "N-06": { "type": "special", "non_empty": 100, "empty_with_sim": 40, "no_sim": "exclude" },
+    "N-07": { "type": "info", "default_score": 100 },
+    "N-08": { "type": "special", "connected": 100, "enabled_not_connected": 80, "disabled": "exclude" },
+    "N-09": { "type": "special", "default_score": 100, "zero_speed_connected": 30 },
+    "N-10": { "type": "interpolated", "points": [[-50, 100], [-60, 85], [-70, 70], [-80, 45], [-90, 20]], "unit": "dbm", "direction": "higher_better" },
+    "N-11": { "type": "binary", "hardware_present": 100, "hardware_absent": 0 },
+    "N-12": { "type": "info", "default_score": 100 },
+    "N-13": { "type": "binary", "present": 100, "absent": "exclude" },
+
+    "L-01": { "type": "special", "enabled": 100, "disabled": "exclude" },
+    "L-02": { "type": "interpolated", "points": [[8, 100], [4, 75], [1, 40], [0, 10]], "unit": "satellites_used", "direction": "higher_better" },
+    "L-03": { "type": "interpolated", "points": [[5, 100], [10, 90], [15, 75], [30, 55], [50, 35], [100, 15]], "unit": "meters", "direction": "lower_better", "timeout_score": 5 },
+
+    "SN-01": { "type": "sensor", "present_active_score": 100, "present_zero_score": 20, "present_no_data_score": 0, "absent_score": "exclude", "z_axis_check": { "expected": 9.8, "tolerance": 2.3, "fail_score": 60 } },
+    "SN-02": { "type": "sensor", "present_active_score": 100, "present_zero_score": 20, "present_no_data_score": 0, "absent_score": "exclude" },
+    "SN-03": { "type": "sensor", "present_active_score": 100, "present_zero_score": 20, "present_no_data_score": 0, "absent_score": "exclude", "magnitude_range": [25, 65], "out_of_range_score": 60 },
+    "SN-04": { "type": "sensor", "present_active_score": 100, "present_zero_score": 20, "present_no_data_score": 0, "absent_score": "exclude" },
+    "SN-05": { "type": "sensor", "present_active_score": 100, "present_zero_score": 20, "present_no_data_score": 0, "absent_score": "exclude" },
+    "SN-06": { "type": "sensor", "present_active_score": 100, "present_zero_score": 20, "present_no_data_score": 0, "absent_score": "exclude", "pressure_range": [970, 1050] },
+    "SN-07": { "type": "sensor", "present_active_score": 100, "absent_score": "exclude" },
+    "SN-08": { "type": "sensor", "present_active_score": 100, "absent_score": "exclude" },
+    "SN-09": { "type": "sensor", "present_active_score": 100, "absent_score": "exclude" },
+    "SN-10": { "type": "sensor", "present_active_score": 100, "present_zero_score": 20, "present_no_data_score": 0, "absent_score": "exclude", "z_axis_check": { "expected": 9.8, "tolerance": 0.5, "fail_score": 60 } },
+    "SN-11": { "type": "sensor", "present_active_score": 100, "present_zero_score": 20, "present_no_data_score": 0, "absent_score": "exclude" },
+    "SN-12": { "type": "sensor", "present_active_score": 100, "present_zero_score": 20, "present_no_data_score": 0, "absent_score": "exclude" },
+
+    "CM-01": { "type": "binary", "opened_captured": 100, "open_error": 0, "timeout": 30 },
+    "CM-02": { "type": "binary", "opened_captured": 100, "open_error": 0, "timeout": 30 },
+    "CM-03": { "type": "binary", "all_working": 100, "some_fail": 50, "absent": "exclude" },
+    "CM-04": { "type": "binary", "torch_on": 100, "supported_fail": 0, "not_supported": "exclude" },
+    "CM-05": { "type": "special", "auto_available": 100, "fixed_only": 50 },
+    "CM-06": { "type": "info", "default_score": 100 },
+    "CM-07": { "type": "info", "default_score": 100 },
+    "CM-08": { "type": "special", "BIOMETRIC_SUCCESS": 100, "BIOMETRIC_ERROR_NONE_ENROLLED": 100, "BIOMETRIC_ERROR_NO_HARDWARE": "exclude", "BIOMETRIC_ERROR_HW_UNAVAILABLE": 0 },
+    "CM-10": { "type": "info", "default_score": 100 },
+    "CM-11": { "type": "binary", "has_vibrator_true": 100, "has_vibrator_false": 0 },
+
+    "D-01": { "type": "info", "default_score": 100 },
+    "D-02": { "type": "info", "default_score": 100 },
+    "D-03": { "type": "info", "default_score": 100, "zero_value_score": 20 },
+
+    "SEC-01": { "type": "special", "all_negative": 100, "one_positive": 50, "two_plus_positive": 10 },
+    "SEC-02": { "type": "special", "green": 100, "yellow": 50, "orange": 20, "unavailable": 75 },
+    "SEC-03": { "type": "binary", "disabled": 100, "enabled": 40 },
+    "SEC-04": { "type": "special", "within_3_months": 100, "within_6_months": 75, "within_12_months": 45, "within_24_months": 20, "older": 5 },
+    "SEC-05": { "type": "special", "ENCRYPTION_STATUS_ACTIVE": 100, "ENCRYPTION_STATUS_ACTIVE_PER_USER": 100, "ENCRYPTION_STATUS_INACTIVE": 30, "ENCRYPTION_STATUS_UNSUPPORTED": 10 },
+    "SEC-06": { "type": "info", "default_score": "exclude", "note": "Requires internet - excluded in Phase 1" },
+    "SEC-07": { "type": "info", "default_score": 100 },
+    "SEC-08": { "type": "info", "default_score": 100 },
+    "SEC-09": { "type": "info", "default_score": 100 },
+    "SEC-10": { "type": "info", "default_score": 100 },
+    "SEC-11": { "type": "special", "default_score": 100, "uptime_under_1h_score": 70 }
+  },
+
+  "category_weights": {
+    "battery":  { "B-01": 10, "B-02": 25, "B-03": 10, "B-04": 3, "B-05": 5, "B-06": 30, "B-07": 2, "B-08": 15 },
+    "cpu":      { "C-01": 5, "C-02": 3, "C-03": 3, "C-04": 10, "C-05": 2, "C-06": 40, "C-07": 37 },
+    "gpu":      { "G-01": 3, "G-02": 2, "G-03": 35, "G-04": 40, "G-05": 20 },
+    "storage":  { "S-01": 2, "S-02": 15, "S-03": 25, "S-04": 20, "S-05": 23, "S-06": 15 },
+    "thermal":  { "T-01": 35, "T-02": 30, "T-03": 25, "T-04": 10 },
+    "memory":   { "R-01": 5, "R-02": 50, "R-03": 45 },
+    "cellular": { "N-01": 30, "N-02": 25, "N-03": 10, "N-04": 10, "N-05": 15, "N-06": 5, "N-07": 5 },
+    "wireless": { "N-08": 30, "N-09": 10, "N-10": 15, "N-11": 25, "N-12": 10, "N-13": 10 },
+    "gps":      { "L-01": 20, "L-02": 35, "L-03": 45 },
+    "sensors":  { "SN-01": 15, "SN-02": 15, "SN-03": 10, "SN-04": 15, "SN-05": 15, "SN-06": 5, "SN-07": 2, "SN-08": 2, "SN-09": 5, "SN-10": 6, "SN-11": 5, "SN-12": 5 },
+    "camera":   { "CM-01": 25, "CM-02": 20, "CM-03": 5, "CM-04": 10, "CM-05": 8, "CM-06": 3, "CM-07": 3, "CM-08": 14, "CM-10": 4, "CM-11": 8 },
+    "display":  { "D-01": 40, "D-02": 30, "D-03": 30 },
+    "security": { "SEC-01": 25, "SEC-02": 15, "SEC-03": 10, "SEC-04": 20, "SEC-05": 15, "SEC-06": 10, "SEC-07": 1, "SEC-08": 1, "SEC-09": 1, "SEC-10": 1, "SEC-11": 1 }
+  },
+
+  "axis_definitions": {
+    "performance": {
+      "name_tr": "Performans ve Güvenilirlik",
+      "name_ar": "الأداء والموثوقية",
+      "question_ar": "هل الجهاز سيكون سريعاً ومستقراً في الاستخدام اليومي؟",
+      "question_tr": "Cihaz günlük kullanımda hızlı ve kararlı olacak mı?",
+      "categories": { "cpu": 25, "gpu": 15, "storage": 20, "thermal": 25, "memory": 15 }
+    },
+    "battery": {
+      "name_tr": "Pil ve Güç",
+      "name_ar": "البطارية والطاقة",
+      "question_ar": "هل البطارية ستكفيني ليوم كامل؟",
+      "question_tr": "Pil tam bir gün yetecek mi?",
+      "categories": { "battery": 100 }
+    },
+    "connectivity": {
+      "name_tr": "Bağlantı ve Sensörler",
+      "name_ar": "الاتصال والحساسات",
+      "question_ar": "هل كل قطع الجهاز الإلكترونية تعمل بشكل صحيح؟",
+      "question_tr": "Tüm elektronik bileşenler doğru çalışıyor mu?",
+      "categories": { "cellular": 25, "wireless": 20, "gps": 10, "sensors": 10, "camera": 25, "display": 10 }
+    },
+    "security": {
+      "name_tr": "Güvenlik ve Emniyet",
+      "name_ar": "الأمان والسلامة",
+      "question_ar": "هل الجهاز آمن ولم يتم التلاعب به؟",
+      "question_tr": "Cihaz güvenli mi ve kurcalanmamış mı?",
+      "categories": { "security": 100 }
+    }
+  },
+
+  "overall_weights": {
+    "performance": 30,
+    "battery": 35,
+    "connectivity": 20,
+    "security": 15
+  },
+
+  "critical_checks": {
+    "checks": [
+      { "id": "N-01", "description": "Baseband modem dead", "condition": "score == 0" },
+      { "id": "CM-01", "description": "Rear camera not working", "condition": "score == 0" },
+      { "id": "CM-02", "description": "Front camera not working", "condition": "score == 0" },
+      { "id": "N-11", "description": "Bluetooth hardware absent", "condition": "score == 0" },
+      { "id": "SEC-01", "description": "Device is rooted (2+ indicators)", "condition": "score <= 10" },
+      { "id": "B-06", "description": "Excessive battery drain >2%/min", "condition": "raw_value > 2.0" },
+      { "id": "C-06", "description": "Severe thermal throttling >70%", "condition": "raw_value > 70" },
+      { "id": "T-01", "description": "Safety cutoff temperature reached", "condition": "raw_value >= 45" },
+      { "id": "R-03", "description": "System in low memory state", "condition": "score == 0" }
+    ],
+    "penalty_per_failure": 10,
+    "max_total_penalty": 40,
+    "grade_cap_with_any_failure": 65
+  },
+
+  "incomplete_scan": {
+    "grade_cap": 55,
+    "note_ar": "التقييم مبني على بيانات جزئية — الفحص أُوقف بسبب حماية الجهاز",
+    "note_tr": "Değerlendirme kısmi verilere dayandırılıyor — tarama cihaz koruması nedeniyle durduruldu"
+  },
+
+  "anti_tamper": {
+    "flags": [
+      { "type": "COLD_START", "condition": "battery_temp_start < 15", "description_ar": "حرارة بداية منخفضة بشكل مريب", "description_tr": "Şüpheli derecede düşük başlangıç sıcaklığı" },
+      { "type": "RECENT_REBOOT", "condition": "uptime_hours < 1", "description_ar": "إعادة تشغيل حديثة", "description_tr": "Yakın zamanda yeniden başlatma tespit edildi" },
+      { "type": "CHARGER_JUST_REMOVED", "condition": "battery_temp > 35 AND voltage > 4300 AND level > 95", "description_ar": "يُحتمل فصل الشاحن قبل الفحص مباشرة", "description_tr": "Şarj cihazı muhtemelen hemen çıkarılmış" },
+      { "type": "HEAVY_BACKGROUND_USAGE", "condition": "cpu_usage_baseline > 25", "description_ar": "استخدام كثيف في الخلفية", "description_tr": "Yoğun arka plan kullanımı tespit edildi" }
+    ],
+    "very_cold_threshold_c": 10,
+    "very_cold_penalty_points": 5,
+    "warning_text_ar": "تم رصد مؤشرات على تحضير الجهاز قبل الفحص — النتائج قد لا تعكس الاستخدام الحقيقي",
+    "warning_text_tr": "Taramadan önce cihaz hazırlığı göstergeleri tespit edildi — sonuçlar gerçek kullanımı yansıtmayabilir"
+  },
+
+  "grades": {
+    "A": { "min": 85, "max": 100, "color_hex": "#1B5E20", "color_hex_light": "#4CAF50", "description_ar": "ممتاز — الجهاز في حالة ممتازة ولم تُكتشف أي مشاكل جوهرية", "description_tr": "Mükemmel — Cihaz mükemmel durumda ve önemli bir sorun bulunamadı" },
+    "B": { "min": 70, "max": 84, "color_hex": "#33691E", "color_hex_light": "#8BC34A", "description_ar": "جيد — الجهاز يعمل بشكل جيد مع بعض علامات الاستخدام الطبيعية", "description_tr": "İyi — Cihaz iyi çalışıyor, normal kullanım izleri mevcut" },
+    "C": { "min": 50, "max": 69, "color_hex": "#E65100", "color_hex_light": "#FF9800", "description_ar": "مقبول — توجد مشاكل ملحوظة يجب مراعاتها", "description_tr": "Kabul Edilebilir — Dikkate alınması gereken belirgin sorunlar var" },
+    "D": { "min": 0, "max": 49, "color_hex": "#B71C1C", "color_hex_light": "#F44336", "description_ar": "ضعيف — مشاكل جوهرية تؤثر على الاستخدام", "description_tr": "Zayıf — Kullanımı etkileyen önemli sorunlar" }
+  },
+
+  "safety_thresholds": {
+    "battery_temp_critical_c": 45,
+    "cpu_temp_critical_c": 90,
+    "drain_window_minutes": 3,
+    "drain_max_percent": 15,
+    "battery_level_critical_percent": 10,
+    "monitor_interval_ms": 250
+  },
+
+  "stress_test_phases": {
+    "phase_1": { "name": "init", "start_sec": 0, "end_sec": 30, "sample_rate_hz": 1, "description_ar": "جمع المعلومات الأساسية", "description_en": "Collecting basic information" },
+    "phase_2": { "name": "storage", "start_sec": 30, "end_sec": 120, "sample_rate_hz": 1, "description_ar": "اختبار سرعة التخزين", "description_en": "Storage speed test" },
+    "phase_3": { "name": "intensive", "start_sec": 120, "end_sec": 300, "sample_rate_hz": 4, "description_ar": "اختبار ضغط مكثف", "description_en": "Intensive stress test" },
+    "phase_4": { "name": "sustained", "start_sec": 300, "end_sec": 600, "sample_rate_hz": 1, "description_ar": "اختبار استقرار الأداء", "description_en": "Performance stability test", "camera_test_at_sec": 360, "gps_test_at_sec": 420, "memory_recheck_at_sec": 480 },
+    "phase_5": { "name": "cooldown", "start_sec": 600, "end_sec": 690, "sample_rate_hz": 1, "description_ar": "مراقبة التبريد", "description_en": "Cooldown monitoring" }
+  },
+
+  "time_series_variables": [
+    { "index": 0, "name": "timestamp_ms", "unit": "ms", "description": "Milliseconds since scan start" },
+    { "index": 1, "name": "battery_temp_c", "unit": "°C", "description": "Battery temperature" },
+    { "index": 2, "name": "battery_voltage_mv", "unit": "mV", "description": "Battery voltage" },
+    { "index": 3, "name": "battery_current_ua", "unit": "µA", "description": "Battery current (negative=discharge)" },
+    { "index": 4, "name": "battery_level_pct", "unit": "%", "description": "Battery level percentage" },
+    { "index": 5, "name": "cpu_temp_c", "unit": "°C", "description": "CPU temperature (-1 if unavailable)" },
+    { "index": 6, "name": "cpu_freq_big_khz", "unit": "kHz", "description": "Big cluster frequency (-1 if unavailable)" },
+    { "index": 7, "name": "cpu_freq_little_khz", "unit": "kHz", "description": "Little cluster frequency (-1 if unavailable)" },
+    { "index": 8, "name": "cpu_freq_mid_khz", "unit": "kHz", "description": "Mid cluster frequency (-1 if unavailable)" },
+    { "index": 9, "name": "cpu_usage_pct", "unit": "%", "description": "Overall CPU usage" },
+    { "index": 10, "name": "gpu_fps", "unit": "fps", "description": "GPU frames per second" },
+    { "index": 11, "name": "gpu_temp_c", "unit": "°C", "description": "GPU temperature (-1 if unavailable)" },
+    { "index": 12, "name": "accel_x", "unit": "m/s²", "description": "Accelerometer X-axis" },
+    { "index": 13, "name": "accel_y", "unit": "m/s²", "description": "Accelerometer Y-axis" },
+    { "index": 14, "name": "accel_z", "unit": "m/s²", "description": "Accelerometer Z-axis" },
+    { "index": 15, "name": "gyro_x", "unit": "rad/s", "description": "Gyroscope X-axis" },
+    { "index": 16, "name": "gyro_y", "unit": "rad/s", "description": "Gyroscope Y-axis" },
+    { "index": 17, "name": "gyro_z", "unit": "rad/s", "description": "Gyroscope Z-axis" }
+  ],
+
+  "file_format": {
+    "extension": ".ts.json.gz",
+    "compression": "gzip",
+    "buffer_flush_interval_sec": 10,
+    "buffer_flush_samples_phase3": 40,
+    "decimal_precision": 2,
+    "missing_value": -1
+  },
+
+  "category_display_order": [
+    "battery", "cpu", "gpu", "thermal", "storage", "memory",
+    "cellular", "wireless", "gps", "sensors", "camera", "display", "security"
+  ],
+
+  "fault_categories": [
+    { "id": "battery_drain", "name_ar": "تفريغ سريع", "name_en": "Fast drain" },
+    { "id": "battery_swell", "name_ar": "انتفاخ", "name_en": "Swelling" },
+    { "id": "battery_no_charge", "name_ar": "لا تشحن", "name_en": "Won't charge" },
+    { "id": "battery_shutdown", "name_ar": "إغلاق مفاجئ", "name_en": "Sudden shutdown" },
+    { "id": "screen_touch", "name_ar": "لمس لا يستجيب", "name_en": "Touch unresponsive" },
+    { "id": "screen_dead_spots", "name_ar": "نقاط ميتة", "name_en": "Dead spots" },
+    { "id": "screen_lines", "name_ar": "خطوط", "name_en": "Lines" },
+    { "id": "screen_backlight", "name_ar": "إضاءة غير متساوية", "name_en": "Uneven backlight" },
+    { "id": "charge_port", "name_ar": "المنفذ لا يثبت", "name_en": "Loose port" },
+    { "id": "charge_slow", "name_ar": "شحن بطيء", "name_en": "Slow charging" },
+    { "id": "network_no_sim", "name_ar": "لا تقرأ الشريحة", "name_en": "SIM not detected" },
+    { "id": "network_weak", "name_ar": "إشارة ضعيفة", "name_en": "Weak signal" },
+    { "id": "network_no_data", "name_ar": "لا اتصال", "name_en": "No connection" },
+    { "id": "audio_earpiece", "name_ar": "سماعة أذن", "name_en": "Earpiece" },
+    { "id": "audio_speaker", "name_ar": "سماعة خارجية", "name_en": "Speaker" },
+    { "id": "audio_mic", "name_ar": "مايكروفون", "name_en": "Microphone" },
+    { "id": "camera_not_working", "name_ar": "لا تعمل", "name_en": "Not working" },
+    { "id": "camera_blurry", "name_ar": "ضبابية", "name_en": "Blurry" },
+    { "id": "camera_flash", "name_ar": "فلاش", "name_en": "Flash issue" },
+    { "id": "performance_slow", "name_ar": "بطيء عموماً", "name_en": "Generally slow" },
+    { "id": "performance_freeze", "name_ar": "يتجمد", "name_en": "Freezes" },
+    { "id": "performance_restart", "name_ar": "يعيد التشغيل", "name_en": "Restarts" },
+    { "id": "thermal_usage", "name_ar": "يسخن أثناء الاستخدام", "name_en": "Overheats during use" },
+    { "id": "thermal_charging", "name_ar": "يسخن أثناء الشحن", "name_en": "Overheats while charging" },
+    { "id": "other", "name_ar": "مشكلة أخرى", "name_en": "Other issue" }
+  ]
+}

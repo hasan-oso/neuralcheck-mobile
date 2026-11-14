@@ -1,0 +1,14 @@
+# fieldsVersion 68, batch 3 part 3: the golden request-payload samples are verified by sha256 (README.md in that folder)
+# and copied byte for byte to the server repository, so no line-ending conversion may touch them (rule 9).
+app/src/test/resources/derived/fv71-app-request-payload-derived-from-*.json -text
+app/src/test/resources/derived/fv71-app-request-payload-derived-from-*.keys.txt -text
+# A-P6-08: the technician-form request samples are copied byte for byte to the server repository for its reader (rule 41), so no line-ending conversion may touch them (rule 9).
+app/src/test/resources/derived/technician-form-request-*.json -text
+# 2026-10-22: the copy of the maintenance-pairs part of the protocol contract (A2, A3 and the vocabulary rows) is read by MaintenancePairContractCopyTest and checked by sha256 (contract/README.md): no line-ending conversion may touch it (rule 9).
+app/src/test/resources/contract/protocol-contract-A2-A3-maintenance-pairs-neuralcheck-backend-*.md -text
+# 2026-10-22: the maintenance-pair request samples are copied byte for byte to the server repository for its reader (rule 41), so no line-ending conversion may touch them (rule 9).
+app/src/test/resources/derived/maintenance-pair-request-*.json -text
+# 2026-10-22: the server's golden REPLY samples of the maintenance link are a byte-for-byte copy (sha256 in contract/README.md): no line-ending conversion may touch them (rule 9).
+app/src/test/resources/contract/maintenance-pair-wire-samples-neuralcheck-backend-*.json -text
+# 2026-10-23: the copy of the consent part of the protocol contract (A8 and its vocabulary rows) is read by ConsentContractCopyTest and checked by sha256 (contract/README.md): no line-ending conversion may touch it (rule 9).
+app/src/test/resources/contract/protocol-contract-A8-consent-neuralcheck-backend-*.md -text

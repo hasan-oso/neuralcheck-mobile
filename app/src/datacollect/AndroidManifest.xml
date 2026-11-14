@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  datacollect-flavor-only manifest fragment. Gradle merges this into the
+  datacollect variant's manifest ONLY (app/src/launch has no equivalent
+  file and no equivalent <receiver>), so BatteryProbeReceiver does not
+  exist as a component in any launch-flavor APK regardless of build type.
+
+  Field-diagnostic probe for the Maxim fuel-gauge sysfs nodes seen on the
+  SM-G977N (S10 5G) via `adb shell` (uid=2000, u:r:shell:s0) — see
+  net.neuralcheck.diagnostics.BatteryProbeReceiver for what it reads and
+  the accompanying report for the adb invocation command and logcat tag.
+  This is diagnostic instrumentation, not a production fix; it does not
+  touch B-08 / testCycleCount() / BatteryCycleCount.read().
+
+  android:exported="true" is required (API 31+ manifest merger rejects an
+  omitted android:exported on any component with an intent-filter) and is
+  what lets `adb shell am broadcast` reach it. No custom permission is
+  declared — this is an internal technician/diagnostic build
+  (net.neuralcheck.datacollect), never distributed to consumers, and the
+  action string is not a standard Android action another app would target.
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <application>
+        <receiver
+            android:name="net.neuralcheck.diagnostics.BatteryProbeReceiver"
+            android:exported="true"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="net.neuralcheck.diagnostics.action.PROBE_BATTERY" />
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

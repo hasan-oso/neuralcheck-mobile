@@ -1,0 +1,1260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App -->
+    <string name="app_tagline">Akıllı Teşhis — Tam Güven</string>
+
+    <!-- Scan Types -->
+    <string name="scan_general">Genel Tarama</string>
+    <string name="scan_pre_repair">Onarım Öncesi Tarama</string>
+    <string name="scan_post_repair">Onarım Sonrası Tarama</string>
+    <string name="scan_general_desc">Tüm cihaz bileşenlerinin kapsamlı taraması</string>
+    <string name="scan_pre_repair_desc">Onarıma göndermeden önce cihaz taraması</string>
+    <string name="scan_post_repair_desc">Onarım sonrası tarama ve sonuç karşılaştırma</string>
+
+    <!-- Navigation / Screen Titles -->
+    <string name="nav_home">Ana Sayfa</string>
+    <string name="nav_history">Geçmiş</string>
+    <string name="nav_settings">Ayarlar</string>
+    <string name="title_onboarding">Hoş Geldiniz</string>
+    <string name="title_home">Ana Sayfa</string>
+    <string name="title_qr_scanner">QR Kod Tara</string>
+    <string name="title_pre_scan">Tarama Hazırlığı</string>
+    <string name="title_active_scan">Tarama Devam Ediyor</string>
+    <string name="title_report">Tarama Raporu</string>
+    <string name="title_tech_pre_repair">Teknisyen Raporu — Onarım Öncesi</string>
+    <string name="title_tech_post_repair">Teknisyen Raporu — Onarım Sonrası</string>
+    <string name="title_comparison">Sonuç Karşılaştırma</string>
+    <string name="title_peer_survey">Kullanıcı Anketi</string>
+    <string name="title_history">Tarama Geçmişi</string>
+    <string name="title_settings">Ayarlar</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_title_1">Kapsamlı Tarama</string>
+    <string name="onboarding_desc_1">Tüm cihaz bileşenleri için 120\'den fazla otomatik ve manuel test</string>
+    <string name="onboarding_title_2">Doğru Sonuçlar</string>
+    <string name="onboarding_desc_2">Dört eksenli akıllı değerlendirme ile ayrıntılı ve paylaşılabilir rapor</string>
+    <string name="onboarding_title_3">Öncesi ve Sonrası Karşılaştırma</string>
+    <string name="onboarding_desc_3">Onarım öncesi ve sonrası cihaz durumunu tek dokunuşla karşılaştırın</string>
+    <string name="btn_next">İleri</string>
+    <string name="btn_skip">Atla</string>
+    <string name="btn_start">Başla</string>
+
+    <!-- Home Screen -->
+    <string name="home_greeting">Tarama Türünü Seçin</string>
+    <string name="home_last_scan">Son Tarama</string>
+    <string name="home_no_scans">Önceki tarama bulunamadı</string>
+
+    <!-- QR Scanner -->
+    <string name="qr_instruction">QR koduna kamerayı yönlendirin — oturum kodu veya önceki tarama</string>
+    <string name="qr_error_invalid">Geçersiz QR kodu</string>
+    <string name="qr_scan_not_found">Tarama bulunamadı</string>
+    <string name="qr_joining">Oturuma katılıyor…</string>
+    <string name="qr_join_failed">Oturuma katılınamadı</string>
+    <string name="qr_join_success">Katılıldı — Tarama başlatılıyor</string>
+
+    <!-- PreScan Conditions -->
+    <string name="prescan_instruction">Taramaya başlamadan önce aşağıdaki koşulları doğrulayın:</string>
+    <string name="prescan_battery_low">Pil seviyesi %20\'nin altında — önce şarj edin</string>
+    <string name="prescan_charger_connected">Şarj cihazı bağlı — önce şarj cihazını çıkarın</string>
+    <string name="prescan_temp_warning">Cihaz sıcaklığı anormal</string>
+    <string name="prescan_uptime_warning">Cihaz yakın zamanda yeniden başlatıldı (1 saatten az)</string>
+    <string name="prescan_close_apps">Diğer tüm uygulamaları kapatın</string>
+    <string name="prescan_flat_surface">Cihazı düz bir yüzeye koyun</string>
+    <string name="btn_start_scan">Taramayı Başlat</string>
+    <string name="prescan_blocked">Tarama başlatılamıyor — yukarıdaki sorunları düzeltin</string>
+
+    <!-- Active Scan -->
+    <string name="scan_phase">Aşama</string>
+    <string name="scan_phase_unknown">Bilinmiyor</string>
+    <string name="scan_phase_init">Başlatma ve temel testler</string>
+    <string name="scan_phase_storage">Depolama testleri</string>
+    <string name="scan_phase_intensive">Yoğun stres testi</string>
+    <string name="scan_phase_sustained">Sürekli stres testi</string>
+    <string name="scan_phase_cooldown">Soğutma aşaması</string>
+    <!-- V2 phase names (8 phases) -->
+    <string name="scan_v2_phase_init_profiling">Hazırlık ve referans ölçüm</string>
+    <string name="scan_v2_phase_storage_stress">Depolama testi</string>
+    <string name="scan_v2_phase_memory_stress">Bellek testi</string>
+    <string name="scan_v2_phase_cpu_sustained">İşlemci stresi</string>
+    <string name="scan_v2_phase_gpu_sustained">Grafik işlemci stresi</string>
+    <string name="scan_v2_phase_combined_peak">Birleşik tepe</string>
+    <string name="scan_v2_phase_burst_pattern">Patlama testi</string>
+    <string name="scan_v2_phase_cooldown">Soğutma</string>
+
+    <!-- feat/technician-evaluation: blind technician questions during QR-session scans -->
+    <string name="eval_title">Teknisyen değerlendirmesi</string>
+    <string name="eval_skip">Atla</string>
+    <string name="eval_subtitle">Deneyiminizle, tarama sonucu görünmeden — tüm sorular isteğe bağlı</string>
+    <string name="eval_q_overall">Cihazın genel notu</string>
+    <string name="eval_grade_excellent">Mükemmel</string>
+    <string name="eval_grade_good">İyi</string>
+    <string name="eval_grade_fair">Orta</string>
+    <string name="eval_grade_weak">Zayıf</string>
+    <string name="eval_q_categories">Kendi kontrol ettiklerinizi puanlayın</string>
+    <string name="eval_cat_battery">Batarya</string>
+    <string name="eval_cat_cpu">İşlemci ve performans</string>
+    <string name="eval_cat_memory">Bellek</string>
+    <string name="eval_cat_storage">Depolama</string>
+    <string name="eval_not_tested">Kontrol etmedim</string>
+    <string name="eval_q_defects">Görünür kusurlar (çoklu seçim)</string>
+    <string name="eval_defect_weak_battery">Zayıf batarya</string>
+    <string name="eval_defect_replaced_screen">Değiştirilmiş ekran</string>
+    <string name="eval_defect_water_damage">Su hasarı</string>
+    <string name="eval_defect_prior_repair">Önceki onarım</string>
+    <string name="eval_defect_none">Fark edilen bir şey yok</string>
+    <!-- Proposed Turkish, not yet approved. eval_confirm removed — see the
+         matching comment in values/strings.xml. -->
+    <string name="eval_submit_failed_generic">Değerlendirme gönderilemedi</string>
+    <!-- V2 scan duration + preconditions -->
+    <string name="scan_v2_duration_label">Tarama 8 dakika sürer ve şunları gerektirir:</string>
+    <string name="scan_v2_pre_battery">%25 veya daha fazla pil</string>
+    <string name="scan_v2_pre_storage">8 GB veya daha fazla boş alan</string>
+    <string name="scan_v2_pre_no_use">Tarama sırasında cihazı kullanmayın</string>
+    <!-- V2 scanProfile section -->
+    <string name="scan_profile_section_title">Tarama koşulları</string>
+    <string name="scan_profile_intensity_full">Tam stres (mükemmel soğutma)</string>
+    <string name="scan_profile_intensity_reduced">Cihazı korumak için stres düşürüldü</string>
+    <string name="scan_profile_tier_flagship">Mükemmel soğutma</string>
+    <string name="scan_profile_tier_mid">Orta soğutma</string>
+    <string name="scan_profile_tier_budget">Sınırlı soğutma</string>
+    <string name="scan_profile_tier_unknown">Belirsiz</string>
+    <string name="scan_profile_throttle_count">%1$d kez yoğunluk düşürüldü</string>
+    <string name="scan_profile_early_terminated">Erken sonlandırılan aşamalar: %1$s</string>
+    <!-- V2 critical defect alert -->
+    <string name="critical_defect_title">⚠️ Silikon kritik kusur tespit edildi</string>
+    <string name="critical_defect_body">Bu cihaz %1$s doğrulamasında başarısız oldu. Satın alınması önerilmez.</string>
+    <string name="critical_defect_categories_cpu">CPU</string>
+    <string name="critical_defect_categories_gpu">GPU</string>
+    <string name="critical_defect_categories_memory">Bellek</string>
+    <string name="critical_defect_categories_storage">Depolama</string>
+    <!-- V2 expected performance card -->
+    <string name="expected_performance_title">Modelin beklediği performans</string>
+    <string name="expected_performance_confidence_high">Yüksek güven</string>
+    <string name="expected_performance_confidence_medium">Orta güven</string>
+    <string name="expected_performance_confidence_low">Düşük güven</string>
+    <!-- V2 change analysis card -->
+    <string name="change_analysis_title">Önceki tarama ile karşılaştırma</string>
+    <string name="change_analysis_stable">Cihaz durumu istikrarlı</string>
+    <string name="change_analysis_improved">Son taramadan beri iyileşti</string>
+    <string name="change_analysis_deteriorated">Son taramadan beri kötüleşti</string>
+    <!-- A115: changeDirection null/unrecognized — must not read as "stable" -->
+    <!-- Order 2026-09-25، القرار ٩١ / القرار ٩٤ البند ١ (نصّ مُعتمَد،
+         <home>\neuralcheck-workspace\evidence\translations-approved-2026-09-25.md). -->
+    <string name="change_analysis_unknown">Son taramadan bu yana değişimin yönü belirlenemedi</string>
+    <string name="scan_progress">İlerleme</string>
+    <string name="scan_time_remaining">Kalan Süre</string>
+    <string name="scan_battery_temp">Pil Sıcaklığı</string>
+    <string name="scan_cpu_temp">İşlemci Sıcaklığı</string>
+    <string name="scan_cpu_usage">İşlemci Kullanımı</string>
+    <string name="scan_chart_min_max_pct">Min %%%1$d • Maks %%%2$d</string>
+    <string name="scan_chart_min_max_temp">Min %1$s°C • Maks %2$s°C</string>
+    <string name="scan_chart_danger_threshold">Tehlike sınırı 45°C</string>
+    <string name="scan_cpu_frequency">İşlemci Frekansı</string>
+    <string name="scan_temp_threshold">Sıcaklık Eşiği</string>
+    <string name="scan_temperature">Sıcaklık</string>
+    <string name="scan_gpu_temp">GPU Sıcaklığı</string>
+    <string name="scan_battery_level">Pil Seviyesi</string>
+    <string name="btn_cancel_scan">Taramayı İptal Et</string>
+    <string name="scan_gpu_fps">GPU Kare Hızı</string>
+    <string name="scan_safety_stop">Güvenlik nedeniyle tarama durduruldu</string>
+    <string name="scan_safety_battery_temp">Pil sıcaklığı güvenli sınırı aştı (45°C)</string>
+    <string name="scan_safety_cpu_temp">İşlemci sıcaklığı güvenli sınırı aştı (90°C)</string>
+    <string name="scan_safety_battery_drain">Pil tüketimi çok yüksek</string>
+    <string name="scan_safety_battery_low">Pil seviyesi çok düşük</string>
+    <string name="scan_cancel_confirm">Taramayı iptal etmek istiyor musunuz?</string>
+
+    <!-- Report -->
+    <string name="report_overall_score">Genel Puan</string>
+    <string name="report_summary">Özet</string>
+    <string name="report_categories">Kategoriler</string>
+    <string name="report_ai_error_title">AI analizi alınamadı</string>
+    <!-- fieldsVersion 69 (S-26): proposed Turkish, pending approval (decision 90). -->
+    <string name="report_ai_wait_title">Bekleyin</string>
+    <string name="report_ai_wait_body">Analiz sunucuda işleniyor. Biraz bekleyin, ardından «Tekrar Dene»ye dokunun.</string>
+    <!-- New redesigned report sections (launch flavor) -->
+    <string name="report_section_summary">📋 Analiz Özeti</string>
+    <string name="report_section_details">📝 Ayrıntılı Analiz</string>
+    <string name="report_section_verdict">⚖️ Karar</string>
+    <!-- Order 2026-10-01 (#4، أمر القرارات) — معتمَد. -->
+    <string name="report_section_issues_title_fmt">Bulgular (%1$d)</string>
+    <!-- Order 2026-10-01 (#5/#6، أمر القرارات) — معتمَد: "%d dikkat gerektiren
+         bulgu"، صيغة واحدة بلا تفريع نحوي (CLDR التركية لها فئة "other"
+         وحدها) — plurals بفئة "other" فقط، كي يبقى اسم المورد نفسه ونوعه
+         (plurals) متطابقَين بين اللغتين لاستدعاء pluralStringResource واحد. -->
+    <plurals name="report_issues_needing_attention">
+        <item quantity="other">%d dikkat gerektiren bulgu</item>
+    </plurals>
+    <string name="report_section_category_eval">📊 Kategori Değerlendirmesi</string>
+    <!-- Phase 1.15: depth-vs-surface report framing -->
+    <!-- Unmeasured category: every test came back not_tested/unavailable -->
+    <string name="report_category_unmeasured">Ölçülmedi</string>
+    <string name="report_category_coverage_fmt">%2$d testten %1$d tanesi yapıldı · %3$d yapılmadı</string>
+    <string name="report_category_not_run_short">%1$d yapılmadı</string>
+    <string name="report_surface_category_tag">Kontrol edenin beyanı — kendiniz kontrol edin</string>
+    <!-- Order 2026-10-01 (#1، أمر القرارات) — معتمَد. -->
+    <string name="report_v7_letter_basis_note">Harf notu ölçüm sonuçlarından hesaplanır; analiz ve öneriler yapay zekâ tarafından hazırlanır.</string>
+    <!-- Order 2026-10-01 (A3) — proposed. -->
+    <string name="report_v7_category_coverage_label_fmt">Kapsam %1$d%%</string>
+    <string name="report_buyer_note_title">NeuralCheck neyi inceler?</string>
+    <string name="report_buyer_note_body">Gözünüzle göremediğiniz derinlikleri inceleriz: işlemci, pil, bellek, yük altında performans ve bütünlük — garanti ettiğimiz budur. Görünür kategoriler (ekran, ses, kamera, titreşim, bağlantı noktaları, kablosuz) ise kontrol eden tarafından beyan edilmiştir ve NeuralCheck tarafından doğrulanmamıştır; bunlar basit ve hızlıdır, satın alırken kendiniz kontrol etmenizi öneririz.</string>
+    <string name="report_maintenance_suspected">Bu cihaz bakımdan geçmiş olabilir: önceki bir taramadan bu yana bir bileşen arızalı durumdan çalışır duruma geçti.</string>
+    <string name="report_section_predicted">🔮 Olası Sorunlar</string>
+    <!-- Phase 3-b: V7 findings-based report display -->
+    <string name="report_grade_unavailable">Not mevcut değil</string>
+    <string name="report_v7_overall_title">🧭 Genel Değerlendirme</string>
+    <string name="report_v7_coverage_fmt">Ölçüm kapsamı: %1$d%%</string>
+    <string name="report_v7_coverage_unavailable">Ölçüm kapsamı oranı mevcut değil</string>
+    <!-- Order 2026-10-01 (أمر القرارات، A8/S-13) — معتمَد: نفس نصّ الخادم
+         حرفياً، "ليطابق نصّ الخادم S-13" (موحَّد بين التطبيق والموقع). -->
+    <string name="report_v7_harness_error_message_unavailable">Bu taramanın test sonuçları hazırlanamadı; bu, cihaz hakkında bir değerlendirme değildir.</string>
+    <string name="report_v7_no_data_at_all">Bu taramada hiçbir şey ölçülmedi</string>
+    <string name="report_v7_partial_no_detail">Kısmi değerlendirme — ek ayrıntı yok</string>
+    <!-- narrativeIncomplete=true banner (order 2026-09-24، القرار ٧٥، البند
+         ٢). نصّ المستخدم النهائي حرفياً — لا "Notlar" وحدها (تُقرأ
+         "ملاحظات" أيضاً)، بل "Harf notları" الذي لا لبس فيه. -->
+    <string name="report_v7_narrative_incomplete">Açıklama eksik. Harf notları ve kapsam ölçümden hesaplanmıştır.</string>
+    <!-- Order 2026-10-07 (A1، إضافة المستخدم ٢) — معتمَد حرفياً، بلا الإيموجي
+         (الأيقونة 🚧 منفصلة في البطاقة). قبل: «🚧 Not sınırlamasının nedeni». -->
+    <string name="report_v7_gate_reason_title">Genel harf notunun nedeni</string>
+    <!-- report_v7_gate_reason_fmt deleted 2026-10-07 (A1 + user addition 1):
+         see the Arabic file's comment. -->
+    <string name="report_v7_field_unavailable">mevcut değil</string>
+    <!-- Order 2026-10-01 (#8-13، أمر القرارات) — معتمَد: "<الموضوع>: mevcut
+         değil"، يحلّ محلّ الشكل السابق. -->
+    <string name="report_v7_issue_title_unavailable">Bulgu başlığı: mevcut değil</string>
+    <string name="report_v7_narrative_status_unavailable">Açıklamanın tamlığı: mevcut değil</string>
+    <!-- Reused by V7OverallSummaryReader.kt (Home/History card) too. -->
+    <string name="report_v7_overall_status_unavailable">Genel değerlendirme: mevcut değil</string>
+    <string name="report_v7_ceiling_reason_unavailable">Kategorinin en yüksek harf nedeni: mevcut değil</string>
+    <string name="report_v7_issues_list_unavailable">Bulgular: mevcut değil</string>
+    <!-- report_v7_gate_reason_name_unavailable deleted 2026-10-07: see the
+         Arabic file's comment (the gate card is now hidden entirely when the
+         server sends no `text`; no stand-in text). -->
+    <string name="report_v7_incomplete">Değerlendirme verileri eksik</string>
+    <string name="report_v7_state_partial">Bu kategori kısmen ölçüldü</string>
+    <string name="report_v7_state_unknown">Bu kategorinin ölçüm durumu bilinmiyor</string>
+    <!-- Order 2026-09-25، القرار ٩١ / القرار ٩٤ البند ١ (نصّ مُعتمَد،
+         <home>\neuralcheck-workspace\evidence\translations-approved-2026-09-25.md). -->
+    <string name="report_v7_issue_severity_unknown">Bilinmiyor</string>
+    <string name="report_v7_letter_source_deterministic">Doğrudan ölçüm sonuçlarından hesaplanan not</string>
+    <!-- Order 2026-10-01 (#17، أمر القرارات) — معتمَد. -->
+    <string name="report_v7_letter_source_llm_adjusted">Yapay zekâ tarafından ayarlanan harf notu</string>
+    <string name="report_v7_letter_source_unknown">Bu notun kaynağı bilinmiyor</string>
+    <string name="report_v7_adjustment_reason_unavailable">Model notu belirtilen bir neden olmadan ayarladı</string>
+    <string name="report_v7_state_uninterpreted_fmt">Bu kategorinin ölçüm durumu: %1$s (sunucudan aktarıldı, henüz özel bir gösterim yok)</string>
+    <!-- Order 2026-09-24، القرار ٨٢ البند ٤ (نصّ مُعتمَد من المستخدم). -->
+    <!-- Order 2026-10-01 (#14، أمر القرارات) — معتمَد: استُبدلت الجملة كاملة،
+         حُذفت "tek dokunuş" و"bu sürümde" معاً. -->
+    <string name="report_v7_state_attested_only">Yalnızca teknisyen beyanıyla, otomatik ölçüm olmadan.</string>
+    <string name="report_v7_state_harness_error">Ölçülmedi: Bu kategorinin testleri tarama aracında çalıştırılamadı. Cihaz hakkında bir yargı değildir.</string>
+    <!-- Order 2026-09-25، القرار ٩١ / القرار ٩٤ البند ١ (نصّ مُعتمَد،
+         <home>\neuralcheck-workspace\evidence\translations-approved-2026-09-25.md). -->
+    <!-- Order 2026-10-01 (#16، أمر القرارات) — معتمَد: "ona not" ⇐ "harf
+         notu" عن نصّ الجولة السابقة. -->
+    <string name="report_v7_reason_battery_uncalibrated">Pil ölçülür, ancak bu sürümde harf notu verilmez.</string>
+    <string name="report_v7_reason_no_health_bearing_declared">Ölçülmedi: Bu taramada bu kategorinin durumu için sayılan hiçbir test yok.</string>
+    <!-- Order 2026-10-01 (#15، أمر القرارات) — معتمَد: استُبدلت الجملة كاملة
+         بنصّ أقصر، ليست مجرّد حذف كلمة كما في الجولة السابقة. -->
+    <string name="report_v7_reason_declared_none_executed">Bu kategori bu taramada ölçülmedi.</string>
+    <string name="report_v7_reason_battery_unmeasured">Pil sağlığı ölçülmedi: göstergelerinden hiçbiri bu taramada ölçüm koşullarını karşılamadı.</string>
+    <string name="report_v7_reason_harness_error_unmeasured">Ölçülmedi: Bu kategorinin verileri tarama aracından gelmedi. Cihaz hakkında bir yargı değildir.</string>
+    <string name="btn_show_more">Daha Fazla Göster</string>
+    <string name="btn_show_less">Daha Az Göster</string>
+    <string name="report_manual_tests">Manuel Testler</string>
+    <string name="manual_tests_subtitle">Manuel müdahale gerektiren 16 test</string>
+    <string name="manual_tests_open">Aç</string>
+    <string name="manual_tests_title">Manuel Testler</string>
+    <string name="manual_tests_instruction">Her test için sonucu işaretleyin. Tarama ile birlikte kaydedilip buluta yüklenecek.</string>
+    <string name="manual_pass">Geçti</string>
+    <string name="manual_fail">Kaldı</string>
+    <string name="manual_tests_saved">Sonuçlar kaydedildi ve senkronize edildi</string>
+    <string name="manual_tests_save_failed">Sonuçlar kaydedilemedi</string>
+    <string name="manual_tests_progress_fmt">%1$d / %2$d</string>
+    <string name="report_share">Raporu Paylaş</string>
+    <string name="report_share_image">Görsel Olarak Paylaş</string>
+    <string name="report_qr_code">QR Kodu</string>
+    <string name="report_scan_date">Tarama Tarihi</string>
+    <string name="report_scan_duration">Tarama Süresi</string>
+    <string name="report_device_info">Cihaz Bilgileri</string>
+    <string name="report_incomplete">Tamamlanmamış Tarama</string>
+
+    <!-- Scoring Axes -->
+    <string name="axis_performance">Performans</string>
+    <string name="axis_health">Sağlık</string>
+    <string name="axis_functionality">İşlevsellik</string>
+    <string name="axis_security">Güvenlik</string>
+
+    <!-- Test Categories -->
+    <string name="category_battery">Pil</string>
+    <string name="category_cpu">İşlemci</string>
+    <string name="category_gpu">Grafik İşlemci</string>
+    <string name="category_storage">Depolama</string>
+    <string name="category_thermal">Isı</string>
+    <string name="category_memory">Bellek</string>
+    <string name="category_cellular">Hücresel Ağ</string>
+    <string name="category_wireless">Kablosuz Bağlantı</string>
+    <string name="category_gps">Konum Sistemi</string>
+    <string name="category_sensors">Sensörler</string>
+    <string name="category_camera">Kamera ve Biyometrik</string>
+    <string name="category_display">Ekran</string>
+    <string name="category_security">Güvenlik</string>
+
+    <!-- Test Status -->
+    <string name="status_pass">Başarılı</string>
+    <string name="status_fail">Başarısız</string>
+    <string name="status_warning">Uyarı</string>
+    <string name="status_unavailable">Kullanılamıyor</string>
+    <string name="status_not_tested">Test Edilmedi</string>
+    <string name="status_error">Hata</string>
+
+    <!-- Battery Tests -->
+    <string name="test_b01">Pil Sağlığı (BatteryManager)</string>
+    <string name="test_b02">Tasarım Kapasitesi</string>
+    <string name="test_b03">Şarj Döngü Sayısı</string>
+    <string name="test_b04">Pil Voltajı</string>
+    <string name="test_b05">Şarj/Deşarj Akımı</string>
+    <string name="test_b06">Stres Altında Pil Tüketim Hızı</string>
+    <string name="test_b07">Hızlı Şarj Teknolojisi</string>
+    <string name="test_b08">Voltaj Tutarlılığı</string>
+
+    <!-- CPU Tests -->
+    <string name="test_c01">İşlemci Çekirdek Sayısı</string>
+    <string name="test_c02">Maksimum İşlemci Frekansı</string>
+    <string name="test_c03">İşlemci Mimarisi (ABI)</string>
+    <string name="test_c04">İşlemci Performansı (MFLOPS)</string>
+    <string name="test_c05">Çok Çekirdekli Performans</string>
+    <string name="test_c06">Termal Kısıtlama Oranı</string>
+    <string name="test_c07">İşlemci Performans Kararlılığı</string>
+
+    <!-- GPU Tests -->
+    <string name="test_g01">Grafik İşlemci Adı</string>
+    <string name="test_g02">OpenGL ES Sürümü</string>
+    <string name="test_g03">FPS Düşüş Oranı</string>
+    <string name="test_g04">Grafik Termal Kısıtlama</string>
+    <string name="test_g05">Vulkan Desteği</string>
+
+    <!-- Storage Tests -->
+    <string name="test_s01">Toplam Depolama Kapasitesi</string>
+    <string name="test_s02">Kullanılabilir Alan</string>
+    <string name="test_s03">Sıralı Yazma Hızı</string>
+    <string name="test_s04">Sıralı Okuma Hızı</string>
+    <string name="test_s05">Rastgele Yazma Hızı (IOPS)</string>
+    <string name="test_s06">Rastgele Okuma Hızı (IOPS)</string>
+
+    <!-- Thermal Tests -->
+    <string name="test_t01">Kaydedilen Maksimum Sıcaklık</string>
+    <string name="test_t02">Sıcaklık Artış Hızı</string>
+    <string name="test_t03">Sıcaklık Düşüş Hızı</string>
+    <string name="test_t04">Aktif Isı Bölgesi Sayısı</string>
+
+    <!-- Memory Tests -->
+    <string name="test_r01">Toplam RAM</string>
+    <string name="test_r02">Kullanılabilir RAM</string>
+    <string name="test_r03">Düşük Bellek Eşiği</string>
+
+    <!-- Network Tests -->
+    <string name="test_n01">SIM Kart Durumu</string>
+    <string name="test_n02">Hücresel Sinyal Gücü</string>
+    <string name="test_n03">Veri Ağ Türü</string>
+    <string name="test_n04">Operatör Adı</string>
+    <string name="test_n05">VoLTE Desteği</string>
+    <string name="test_n06">Dolaşım Durumu</string>
+    <string name="test_n07">eSIM Desteği</string>
+    <string name="test_n08">Wi-Fi Durumu</string>
+    <string name="test_n09">Wi-Fi Sinyal Gücü</string>
+    <string name="test_n10">Wi-Fi Frekansı (2.4/5 GHz)</string>
+    <string name="test_n11">Bluetooth Durumu</string>
+    <string name="test_n12">NFC Durumu</string>
+    <string name="test_n13">Uçak Modu</string>
+
+    <!-- GPS Tests -->
+    <string name="test_l01">GPS Kullanılabilirliği</string>
+    <string name="test_l02">Uydu Sayısı</string>
+    <string name="test_l03">Konum Doğruluğu</string>
+    <string name="gps_permission_denied">Konum izni reddedildi</string>
+    <string name="gps_disabled">GPS devre dışı</string>
+    <string name="gps_no_signal">Sinyal alınamadı — zaman aşımı</string>
+    <string name="gps_indoor_hint">Cihaz kapalı bir ortamda olabilir</string>
+    <string name="gps_satellite_data_unreadable">Uydu verileri okunamadı</string>
+
+    <!-- Sensor Tests -->
+    <string name="test_sn01">İvmeölçer</string>
+    <string name="test_sn02">Jiroskop</string>
+    <string name="test_sn03">Yakınlık Sensörü</string>
+    <string name="test_sn04">Ortam Işığı Sensörü</string>
+    <string name="test_sn05">Pusula (Manyetometre)</string>
+    <string name="test_sn06">Barometre</string>
+    <string name="test_sn07">Ortam Sıcaklık Sensörü</string>
+    <string name="test_sn08">Adım Algılayıcı</string>
+    <string name="test_sn09">Adım Sayacı</string>
+    <string name="test_sn10">Yerçekimi Sensörü</string>
+    <string name="test_sn11">Doğrusal İvme Sensörü</string>
+    <string name="test_sn12">Dönüş Vektörü Sensörü</string>
+
+    <!-- Camera & Biometric Tests -->
+    <string name="test_cm01">Arka Kamera — Çalışma</string>
+    <string name="test_cm02">Ön Kamera — Çalışma</string>
+    <string name="test_cm03">Arka Kamera Otomatik Odaklama</string>
+    <string name="test_cm04">Flaş</string>
+    <string name="test_cm05">Video Kaydı</string>
+    <string name="test_cm06">Arka Kamera Çözünürlüğü (MP)</string>
+    <string name="test_cm07">Ön Kamera Çözünürlüğü (MP)</string>
+    <string name="test_cm08">Parmak İzi Sensörü</string>
+    <string name="test_cm09">Yüz Tanıma</string>
+    <string name="test_cm10">Titreşim Motoru</string>
+    <string name="test_cm11">Bildirim LED\'i</string>
+
+    <!-- Display Tests -->
+    <string name="test_d01">Ekran Çözünürlüğü</string>
+    <string name="test_d02">Piksel Yoğunluğu (DPI)</string>
+    <string name="test_d03">Ekran Yenileme Hızı</string>
+
+    <!-- Security Tests -->
+    <string name="test_sec01">Ekran Kilidi Durumu</string>
+    <string name="test_sec02">Şifreleme Durumu</string>
+    <string name="test_sec03">Güvenlik Yaması Seviyesi</string>
+    <string name="test_sec04">Root Yetkisi</string>
+    <string name="test_sec05">Geliştirici Modu</string>
+    <string name="test_sec06">USB Hata Ayıklama</string>
+    <string name="test_sec07">Bilinmeyen Kaynaklar</string>
+    <string name="test_sec08">Google Play Protect</string>
+    <string name="test_sec09">İşletim Sistemi Sürümü</string>
+    <string name="test_sec10">API Seviyesi</string>
+    <string name="test_sec11">Önyükleyici (Bootloader)</string>
+
+    <!-- Manual Tests Section (inline, user-facing) -->
+    <string name="manual_tests_section_title">Denemeniz gereken testler</string>
+    <!-- Generic "scan failed to start" dialog -->
+    <string name="scan_start_failed_title">Tarama başlatılamadı</string>
+    <string name="scan_start_failed_body_fmt">Tarama servisi başlatılırken bir hata oluştu. Uygulamayı yeniden başlatıp tekrar deneyin. (Kod: %1$s)</string>
+    <string name="scan_error_battery_too_low_fmt">Taramayı başlatmak için en az %%%1$d pil şarjı gerekir — mevcut şarj %%%2$d. Cihazı şarj edip tekrar deneyin.</string>
+    <string name="scan_error_battery_too_low_generic">Taramayı başlatmak için en az %%%1$d pil şarjı gerekir. Cihazı şarj edip tekrar deneyin.</string>
+    <string name="scan_error_device_too_hot">Cihaz çok sıcak — pil sıcaklığı 38°C üzerinde. Cihazın soğumasını bekleyip tekrar deneyin.</string>
+    <string name="scan_error_charger_connected">Taramaya başlamadan önce şarj cihazını çıkarın — şarj sırasında pil ölçümleri bozulur.</string>
+    <string name="scan_error_storage_full">Boş depolama alanı yetersiz — tarama için en az 6 GB boş alan gerekir.</string>
+    <string name="scan_error_ram_insufficient">Kullanılabilir bellek yetersiz — tarama için en az 1 GB boş RAM gerekir.</string>
+    <!-- Dedicated post-scan manual tests screen (between ActiveScan and Report) -->
+    <string name="manual_tests_screen_title">Manuel Testler</string>
+    <string name="manual_tests_screen_subtitle">Raporu görmeden önce aşağıdaki testleri yanıtlayın. Atlamak istediğiniz soruda \"Test etmedim\" seçeneğini kullanabilirsiniz.</string>
+    <string name="manual_tests_continue_btn">Rapora Devam Et</string>
+    <string name="manual_dead_pixels">Ölü pikseller</string>
+    <string name="manual_dead_pixels_instruction">Ekranda yanmayan nokta arayın</string>
+    <string name="manual_touch_response">Dokunmatik tepkisi</string>
+    <string name="manual_touch_response_instruction">Parmağınızı ekranın kenarlarında, ardından iki köşegen üzerinde gezdirin</string>
+    <string name="manual_multi_touch">Çoklu dokunma</string>
+    <string name="manual_multi_touch_instruction">Ekrana iki veya daha fazla parmakla dokunun</string>
+    <string name="manual_speaker">Harici hoparlör</string>
+    <string name="manual_speaker_instruction">Bir ses çalın ve dinleyin</string>
+    <string name="manual_earpiece">Kulaklık hoparlörü</string>
+    <string name="manual_earpiece_instruction">Telefonu kulağınıza koyun ve dinleyin</string>
+    <string name="manual_main_mic">Ana mikrofon</string>
+    <string name="manual_main_mic_instruction">Sesinizi kaydedin ve dinleyin</string>
+    <string name="manual_headphone_jack">Kulaklık girişi</string>
+    <string name="manual_headphone_jack_instruction">Kulaklık takın — algılıyor mu?</string>
+    <string name="manual_volume_up">Ses açma düğmesi</string>
+    <string name="manual_volume_up_instruction">Ses açma düğmesine basın</string>
+    <string name="manual_volume_down">Ses kısma düğmesi</string>
+    <string name="manual_volume_down_instruction">Ses kısma düğmesine basın</string>
+    <string name="manual_power_button">Güç düğmesi</string>
+    <string name="manual_power_button_instruction">Güç düğmesine kısa basın</string>
+    <string name="manual_charging_port">Şarj girişi</string>
+    <string name="manual_charging_port_instruction">Şarj kablosunu takın</string>
+    <string name="manual_otg">OTG desteği</string>
+    <string name="manual_otg_instruction">USB cihazı bağlayın</string>
+    <string name="manual_wireless_charging">Kablosuz şarj</string>
+    <string name="manual_wireless_charging_instruction">Cihazı kablosuz şarj cihazına koyun</string>
+    <string name="manual_sd_card">SD kart yuvası</string>
+    <string name="manual_sd_card_instruction">Hafıza kartı takın</string>
+    <string name="manual_ir_blaster">Kızılötesi</string>
+    <string name="manual_ir_blaster_instruction">Kızılötesi kumandayı test edin</string>
+    <!-- M-17..M-22 — user-perception checks for camera / biometrics / vibration -->
+    <string name="manual_rear_camera">Arka Kamera Fotoğrafları</string>
+    <string name="manual_rear_camera_instruction">Kamera uygulamasını açın, arka kamera ile bir fotoğraf çekin ve net olduğunu kontrol edin</string>
+    <string name="manual_front_camera">Ön Kamera Fotoğrafları</string>
+    <string name="manual_front_camera_instruction">Ön kameraya geçin, bir selfie çekin ve net olduğunu kontrol edin</string>
+    <string name="manual_flash">Flaş</string>
+    <string name="manual_flash_instruction">Kamera uygulamasından flaşı (fener modu) açın ve yandığını doğrulayın</string>
+    <string name="manual_fingerprint">Parmak İzi</string>
+    <string name="manual_fingerprint_instruction">Parmağınızı parmak izi sensörüne koyarak cihazın kilidini açın</string>
+    <string name="manual_face_unlock">Yüz Tanıma</string>
+    <string name="manual_face_unlock_instruction">Ön kameraya bakarak yüzle kilit açma özelliğini deneyin</string>
+    <string name="manual_vibration">Titreşim</string>
+    <string name="manual_vibration_instruction">Ses ayarlarından titreşimi etkinleştirin ve hissettiğinizden emin olun</string>
+    <string name="manual_works">Çalışıyor</string>
+    <string name="manual_not_works">Çalışmıyor</string>
+    <string name="manual_not_tested_btn">Test etmedim</string>
+    <string name="manual_start_test">Testi Başlat</string>
+    <string name="manual_next_color">Sonraki renk için dokunun</string>
+    <string name="manual_dead_pixel_title">Ekran sağlam mı?</string>
+    <string name="manual_dead_pixel_question">Yanmayan veya farklı renkte bir piksel gördünüz mü?</string>
+    <string name="manual_screen_ok">Sağlam</string>
+    <string name="manual_screen_issue">Sorun var</string>
+    <string name="manual_touch_title">Dokunmatik Testi</string>
+    <string name="manual_touch_hint">Parmağınızla %1$d saniye içinde tüm kareleri tarayın</string>
+    <string name="manual_touch_hint_v2">Parmağınızı ekranın kenarlarında, ardından iki köşegen üzerinde gezdirin</string>
+    <string name="manual_touch_result">%1$d / %2$d kareye dokunuldu</string>
+    <string name="manual_touch_done_btn">Bitirdim</string>
+    <string name="manual_touch_pct_fmt">Ekranın %%%1$d\'si yanıt verdi</string>
+    <string name="manual_touch_result_pass">Ekran sağlam</string>
+    <string name="manual_touch_result_warn">Zayıf bölgeler var — dikkat gerekiyor</string>
+    <string name="manual_touch_result_fail">Çok sayıda ölü bölge</string>
+    <string name="manual_audio_title">Ses Testi</string>
+    <string name="manual_audio_playing">Test tonu çalınıyor</string>
+    <string name="manual_audio_question">Sesi net duydunuz mu?</string>
+    <string name="manual_audio_heard">Evet duydum</string>
+    <string name="manual_audio_not_heard">Duymadım</string>
+    <string name="manual_button_title">Düğme Testi</string>
+    <string name="manual_button_press_volume_up">Sesi açma düğmesine basın</string>
+    <string name="manual_button_press_volume_down">Sesi kısma düğmesine basın</string>
+    <string name="manual_button_press_power">Güç düğmesine kısa basın</string>
+    <string name="manual_button_detected">Basış algılandı</string>
+    <string name="manual_button_not_detected">Basış algılanmadı</string>
+    <string name="manual_test_result_saved">Sonuç kaydedildi</string>
+
+    <!-- Interactive manual-test dialogs (Phase 1) -->
+    <string name="manual_remaining_sec_fmt">Kalan süre: %1$d saniye</string>
+    <!-- ONE text for the «unavailable» answer (rule 24) — see values/strings.xml. Text decided by the user 2026-10-15 (was «Bu cihazda yok»). -->
+    <string name="manual_mark_unavailable">Bu cihazda bu parça yok</string>
+
+    <!-- Microphone test (M-06 / M-07) -->
+    <string name="manual_mic_title">Mikrofon Testi</string>
+    <string name="manual_mic_ready">Kayıt için hazırlanıyor...</string>
+    <string name="manual_mic_permission_required">Test mikrofon izni gerektirir</string>
+    <string name="manual_mic_recording">Kayıt yapılıyor... Net konuşun</string>
+    <string name="manual_mic_playing">Kayıt çalınıyor...</string>
+    <string name="manual_mic_question">Sesinizi net duydunuz mu?</string>
+    <string name="manual_mic_error">Mikrofona erişilemedi</string>
+
+    <!-- Headphone jack (M-08) -->
+    <string name="manual_headphone_title">Kulaklık Girişi Testi</string>
+    <string name="manual_headphone_waiting">Kulaklığı girişe takın</string>
+    <string name="manual_headphone_detected">Kulaklık algılandı ✓</string>
+
+    <!-- Charging port (M-12) -->
+    <string name="manual_charging_title">Şarj Portu Testi</string>
+    <string name="manual_charging_instructions">Şarj kablosunu cihaza takın</string>
+    <string name="manual_charging_waiting">Kablo bekleniyor...</string>
+    <string name="manual_charging_detected">Şarj cihazı bağlandı ✓</string>
+
+    <!-- OTG (M-13) -->
+    <string name="manual_otg_title">OTG Testi</string>
+    <string name="manual_otg_instructions">USB cihazını OTG kablosuyla bağlayın</string>
+    <string name="manual_otg_waiting">USB cihazı bekleniyor...</string>
+    <string name="manual_otg_detected">USB cihazı algılandı ✓</string>
+
+    <!-- Wireless charging (M-14) -->
+    <string name="manual_wireless_title">Kablosuz Şarj Testi</string>
+    <string name="manual_wireless_instructions">Cihazı kablosuz şarj pedine koyun</string>
+    <string name="manual_wireless_waiting">Kablosuz şarj bekleniyor...</string>
+    <string name="manual_wireless_detected">Kablosuz şarj çalışıyor ✓</string>
+
+    <!-- SD card (M-15) -->
+    <string name="manual_sd_title">SD Kart Testi</string>
+    <string name="manual_sd_instructions">Hafıza kartını yuvaya takın</string>
+    <string name="manual_sd_waiting">Kart bekleniyor...</string>
+    <string name="manual_sd_detected">Kart algılandı ✓</string>
+
+    <!-- IR blaster (M-16) -->
+    <string name="manual_ir_title">Kızılötesi Testi</string>
+    <string name="manual_ir_not_available">Bu cihazda kızılötesi verici yok</string>
+    <string name="manual_ir_transmit">Cihazı TV\'ye yöneltin, sonra dokunun</string>
+    <string name="manual_ir_send_btn">Test sinyali gönder</string>
+    <string name="manual_ir_question">Hedef cihaz yanıt verdi mi?</string>
+
+    <!-- Manual Tests (test IDs in spec) -->
+    <string name="test_m01">Dokunmatik — Ölü Bölgeler</string>
+    <string name="test_m02">Dokunmatik — Çoklu Dokunma</string>
+    <string name="test_m03">Ekran — Ölü Piksel</string>
+    <string name="test_m04">Ekran — Renk Değişimi</string>
+    <string name="test_m05">Ekran — Yanma İzi</string>
+    <string name="test_m06">Harici Hoparlör</string>
+    <string name="test_m07">Kulaklık Hoparlörü</string>
+    <string name="test_m08">Mikrofon</string>
+    <string name="test_m09">Şarj Portu</string>
+    <string name="test_m10">Kulaklık Girişi</string>
+    <string name="test_m11">Fiziksel Düğmeler</string>
+    <string name="test_m12">Dış Gövde</string>
+    <string name="test_m13">Su Dayanıklılığı</string>
+    <string name="test_m14">Kablosuz Şarj</string>
+    <string name="test_m15">Dokunmatik Kalem</string>
+    <string name="test_m16">Hafıza Kartı Yuvası</string>
+
+    <!-- Technician -->
+    <string name="tech_fault_categories">Arıza Kategorileri</string>
+    <string name="tech_confidence">Teşhis Güven Seviyesi</string>
+    <string name="tech_notes">Teknisyen Notları</string>
+    <string name="tech_parts_replaced">Değiştirilen Parçalar</string>
+    <string name="tech_repair_type">Onarım Türü</string>
+    <string name="tech_submit">Raporu Gönder</string>
+
+    <!-- Peer Survey -->
+    <string name="survey_title">Hızlı Anket</string>
+    <string name="survey_battery_drains">Pil hızlı mı bitiyor?</string>
+    <string name="survey_overheats">Cihaz anormal şekilde ısınıyor mu?</string>
+    <string name="survey_sluggish">Cihaz yavaş mı veya donuyor mu?</string>
+    <string name="survey_yes">Evet</string>
+    <string name="survey_no">Hayır</string>
+
+    <!-- Comparison -->
+    <string name="comparison_before">Onarım Öncesi</string>
+    <string name="comparison_after">Onarım Sonrası</string>
+    <string name="comparison_improved">İyileşti</string>
+    <string name="comparison_degraded">Kötüleşti</string>
+    <string name="comparison_unchanged">Değişmedi</string>
+    <string name="comparison_overall_change">Genel Değişim</string>
+
+    <!-- History -->
+    <string name="history_search">Taramalarda Ara</string>
+    <string name="history_filter">Filtrele</string>
+    <string name="history_filter_all">Tümü</string>
+    <string name="history_empty">Kayıtlı tarama bulunamadı</string>
+    <string name="history_delete_confirm">Bu taramayı silmek istiyor musunuz?</string>
+
+    <!-- Settings -->
+    <string name="settings_sync">Senkronizasyon</string>
+    <string name="settings_sync_enabled">Otomatik senkronizasyon açık</string>
+    <string name="settings_sync_disabled">Otomatik senkronizasyon kapalı</string>
+    <string name="settings_sync_now">Şimdi Senkronize Et</string>
+    <string name="settings_language">Dil</string>
+    <string name="settings_language_ar">العربية</string>
+    <string name="settings_language_tr">Türkçe</string>
+    <string name="settings_theme">Tema</string>
+    <string name="settings_theme_system">Sisteme Göre</string>
+    <string name="settings_theme_light">Açık</string>
+    <string name="settings_theme_dark">Koyu</string>
+    <string name="settings_dev_tools">Geliştirici Araçları</string>
+    <string name="settings_clear_data">Tüm Verileri Sil</string>
+    <string name="settings_clear_confirm">Tüm verileri silmek istediğinizden emin misiniz?</string>
+    <string name="settings_export_data">Verileri Dışa Aktar</string>
+    <string name="settings_about">Uygulama Hakkında</string>
+    <string name="settings_version">Sürüm</string>
+
+    <!-- General -->
+    <string name="btn_cancel">İptal</string>
+    <string name="btn_confirm">Onayla</string>
+    <string name="btn_ok">Tamam</string>
+    <string name="btn_back">Geri</string>
+    <string name="btn_done">Bitti</string>
+    <string name="btn_retry">Tekrar Dene</string>
+    <string name="btn_close">Kapat</string>
+    <string name="btn_save">Kaydet</string>
+    <string name="btn_delete">Sil</string>
+    <string name="error_generic">Beklenmeyen bir hata oluştu</string>
+    <string name="error_permission_denied">Gerekli izin reddedildi</string>
+    <string name="loading">Yükleniyor…</string>
+    <string name="minutes_short">dk</string>
+    <string name="seconds_short">sn</string>
+    <string name="percent">%</string>
+    <string name="degree_celsius">°C</string>
+
+    <!-- Anti-Tamper -->
+    <string name="tamper_cold_start">Soğuk başlatma — düşük başlangıç sıcaklığı</string>
+    <string name="tamper_recent_reboot">Yakın zamanda yeniden başlatma</string>
+    <string name="tamper_charger_removed">Şarj cihazı yakın zamanda çıkarıldı</string>
+    <string name="tamper_heavy_background">Yüksek arka plan aktivitesi</string>
+
+    <!-- Notifications -->
+    <string name="notification_channel_scan">Tarama Devam Ediyor</string>
+    <string name="notification_scan_title">NeuralCheck — Tarama Devam Ediyor</string>
+    <string name="notification_scan_progress">Aşama %1$d / 5 — %2$d%%</string>
+    <string name="notification_scan_progress_v2">%1$s — %2$d%%</string>
+    <string name="notification_scan_complete">Tarama Tamamlandı</string>
+    <string name="notification_safety_stop">Güvenlik için tarama durduruldu</string>
+    <string name="notification_sync_title">Veri Senkronizasyonu</string>
+    <string name="notification_sync_progress">Veriler yükleniyor…</string>
+    <string name="notification_sync_complete">Senkronizasyon başarılı</string>
+    <string name="notification_sync_complete_count">%1$d tarama senkronize edildi</string>
+    <string name="notification_sync_failed">Senkronizasyon başarısız</string>
+    <string name="unit_satellite">uydu</string>
+    <string name="unit_meter_short">m</string>
+    <string name="report_image_title">NeuralCheck</string>
+    <string name="report_image_subtitle">Tarama Raporu</string>
+    <string name="report_image_grade_label">Not</string>
+    <string name="report_image_score_label">Puan</string>
+    <string name="comparison_image_title">NeuralCheck — Karşılaştırma</string>
+    <string name="comparison_image_before">Önce: %1$s (%2$.0f)</string>
+    <string name="comparison_image_after">Sonra: %1$s (%2$.0f)</string>
+    <string name="antitamper_cold_start">Şüpheli şekilde düşük başlangıç sıcaklığı</string>
+    <string name="antitamper_recent_reboot">Yakın zamanda yeniden başlatma tespit edildi</string>
+    <string name="antitamper_charger_removed">Şarj cihazı muhtemelen hemen çıkarılmış</string>
+    <string name="antitamper_heavy_usage">Yoğun arka plan kullanımı</string>
+
+    <!-- PreScan dynamic conditions -->
+    <string name="prescan_battery_level_fmt">Pil seviyesi: %%%1$d</string>
+    <string name="prescan_charger_status_fmt">Şarj durumu: %1$s</string>
+    <string name="prescan_charger_connected_lbl">Bağlı</string>
+    <string name="prescan_charger_disconnected_lbl">Bağlı değil</string>
+    <string name="prescan_temperature_fmt">Sıcaklık: %1$s°C</string>
+    <string name="prescan_uptime_fmt">Çalışma süresi: %1$s saat</string>
+    <string name="prescan_start_confirm">Test yaklaşık 8 dakika sürecek. Cihazı kullanmayın. Başlamak istiyor musunuz?</string>
+    <!-- Phase 1.7.D — pre-scan warnings -->
+    <string name="prescan_warn_title">Tarama Öncesi Uyarı</string>
+    <string name="prescan_warn_charger">Doğru sonuçlar için taramayı başlatmadan önce şarj cihazını çıkarın.</string>
+    <string name="prescan_warn_hot_fmt">Pil sıcaklığı %1$s°C — 32°C veya altına inmesini beklemek önerilir.</string>
+    <string name="prescan_warn_hot_blocking_title">Cihaz ısınmış</string>
+    <string name="prescan_warn_hot_blocking_body_fmt">Cihazın pil sıcaklığı %1$s°C, 35°C\'nin üzerinde. Bu durumda yapılan tarama yanıltıcı sonuçlar üretebilir (sahte termal kısıtlama). 5–10 dakika beklemenizi öneririz.</string>
+    <string name="prescan_warn_hot_blocking_wait">Bekle ve yeniden dene</string>
+    <string name="prescan_warn_hot_blocking_proceed">Yine de taramayı yap</string>
+    <string name="prescan_warn_recently_unplugged_fmt">Cihaz şarjdan %1$d dakika önce çıkarıldı. Güvenilir sonuçlar için 15 dakika beklemek önerilir.</string>
+    <string name="btn_proceed_anyway">Yine de devam et</string>
+
+    <!-- Active Scan UI -->
+    <string name="scan_progress_minute_fmt">%1$d. dakika / 8</string>
+    <string name="scan_collecting">Veri toplanıyor...</string>
+
+    <!-- Comparison UI -->
+    <string name="comparison_loading">Karşılaştırma yükleniyor...</string>
+
+    <!-- Technician UI -->
+    <string name="tech_complaint_label">Müşteri şikayeti</string>
+    <string name="tech_what_repaired">Ne onarıldı?</string>
+    <string name="tech_repair_result">Onarım sonucu</string>
+    <string name="tech_save_and_compare">Kaydet ve karşılaştırmayı göster</string>
+    <string name="tech_repair_full">Tamamen onarıldı</string>
+    <string name="tech_repair_partial">Kısmen onarıldı</string>
+    <string name="tech_repair_none">Onarılmadı</string>
+    <string name="tech_cat_battery">Batarya</string>
+    <string name="tech_cat_screen">Ekran</string>
+    <string name="tech_cat_cpu">İşlemci</string>
+    <string name="tech_cat_camera">Kamera</string>
+    <string name="tech_cat_audio">Ses</string>
+    <string name="tech_cat_charging">Şarj</string>
+    <string name="tech_cat_other">Diğer</string>
+
+    <!-- Peer survey -->
+    <string name="peer_submit">Gönder</string>
+
+    <!-- Report UI -->
+    <string name="report_share_opened">Paylaşım açıldı</string>
+    <string name="report_share_failed">Paylaşım başarısız oldu</string>
+    <string name="report_saved_fmt">Kaydedildi: %1$s</string>
+    <string name="report_save_failed">Kaydetme başarısız oldu</string>
+    <string name="report_critical_issues_fmt">Kritik sorunlar (%1$d)</string>
+    <string name="report_tamper_penalty_fmt">Manipülasyon göstergeleri — %1$s puan düşüldü</string>
+    <string name="report_share_subject_fmt">NeuralCheck raporu — Derece %1$s (%%%2$s)</string>
+    <string name="report_share_chooser">Raporu paylaş</string>
+
+    <!-- QR Scanner -->
+    <string name="qr_manual_select">Manuel seçim</string>
+    <string name="qr_permission_denied">QR kodu taramak için kamera izni gereklidir. Lütfen uygulama ayarlarından erişime izin verin.</string>
+    <string name="qr_open_settings">Ayarları aç</string>
+    <string name="qr_linked_success_fmt">Bağlandı — %1$s tarihli tarama</string>
+    <string name="qr_select_hint">Bağlanılacak önceki taramayı seçin</string>
+
+    <!-- Scan permissions gate — proposed Turkish, not yet approved (order
+         2026-09-30 top-level instruction: هذه ترجمة مقترحة تُعرض للموافقة). -->
+    <string name="scan_permission_label_camera">Kamera</string>
+    <string name="scan_permission_label_microphone">Mikrofon</string>
+    <string name="scan_permission_label_location">Hassas Konum</string>
+    <string name="scan_permission_label_phone_state">Telefon Durumu</string>
+    <!-- fieldsVersion 68 (S-18), approved by the user 2026-10-08: "Fiziksel aktivite".
+         Label of the ACTIVITY_RECOGNITION permission in the denied-permissions notice. -->
+    <string name="scan_permission_label_activity_recognition">Fiziksel aktivite</string>
+    <string name="scan_permission_denied_title">Bazı İzinler Reddedildi</string>
+    <string name="scan_permission_denied_intro">Aşağıdaki testler izin reddedildiği için ölçülemeyecek:</string>
+    <string name="scan_permission_open_settings">Ayarları Aç</string>
+    <string name="scan_permission_continue">Devam Et</string>
+
+    <!-- Proposed Turkish, not yet approved. -->
+    <string name="scan_location_service_off_title">Konum Hizmeti Kapalı</string>
+    <string name="scan_location_service_off_body">Cihazda konum hizmeti açılmadan bazı konum (GPS) testleri ölçülemez.</string>
+    <string name="scan_location_service_open_settings">Konum Ayarlarını Aç</string>
+
+    <!-- SEC-08 Play Protect — proposed Turkish, not yet approved. -->
+    <string name="sec08_status_not_read">Play Protect durumu bu sürümde okunmuyor</string>
+
+    <!-- History selection (post-maintenance flow) -->
+    <string name="history_select_title">Bakım öncesi taramayı seçin</string>
+    <string name="history_select_hint">Bakım sonrası taramaya bağlanacak önceki taramayı seçin</string>
+
+    <!-- Power save mode block -->
+    <string name="power_save_dialog_title">Güç tasarrufu modu açık</string>
+    <string name="power_save_dialog_message">Güç tasarrufu modu etkin — lütfen ayarlardan kapatın ve tekrar deneyin</string>
+
+    <!-- Thermal source labels -->
+    <string name="thermal_source_cpu">Ölçüm kaynağı: CPU</string>
+    <string name="thermal_source_gpu">Ölçüm kaynağı: GPU</string>
+    <string name="thermal_source_battery">Ölçüm kaynağı: Pil (tahmini)</string>
+    <string name="thermal_source_none">Bu cihazda sıcaklık okuması yapılamıyor</string>
+    <string name="thermal_t03_informational_note">Not: 60 saniyelik pencere, çoğu cihazda güvenilir bir soğuma hızı ölçümü için yetersiz. Değer yalnızca bilgi amaçlıdır.</string>
+    <string name="c07_constant_freq_note">CPU frekansı yük altında sabit kaldı — sıfır varyans, yöneticinin tepe değerine kilitlenmesinin sonucudur, gerçek bir kararlılık sinyali değildir.</string>
+    <string name="battery_b02_outside_linear_range">Pil kapasitesi tahmini için taramayı %20 ile %90 arasında bir batarya seviyesiyle tekrarlayın.</string>
+
+    <!-- GPU benchmark unavailable note -->
+    <string name="gpu_bench_unavailable">Bu cihazda grafik performansı ölçülemedi</string>
+
+    <!-- PDF Report -->
+    <string name="report_pdf_tagline">Akıllı Tarama — Tam Güven</string>
+    <string name="report_pdf_ai_badge">✦ Yapay Zekâ Analizi</string>
+    <string name="report_pdf_ai_verdict_label">Yapay Zekâ Değerlendirmesi</string>
+    <string name="report_pdf_issues_title">⚠️ Dikkat Edilmesi Gerekenler</string>
+    <string name="report_pdf_root_cause_title">Kök Neden</string>
+    <string name="report_pdf_buyer_advice_title">Kullanıma Göre Tavsiye</string>
+    <string name="report_pdf_predicted_title">🔮 Olası Sorunlar</string>
+    <string name="report_pdf_categories_title">📊 Detaylı Test Sonuçları</string>
+    <string name="report_pdf_battery_indicators_title">🔋 Pil göstergeleri (bilgilendirme — kalibre edilmedi)</string>
+    <string name="report_pdf_battery_soc_both_fmt">Tarama boyunca pil şarj seviyesi: %%%1$d ile %%%2$d arasında</string>
+    <string name="report_pdf_battery_soc_start_only_fmt">Tarama başlangıcında pil şarj seviyesi: %%%1$d (tarama sonu mevcut değil)</string>
+    <string name="report_pdf_battery_soc_end_only_fmt">Tarama sonunda pil şarj seviyesi: %%%1$d (tarama başlangıcı mevcut değil)</string>
+    <string name="report_pdf_indicator_advisory_tag">Bilgilendirme — kalibre edilmedi (eşik değeri henüz belirlenmedi)</string>
+    <string name="report_pdf_indicator_verdict_unknown_fmt">Sonuç: %1$s (bu uygulama için bilinmeyen bir değer)</string>
+    <string name="report_pdf_indicator_status_measured">Ölçüldü</string>
+    <!-- Order 2026-09-25، القرار ٩١ / القرار ٩٤ البند ١ (نصّ مُعتمَد،
+         <home>\neuralcheck-workspace\evidence\translations-approved-2026-09-25.md). -->
+    <string name="report_pdf_indicator_status_abstained">Ölçüm bir sonuç vermedi</string>
+    <string name="report_pdf_indicator_status_unknown_fmt">Ölçüm durumu: %1$s (bu uygulama için bilinmeyen bir değer)</string>
+    <string name="report_pdf_specs_title">📋 Önemli Teknik Ölçümler</string>
+    <string name="report_pdf_tamper_clean">🛡️ Güvenilir tarama — manipülasyon belirtisi yok</string>
+    <string name="report_pdf_tamper_detected">⚠️ Uyarı — olası manipülasyon belirtileri tespit edildi</string>
+    <string name="report_pdf_qr_label">Raporu doğrulamak için QR kodu tarayın</string>
+    <string name="report_pdf_verify_url">neuralcheck.app/verify</string>
+    <string name="report_pdf_scan_id_label">Tarama Kimliği</string>
+    <string name="report_pdf_grade_a">Mükemmel — önemli bir sorun yok</string>
+    <string name="report_pdf_grade_b">İyi — kabul edilebilir performans</string>
+    <string name="report_pdf_grade_c">Orta — belirgin sorunlar var</string>
+    <string name="report_pdf_grade_d">Zayıf — ciddi sorunlar var</string>
+    <string name="report_pdf_share_subject">NeuralCheck Tarama Raporu</string>
+    <string name="report_pdf_copyright">Tüm hakları saklıdır © NeuralCheck</string>
+    <string name="report_pdf_page_fmt">Sayfa %1$d / %2$d</string>
+
+    <!-- PDF auto-detected issues (rule-based fallback) -->
+    <string name="report_pdf_issue_thermal">Isınma sorunu</string>
+    <string name="report_pdf_issue_thermal_desc">İşlemci stres altında performansının önemli bir kısmını kaybediyor (%1$s). Termal macun değişimi veya soğutma sistemi kontrolü gerekebilir.</string>
+    <string name="report_pdf_issue_heat_rise">Hızlı ısınma</string>
+    <string name="report_pdf_issue_heat_rise_desc">Cihaz sıcaklığı anormal hızla yükseliyor (%1$s). Yoğun kullanımda izlenmesi önerilir.</string>
+    <string name="report_pdf_issue_battery">Yüksek pil tüketimi</string>
+    <string name="report_pdf_issue_battery_desc">Stres altında pil boşalma oranı (%1$s) normalden yüksek — pil yıpranmış olabilir.</string>
+    <string name="report_pdf_issue_root">Değiştirilmiş cihaz (Root)</string>
+    <string name="report_pdf_issue_root_desc">Root yetkileri tespit edildi. Güvenliği azaltabilir ve bazı banka/resmi uygulamaların çalışmasını engelleyebilir.</string>
+    <string name="report_pdf_issue_category_fail">%1$s kategorisinde zayıf performans</string>
+    <string name="report_pdf_issue_category_fail_desc">Bu kategori D notu aldı — yukarıdaki detaylı sonuçları inceleyiniz.</string>
+    <string name="report_pdf_issue_storage">Yavaş depolama</string>
+    <string name="report_pdf_issue_storage_desc">Depolama hızı (%1$s) beklenenden düşük — uygulama açılış hızını etkileyebilir.</string>
+    <string name="report_pdf_verdict_generic_a">Günlük kullanım ve çeşitli aktiviteler için uygun — genel performans mükemmel.</string>
+    <string name="report_pdf_verdict_generic_b">Günlük kullanıma uygun, deneyimi etkilemeyen küçük notlar var.</string>
+    <string name="report_pdf_verdict_generic_c">Hafif kullanım için uygun. Oyun veya ağır görevler için önerilmez.</string>
+    <string name="report_pdf_verdict_generic_d">Güvenilir kullanım için bakım gerekir — önemli sorunlar mevcut.</string>
+    <string name="report_pdf_summary_generic">Dahili değerlendirme kurallarına dayalı tarama özeti.</string>
+    <string name="report_pdf_details_generic">Olası sorunlar ve kategori bazlı sonuçlar için aşağıdaki bölümleri inceleyiniz.</string>
+
+    <!-- PDF spec labels -->
+    <string name="report_pdf_spec_read_speed">Okuma Hızı</string>
+    <string name="report_pdf_spec_write_speed">Yazma Hızı</string>
+    <string name="report_pdf_spec_max_temp">Maksimum Sıcaklık</string>
+    <string name="report_pdf_spec_drain_rate">Pil Boşalma Oranı</string>
+    <string name="report_pdf_spec_memory">Mevcut Bellek</string>
+    <string name="report_pdf_spec_storage">Mevcut Depolama</string>
+    <string name="report_pdf_spec_cpu_throttle">İşlemci Kısıtlaması</string>
+    <string name="report_pdf_spec_gpu_fps">Grafik Performansı</string>
+
+    <!-- Login / Register -->
+    <string name="login_tab">Giriş Yap</string>
+    <string name="register_tab">Yeni Hesap</string>
+    <string name="login_name">İsim</string>
+    <string name="login_phone_optional">Telefon (isteğe bağlı)</string>
+    <string name="login_email">E-posta</string>
+    <string name="login_password">Şifre</string>
+    <string name="login_credential">Şifre</string>
+    <string name="login_button">Giriş Yap</string>
+    <string name="register_button">Yeni Hesap Oluştur</string>
+    <string name="login_forgot_password">Şifremi unuttum?</string>
+    <string name="login_password_reset_sent">Sıfırlama bağlantısı e-postanıza gönderildi</string>
+    <string name="login_password_reset_email_required">Önce e-posta adresinizi girin</string>
+    <string name="login_or">veya</string>
+    <string name="login_google">Google ile Giriş</string>
+    <string name="login_google_not_configured">Google ile giriş yapılandırılmadı</string>
+    <string name="login_google_failed">Google ile giriş başarısız</string>
+    <string name="login_error_email_in_use">Bu e-posta zaten kayıtlı</string>
+    <string name="login_error_wrong_password">Şifre yanlış</string>
+    <string name="login_error_weak_password">Şifre çok zayıf — en az 6 karakter kullanın</string>
+    <string name="login_error_user_not_found">Bu e-posta ile kayıtlı hesap yok</string>
+    <string name="login_error_network">İnternet bağlantısı yok</string>
+    <string name="login_error_invalid_email">Geçersiz e-posta biçimi</string>
+    <string name="logout">Çıkış Yap</string>
+    <string name="logout_confirm">Çıkış yapmak istiyor musunuz?</string>
+    <string name="subscription_no_scans">Tarama hakkınız kalmadı. Lütfen abonelik satın alın.</string>
+
+    <!-- ========== Account / Profile Screen (launch flavor only) ========== -->
+    <string name="profile_title">Hesabım</string>
+    <string name="profile_guest_name">Ziyaretçi</string>
+    <string name="profile_guest_email">E-posta yok</string>
+    <string name="profile_stat_plan">Mevcut Plan</string>
+    <string name="profile_stat_scans_left">Kalan Tarama</string>
+    <string name="profile_stat_days_left">Kalan Gün</string>
+    <string name="profile_plan_none">Abonelik yok</string>
+    <string name="profile_plan_single">Tek Tarama</string>
+    <string name="profile_plan_shop_basic">Mağaza — Temel</string>
+    <string name="profile_plan_shop_pro">Mağaza — Profesyonel</string>
+    <string name="profile_action_upgrade">Aboneliği Yükselt</string>
+    <string name="profile_action_upgrade_desc">Yeni plan satın al veya aboneliğini yenile</string>
+    <string name="profile_action_payment_history">Ödeme Geçmişi</string>
+    <string name="profile_action_payment_history_desc">Önceki istekleriniz ve durumları</string>
+    <string name="profile_action_scan_history">Bulut Tarama Geçmişim</string>
+    <string name="profile_action_scan_history_desc">Bulutta kayıtlı tüm taramaların</string>
+
+    <!-- ========== Payment History Screen ========== -->
+    <string name="payment_history_title">Ödeme Geçmişi</string>
+    <string name="payment_history_empty_title">Henüz ödeme yok</string>
+    <string name="payment_history_empty_body">İlk ödemenizden sonra istekleriniz burada listelenecek.</string>
+    <string name="payment_history_error">Ödemeler yüklenemedi. Lütfen tekrar deneyin.</string>
+    <string name="payment_history_retry">Yeniden dene</string>
+    <string name="payment_history_status_pending">⏳ İnceleniyor</string>
+    <string name="payment_history_status_confirmed">✅ Onaylandı</string>
+    <string name="payment_history_status_rejected">❌ Reddedildi</string>
+    <string name="payment_history_reason_label">Red nedeni: %1$s</string>
+    <string name="payment_history_reference_label">Dekont no: %1$s</string>
+    <string name="payment_history_amount_syp">%1$s SYP</string>
+    <string name="profile_action_language">Dil</string>
+    <string name="profile_action_about">Uygulama Hakkında</string>
+    <string name="profile_action_about_desc">Sürüm ve yasal bilgiler</string>
+    <string name="profile_action_logout">Çıkış Yap</string>
+    <string name="profile_about_title">NeuralCheck Hakkında</string>
+    <string name="profile_about_body">NeuralCheck — ikinci el telefonlar için yapay zekâ destekli tanılama uygulaması. Sürüm %1$s</string>
+    <string name="profile_loading_subscription">Abonelik bilgileri yükleniyor…</string>
+    <string name="profile_no_expiry">—</string>
+
+    <!-- ========== Subscription Screen ========== -->
+    <string name="subscription_title">Abonelikler</string>
+    <string name="subscription_subtitle">Size uygun planı seçin</string>
+    <string name="subscription_popular_badge">En Popüler</string>
+    <string name="subscription_plan_single_name">Tek Tarama</string>
+    <string name="subscription_plan_single_price">$0.50</string>
+    <string name="subscription_plan_single_period">Tek seferlik</string>
+    <string name="subscription_plan_single_scans">Tek kapsamlı tarama</string>
+    <string name="subscription_plan_single_feature_1">Tam AI analizi</string>
+    <string name="subscription_plan_single_feature_2">İndirilebilir PDF rapor</string>
+    <string name="subscription_plan_single_feature_3">Doğrulama QR kodu</string>
+    <string name="subscription_plan_single_feature_4">30 gün geçerli</string>
+
+    <string name="subscription_plan_shop_basic_name">Dükkan Temel</string>
+    <string name="subscription_plan_shop_basic_price">$10/ay</string>
+    <string name="subscription_plan_shop_basic_period">Aylık</string>
+    <string name="subscription_plan_shop_basic_scans">Küçük dükkanlar için</string>
+    <string name="subscription_plan_shop_basic_feature_1">Aylık 50 tarama</string>
+    <string name="subscription_plan_shop_basic_feature_2">Tam rapor + PDF + QR</string>
+    <string name="subscription_plan_shop_basic_feature_3">Bulut tarama geçmişi</string>
+    <string name="subscription_plan_shop_basic_feature_4">Web sitesinde dükkan sayfası</string>
+    <string name="subscription_plan_shop_basic_feature_5">Kodla uzaktan tarama</string>
+
+    <string name="subscription_plan_shop_pro_name">Dükkan Pro</string>
+    <string name="subscription_plan_shop_pro_price">$20/ay</string>
+    <string name="subscription_plan_shop_pro_period">Aylık</string>
+    <string name="subscription_plan_shop_pro_scans">Büyük dükkanlar ve bayiler için</string>
+    <string name="subscription_plan_shop_pro_feature_1">Aylık 150 tarama</string>
+    <string name="subscription_plan_shop_pro_feature_2">Tüm Temel özellikleri</string>
+    <string name="subscription_plan_shop_pro_feature_3">Cihaz ve fiyat yönetimi</string>
+    <string name="subscription_plan_shop_pro_feature_4">Raporlarda dükkan logosu</string>
+    <string name="subscription_plan_shop_pro_feature_5">Aylık istatistikler</string>
+    <string name="subscription_plan_shop_pro_feature_6">Öncelikli teknik destek</string>
+
+    <!-- Free trial — single complimentary scan -->
+    <string name="free_trial_banner">Uygulamayı denemek için 1 ücretsiz taramanız var</string>
+    <string name="free_trial_used">Ücretsiz tarama bitti — devam etmek için abone olun</string>
+    <string name="free_trial_report_banner">Bu deneme taramasıdır — PDF ve QR için abone olun</string>
+    <string name="free_trial_no_pdf">Ücretsiz taramada PDF mevcut değil</string>
+    <string name="subscription_select_button">Bu planı seç</string>
+    <string name="subscription_btn_renew">Yenile</string>
+    <string name="subscription_btn_upgrade">Yükselt</string>
+    <string name="subscription_btn_downgrade">Plan düşür</string>
+    <string name="subscription_btn_buy_extra">Ek tarama satın al</string>
+    <string name="subscription_current_badge">✓ Mevcut planınız</string>
+
+    <!-- ========== Payment Screen (ShamCash) ========== -->
+    <string name="payment_title">Ödemeyi Tamamla</string>
+    <string name="payment_plan_label">Seçilen Plan</string>
+    <string name="payment_amount_label">Tutar</string>
+    <string name="payment_method_label">Ödeme Yöntemi</string>
+    <string name="payment_method_value">ShamCash (Şam Kaş)</string>
+    <string name="payment_instructions_title">Transfer Talimatları</string>
+    <string name="payment_instructions_body">Tutarı aşağıdaki numaraya ShamCash üzerinden gönderin, sonra makbuz numarasını (Reference) kopyalayıp sayfanın altındaki alana yapıştırın.</string>
+    <string name="payment_transfer_to_label">Transfer Numarası</string>
+    <string name="payment_copy">Kopyala</string>
+    <string name="payment_copied">Numara kopyalandı</string>
+    <string name="payment_reference_label">Makbuz Numarası (Reference)</string>
+    <string name="payment_reference_hint">Makbuz numarasını buraya yapıştırın</string>
+    <string name="payment_confirm_button">Ödemeyi Onayla</string>
+    <string name="payment_success_title">Talebiniz alındı</string>
+    <string name="payment_success_body">Makbuzu inceleyip aboneliğinizi dakikalar içinde etkinleştireceğiz. Etkinleştirildiğinde bildirim alacaksınız.</string>
+    <string name="payment_success_done">Hesabıma Dön</string>
+    <string name="payment_error_empty_reference">Lütfen makbuz numarasını girin</string>
+    <string name="payment_error_generic">Ödeme talebi gönderilemedi — tekrar deneyin</string>
+
+    <!-- ========== Scan History (cloud) Screen ========== -->
+    <string name="scan_history_title">Tarama Geçmişim</string>
+    <string name="scan_history_empty">Bulutta henüz tarama yok</string>
+    <string name="scan_history_loading">Taramalar yükleniyor…</string>
+    <string name="scan_history_error_generic">Geçmiş yüklenemedi — bağlantınızı kontrol edin</string>
+    <string name="scan_history_grade_label">Derece</string>
+    <string name="scan_history_score_label">Puan</string>
+
+    <!-- ========== In-app Notifications ========== -->
+    <string name="notification_channel_account">Hesap ve Ödemeler</string>
+    <string name="notification_payment_submitted_title">Ödeme talebi alındı</string>
+    <string name="notification_payment_submitted_body">Makbuzu inceleyip aboneliğinizi yakında etkinleştireceğiz</string>
+    <string name="in_app_payment_submitted">Makbuz alındı — inceleniyor</string>
+
+    <!-- ========== FCM Push ========== -->
+    <string name="notification_channel_push">Anlık bildirimler</string>
+    <string name="notification_push_default_title">NeuralCheck</string>
+    <string name="notification_push_default_body">Yeni bir güncellemeniz var</string>
+
+    <!-- ========== Cross-device scan session ========== -->
+    <string name="scan_other_device">Başka Cihaz Tara</string>
+    <string name="generate_session_title">Başka Cihaz Tara</string>
+    <string name="session_creating">Oturum oluşturuluyor…</string>
+    <string name="session_share_code">veya kodu paylaşın:</string>
+    <string name="session_copy">Kopyala</string>
+    <string name="session_valid_for">%d dakika geçerli</string>
+    <string name="session_waiting">Cihaz bağlantısı bekleniyor…</string>
+    <string name="session_joined">Cihaz bağlandı! Taranıyor…</string>
+    <string name="session_scanning">Taranıyor…</string>
+    <string name="session_completed">Tarama tamamlandı</string>
+    <string name="session_view_report">Raporu Görüntüle</string>
+    <string name="session_expired">Kodun süresi doldu</string>
+    <string name="session_new_code">Yeni Kod Oluştur</string>
+    <string name="session_create_new_btn">+ Başka cihaz için kod</string>
+    <string name="session_create_new_hint">Önceki kod süresi dolana kadar geçerli kalır</string>
+    <string name="session_retry">Tekrar Dene</string>
+    <string name="session_error_generic">Oturum oluşturulamadı</string>
+
+    <string name="join_session_title">Tarama Kodunu Girin</string>
+    <string name="join_session_prompt">Mağaza sahibinden ekranındaki kodu isteyin.</string>
+    <string name="join_session_label">Tarama Kodu</string>
+    <string name="join_session_placeholder">NC-0000</string>
+    <string name="join_session_or_scan">veya QR kodu tarayın</string>
+    <string name="join_session_open_camera">Kamerayı Aç</string>
+    <string name="join_session_start">Taramayı Başlat</string>
+    <string name="join_session_invalid">Kod geçersiz veya süresi dolmuş</string>
+    <!-- Batch 2, item 2 (order 2026-10-15). The user approved every text below, verbatim (decision 90 for 1-6; the order of 2026-10-10 for the four codes): nothing here is awaiting approval. -->
+    <string name="session_cancel_btn">Oturumu iptal et</string>
+    <string name="session_cancel_confirm_title">Bu oturum iptal edilsin mi?</string>
+    <string name="session_cancel_confirm_text">İptalden sonra müşteri bu kodu kullanamaz; devam eden taraması da durur.</string>
+    <string name="session_cancelled_state">Oturum iptal edildi</string>
+    <!-- Batch 3, item 2 (user decision 5, 2026-10-16): the owner sees this when the customer left the session (cancelReason left_by_customer). Approved verbatim in both languages (decision 90). cancelled_by_owner, consent_declined, and an absent or unknown cancelReason keep session_cancelled_state. -->
+    <string name="session_customer_left_state">Müşteri oturumdan ayrıldı</string>
+    <string name="session_join_completed">Bu oturumun taraması tamamlandı. Teknisyenden yeni bir kod isteyin.</string>
+    <string name="session_leave_btn">Oturumdan ayrıl</string>
+    <string name="session_leave_confirm_title">Oturumdan ayrılmak istiyor musunuz?</string>
+    <string name="session_leave_confirm_text">Bu oturum iptal edilecek; daha sonra tarama için teknisyenden yeni bir kod istemeniz gerekir.</string>
+    <string name="session_join_already_joined">Bu oturuma daha önce katılındı. Yeni bir tarama için teknisyenden yeni bir kod isteyin.</string>
+    <string name="session_join_cancelled">Bu oturum iptal edildi. Teknisyenden yeni bir kod isteyin.</string>
+    <string name="session_cancel_completed">Bu oturumun taraması tamamlandı, iptal edilemez.</string>
+    <string name="session_cancel_analysis_in_flight">Analiz sürüyor. Bittikten sonra iptal etmeyi deneyin.</string>
+    <!-- A-SUB wave 1 (order 2026-10-17; user decisions 2, 3 and 7, approved verbatim in both languages - decision 90): see values/strings.xml. -->
+    <string name="shop_subscription_expired">Mağaza aboneliği sona erdi. Lütfen yönetimle iletişime geçin.</string>
+    <string name="subscription_expired">Aboneliğiniz sona erdi. Lütfen yenileyin.</string>
+    <string name="shop_no_credit">Mağazanın tarama hakkı kalmadı. Lütfen yönetimle iletişime geçin.</string>
+    <string name="free_device_used">Bu cihaz için ücretsiz tarama daha önce kullanıldı.</string>
+    <!-- 2026-10-20 (order app-engineer-5; user decision of that date: the two Turkish texts approved): see values/strings.xml. -->
+    <string name="scan_report_not_available">İşlem tamamlanamadı</string>
+    <string name="shop_plan_required">Bu özellik mevcut paketinizde kullanılamıyor</string>
+
+    <string name="login_have_code">Tarama kodum var</string>
+    <string name="in_app_welcome_new_user">NeuralCheck\'e hoş geldiniz! 🎉</string>
+
+    <!-- ========== Promo code ========== -->
+    <string name="promo_action_title">Promosyon kodunuz var mı?</string>
+    <string name="promo_action_subtitle">Kodunuzu kullanarak teklifi etkinleştirin</string>
+    <string name="promo_dialog_title">Kodu girin</string>
+    <string name="promo_code_label">Promosyon kodu</string>
+    <string name="promo_btn_activate">Etkinleştir</string>
+    <string name="promo_success_message">Teklif etkinleştirildi! 🎉</string>
+    <string name="promo_error_invalid">Geçersiz kod</string>
+    <string name="promo_error_expired">Bu teklif sona erdi</string>
+    <string name="promo_error_already_used">Bu kodu zaten kullandınız</string>
+    <string name="promo_error_generic">Kod etkinleştirilemedi</string>
+
+    <!-- ========== Shop Setup ========== -->
+    <string name="shop_setup_action">Dükkanımı Ayarla 🏪</string>
+    <string name="shop_setup_action_desc">Dükkan logosu ve iletişim bilgileri</string>
+    <string name="shop_setup_title">Dükkanımı Ayarla</string>
+    <string name="shop_setup_pick_logo">Logo Seç</string>
+    <string name="shop_setup_change_logo">Logoyu Değiştir</string>
+    <string name="shop_setup_name_label">Dükkan Adı</string>
+    <string name="shop_setup_name_required">Dükkan adı zorunludur</string>
+    <string name="shop_setup_description_label">Kısa Açıklama</string>
+    <string name="shop_setup_description_hint">En fazla 200 karakter</string>
+    <string name="shop_setup_city_label">Şehir</string>
+    <string name="shop_setup_city_hint">Örn: Halep, İstanbul</string>
+    <string name="shop_setup_phone_label">İletişim</string>
+    <string name="shop_setup_address_label">Adres</string>
+    <string name="shop_setup_save">Kaydet</string>
+    <string name="shop_setup_save_success">Dükkan bilgileri kaydedildi</string>
+    <string name="shop_setup_save_failed">Dükkan bilgileri kaydedilemedi</string>
+    <string name="shop_setup_slug_label">Mağaza linki (İngilizce)</string>
+    <string name="shop_setup_slug_placeholder">mobile-house-aleppo</string>
+    <string name="shop_setup_slug_url_preview_fmt">neuralcheck.net/shop/%1$s</string>
+    <string name="shop_setup_slug_helper">Boş bırakırsanız mağaza adından otomatik oluşturulur</string>
+    <string name="shop_setup_slug_invalid">Yalnızca İngilizce harf, rakam ve tire (3-30 karakter, başında veya sonunda tire olamaz)</string>
+    <string name="shop_setup_slug_taken">Bu link alınmış, başka birini seçin</string>
+
+    <!-- ========== Home (launch) ========== -->
+    <string name="home_welcome_fmt">Merhaba %s! 👋</string>
+    <string name="home_scans_left_fmt">%d tarama hakkınız kaldı</string>
+    <string name="home_view_report">Raporu Görüntüle</string>
+    <string name="home_total_scans">Toplam Tarama</string>
+    <string name="home_this_month">Bu Ay</string>
+    <string name="home_tip_battery">Taramadan önce bataryanın %%30\'un üzerinde olduğundan emin olun</string>
+    <string name="home_tip_duration">Tarama 8 dakika sürer — uygulamayı kapatmayın</string>
+    <string name="home_tip_share">Güven oluşturmak için raporu alıcıyla paylaşın</string>
+    <string name="home_start_scan">Taramayı Başlat</string>
+    <string name="home_guest_name">Misafir</string>
+    <string name="nav_profile">Hesabım</string>
+
+    <!-- ========== Short plan names (Profile stat chip) ========== -->
+    <string name="plan_short_single">Tek</string>
+    <string name="plan_short_shop_basic">Temel</string>
+    <string name="plan_short_shop_pro">Pro</string>
+    <string name="plan_short_none">—</string>
+
+    <!-- ========== Login hero ========== -->
+    <string name="login_description">Yapay zekâ ile kapsamlı kullanılmış telefon taraması</string>
+
+    <!-- ========== Report CTA ========== -->
+    <string name="report_new_scan">Yeni Tarama</string>
+
+    <!-- ========== Subscription ========== -->
+    <string name="subscription_save_fmt">%%%d tasarruf</string>
+
+    <!-- ========== Session countdown + waiting ========== -->
+    <string name="session_time_remaining_fmt">⏳ Kalan süre: %s</string>
+    <string name="session_waiting_dots">Bağlantı bekleniyor</string>
+
+    <!-- ========== ActiveScan tips ========== -->
+    <string name="scan_tip_no_close">Tarama sırasında uygulamayı kapatmayın</string>
+    <string name="scan_tip_no_charger">Cihazın şarjda olmadığından emin olun</string>
+    <string name="scan_tip_flat">Daha doğru sonuçlar için cihazı düz bir yüzeye koyun</string>
+    <string name="scan_tip_ai">Sonuçlar yapay zekâ ile analiz edilecek</string>
+    <!-- fieldsVersion 69 (SN-04): proposed Turkish, pending approval (decision 90). -->
+    <string name="scan_cover_light_sensor_prompt">Ekranın üst kısmını elinizle kapatın</string>
+
+    <!-- ========== ActiveScan phase names (numeric keys for the new copy) ========== -->
+    <string name="scan_phase_1">Temel performans ölçümü</string>
+    <string name="scan_phase_2">Depolama testi</string>
+    <string name="scan_phase_3">Yoğun stres testi</string>
+    <string name="scan_phase_4">Yük azaltma</string>
+    <string name="scan_phase_5">Soğuma ve toparlanma ölçümü</string>
+
+    <!-- ========== AI loading overlay (post-scan) ========== -->
+    <!-- A20: real analysis stages (replace the untethered carousel) -->
+    <string name="ai_stage_reading">Tarama ölçümleri okunuyor…</string>
+    <string name="ai_stage_preparing">Veriler gönderime hazırlanıyor…</string>
+    <string name="ai_stage_checking">Önceki analiz kontrol ediliyor…</string>
+    <string name="ai_stage_analysing">Yapay zekâ cihazınızı analiz ediyor…</string>
+    <string name="ai_stage_building">Rapor hazırlanıyor…</string>
+    <string name="ai_stage_hint">Analiz genellikle 2-3 dakika sürer. Uygulamayı kapatmayın.</string>
+    <string name="ai_stage_elapsed_fmt">Geçen süre %1$d:%2$02d</string>
+    <string name="ai_loading_1">İşlemci verileri analiz ediliyor…</string>
+    <string name="ai_loading_2">Batarya davranışı inceleniyor…</string>
+    <string name="ai_loading_3">Sıcaklık değerlendiriliyor…</string>
+    <string name="ai_loading_4">Güvenlik kontrol ediliyor…</string>
+    <string name="ai_loading_5">Nihai rapor hazırlanıyor…</string>
+
+    <!-- M-17 / M-18 — kamera önizleme diyalogları -->
+    <string name="manual_camera_preview_title_rear">Arka Kamera Önizlemesi</string>
+    <string name="manual_camera_preview_title_front">Ön Kamera Önizlemesi</string>
+    <string name="manual_camera_preview_hint">Yukarıdaki görüntüye bakın. Net ve gürültüsüz mü görünüyor?</string>
+    <string name="manual_camera_open_btn">Kamerayı Aç</string>
+    <string name="manual_camera_close_btn">Kamerayı Kapat</string>
+    <string name="manual_camera_capture_btn">Fotoğraf Çek</string>
+    <string name="manual_camera_clear">Net</string>
+    <string name="manual_camera_blurry">Bulanık</string>
+    <string name="manual_camera_open_failed">Kamera açılamadı</string>
+    <string name="manual_camera_permission_required">Kamera için izin gerekli</string>
+
+    <!-- M-19 — flaş / fener diyaloğu -->
+    <string name="manual_flash_title">Flaş Testi</string>
+    <string name="manual_flash_torch_on">Flaşı Aç</string>
+    <string name="manual_flash_torch_off">Flaşı Kapat</string>
+    <string name="manual_flash_open_failed">Flaş çalıştırılamadı — başka bir uygulama tarafından kullanılıyor olabilir</string>
+    <string name="manual_flash_unsupported">Bu cihazda flaş yok</string>
+
+    <!-- M-20 / M-21 — biyometrik diyaloglar -->
+    <string name="manual_biometric_fp_title">Parmak İzi Testi</string>
+    <string name="manual_biometric_fp_subtitle">Parmağınızı sensöre yerleştirin</string>
+    <string name="manual_biometric_face_title">Yüz Tanıma Testi</string>
+    <string name="manual_biometric_face_subtitle">Ön kamerayı yüzünüze doğrultun</string>
+    <string name="manual_face_question">Bu cihazda yüz tanıma çalışıyor mu?</string>
+    <string name="manual_biometric_try_btn">Şimdi Dene</string>
+    <string name="manual_biometric_cancel">İptal</string>
+    <string name="manual_biometric_no_fp_enrolled">Cihazda kayıtlı parmak izi yok</string>
+    <string name="manual_biometric_no_face_enrolled">Cihazda kayıtlı yüz yok</string>
+    <string name="manual_biometric_face_unsupported">Bu cihazda yüz tanıma desteklenmiyor</string>
+    <string name="manual_biometric_no_hardware">Parmak izi donanımı yok</string>
+    <string name="manual_biometric_failed">Doğrulama başarısız</string>
+
+    <!-- M-22 — titreşim diyaloğu -->
+    <string name="manual_vibration_title">Titreşim Testi</string>
+    <string name="manual_vibration_try_btn">Titreşimi Dene</string>
+    <string name="manual_vibration_unsupported">Titreşim donanımı yok</string>
+    <string name="manual_vibration_open_failed">Titreşim çalıştırılamadı</string>
+
+    <!-- AI-authored extras: root-cause + per-persona buyer advice. -->
+    <string name="root_cause_title">Temel Neden</string>
+    <string name="buyer_advice_title">Kullanıma Göre Tavsiye</string>
+    <string name="advice_casual">Günlük Kullanım</string>
+    <string name="advice_gamer">Oyun</string>
+    <string name="advice_photographer">Fotoğrafçılık</string>
+    <string name="ai_model_credit_fmt">%1$s tarafından analiz edildi</string>
+
+    <!-- ========== DB destructive-migration one-time notice (order 2026-09-24، القرار ٨٠ البند ١ / القرار ٨٢) ========== -->
+    <string name="destructive_migration_alert_title">Uyarı</string>
+    <string name="destructive_migration_alert_body">Güncellemeden sonra bu cihazdaki rapor geçmişi sıfırlandı. Raporların kendisi sunucuda kayıtlıdır.</string>
+
+    <!-- ========== Maintenance before/after cycle (Turkish: approved by Hasan before a speaker review - see TR-TEXTS-NEED-SPEAKER-REVIEW-2026-10-22.md): the purpose chips, the five fault types, the pair list (rows ص1-ص21 of TEXTS-FOR-APPROVAL-MAINTENANCE-PAIRS-2026-10-22.md; approved by Hasan 2026-10-22, written verbatim; ص12 and ص13 are the existing qr_linked_success_fmt and btn_confirm) ========== -->
+    <string name="purpose_chips_title">Tarama amacı</string>
+    <string name="purpose_chip_normal">Normal</string>
+    <string name="purpose_chip_maintenance_before">Bakım öncesi</string>
+    <string name="purpose_chip_maintenance_after">Bakım sonrası</string>
+    <string name="purpose_chips_locked_note">Telefon bağlandıktan sonra amaç değiştirilemez</string>
+    <string name="defect_type_battery">Batarya — batarya değişimi</string>
+    <string name="defect_type_charging_port">Şarj girişi — şarj portu veya şarj flex kablosu</string>
+    <string name="defect_type_thermal">Isınma ve soğutma — temizlik veya termal macun</string>
+    <string name="defect_type_motherboard">Anakart — rastgele yeniden başlatma, ısınma veya ağ</string>
+    <string name="defect_type_software">Yazılım — flaş, fabrika ayarlarına sıfırlama veya sistem güncellemesi</string>
+    <string name="defect_type_title">Arıza türü</string>
+    <string name="defect_type_hint">Onaracağınız arızayı seçin; bulamazsanız «Normal» tarama yapın</string>
+    <string name="defect_type_title_after">Onarılan arıza türü</string>
+    <string name="defect_type_hint_after">Onardığınız arızayı seçin, ardından bu telefonun «Bakım öncesi» taramasını seçin</string>
+    <string name="pair_pick_prompt">Bu telefon için «Bakım öncesi» taramasını seçin</string>
+    <string name="pair_row_fmt">%1$s · %2$s · saat %3$s</string>
+    <string name="pair_empty_fmt">Son %1$d saatte bu türde açık «Bakım öncesi» taraması yok</string>
+    <string name="pair_no_device_name">Ticari adı olmayan cihaz</string>
+    <string name="pair_failure_not_available">Bu tarama bağlanamaz</string>
+    <string name="pair_failure_already_paired">Bu tarama daha önce bağlanmış</string>
+    <string name="pair_failure_expired">Bu taramanın süresi doldu, bağlanamaz</string>
+    <string name="pair_failure_wrong_defect_type">Bu taramanın arıza türü seçtiğinizden farklı</string>
+    <string name="pair_failure_general">Bağlantı kurulamadı. Tekrar deneyin</string>
+    <string name="pair_failure_not_enabled">Bakım özelliği hesabınız için etkin değil</string>
+    <string name="purpose_part_not_enabled">Tarama amacı hesabınız için etkin değil</string>
+    <!-- BEGIN technician-form + repeat-scan + scan-window texts: Hasan delegated the pending texts on 2026-10-22 (his words: approve the best-judged of every pending text and prepare for delivery); reviewed 2026-10-23, `scratchpad/app-delegated/texts-review.md`. Written verbatim from the table; the technician's texts are Arabic only (no values-tr entry, on purpose); the scanned phone's have both languages (the Turkish is proposed, and needs a speaker). -->
+    <!-- scanned phone (seen by the customer): the in-session sentence, the cooling screen, the battery window (ar + tr) -->
+    <string name="tf_scan_in_progress">Test sürüyor. Telefonu bırakın ve dokunmayın.</string>
+    <string name="rp_wait_title">Tekrar testi: telefonun soğumasını bekleyin</string>
+    <string name="rp_ready">Hazır — tekrar testini başlat</string>
+    <string name="rp_not_cooled_warning">Telefon henüz soğumadı — test sıcak tekrar olarak gönderilir</string>
+    <string name="rp_start_anyway">Yine de başlat</string>
+    <string name="rp_wait">Bekle</string>
+    <string name="rp_temperature_unreadable">Pil sıcaklığı okunamadı</string>
+    <string name="rp_refused_parent_joiner_unknown">Tekrar testi başlatılamadı: bu oturumdaki test edilen telefon belirlenemiyor.</string>
+    <string name="rp_refused_already_started">Bu telefon için tekrar testi daha önce başlatıldı.</string>
+    <string name="rp_refused_not_selected">Bu telefon tekrar testi için seçilmedi.</string>
+    <string name="rp_refused_session_not_completed">İlk test henüz tamamlanmadı.</string>
+    <string name="rp_refused_parent_owner_unknown">Tekrar testi başlatılamadı: oturum sahibi belirlenemiyor.</string>
+    <string name="rp_refused_record_absent">Bu test için tekrar testi kaydı bulunmuyor.</string>
+    <string name="rp_refused_state_unknown">Tekrar testinin durumu okunamadı.</string>
+    <string name="rp_start_not_sent">Tekrar testi başlamadı; bağlantıyı kontrol edip tekrar deneyin</string>
+    <string name="scan_error_battery_window_fmt">Taramayı başlatmak için şarj %%%1$d ile %%%2$d arasında olmalı — şu an %%%3$d</string>
+    <!-- END technician-form + repeat-scan + scan-window texts -->
+    <!-- BEGIN consent texts, version 2 (2026-10-23, Hasan's delegation of 2026-10-22; reviewed in texts-review.md). Both languages are written: the customer sees this screen. The Turkish is proposed and needs a speaker. FINAL LEGAL WORDING: pending Hasan, the KVKK lawyer later. -->
+    <string name="consent_title">Test başlamadan önce</string>
+    <string name="consent_measures">Bu test telefonun donanımını ölçer: işlemci, pil, sıcaklık, ekran ve sensörler. Cihaz kimliğinin kendisi yerine, cihaz kimliklerinden hesaplanan bir kod kullanır.</string>
+    <string name="consent_does_not_read">Test fotoğraflarınızı, mesajlarınızı, dosyalarınızı veya hesaplarınızı okumaz; konumunuzu kaydetmeden uydu sinyali alımını test eder.</string>
+    <string name="consent_microphone">Mikrofon testi, size dinletmek için kısa bir kayıt yapar, ardından kaydı telefondan siler ve göndermez.</string>
+    <string name="consent_accept">Kabul ediyorum, testi başlat</string>
+    <string name="consent_decline">Kabul etmiyorum</string>
+    <string name="consent_record_failed">Onay kaydedilemedi. Tekrar deneyin.</string>
+    <string name="consent_record_session_not_scanning">Onay kaydedilemedi çünkü bu oturumda artık test yapılmıyor.</string>
+    <string name="consent_record_stored_unreadable">Bu oturum için onay kaydedilemedi. Teknisyenden yeni bir oturum açmasını isteyin.</string>
+    <!-- END consent texts -->
+</resources>

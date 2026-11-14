@@ -1,0 +1,438 @@
+{
+  "B-01": {
+    "ar": "صحة البطارية",
+    "tr": "Pil Sağlığı (BatteryManager)"
+  },
+  "B-02": {
+    "ar": "سعة البطارية المصممة",
+    "tr": "Tasarım Kapasitesi"
+  },
+  "B-03": {
+    "ar": "حرارة البطارية",
+    "tr": "Pil Sıcaklığı"
+  },
+  "B-04": {
+    "ar": "جهد البطارية",
+    "tr": "Pil Voltajı"
+  },
+  "B-05": {
+    "ar": "تيار الشحن/التفريغ",
+    "tr": "Şarj/Deşarj Akımı"
+  },
+  "B-06": {
+    "ar": "معدل الاستنزاف",
+    "tr": "Tahliye Oranı"
+  },
+  "B-07": {
+    "ar": "تقنية الشحن",
+    "tr": "Şarj Teknolojisi"
+  },
+  "B-08": {
+    "ar": "دورات الشحن",
+    "tr": "Şarj Döngüsü"
+  },
+  "C-01": {
+    "ar": "عدد الأنوية",
+    "tr": "Çekirdek Sayısı"
+  },
+  "C-02": {
+    "ar": "التردد الأقصى",
+    "tr": "Maksimum Frekans"
+  },
+  "C-03": {
+    "ar": "التردد الحالي عند الراحة",
+    "tr": "Boşta CPU Frekansı"
+  },
+  "C-04": {
+    "ar": "أداء المعالج",
+    "tr": "CPU Performansı"
+  },
+  "C-05": {
+    "ar": "طراز المعالج",
+    "tr": "İşlemci Modeli"
+  },
+  "C-06": {
+    "ar": "الاختناق الحراري",
+    "tr": "Termal Kısıtlama"
+  },
+  "C-07": {
+    "ar": "استقرار الأداء",
+    "tr": "Performans İstikrarı"
+  },
+  "G-01": {
+    "ar": "معالج الرسومات",
+    "tr": "GPU"
+  },
+  "G-02": {
+    "ar": "دعم Vulkan",
+    "tr": "Vulkan Desteği"
+  },
+  "G-03": {
+    "ar": "انخفاض FPS",
+    "tr": "FPS Düşüşü"
+  },
+  "G-04": {
+    "ar": "اختناق GPU",
+    "tr": "GPU Kısıtlaması"
+  },
+  "G-05": {
+    "ar": "أدنى FPS مستدام",
+    "tr": "En düşük FPS"
+  },
+  "S-01": {
+    "ar": "السعة الكلية",
+    "tr": "Toplam Kapasite"
+  },
+  "S-02": {
+    "ar": "المساحة المتاحة",
+    "tr": "Mevcut Alan"
+  },
+  "S-03": {
+    "ar": "سرعة الكتابة",
+    "tr": "Yazma Hızı"
+  },
+  "S-04": {
+    "ar": "سرعة القراءة",
+    "tr": "Okuma Hızı"
+  },
+  "S-05": {
+    "ar": "قراءة عشوائية",
+    "tr": "Rastgele Okuma"
+  },
+  "S-06": {
+    "ar": "كتابة عشوائية",
+    "tr": "Rastgele Yazma"
+  },
+  "T-01": {
+    "ar": "أقصى حرارة",
+    "tr": "Maksimum Sıcaklık"
+  },
+  "T-02": {
+    "ar": "معدل الارتفاع",
+    "tr": "Yükseliş Hızı"
+  },
+  "T-03": {
+    "ar": "معدل التبريد",
+    "tr": "Soğutma Hızı"
+  },
+  "T-04": {
+    "ar": "مناطق الحرارة",
+    "tr": "Termal Bölgeler"
+  },
+  "R-01": {
+    "ar": "إجمالي الذاكرة",
+    "tr": "Toplam Bellek"
+  },
+  "R-02": {
+    "ar": "الذاكرة المتاحة",
+    "tr": "Mevcut Bellek"
+  },
+  "R-03": {
+    "ar": "حالة الذاكرة",
+    "tr": "Bellek Durumu"
+  },
+  "N-01": {
+    "ar": "إصدار مودم الاتصال",
+    "tr": "Modem Sürümü"
+  },
+  "N-02": {
+    "ar": "شريحة الاتصال 1",
+    "tr": "SIM 1 Durumu"
+  },
+  "N-03": {
+    "ar": "شريحة الاتصال 2",
+    "tr": "SIM 2 Durumu"
+  },
+  "N-04": {
+    "ar": "نوع الشبكة",
+    "tr": "Ağ Türü"
+  },
+  "N-05": {
+    "ar": "قوة إشارة الشبكة",
+    "tr": "İşaret Gücü"
+  },
+  "N-06": {
+    "ar": "مشغّل الشبكة",
+    "tr": "Operatör"
+  },
+  "N-07": {
+    "ar": "دعم الشريحة الإلكترونية",
+    "tr": "eSIM"
+  },
+  "N-08": {
+    "ar": "الاتصال بالواي فاي",
+    "tr": "Wi-Fi"
+  },
+  "N-09": {
+    "ar": "سرعة اتصال Wi-Fi",
+    "tr": "Wi-Fi Bağlantı Hızı"
+  },
+  "N-10": {
+    "ar": "قوة إشارة Wi-Fi",
+    "tr": "Wi-Fi İşaret Gücü"
+  },
+  "N-11": {
+    "ar": "Bluetooth",
+    "tr": "Bluetooth"
+  },
+  "N-12": {
+    "ar": "بلوتوث منخفض الطاقة",
+    "tr": "Düşük Güç Bluetooth"
+  },
+  "N-13": {
+    "ar": "الاتصال القريب NFC",
+    "tr": "NFC"
+  },
+  "L-01": {
+    "ar": "توفر GPS",
+    "tr": "GPS Kullanılabilirliği"
+  },
+  "L-02": {
+    "ar": "الأقمار الصناعية",
+    "tr": "Uydu Sayısı"
+  },
+  "L-03": {
+    "ar": "دقة الموقع",
+    "tr": "Konum Doğruluğu"
+  },
+  "SN-01": {
+    "ar": "مقياس التسارع",
+    "tr": "İvmeölçer"
+  },
+  "SN-02": {
+    "ar": "الجيروسكوب",
+    "tr": "Jiroskop"
+  },
+  "SN-03": {
+    "ar": "مستشعر القرب",
+    "tr": "Yakınlık Sensörü"
+  },
+  "SN-04": {
+    "ar": "مستشعر الضوء",
+    "tr": "Işık Sensörü"
+  },
+  "SN-05": {
+    "ar": "البوصلة",
+    "tr": "Pusula"
+  },
+  "SN-06": {
+    "ar": "مقياس الضغط",
+    "tr": "Barometr"
+  },
+  "SN-07": {
+    "ar": "حرارة محيطة",
+    "tr": "Ortam Sıcaklığı"
+  },
+  "SN-08": {
+    "ar": "كاشف الخطوات",
+    "tr": "Adım Dedektörü"
+  },
+  "SN-09": {
+    "ar": "عداد الخطوات",
+    "tr": "Adım Sayacı"
+  },
+  "SN-10": {
+    "ar": "الجاذبية",
+    "tr": "Yerçekimi"
+  },
+  "SN-11": {
+    "ar": "تسارع خطي",
+    "tr": "Doğrusal İvme"
+  },
+  "SN-12": {
+    "ar": "متجه الدوران",
+    "tr": "Rotasyon Vektörü"
+  },
+  "CM-01": {
+    "ar": "كاميرا خلفية",
+    "tr": "Arka Kamera"
+  },
+  "CM-02": {
+    "ar": "كاميرا أمامية",
+    "tr": "Ön Kamera"
+  },
+  "CM-03": {
+    "ar": "كاميرات إضافية",
+    "tr": "Ek Kameralar"
+  },
+  "CM-04": {
+    "ar": "الفلاش",
+    "tr": "Flaş"
+  },
+  "CM-05": {
+    "ar": "ضبط تلقائي",
+    "tr": "Otomatik Odakla"
+  },
+  "CM-06": {
+    "ar": "دقة الكاميرا الخلفية",
+    "tr": "Arka Kamera Çözünürlüğü"
+  },
+  "CM-07": {
+    "ar": "دقة الكاميرا الأمامية",
+    "tr": "Ön Kamera Çözünürlüğü"
+  },
+  "CM-08": {
+    "ar": "بصمة الإصبع",
+    "tr": "Parmak İzi"
+  },
+  "CM-10": {
+    "ar": "التعرف على الوجه",
+    "tr": "Yüz Tanıma"
+  },
+  "CM-11": {
+    "ar": "الاهتزاز",
+    "tr": "Titreşim"
+  },
+  "D-01": {
+    "ar": "دقة الشاشة",
+    "tr": "Ekran Çözünürlüğü"
+  },
+  "D-02": {
+    "ar": "كثافة البكسل",
+    "tr": "Piksel Yoğunluğu"
+  },
+  "D-03": {
+    "ar": "معدل التحديث",
+    "tr": "Tazeleme Hızı"
+  },
+  "SEC-01": {
+    "ar": "قفل الشاشة",
+    "tr": "Ekran Kilidi"
+  },
+  "SEC-02": {
+    "ar": "التشفير",
+    "tr": "Şifreleme"
+  },
+  "SEC-03": {
+    "ar": "تصحيح الأمان",
+    "tr": "Güvenlik Yaması"
+  },
+  "SEC-04": {
+    "ar": "صلاحيات الروت",
+    "tr": "Root Yetkileri"
+  },
+  "SEC-05": {
+    "ar": "وضع المطور",
+    "tr": "Geliştirici Modu"
+  },
+  "SEC-06": {
+    "ar": "تصحيح USB",
+    "tr": "USB Hata Ayıklaması"
+  },
+  "SEC-07": {
+    "ar": "مصادر غير معروفة",
+    "tr": "Bilinmeyen Kaynaklar"
+  },
+  "SEC-08": {
+    "ar": "Play Protect",
+    "tr": "Play Protect"
+  },
+  "SEC-09": {
+    "ar": "نظام التشغيل",
+    "tr": "İşletim Sistemi"
+  },
+  "SEC-10": {
+    "ar": "مستوى API",
+    "tr": "API Seviyesi"
+  },
+  "SEC-11": {
+    "ar": "محمل الإقلاع",
+    "tr": "Bootloader"
+  },
+  "M-01": {
+    "ar": "النقاط الميتة في الشاشة",
+    "tr": "Ölü pikseller"
+  },
+  "M-02": {
+    "ar": "استجابة اللمس",
+    "tr": "Dokunmatik tepkisi"
+  },
+  "M-03": {
+    "ar": "اللمس المتعدد",
+    "tr": "Çoklu dokunma"
+  },
+  "M-04": {
+    "ar": "السماعة الخارجية",
+    "tr": "Harici hoparlör"
+  },
+  "M-05": {
+    "ar": "سماعة الأذن",
+    "tr": "Kulaklık hoparlörü"
+  },
+  "M-06": {
+    "ar": "الميكروفون الأساسي",
+    "tr": "Ana mikrofon"
+  },
+  "M-08": {
+    "ar": "منفذ السماعات",
+    "tr": "Kulaklık girişi"
+  },
+  "M-09": {
+    "ar": "زر رفع الصوت",
+    "tr": "Ses açma düğmesi"
+  },
+  "M-10": {
+    "ar": "زر خفض الصوت",
+    "tr": "Ses kısma düğmesi"
+  },
+  "M-11": {
+    "ar": "زر الطاقة",
+    "tr": "Güç düğmesi"
+  },
+  "M-12": {
+    "ar": "منفذ الشحن",
+    "tr": "Şarj girişi"
+  },
+  "M-14": {
+    "ar": "الشحن اللاسلكي",
+    "tr": "Kablosuz şarj"
+  },
+  "M-15": {
+    "ar": "فتحة بطاقة الذاكرة",
+    "tr": "SD kart yuvası"
+  },
+  "M-17": {
+    "ar": "صور الكاميرا الخلفية",
+    "tr": "Arka Kamera Fotoğrafları"
+  },
+  "M-18": {
+    "ar": "صور الكاميرا الأمامية",
+    "tr": "Ön Kamera Fotoğrafları"
+  },
+  "M-19": {
+    "ar": "الفلاش",
+    "tr": "Flaş"
+  },
+  "M-20": {
+    "ar": "بصمة الإصبع",
+    "tr": "Parmak İzi"
+  },
+  "M-21": {
+    "ar": "التعرف على الوجه",
+    "tr": "Yüz Tanıma"
+  },
+  "M-22": {
+    "ar": "الاهتزاز",
+    "tr": "Titreşim"
+  },
+  "SEC-12": {
+    "ar": "حالة قفل المُحمّل",
+    "tr": "Bootloader Kilit Durumu"
+  },
+  "SN-13": {
+    "ar": "معايرة مقياس التسارع",
+    "tr": "İvmeölçer Kalibrasyonu"
+  },
+  "INFO-01": {
+    "ar": "رمز المنطقة (CSC)",
+    "tr": "Bölge Kodu (CSC)"
+  },
+  "M-13": {
+    "ar": "دعم OTG",
+    "tr": "OTG desteği"
+  },
+  "M-16": {
+    "ar": "الأشعة تحت الحمراء",
+    "tr": "Kızılötesi"
+  }
+}

@@ -1,0 +1,8 @@
+# SYNTHETIC excerpt (2026-10-09), not a real R8 output: the shape R8 gives a class whose fields it did NOT rename. The class is renamed
+# (gf.t, as in the real 62507f4 mapping) and the six fields have NO line - measured on that real mapping: the kept class
+# net.neuralcheck.data.remote.model.DeviceInfo lists none of its String fields, and the whole file has 0 lines of the form `String x -> x`.
+net.neuralcheck.util.DeviceProfileKey -> gf.t:
+# {"id":"sourceFile","fileName":"DeviceFingerprint.kt"}
+    10:25:void <init>(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String):49:49 -> <init>
+    0:78:boolean equals(java.lang.Object):0:0 -> equals
+    61:65:java.lang.String toString():0:0 -> toString

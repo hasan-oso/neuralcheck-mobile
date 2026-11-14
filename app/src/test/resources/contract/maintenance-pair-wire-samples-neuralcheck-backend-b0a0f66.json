@@ -1,0 +1,3605 @@
+{
+  "_provenance": {
+    "generator": "functions/scripts/generate-maintenance-pair-wire-samples.js",
+    "decision": "أمر المستخدم 2026-10-22 (ربط «قبل الصيانة» بـ«بعد الصيانة»، المرحلة S7): منقول عن أمر الباك اند، غير متحقَّق من هذا المستودع",
+    "kind": "maintenance pair wire replies",
+    "whatIsReal": "غلاف onCall الحقيقي (firebase-functions) يكتب الحالة والجسم؛ الدالّتان المُصدَّرتان بمعالجَيهما الكاملين وكل ما يحكم فيهما؛ وsetSessionPurpose المُصدَّرة لرفوض النوع.",
+    "whatIsStubbed": "utils/admin ⟵ db في الذاكرة (test/lib/pairFakeDb.js) بمستندات اصطناعية؛ والساعة مجمَّدة وقت كل نداء (2026-10-22T12:00:00Z). بلا Firestore ولا محاكٍ ولا إنتاج ولا شبكة.",
+    "notVerified": "سلوك الدالّتين على Firestore الحقيقي (يغطّيه maintenancePair.e2e.test.js على المحاكي)، وسلوك التطبيق عند هذه الأجسام. لا عيّنة طلب من التطبيق هنا (يُنتجها كاتب التطبيق ثم تُنسخ).",
+    "followsContract": "docs/PROTOCOL_CONTRACT.md §٢ A2 وA3 (إلحاقات 2026-10-22) (القاعدة 39: من يغيّر العقد يُعيد التوليد في الالتزام نفسه)."
+  },
+  "samples": [
+    {
+      "id": "list.success.two-candidates",
+      "function": "listOpenMaintenanceBefores",
+      "note": "جلسة «بعد» نوعها BATTERY، والإعداد 72 ساعة: مرشَّحان فقط بالأحدث أوّلاً — الأوّل بطراز في الخريطة (deviceName.state = mapped بالأسماء الثلاثة) والثاني بطراز غير مربوط (name_unmapped مع Build.MODEL كما هو). المستبعَدة (لا تظهر): نوع THERMAL، ومحلّ آخر (لا يُقرأ أصلاً: الاستعلام يقيّد pair.ownerId؛ S8)، ومنقضية (80 ساعة). scannedAtMs = pair.openedAt بالمللي ثانية.",
+      "request": {
+        "data": {
+          "sessionId": "sess-after"
+        },
+        "authenticatedAs": {
+          "sign_in_provider": "google.com",
+          "uid": "owner-sample"
+        }
+      },
+      "seed": {
+        "scanSessions/sess-after": {
+          "ownerId": "owner-sample",
+          "status": "pending",
+          "purpose": "maintenance_after",
+          "expiresAt": {
+            "$firestoreTimestamp": "2026-10-22T13:00:00.000Z"
+          },
+          "scanId": null,
+          "deviceModel": null
+        },
+        "users/owner-sample": {
+          "plan": "shop_pro",
+          "protocolParts": {
+            "purposes": true,
+            "batteryBeforeAfter": true
+          }
+        },
+        "protocolSettings/current": {
+          "version": 2,
+          "openBeforeValidityHours": 72
+        },
+        "protocolPending/sess-after": {
+          "purposeSource": "selected",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkMethod": null,
+          "linkConfirmedAt": null,
+          "linkConfirmedByTechnicianId": null
+        },
+        "scanProtocol/before-1": {
+          "scanPurpose": "maintenance_before",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkState": "none",
+          "linkMethod": null,
+          "pair": {
+            "state": "OPEN",
+            "openedAt": {
+              "$firestoreTimestamp": "2026-10-22T09:00:00.000Z"
+            },
+            "ownerId": "owner-sample"
+          }
+        },
+        "reports/before-1": {
+          "userId": "owner-sample",
+          "deviceModel": "SM-A135F"
+        },
+        "scanProtocol/before-2": {
+          "scanPurpose": "maintenance_before",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkState": "none",
+          "linkMethod": null,
+          "pair": {
+            "state": "OPEN",
+            "openedAt": {
+              "$firestoreTimestamp": "2026-10-20T10:00:00.000Z"
+            },
+            "ownerId": "owner-sample"
+          }
+        },
+        "reports/before-2": {
+          "userId": "owner-sample",
+          "deviceModel": "XT2201-2"
+        },
+        "scanProtocol/before-thermal": {
+          "scanPurpose": "maintenance_before",
+          "defectType": "THERMAL",
+          "linkedScanId": null,
+          "linkState": "none",
+          "linkMethod": null,
+          "pair": {
+            "state": "OPEN",
+            "openedAt": {
+              "$firestoreTimestamp": "2026-10-22T10:00:00.000Z"
+            },
+            "ownerId": "owner-sample"
+          }
+        },
+        "reports/before-thermal": {
+          "userId": "owner-sample",
+          "deviceModel": "SM-A135F"
+        },
+        "scanProtocol/before-other-shop": {
+          "scanPurpose": "maintenance_before",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkState": "none",
+          "linkMethod": null,
+          "pair": {
+            "state": "OPEN",
+            "openedAt": {
+              "$firestoreTimestamp": "2026-10-22T10:00:00.000Z"
+            },
+            "ownerId": "owner-else"
+          }
+        },
+        "reports/before-other-shop": {
+          "userId": "owner-else",
+          "deviceModel": "SM-A135F"
+        },
+        "scanProtocol/before-expired": {
+          "scanPurpose": "maintenance_before",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkState": "none",
+          "linkMethod": null,
+          "pair": {
+            "state": "OPEN",
+            "openedAt": {
+              "$firestoreTimestamp": "2026-10-19T04:00:00.000Z"
+            },
+            "ownerId": "owner-sample"
+          }
+        },
+        "reports/before-expired": {
+          "userId": "owner-sample",
+          "deviceModel": "SM-A135F"
+        },
+        "marketingNames/current": {
+          "version": 3,
+          "entries": [
+            {
+              "model": "SM-A135F",
+              "ar": "سامسونج A13",
+              "tr": "Samsung A13",
+              "en": "Samsung A13"
+            }
+          ]
+        }
+      },
+      "httpStatus": 200,
+      "body": {
+        "result": {
+          "validityHours": 72,
+          "candidates": [
+            {
+              "beforeScanId": "before-1",
+              "deviceName": {
+                "state": "mapped",
+                "model": "SM-A135F",
+                "names": {
+                  "ar": "سامسونج A13",
+                  "tr": "Samsung A13",
+                  "en": "Samsung A13"
+                },
+                "reason": null
+              },
+              "scannedAtMs": 1792659600000
+            },
+            {
+              "beforeScanId": "before-2",
+              "deviceName": {
+                "state": "name_unmapped",
+                "model": "XT2201-2",
+                "names": null,
+                "reason": "MODEL_NOT_IN_MAP"
+              },
+              "scannedAtMs": 1792490400000
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "list.success.empty",
+      "function": "listOpenMaintenanceBefores",
+      "note": "لا «قبل» مفتوحة بالنوع نفسه للمحلّ نفسه: candidates مصفوفة فارغة (لا مفتاح غائب)، وvalidityHours حاضر.",
+      "request": {
+        "data": {
+          "sessionId": "sess-after"
+        },
+        "authenticatedAs": {
+          "sign_in_provider": "google.com",
+          "uid": "owner-sample"
+        }
+      },
+      "seed": {
+        "scanSessions/sess-after": {
+          "ownerId": "owner-sample",
+          "status": "pending",
+          "purpose": "maintenance_after",
+          "expiresAt": {
+            "$firestoreTimestamp": "2026-10-22T13:00:00.000Z"
+          },
+          "scanId": null,
+          "deviceModel": null
+        },
+        "users/owner-sample": {
+          "plan": "shop_pro",
+          "protocolParts": {
+            "purposes": true,
+            "batteryBeforeAfter": true
+          }
+        },
+        "protocolSettings/current": {
+          "version": 2,
+          "openBeforeValidityHours": 72
+        },
+        "protocolPending/sess-after": {
+          "purposeSource": "selected",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkMethod": null,
+          "linkConfirmedAt": null,
+          "linkConfirmedByTechnicianId": null
+        },
+        "scanProtocol/before-thermal": {
+          "scanPurpose": "maintenance_before",
+          "defectType": "THERMAL",
+          "linkedScanId": null,
+          "linkState": "none",
+          "linkMethod": null,
+          "pair": {
+            "state": "OPEN",
+            "openedAt": {
+              "$firestoreTimestamp": "2026-10-22T10:00:00.000Z"
+            },
+            "ownerId": "owner-sample"
+          }
+        },
+        "reports/before-thermal": {
+          "userId": "owner-sample",
+          "deviceModel": "SM-A135F"
+        }
+      },
+      "httpStatus": 200,
+      "body": {
+        "result": {
+          "validityHours": 72,
+          "candidates": []
+        }
+      }
+    },
+    {
+      "id": "list.success.link-hides-before",
+      "function": "listOpenMaintenanceBefores",
+      "note": "«قبل» لها ربط حيّ من «بعد» (linkState = active) لا تظهر، والحرّة تظهر: لا يظهر جهاز له «قبل» و«بعد» معاً.",
+      "request": {
+        "data": {
+          "sessionId": "sess-after"
+        },
+        "authenticatedAs": {
+          "sign_in_provider": "google.com",
+          "uid": "owner-sample"
+        }
+      },
+      "seed": {
+        "scanSessions/sess-after": {
+          "ownerId": "owner-sample",
+          "status": "pending",
+          "purpose": "maintenance_after",
+          "expiresAt": {
+            "$firestoreTimestamp": "2026-10-22T13:00:00.000Z"
+          },
+          "scanId": null,
+          "deviceModel": null
+        },
+        "users/owner-sample": {
+          "plan": "shop_pro",
+          "protocolParts": {
+            "purposes": true,
+            "batteryBeforeAfter": true
+          }
+        },
+        "protocolSettings/current": {
+          "version": 2,
+          "openBeforeValidityHours": 72
+        },
+        "protocolPending/sess-after": {
+          "purposeSource": "selected",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkMethod": null,
+          "linkConfirmedAt": null,
+          "linkConfirmedByTechnicianId": null
+        },
+        "scanProtocol/before-linked": {
+          "scanPurpose": "maintenance_before",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkState": "none",
+          "linkMethod": null,
+          "pair": {
+            "state": "OPEN",
+            "openedAt": {
+              "$firestoreTimestamp": "2026-10-22T10:00:00.000Z"
+            },
+            "ownerId": "owner-sample"
+          }
+        },
+        "reports/before-linked": {
+          "userId": "owner-sample",
+          "deviceModel": "SM-A135F"
+        },
+        "scanProtocol/after-live": {
+          "scanPurpose": "maintenance_after",
+          "defectType": "BATTERY",
+          "linkedScanId": "before-linked",
+          "linkState": "active",
+          "linkMethod": "manual",
+          "pair": null
+        },
+        "scanProtocol/before-free": {
+          "scanPurpose": "maintenance_before",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkState": "none",
+          "linkMethod": null,
+          "pair": {
+            "state": "OPEN",
+            "openedAt": {
+              "$firestoreTimestamp": "2026-10-22T08:00:00.000Z"
+            },
+            "ownerId": "owner-sample"
+          }
+        },
+        "reports/before-free": {
+          "userId": "owner-sample",
+          "deviceModel": "SM-A135F"
+        }
+      },
+      "httpStatus": 200,
+      "body": {
+        "result": {
+          "validityHours": 72,
+          "candidates": [
+            {
+              "beforeScanId": "before-free",
+              "deviceName": {
+                "state": "name_unmapped",
+                "model": "SM-A135F",
+                "names": null,
+                "reason": "MAP_ABSENT"
+              },
+              "scannedAtMs": 1792656000000
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "list.success.owner-mismatch-excluded",
+      "function": "listOpenMaintenanceBefores",
+      "note": "شذوذ: pair.ownerId = المستدعي لكن userId في تقرير «قبل» لمحلّ آخر (before-mismatch): تُستبعد من المرشَّحين (OWNER_MISMATCH) ويُعلَن الشذوذ في سجلّ الخادم (anomaly reason=PAIR_OWNER_MISMATCH) لا في الردّ؛ والسليمة وحدها تظهر.",
+      "request": {
+        "data": {
+          "sessionId": "sess-after"
+        },
+        "authenticatedAs": {
+          "sign_in_provider": "google.com",
+          "uid": "owner-sample"
+        }
+      },
+      "seed": {
+        "scanSessions/sess-after": {
+          "ownerId": "owner-sample",
+          "status": "pending",
+          "purpose": "maintenance_after",
+          "expiresAt": {
+            "$firestoreTimestamp": "2026-10-22T13:00:00.000Z"
+          },
+          "scanId": null,
+          "deviceModel": null
+        },
+        "users/owner-sample": {
+          "plan": "shop_pro",
+          "protocolParts": {
+            "purposes": true,
+            "batteryBeforeAfter": true
+          }
+        },
+        "protocolSettings/current": {
+          "version": 2,
+          "openBeforeValidityHours": 72
+        },
+        "protocolPending/sess-after": {
+          "purposeSource": "selected",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkMethod": null,
+          "linkConfirmedAt": null,
+          "linkConfirmedByTechnicianId": null
+        },
+        "scanProtocol/before-mismatch": {
+          "scanPurpose": "maintenance_before",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkState": "none",
+          "linkMethod": null,
+          "pair": {
+            "state": "OPEN",
+            "openedAt": {
+              "$firestoreTimestamp": "2026-10-22T09:00:00.000Z"
+            },
+            "ownerId": "owner-sample"
+          }
+        },
+        "reports/before-mismatch": {
+          "userId": "owner-else",
+          "deviceModel": "SM-A135F"
+        },
+        "scanProtocol/before-good": {
+          "scanPurpose": "maintenance_before",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkState": "none",
+          "linkMethod": null,
+          "pair": {
+            "state": "OPEN",
+            "openedAt": {
+              "$firestoreTimestamp": "2026-10-22T08:00:00.000Z"
+            },
+            "ownerId": "owner-sample"
+          }
+        },
+        "reports/before-good": {
+          "userId": "owner-sample",
+          "deviceModel": "SM-A135F"
+        }
+      },
+      "httpStatus": 200,
+      "body": {
+        "result": {
+          "validityHours": 72,
+          "candidates": [
+            {
+              "beforeScanId": "before-good",
+              "deviceName": {
+                "state": "name_unmapped",
+                "model": "SM-A135F",
+                "names": null,
+                "reason": "MAP_ABSENT"
+              },
+              "scannedAtMs": 1792656000000
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "list.success.pair-without-owner-not-listed",
+      "function": "listOpenMaintenanceBefores",
+      "note": "«قبل» بـpair بلا ownerId (شكل قديم أو مالك مجهول عند الفتح): لا تطابق استعلام أيّ محلّ فلا تُقرأ ولا تظهر (لا ترحيل؛ تُعلَن عند الكتابة بملاحظة PAIR_OWNER_ABSENT)؛ والسليمة وحدها تظهر.",
+      "request": {
+        "data": {
+          "sessionId": "sess-after"
+        },
+        "authenticatedAs": {
+          "sign_in_provider": "google.com",
+          "uid": "owner-sample"
+        }
+      },
+      "seed": {
+        "scanSessions/sess-after": {
+          "ownerId": "owner-sample",
+          "status": "pending",
+          "purpose": "maintenance_after",
+          "expiresAt": {
+            "$firestoreTimestamp": "2026-10-22T13:00:00.000Z"
+          },
+          "scanId": null,
+          "deviceModel": null
+        },
+        "users/owner-sample": {
+          "plan": "shop_pro",
+          "protocolParts": {
+            "purposes": true,
+            "batteryBeforeAfter": true
+          }
+        },
+        "protocolSettings/current": {
+          "version": 2,
+          "openBeforeValidityHours": 72
+        },
+        "protocolPending/sess-after": {
+          "purposeSource": "selected",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkMethod": null,
+          "linkConfirmedAt": null,
+          "linkConfirmedByTechnicianId": null
+        },
+        "scanProtocol/before-no-owner-pair": {
+          "scanPurpose": "maintenance_before",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkState": "none",
+          "linkMethod": null,
+          "pair": {
+            "state": "OPEN",
+            "openedAt": {
+              "$firestoreTimestamp": "2026-10-22T09:00:00.000Z"
+            }
+          }
+        },
+        "reports/before-no-owner-pair": {
+          "userId": "owner-sample",
+          "deviceModel": "SM-A135F"
+        },
+        "scanProtocol/before-good": {
+          "scanPurpose": "maintenance_before",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkState": "none",
+          "linkMethod": null,
+          "pair": {
+            "state": "OPEN",
+            "openedAt": {
+              "$firestoreTimestamp": "2026-10-22T08:00:00.000Z"
+            },
+            "ownerId": "owner-sample"
+          }
+        },
+        "reports/before-good": {
+          "userId": "owner-sample",
+          "deviceModel": "SM-A135F"
+        }
+      },
+      "httpStatus": 200,
+      "body": {
+        "result": {
+          "validityHours": 72,
+          "candidates": [
+            {
+              "beforeScanId": "before-good",
+              "deviceName": {
+                "state": "name_unmapped",
+                "model": "SM-A135F",
+                "names": null,
+                "reason": "MAP_ABSENT"
+              },
+              "scannedAtMs": 1792656000000
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "list.success.cap-is-per-shop",
+      "function": "listOpenMaintenanceBefores",
+      "note": "السقف لكل محلّ: محلّ آخر عنده 501 «قبل» مفتوحة (فوق OPEN_PAIR_SCAN_CAP) ولهذا المحلّ واحدة: تُخدَم القائمة بمرشَّحها الوحيد (قبل S8 كان العدّ للمشروع كلّه فيُرفض كل المحلّات بـPAIR_SCAN_CAP_EXCEEDED).",
+      "request": {
+        "data": {
+          "sessionId": "sess-after"
+        },
+        "authenticatedAs": {
+          "sign_in_provider": "google.com",
+          "uid": "owner-sample"
+        }
+      },
+      "seed": {
+        "summary": "501 مستند scanProtocol لمحلّ آخر بـpair.ownerId = owner-else وpair.state = OPEN (لا تُدرَج في الملفّ) + «قبل» واحدة لهذا المحلّ (before: mine-1 بتقريرها) + بذرة الجلسة والمالك والإعداد والنوع كما في baseSeed"
+      },
+      "httpStatus": 200,
+      "body": {
+        "result": {
+          "validityHours": 72,
+          "candidates": [
+            {
+              "beforeScanId": "mine-1",
+              "deviceName": {
+                "state": "name_unmapped",
+                "model": "SM-A135F",
+                "names": null,
+                "reason": "MAP_ABSENT"
+              },
+              "scannedAtMs": 1792663200000
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "list.name-unmapped.map-absent",
+      "function": "listOpenMaintenanceBefores",
+      "note": "خريطة الأسماء غير مكتوبة: كل الأسماء name_unmapped بسبب MAP_ABSENT مع Build.MODEL كما هو (لا اسم مختلَق).",
+      "request": {
+        "data": {
+          "sessionId": "sess-after"
+        },
+        "authenticatedAs": {
+          "sign_in_provider": "google.com",
+          "uid": "owner-sample"
+        }
+      },
+      "seed": {
+        "scanSessions/sess-after": {
+          "ownerId": "owner-sample",
+          "status": "pending",
+          "purpose": "maintenance_after",
+          "expiresAt": {
+            "$firestoreTimestamp": "2026-10-22T13:00:00.000Z"
+          },
+          "scanId": null,
+          "deviceModel": null
+        },
+        "users/owner-sample": {
+          "plan": "shop_pro",
+          "protocolParts": {
+            "purposes": true,
+            "batteryBeforeAfter": true
+          }
+        },
+        "protocolSettings/current": {
+          "version": 2,
+          "openBeforeValidityHours": 72
+        },
+        "protocolPending/sess-after": {
+          "purposeSource": "selected",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkMethod": null,
+          "linkConfirmedAt": null,
+          "linkConfirmedByTechnicianId": null
+        },
+        "scanProtocol/before-1": {
+          "scanPurpose": "maintenance_before",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkState": "none",
+          "linkMethod": null,
+          "pair": {
+            "state": "OPEN",
+            "openedAt": {
+              "$firestoreTimestamp": "2026-10-22T09:00:00.000Z"
+            },
+            "ownerId": "owner-sample"
+          }
+        },
+        "reports/before-1": {
+          "userId": "owner-sample",
+          "deviceModel": "SM-A135F"
+        }
+      },
+      "httpStatus": 200,
+      "body": {
+        "result": {
+          "validityHours": 72,
+          "candidates": [
+            {
+              "beforeScanId": "before-1",
+              "deviceName": {
+                "state": "name_unmapped",
+                "model": "SM-A135F",
+                "names": null,
+                "reason": "MAP_ABSENT"
+              },
+              "scannedAtMs": 1792659600000
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "list.refused.not-authenticated",
+      "function": "listOpenMaintenanceBefores",
+      "note": "بلا مصادقة.",
+      "request": {
+        "data": {
+          "sessionId": "sess-after"
+        },
+        "authenticatedAs": null
+      },
+      "seed": {
+        "scanSessions/sess-after": {
+          "ownerId": "owner-sample",
+          "status": "pending",
+          "purpose": "maintenance_after",
+          "expiresAt": {
+            "$firestoreTimestamp": "2026-10-22T13:00:00.000Z"
+          },
+          "scanId": null,
+          "deviceModel": null
+        },
+        "users/owner-sample": {
+          "plan": "shop_pro",
+          "protocolParts": {
+            "purposes": true,
+            "batteryBeforeAfter": true
+          }
+        },
+        "protocolSettings/current": {
+          "version": 2,
+          "openBeforeValidityHours": 72
+        },
+        "protocolPending/sess-after": {
+          "purposeSource": "selected",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkMethod": null,
+          "linkConfirmedAt": null,
+          "linkConfirmedByTechnicianId": null
+        }
+      },
+      "httpStatus": 401,
+      "body": {
+        "error": {
+          "details": {
+            "reasonCode": "PAIR_NOT_AUTHENTICATED"
+          },
+          "message": "يجب تسجيل الدخول",
+          "status": "UNAUTHENTICATED"
+        }
+      }
+    },
+    {
+      "id": "list.refused.session-id-required",
+      "function": "listOpenMaintenanceBefores",
+      "note": "sessionId غائب.",
+      "request": {
+        "data": {},
+        "authenticatedAs": {
+          "sign_in_provider": "google.com",
+          "uid": "owner-sample"
+        }
+      },
+      "seed": {
+        "scanSessions/sess-after": {
+          "ownerId": "owner-sample",
+          "status": "pending",
+          "purpose": "maintenance_after",
+          "expiresAt": {
+            "$firestoreTimestamp": "2026-10-22T13:00:00.000Z"
+          },
+          "scanId": null,
+          "deviceModel": null
+        },
+        "users/owner-sample": {
+          "plan": "shop_pro",
+          "protocolParts": {
+            "purposes": true,
+            "batteryBeforeAfter": true
+          }
+        },
+        "protocolSettings/current": {
+          "version": 2,
+          "openBeforeValidityHours": 72
+        },
+        "protocolPending/sess-after": {
+          "purposeSource": "selected",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkMethod": null,
+          "linkConfirmedAt": null,
+          "linkConfirmedByTechnicianId": null
+        }
+      },
+      "httpStatus": 400,
+      "body": {
+        "error": {
+          "details": {
+            "reasonCode": "PAIR_SESSION_ID_REQUIRED"
+          },
+          "message": "sessionId مطلوب",
+          "status": "INVALID_ARGUMENT"
+        }
+      }
+    },
+    {
+      "id": "list.refused.not-owner",
+      "function": "listOpenMaintenanceBefores",
+      "note": "غير المالك: SESSION_NOT_PARTICIPANT (الردّ نفسه لجلسة غير موجودة؛ السجلّ يفرّق).",
+      "request": {
+        "data": {
+          "sessionId": "sess-after"
+        },
+        "authenticatedAs": {
+          "sign_in_provider": "google.com",
+          "uid": "stranger"
+        }
+      },
+      "seed": {
+        "scanSessions/sess-after": {
+          "ownerId": "owner-sample",
+          "status": "pending",
+          "purpose": "maintenance_after",
+          "expiresAt": {
+            "$firestoreTimestamp": "2026-10-22T13:00:00.000Z"
+          },
+          "scanId": null,
+          "deviceModel": null
+        },
+        "users/owner-sample": {
+          "plan": "shop_pro",
+          "protocolParts": {
+            "purposes": true,
+            "batteryBeforeAfter": true
+          }
+        },
+        "protocolSettings/current": {
+          "version": 2,
+          "openBeforeValidityHours": 72
+        },
+        "protocolPending/sess-after": {
+          "purposeSource": "selected",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkMethod": null,
+          "linkConfirmedAt": null,
+          "linkConfirmedByTechnicianId": null
+        }
+      },
+      "httpStatus": 403,
+      "body": {
+        "error": {
+          "details": {
+            "reasonCode": "SESSION_NOT_PARTICIPANT"
+          },
+          "message": "جلسة الفحص غير صالحة",
+          "status": "PERMISSION_DENIED"
+        }
+      }
+    },
+    {
+      "id": "list.refused.session-missing",
+      "function": "listOpenMaintenanceBefores",
+      "note": "جلسة غير موجودة: الردّ نفسه لغير المالك.",
+      "request": {
+        "data": {
+          "sessionId": "no-such"
+        },
+        "authenticatedAs": {
+          "sign_in_provider": "google.com",
+          "uid": "owner-sample"
+        }
+      },
+      "seed": {
+        "scanSessions/sess-after": {
+          "ownerId": "owner-sample",
+          "status": "pending",
+          "purpose": "maintenance_after",
+          "expiresAt": {
+            "$firestoreTimestamp": "2026-10-22T13:00:00.000Z"
+          },
+          "scanId": null,
+          "deviceModel": null
+        },
+        "users/owner-sample": {
+          "plan": "shop_pro",
+          "protocolParts": {
+            "purposes": true,
+            "batteryBeforeAfter": true
+          }
+        },
+        "protocolSettings/current": {
+          "version": 2,
+          "openBeforeValidityHours": 72
+        },
+        "protocolPending/sess-after": {
+          "purposeSource": "selected",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkMethod": null,
+          "linkConfirmedAt": null,
+          "linkConfirmedByTechnicianId": null
+        }
+      },
+      "httpStatus": 403,
+      "body": {
+        "error": {
+          "details": {
+            "reasonCode": "SESSION_NOT_PARTICIPANT"
+          },
+          "message": "جلسة الفحص غير صالحة",
+          "status": "PERMISSION_DENIED"
+        }
+      }
+    },
+    {
+      "id": "list.refused.session-not-after",
+      "function": "listOpenMaintenanceBefores",
+      "note": "غرض الجلسة ليس maintenance_after.",
+      "request": {
+        "data": {
+          "sessionId": "sess-after"
+        },
+        "authenticatedAs": {
+          "sign_in_provider": "google.com",
+          "uid": "owner-sample"
+        }
+      },
+      "seed": {
+        "scanSessions/sess-after": {
+          "ownerId": "owner-sample",
+          "status": "pending",
+          "purpose": "maintenance_before",
+          "expiresAt": {
+            "$firestoreTimestamp": "2026-10-22T13:00:00.000Z"
+          }
+        },
+        "users/owner-sample": {
+          "plan": "shop_pro",
+          "protocolParts": {
+            "purposes": true,
+            "batteryBeforeAfter": true
+          }
+        },
+        "protocolSettings/current": {
+          "version": 2,
+          "openBeforeValidityHours": 72
+        },
+        "protocolPending/sess-after": {
+          "purposeSource": "selected",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkMethod": null,
+          "linkConfirmedAt": null,
+          "linkConfirmedByTechnicianId": null
+        }
+      },
+      "httpStatus": 400,
+      "body": {
+        "error": {
+          "details": {
+            "reasonCode": "PAIR_SESSION_NOT_AFTER"
+          },
+          "message": "PAIR_SESSION_NOT_AFTER",
+          "status": "FAILED_PRECONDITION"
+        }
+      }
+    },
+    {
+      "id": "list.refused.part-not-enabled",
+      "function": "listOpenMaintenanceBefores",
+      "note": "جزء batteryBeforeAfter غير مفعَّل للمحلّ.",
+      "request": {
+        "data": {
+          "sessionId": "sess-after"
+        },
+        "authenticatedAs": {
+          "sign_in_provider": "google.com",
+          "uid": "owner-sample"
+        }
+      },
+      "seed": {
+        "scanSessions/sess-after": {
+          "ownerId": "owner-sample",
+          "status": "pending",
+          "purpose": "maintenance_after",
+          "expiresAt": {
+            "$firestoreTimestamp": "2026-10-22T13:00:00.000Z"
+          },
+          "scanId": null,
+          "deviceModel": null
+        },
+        "users/owner-sample": {
+          "plan": "shop_pro",
+          "protocolParts": {
+            "purposes": true
+          }
+        },
+        "protocolSettings/current": {
+          "version": 2,
+          "openBeforeValidityHours": 72
+        },
+        "protocolPending/sess-after": {
+          "purposeSource": "selected",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkMethod": null,
+          "linkConfirmedAt": null,
+          "linkConfirmedByTechnicianId": null
+        }
+      },
+      "httpStatus": 400,
+      "body": {
+        "error": {
+          "details": {
+            "reasonCode": "PAIR_PART_NOT_ENABLED"
+          },
+          "message": "PAIR_PART_NOT_ENABLED",
+          "status": "FAILED_PRECONDITION"
+        }
+      }
+    },
+    {
+      "id": "list.refused.validity-setting-absent",
+      "function": "listOpenMaintenanceBefores",
+      "note": "openBeforeValidityHours غير مكتوب: لا قيمة افتراضية.",
+      "request": {
+        "data": {
+          "sessionId": "sess-after"
+        },
+        "authenticatedAs": {
+          "sign_in_provider": "google.com",
+          "uid": "owner-sample"
+        }
+      },
+      "seed": {
+        "scanSessions/sess-after": {
+          "ownerId": "owner-sample",
+          "status": "pending",
+          "purpose": "maintenance_after",
+          "expiresAt": {
+            "$firestoreTimestamp": "2026-10-22T13:00:00.000Z"
+          },
+          "scanId": null,
+          "deviceModel": null
+        },
+        "users/owner-sample": {
+          "plan": "shop_pro",
+          "protocolParts": {
+            "purposes": true,
+            "batteryBeforeAfter": true
+          }
+        },
+        "protocolSettings/current": {
+          "version": 2
+        },
+        "protocolPending/sess-after": {
+          "purposeSource": "selected",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkMethod": null,
+          "linkConfirmedAt": null,
+          "linkConfirmedByTechnicianId": null
+        }
+      },
+      "httpStatus": 400,
+      "body": {
+        "error": {
+          "details": {
+            "reasonCode": "PAIR_VALIDITY_SETTING_ABSENT"
+          },
+          "message": "PAIR_VALIDITY_SETTING_ABSENT",
+          "status": "FAILED_PRECONDITION"
+        }
+      }
+    },
+    {
+      "id": "list.refused.session-defect-type-absent",
+      "function": "listOpenMaintenanceBefores",
+      "note": "نوع «بعد» غائب في protocolPending (شذوذ).",
+      "request": {
+        "data": {
+          "sessionId": "sess-after"
+        },
+        "authenticatedAs": {
+          "sign_in_provider": "google.com",
+          "uid": "owner-sample"
+        }
+      },
+      "seed": {
+        "scanSessions/sess-after": {
+          "ownerId": "owner-sample",
+          "status": "pending",
+          "purpose": "maintenance_after",
+          "expiresAt": {
+            "$firestoreTimestamp": "2026-10-22T13:00:00.000Z"
+          },
+          "scanId": null,
+          "deviceModel": null
+        },
+        "users/owner-sample": {
+          "plan": "shop_pro",
+          "protocolParts": {
+            "purposes": true,
+            "batteryBeforeAfter": true
+          }
+        },
+        "protocolSettings/current": {
+          "version": 2,
+          "openBeforeValidityHours": 72
+        },
+        "protocolPending/sess-after": {
+          "purposeSource": "selected"
+        }
+      },
+      "httpStatus": 400,
+      "body": {
+        "error": {
+          "details": {
+            "reasonCode": "PAIR_SESSION_DEFECT_TYPE_ABSENT"
+          },
+          "message": "PAIR_SESSION_DEFECT_TYPE_ABSENT",
+          "status": "FAILED_PRECONDITION"
+        }
+      }
+    },
+    {
+      "id": "list.refused.scan-cap-exceeded",
+      "function": "listOpenMaintenanceBefores",
+      "note": "أكثر من 500 «قبل» مفتوحة **لهذا المحلّ** (السقف OPEN_PAIR_SCAN_CAP لكل محلّ؛ S8): رفض مسمّى لا اقتطاع صامت.",
+      "request": {
+        "data": {
+          "sessionId": "sess-after"
+        },
+        "authenticatedAs": {
+          "sign_in_provider": "google.com",
+          "uid": "owner-sample"
+        }
+      },
+      "seed": {
+        "summary": "501 مستند scanProtocol بـpair.ownerId = المستدعي وpair.state = OPEN (لا تُدرَج في الملفّ) + بذرة الجلسة والمالك والإعداد والنوع كما في baseSeed"
+      },
+      "httpStatus": 400,
+      "body": {
+        "error": {
+          "details": {
+            "reasonCode": "PAIR_SCAN_CAP_EXCEEDED"
+          },
+          "message": "PAIR_SCAN_CAP_EXCEEDED",
+          "status": "FAILED_PRECONDITION"
+        }
+      }
+    },
+    {
+      "id": "confirm.success",
+      "function": "confirmMaintenanceAfterLink",
+      "note": "تأكيد سليم: الردّ {sessionId, beforeScanId, linkMethod: \"manual\"}، والكتابة الوحيدة set (دمج) على protocolPending: linkedScanId · linkMethod · linkConfirmedAt · linkConfirmedByTechnicianId = null صريحاً (storeAfter). لا شيء يُكتب على «قبل».",
+      "request": {
+        "data": {
+          "sessionId": "sess-after",
+          "beforeScanId": "before-1"
+        },
+        "authenticatedAs": {
+          "sign_in_provider": "google.com",
+          "uid": "owner-sample"
+        }
+      },
+      "seed": {
+        "scanSessions/sess-after": {
+          "ownerId": "owner-sample",
+          "status": "pending",
+          "purpose": "maintenance_after",
+          "expiresAt": {
+            "$firestoreTimestamp": "2026-10-22T13:00:00.000Z"
+          },
+          "scanId": null,
+          "deviceModel": null
+        },
+        "users/owner-sample": {
+          "plan": "shop_pro",
+          "protocolParts": {
+            "purposes": true,
+            "batteryBeforeAfter": true
+          }
+        },
+        "protocolSettings/current": {
+          "version": 2,
+          "openBeforeValidityHours": 72
+        },
+        "protocolPending/sess-after": {
+          "purposeSource": "selected",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkMethod": null,
+          "linkConfirmedAt": null,
+          "linkConfirmedByTechnicianId": null
+        },
+        "scanProtocol/before-1": {
+          "scanPurpose": "maintenance_before",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkState": "none",
+          "linkMethod": null,
+          "pair": {
+            "state": "OPEN",
+            "openedAt": {
+              "$firestoreTimestamp": "2026-10-22T09:00:00.000Z"
+            },
+            "ownerId": "owner-sample"
+          }
+        },
+        "reports/before-1": {
+          "userId": "owner-sample",
+          "deviceModel": "SM-A135F"
+        }
+      },
+      "httpStatus": 200,
+      "body": {
+        "result": {
+          "sessionId": "sess-after",
+          "beforeScanId": "before-1",
+          "linkMethod": "manual"
+        }
+      },
+      "transactionWrites": [
+        "set:protocolPending/sess-after"
+      ],
+      "storeAfter": {
+        "protocolPending/sess-after": {
+          "purposeSource": "selected",
+          "defectType": "BATTERY",
+          "linkedScanId": "before-1",
+          "linkMethod": "manual",
+          "linkConfirmedAt": {
+            "$firestoreTimestamp": "2026-10-22T12:00:00.000Z"
+          },
+          "linkConfirmedByTechnicianId": null
+        }
+      }
+    },
+    {
+      "id": "confirm.success.scanning-session",
+      "function": "confirmMaintenanceAfterLink",
+      "note": "جلسة scanning (بعد انضمام الهاتف) تقبل التأكيد كذلك.",
+      "request": {
+        "data": {
+          "sessionId": "sess-after",
+          "beforeScanId": "before-1"
+        },
+        "authenticatedAs": {
+          "sign_in_provider": "google.com",
+          "uid": "owner-sample"
+        }
+      },
+      "seed": {
+        "scanSessions/sess-after": {
+          "ownerId": "owner-sample",
+          "status": "scanning",
+          "joinedBy": "phone-1",
+          "purpose": "maintenance_after",
+          "expiresAt": {
+            "$firestoreTimestamp": "2026-10-22T13:00:00.000Z"
+          }
+        },
+        "users/owner-sample": {
+          "plan": "shop_pro",
+          "protocolParts": {
+            "purposes": true,
+            "batteryBeforeAfter": true
+          }
+        },
+        "protocolSettings/current": {
+          "version": 2,
+          "openBeforeValidityHours": 72
+        },
+        "protocolPending/sess-after": {
+          "purposeSource": "selected",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkMethod": null,
+          "linkConfirmedAt": null,
+          "linkConfirmedByTechnicianId": null
+        },
+        "scanProtocol/before-1": {
+          "scanPurpose": "maintenance_before",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkState": "none",
+          "linkMethod": null,
+          "pair": {
+            "state": "OPEN",
+            "openedAt": {
+              "$firestoreTimestamp": "2026-10-22T09:00:00.000Z"
+            },
+            "ownerId": "owner-sample"
+          }
+        },
+        "reports/before-1": {
+          "userId": "owner-sample",
+          "deviceModel": "SM-A135F"
+        }
+      },
+      "httpStatus": 200,
+      "body": {
+        "result": {
+          "sessionId": "sess-after",
+          "beforeScanId": "before-1",
+          "linkMethod": "manual"
+        }
+      },
+      "transactionWrites": [
+        "set:protocolPending/sess-after"
+      ],
+      "storeAfter": {
+        "protocolPending/sess-after": {
+          "purposeSource": "selected",
+          "defectType": "BATTERY",
+          "linkedScanId": "before-1",
+          "linkMethod": "manual",
+          "linkConfirmedAt": {
+            "$firestoreTimestamp": "2026-10-22T12:00:00.000Z"
+          },
+          "linkConfirmedByTechnicianId": null
+        }
+      }
+    },
+    {
+      "id": "confirm.success.re-choice-replaces",
+      "function": "confirmMaintenanceAfterLink",
+      "note": "إعادة الاختيار تستبدل ما في pending (الأحدث يربح): من before-1 إلى before-2.",
+      "request": {
+        "data": {
+          "sessionId": "sess-after",
+          "beforeScanId": "before-2"
+        },
+        "authenticatedAs": {
+          "sign_in_provider": "google.com",
+          "uid": "owner-sample"
+        }
+      },
+      "seed": {
+        "scanSessions/sess-after": {
+          "ownerId": "owner-sample",
+          "status": "pending",
+          "purpose": "maintenance_after",
+          "expiresAt": {
+            "$firestoreTimestamp": "2026-10-22T13:00:00.000Z"
+          },
+          "scanId": null,
+          "deviceModel": null
+        },
+        "users/owner-sample": {
+          "plan": "shop_pro",
+          "protocolParts": {
+            "purposes": true,
+            "batteryBeforeAfter": true
+          }
+        },
+        "protocolSettings/current": {
+          "version": 2,
+          "openBeforeValidityHours": 72
+        },
+        "protocolPending/sess-after": {
+          "purposeSource": "selected",
+          "defectType": "BATTERY",
+          "linkedScanId": "before-1",
+          "linkMethod": "manual",
+          "linkConfirmedAt": {
+            "$firestoreTimestamp": "2026-10-22T11:00:00.000Z"
+          },
+          "linkConfirmedByTechnicianId": null
+        },
+        "scanProtocol/before-1": {
+          "scanPurpose": "maintenance_before",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkState": "none",
+          "linkMethod": null,
+          "pair": {
+            "state": "OPEN",
+            "openedAt": {
+              "$firestoreTimestamp": "2026-10-22T09:00:00.000Z"
+            },
+            "ownerId": "owner-sample"
+          }
+        },
+        "reports/before-1": {
+          "userId": "owner-sample",
+          "deviceModel": "SM-A135F"
+        },
+        "scanProtocol/before-2": {
+          "scanPurpose": "maintenance_before",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkState": "none",
+          "linkMethod": null,
+          "pair": {
+            "state": "OPEN",
+            "openedAt": {
+              "$firestoreTimestamp": "2026-10-22T07:00:00.000Z"
+            },
+            "ownerId": "owner-sample"
+          }
+        },
+        "reports/before-2": {
+          "userId": "owner-sample",
+          "deviceModel": "SM-A135F"
+        }
+      },
+      "httpStatus": 200,
+      "body": {
+        "result": {
+          "sessionId": "sess-after",
+          "beforeScanId": "before-2",
+          "linkMethod": "manual"
+        }
+      },
+      "transactionWrites": [
+        "set:protocolPending/sess-after"
+      ],
+      "storeAfter": {
+        "protocolPending/sess-after": {
+          "purposeSource": "selected",
+          "defectType": "BATTERY",
+          "linkedScanId": "before-2",
+          "linkMethod": "manual",
+          "linkConfirmedAt": {
+            "$firestoreTimestamp": "2026-10-22T12:00:00.000Z"
+          },
+          "linkConfirmedByTechnicianId": null
+        }
+      }
+    },
+    {
+      "id": "confirm.refused.not-authenticated",
+      "function": "confirmMaintenanceAfterLink",
+      "note": "بلا مصادقة.",
+      "request": {
+        "data": {
+          "sessionId": "sess-after",
+          "beforeScanId": "before-1"
+        },
+        "authenticatedAs": null
+      },
+      "seed": {
+        "scanSessions/sess-after": {
+          "ownerId": "owner-sample",
+          "status": "pending",
+          "purpose": "maintenance_after",
+          "expiresAt": {
+            "$firestoreTimestamp": "2026-10-22T13:00:00.000Z"
+          },
+          "scanId": null,
+          "deviceModel": null
+        },
+        "users/owner-sample": {
+          "plan": "shop_pro",
+          "protocolParts": {
+            "purposes": true,
+            "batteryBeforeAfter": true
+          }
+        },
+        "protocolSettings/current": {
+          "version": 2,
+          "openBeforeValidityHours": 72
+        },
+        "protocolPending/sess-after": {
+          "purposeSource": "selected",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkMethod": null,
+          "linkConfirmedAt": null,
+          "linkConfirmedByTechnicianId": null
+        },
+        "scanProtocol/before-1": {
+          "scanPurpose": "maintenance_before",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkState": "none",
+          "linkMethod": null,
+          "pair": {
+            "state": "OPEN",
+            "openedAt": {
+              "$firestoreTimestamp": "2026-10-22T09:00:00.000Z"
+            },
+            "ownerId": "owner-sample"
+          }
+        },
+        "reports/before-1": {
+          "userId": "owner-sample",
+          "deviceModel": "SM-A135F"
+        }
+      },
+      "httpStatus": 401,
+      "body": {
+        "error": {
+          "details": {
+            "reasonCode": "PAIR_NOT_AUTHENTICATED"
+          },
+          "message": "يجب تسجيل الدخول",
+          "status": "UNAUTHENTICATED"
+        }
+      }
+    },
+    {
+      "id": "confirm.refused.session-id-required",
+      "function": "confirmMaintenanceAfterLink",
+      "note": "sessionId غائب.",
+      "request": {
+        "data": {
+          "beforeScanId": "before-1"
+        },
+        "authenticatedAs": {
+          "sign_in_provider": "google.com",
+          "uid": "owner-sample"
+        }
+      },
+      "seed": {
+        "scanSessions/sess-after": {
+          "ownerId": "owner-sample",
+          "status": "pending",
+          "purpose": "maintenance_after",
+          "expiresAt": {
+            "$firestoreTimestamp": "2026-10-22T13:00:00.000Z"
+          },
+          "scanId": null,
+          "deviceModel": null
+        },
+        "users/owner-sample": {
+          "plan": "shop_pro",
+          "protocolParts": {
+            "purposes": true,
+            "batteryBeforeAfter": true
+          }
+        },
+        "protocolSettings/current": {
+          "version": 2,
+          "openBeforeValidityHours": 72
+        },
+        "protocolPending/sess-after": {
+          "purposeSource": "selected",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkMethod": null,
+          "linkConfirmedAt": null,
+          "linkConfirmedByTechnicianId": null
+        },
+        "scanProtocol/before-1": {
+          "scanPurpose": "maintenance_before",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkState": "none",
+          "linkMethod": null,
+          "pair": {
+            "state": "OPEN",
+            "openedAt": {
+              "$firestoreTimestamp": "2026-10-22T09:00:00.000Z"
+            },
+            "ownerId": "owner-sample"
+          }
+        },
+        "reports/before-1": {
+          "userId": "owner-sample",
+          "deviceModel": "SM-A135F"
+        }
+      },
+      "httpStatus": 400,
+      "body": {
+        "error": {
+          "details": {
+            "reasonCode": "PAIR_SESSION_ID_REQUIRED"
+          },
+          "message": "sessionId مطلوب",
+          "status": "INVALID_ARGUMENT"
+        }
+      }
+    },
+    {
+      "id": "confirm.refused.before-scan-id-required",
+      "function": "confirmMaintenanceAfterLink",
+      "note": "beforeScanId غائب.",
+      "request": {
+        "data": {
+          "sessionId": "sess-after"
+        },
+        "authenticatedAs": {
+          "sign_in_provider": "google.com",
+          "uid": "owner-sample"
+        }
+      },
+      "seed": {
+        "scanSessions/sess-after": {
+          "ownerId": "owner-sample",
+          "status": "pending",
+          "purpose": "maintenance_after",
+          "expiresAt": {
+            "$firestoreTimestamp": "2026-10-22T13:00:00.000Z"
+          },
+          "scanId": null,
+          "deviceModel": null
+        },
+        "users/owner-sample": {
+          "plan": "shop_pro",
+          "protocolParts": {
+            "purposes": true,
+            "batteryBeforeAfter": true
+          }
+        },
+        "protocolSettings/current": {
+          "version": 2,
+          "openBeforeValidityHours": 72
+        },
+        "protocolPending/sess-after": {
+          "purposeSource": "selected",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkMethod": null,
+          "linkConfirmedAt": null,
+          "linkConfirmedByTechnicianId": null
+        },
+        "scanProtocol/before-1": {
+          "scanPurpose": "maintenance_before",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkState": "none",
+          "linkMethod": null,
+          "pair": {
+            "state": "OPEN",
+            "openedAt": {
+              "$firestoreTimestamp": "2026-10-22T09:00:00.000Z"
+            },
+            "ownerId": "owner-sample"
+          }
+        },
+        "reports/before-1": {
+          "userId": "owner-sample",
+          "deviceModel": "SM-A135F"
+        }
+      },
+      "httpStatus": 400,
+      "body": {
+        "error": {
+          "details": {
+            "reasonCode": "PAIR_BEFORE_SCAN_ID_REQUIRED"
+          },
+          "message": "PAIR_BEFORE_SCAN_ID_REQUIRED",
+          "status": "INVALID_ARGUMENT"
+        }
+      }
+    },
+    {
+      "id": "confirm.refused.before-id-invalid",
+      "function": "confirmMaintenanceAfterLink",
+      "note": "معرّف «قبل» غير صالح كمعرّف مستند: BEFORE_NOT_FOUND بلا قراءة.",
+      "request": {
+        "data": {
+          "sessionId": "sess-after",
+          "beforeScanId": "a/b"
+        },
+        "authenticatedAs": {
+          "sign_in_provider": "google.com",
+          "uid": "owner-sample"
+        }
+      },
+      "seed": {
+        "scanSessions/sess-after": {
+          "ownerId": "owner-sample",
+          "status": "pending",
+          "purpose": "maintenance_after",
+          "expiresAt": {
+            "$firestoreTimestamp": "2026-10-22T13:00:00.000Z"
+          },
+          "scanId": null,
+          "deviceModel": null
+        },
+        "users/owner-sample": {
+          "plan": "shop_pro",
+          "protocolParts": {
+            "purposes": true,
+            "batteryBeforeAfter": true
+          }
+        },
+        "protocolSettings/current": {
+          "version": 2,
+          "openBeforeValidityHours": 72
+        },
+        "protocolPending/sess-after": {
+          "purposeSource": "selected",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkMethod": null,
+          "linkConfirmedAt": null,
+          "linkConfirmedByTechnicianId": null
+        },
+        "scanProtocol/before-1": {
+          "scanPurpose": "maintenance_before",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkState": "none",
+          "linkMethod": null,
+          "pair": {
+            "state": "OPEN",
+            "openedAt": {
+              "$firestoreTimestamp": "2026-10-22T09:00:00.000Z"
+            },
+            "ownerId": "owner-sample"
+          }
+        },
+        "reports/before-1": {
+          "userId": "owner-sample",
+          "deviceModel": "SM-A135F"
+        }
+      },
+      "httpStatus": 404,
+      "body": {
+        "error": {
+          "details": {
+            "reasonCode": "BEFORE_NOT_FOUND"
+          },
+          "message": "BEFORE_NOT_FOUND",
+          "status": "NOT_FOUND"
+        }
+      }
+    },
+    {
+      "id": "confirm.refused.not-owner",
+      "function": "confirmMaintenanceAfterLink",
+      "note": "غير المالك: SESSION_NOT_PARTICIPANT.",
+      "request": {
+        "data": {
+          "sessionId": "sess-after",
+          "beforeScanId": "before-1"
+        },
+        "authenticatedAs": {
+          "sign_in_provider": "google.com",
+          "uid": "stranger"
+        }
+      },
+      "seed": {
+        "scanSessions/sess-after": {
+          "ownerId": "owner-sample",
+          "status": "pending",
+          "purpose": "maintenance_after",
+          "expiresAt": {
+            "$firestoreTimestamp": "2026-10-22T13:00:00.000Z"
+          },
+          "scanId": null,
+          "deviceModel": null
+        },
+        "users/owner-sample": {
+          "plan": "shop_pro",
+          "protocolParts": {
+            "purposes": true,
+            "batteryBeforeAfter": true
+          }
+        },
+        "protocolSettings/current": {
+          "version": 2,
+          "openBeforeValidityHours": 72
+        },
+        "protocolPending/sess-after": {
+          "purposeSource": "selected",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkMethod": null,
+          "linkConfirmedAt": null,
+          "linkConfirmedByTechnicianId": null
+        },
+        "scanProtocol/before-1": {
+          "scanPurpose": "maintenance_before",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkState": "none",
+          "linkMethod": null,
+          "pair": {
+            "state": "OPEN",
+            "openedAt": {
+              "$firestoreTimestamp": "2026-10-22T09:00:00.000Z"
+            },
+            "ownerId": "owner-sample"
+          }
+        },
+        "reports/before-1": {
+          "userId": "owner-sample",
+          "deviceModel": "SM-A135F"
+        }
+      },
+      "httpStatus": 403,
+      "body": {
+        "error": {
+          "details": {
+            "reasonCode": "SESSION_NOT_PARTICIPANT"
+          },
+          "message": "جلسة الفحص غير صالحة",
+          "status": "PERMISSION_DENIED"
+        }
+      }
+    },
+    {
+      "id": "confirm.refused.session-missing",
+      "function": "confirmMaintenanceAfterLink",
+      "note": "جلسة غير موجودة: الردّ نفسه لغير المالك.",
+      "request": {
+        "data": {
+          "sessionId": "no-such",
+          "beforeScanId": "before-1"
+        },
+        "authenticatedAs": {
+          "sign_in_provider": "google.com",
+          "uid": "owner-sample"
+        }
+      },
+      "seed": {
+        "scanSessions/sess-after": {
+          "ownerId": "owner-sample",
+          "status": "pending",
+          "purpose": "maintenance_after",
+          "expiresAt": {
+            "$firestoreTimestamp": "2026-10-22T13:00:00.000Z"
+          },
+          "scanId": null,
+          "deviceModel": null
+        },
+        "users/owner-sample": {
+          "plan": "shop_pro",
+          "protocolParts": {
+            "purposes": true,
+            "batteryBeforeAfter": true
+          }
+        },
+        "protocolSettings/current": {
+          "version": 2,
+          "openBeforeValidityHours": 72
+        },
+        "protocolPending/sess-after": {
+          "purposeSource": "selected",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkMethod": null,
+          "linkConfirmedAt": null,
+          "linkConfirmedByTechnicianId": null
+        },
+        "scanProtocol/before-1": {
+          "scanPurpose": "maintenance_before",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkState": "none",
+          "linkMethod": null,
+          "pair": {
+            "state": "OPEN",
+            "openedAt": {
+              "$firestoreTimestamp": "2026-10-22T09:00:00.000Z"
+            },
+            "ownerId": "owner-sample"
+          }
+        },
+        "reports/before-1": {
+          "userId": "owner-sample",
+          "deviceModel": "SM-A135F"
+        }
+      },
+      "httpStatus": 403,
+      "body": {
+        "error": {
+          "details": {
+            "reasonCode": "SESSION_NOT_PARTICIPANT"
+          },
+          "message": "جلسة الفحص غير صالحة",
+          "status": "PERMISSION_DENIED"
+        }
+      }
+    },
+    {
+      "id": "confirm.refused.session-not-active",
+      "function": "confirmMaintenanceAfterLink",
+      "note": "الجلسة completed: ليست pending ولا scanning.",
+      "request": {
+        "data": {
+          "sessionId": "sess-after",
+          "beforeScanId": "before-1"
+        },
+        "authenticatedAs": {
+          "sign_in_provider": "google.com",
+          "uid": "owner-sample"
+        }
+      },
+      "seed": {
+        "scanSessions/sess-after": {
+          "ownerId": "owner-sample",
+          "status": "completed",
+          "purpose": "maintenance_after",
+          "expiresAt": {
+            "$firestoreTimestamp": "2026-10-22T13:00:00.000Z"
+          }
+        },
+        "users/owner-sample": {
+          "plan": "shop_pro",
+          "protocolParts": {
+            "purposes": true,
+            "batteryBeforeAfter": true
+          }
+        },
+        "protocolSettings/current": {
+          "version": 2,
+          "openBeforeValidityHours": 72
+        },
+        "protocolPending/sess-after": {
+          "purposeSource": "selected",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkMethod": null,
+          "linkConfirmedAt": null,
+          "linkConfirmedByTechnicianId": null
+        },
+        "scanProtocol/before-1": {
+          "scanPurpose": "maintenance_before",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkState": "none",
+          "linkMethod": null,
+          "pair": {
+            "state": "OPEN",
+            "openedAt": {
+              "$firestoreTimestamp": "2026-10-22T09:00:00.000Z"
+            },
+            "ownerId": "owner-sample"
+          }
+        },
+        "reports/before-1": {
+          "userId": "owner-sample",
+          "deviceModel": "SM-A135F"
+        }
+      },
+      "httpStatus": 400,
+      "body": {
+        "error": {
+          "details": {
+            "reasonCode": "PAIR_SESSION_NOT_ACTIVE"
+          },
+          "message": "PAIR_SESSION_NOT_ACTIVE",
+          "status": "FAILED_PRECONDITION"
+        }
+      }
+    },
+    {
+      "id": "confirm.refused.session-status-unknown",
+      "function": "confirmMaintenanceAfterLink",
+      "note": "حالة لا تعرفها الشيفرة.",
+      "request": {
+        "data": {
+          "sessionId": "sess-after",
+          "beforeScanId": "before-1"
+        },
+        "authenticatedAs": {
+          "sign_in_provider": "google.com",
+          "uid": "owner-sample"
+        }
+      },
+      "seed": {
+        "scanSessions/sess-after": {
+          "ownerId": "owner-sample",
+          "status": "done",
+          "purpose": "maintenance_after",
+          "expiresAt": {
+            "$firestoreTimestamp": "2026-10-22T13:00:00.000Z"
+          }
+        },
+        "users/owner-sample": {
+          "plan": "shop_pro",
+          "protocolParts": {
+            "purposes": true,
+            "batteryBeforeAfter": true
+          }
+        },
+        "protocolSettings/current": {
+          "version": 2,
+          "openBeforeValidityHours": 72
+        },
+        "protocolPending/sess-after": {
+          "purposeSource": "selected",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkMethod": null,
+          "linkConfirmedAt": null,
+          "linkConfirmedByTechnicianId": null
+        },
+        "scanProtocol/before-1": {
+          "scanPurpose": "maintenance_before",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkState": "none",
+          "linkMethod": null,
+          "pair": {
+            "state": "OPEN",
+            "openedAt": {
+              "$firestoreTimestamp": "2026-10-22T09:00:00.000Z"
+            },
+            "ownerId": "owner-sample"
+          }
+        },
+        "reports/before-1": {
+          "userId": "owner-sample",
+          "deviceModel": "SM-A135F"
+        }
+      },
+      "httpStatus": 400,
+      "body": {
+        "error": {
+          "details": {
+            "reasonCode": "SESSION_STATUS_UNKNOWN"
+          },
+          "message": "SESSION_STATUS_UNKNOWN",
+          "status": "FAILED_PRECONDITION"
+        }
+      }
+    },
+    {
+      "id": "confirm.refused.session-expired",
+      "function": "confirmMaintenanceAfterLink",
+      "note": "pending وانقضى expiresAt: «الجلسة منتهية» وتُكتب «منتهية» في المعاملة نفسها (transactionWrites).",
+      "request": {
+        "data": {
+          "sessionId": "sess-after",
+          "beforeScanId": "before-1"
+        },
+        "authenticatedAs": {
+          "sign_in_provider": "google.com",
+          "uid": "owner-sample"
+        }
+      },
+      "seed": {
+        "scanSessions/sess-after": {
+          "ownerId": "owner-sample",
+          "status": "pending",
+          "purpose": "maintenance_after",
+          "expiresAt": {
+            "$firestoreTimestamp": "2026-10-22T11:00:00.000Z"
+          }
+        },
+        "users/owner-sample": {
+          "plan": "shop_pro",
+          "protocolParts": {
+            "purposes": true,
+            "batteryBeforeAfter": true
+          }
+        },
+        "protocolSettings/current": {
+          "version": 2,
+          "openBeforeValidityHours": 72
+        },
+        "protocolPending/sess-after": {
+          "purposeSource": "selected",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkMethod": null,
+          "linkConfirmedAt": null,
+          "linkConfirmedByTechnicianId": null
+        },
+        "scanProtocol/before-1": {
+          "scanPurpose": "maintenance_before",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkState": "none",
+          "linkMethod": null,
+          "pair": {
+            "state": "OPEN",
+            "openedAt": {
+              "$firestoreTimestamp": "2026-10-22T09:00:00.000Z"
+            },
+            "ownerId": "owner-sample"
+          }
+        },
+        "reports/before-1": {
+          "userId": "owner-sample",
+          "deviceModel": "SM-A135F"
+        }
+      },
+      "httpStatus": 400,
+      "body": {
+        "error": {
+          "details": {
+            "reasonCode": "SESSION_EXPIRED"
+          },
+          "message": "الجلسة منتهية",
+          "status": "FAILED_PRECONDITION"
+        }
+      },
+      "transactionWrites": [
+        "update:scanSessions/sess-after"
+      ]
+    },
+    {
+      "id": "confirm.refused.session-expires-at-invalid",
+      "function": "confirmMaintenanceAfterLink",
+      "note": "expiresAt غائب: بلا كتابة.",
+      "request": {
+        "data": {
+          "sessionId": "sess-after",
+          "beforeScanId": "before-1"
+        },
+        "authenticatedAs": {
+          "sign_in_provider": "google.com",
+          "uid": "owner-sample"
+        }
+      },
+      "seed": {
+        "scanSessions/sess-after": {
+          "ownerId": "owner-sample",
+          "status": "pending",
+          "purpose": "maintenance_after"
+        },
+        "users/owner-sample": {
+          "plan": "shop_pro",
+          "protocolParts": {
+            "purposes": true,
+            "batteryBeforeAfter": true
+          }
+        },
+        "protocolSettings/current": {
+          "version": 2,
+          "openBeforeValidityHours": 72
+        },
+        "protocolPending/sess-after": {
+          "purposeSource": "selected",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkMethod": null,
+          "linkConfirmedAt": null,
+          "linkConfirmedByTechnicianId": null
+        },
+        "scanProtocol/before-1": {
+          "scanPurpose": "maintenance_before",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkState": "none",
+          "linkMethod": null,
+          "pair": {
+            "state": "OPEN",
+            "openedAt": {
+              "$firestoreTimestamp": "2026-10-22T09:00:00.000Z"
+            },
+            "ownerId": "owner-sample"
+          }
+        },
+        "reports/before-1": {
+          "userId": "owner-sample",
+          "deviceModel": "SM-A135F"
+        }
+      },
+      "httpStatus": 403,
+      "body": {
+        "error": {
+          "details": {
+            "reasonCode": "SESSION_EXPIRES_AT_INVALID"
+          },
+          "message": "جلسة الفحص غير صالحة",
+          "status": "PERMISSION_DENIED"
+        }
+      }
+    },
+    {
+      "id": "confirm.refused.session-not-after",
+      "function": "confirmMaintenanceAfterLink",
+      "note": "غرض الجلسة normal.",
+      "request": {
+        "data": {
+          "sessionId": "sess-after",
+          "beforeScanId": "before-1"
+        },
+        "authenticatedAs": {
+          "sign_in_provider": "google.com",
+          "uid": "owner-sample"
+        }
+      },
+      "seed": {
+        "scanSessions/sess-after": {
+          "ownerId": "owner-sample",
+          "status": "pending",
+          "purpose": "normal",
+          "expiresAt": {
+            "$firestoreTimestamp": "2026-10-22T13:00:00.000Z"
+          }
+        },
+        "users/owner-sample": {
+          "plan": "shop_pro",
+          "protocolParts": {
+            "purposes": true,
+            "batteryBeforeAfter": true
+          }
+        },
+        "protocolSettings/current": {
+          "version": 2,
+          "openBeforeValidityHours": 72
+        },
+        "protocolPending/sess-after": {
+          "purposeSource": "selected",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkMethod": null,
+          "linkConfirmedAt": null,
+          "linkConfirmedByTechnicianId": null
+        },
+        "scanProtocol/before-1": {
+          "scanPurpose": "maintenance_before",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkState": "none",
+          "linkMethod": null,
+          "pair": {
+            "state": "OPEN",
+            "openedAt": {
+              "$firestoreTimestamp": "2026-10-22T09:00:00.000Z"
+            },
+            "ownerId": "owner-sample"
+          }
+        },
+        "reports/before-1": {
+          "userId": "owner-sample",
+          "deviceModel": "SM-A135F"
+        }
+      },
+      "httpStatus": 400,
+      "body": {
+        "error": {
+          "details": {
+            "reasonCode": "PAIR_SESSION_NOT_AFTER"
+          },
+          "message": "PAIR_SESSION_NOT_AFTER",
+          "status": "FAILED_PRECONDITION"
+        }
+      }
+    },
+    {
+      "id": "confirm.refused.part-not-enabled",
+      "function": "confirmMaintenanceAfterLink",
+      "note": "الجزء غير مفعَّل.",
+      "request": {
+        "data": {
+          "sessionId": "sess-after",
+          "beforeScanId": "before-1"
+        },
+        "authenticatedAs": {
+          "sign_in_provider": "google.com",
+          "uid": "owner-sample"
+        }
+      },
+      "seed": {
+        "scanSessions/sess-after": {
+          "ownerId": "owner-sample",
+          "status": "pending",
+          "purpose": "maintenance_after",
+          "expiresAt": {
+            "$firestoreTimestamp": "2026-10-22T13:00:00.000Z"
+          },
+          "scanId": null,
+          "deviceModel": null
+        },
+        "users/owner-sample": {
+          "plan": "shop_pro",
+          "protocolParts": {
+            "purposes": true
+          }
+        },
+        "protocolSettings/current": {
+          "version": 2,
+          "openBeforeValidityHours": 72
+        },
+        "protocolPending/sess-after": {
+          "purposeSource": "selected",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkMethod": null,
+          "linkConfirmedAt": null,
+          "linkConfirmedByTechnicianId": null
+        },
+        "scanProtocol/before-1": {
+          "scanPurpose": "maintenance_before",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkState": "none",
+          "linkMethod": null,
+          "pair": {
+            "state": "OPEN",
+            "openedAt": {
+              "$firestoreTimestamp": "2026-10-22T09:00:00.000Z"
+            },
+            "ownerId": "owner-sample"
+          }
+        },
+        "reports/before-1": {
+          "userId": "owner-sample",
+          "deviceModel": "SM-A135F"
+        }
+      },
+      "httpStatus": 400,
+      "body": {
+        "error": {
+          "details": {
+            "reasonCode": "PAIR_PART_NOT_ENABLED"
+          },
+          "message": "PAIR_PART_NOT_ENABLED",
+          "status": "FAILED_PRECONDITION"
+        }
+      }
+    },
+    {
+      "id": "confirm.refused.validity-setting-absent",
+      "function": "confirmMaintenanceAfterLink",
+      "note": "المدّة غير مكتوبة.",
+      "request": {
+        "data": {
+          "sessionId": "sess-after",
+          "beforeScanId": "before-1"
+        },
+        "authenticatedAs": {
+          "sign_in_provider": "google.com",
+          "uid": "owner-sample"
+        }
+      },
+      "seed": {
+        "scanSessions/sess-after": {
+          "ownerId": "owner-sample",
+          "status": "pending",
+          "purpose": "maintenance_after",
+          "expiresAt": {
+            "$firestoreTimestamp": "2026-10-22T13:00:00.000Z"
+          },
+          "scanId": null,
+          "deviceModel": null
+        },
+        "users/owner-sample": {
+          "plan": "shop_pro",
+          "protocolParts": {
+            "purposes": true,
+            "batteryBeforeAfter": true
+          }
+        },
+        "protocolSettings/current": {
+          "version": 2
+        },
+        "protocolPending/sess-after": {
+          "purposeSource": "selected",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkMethod": null,
+          "linkConfirmedAt": null,
+          "linkConfirmedByTechnicianId": null
+        },
+        "scanProtocol/before-1": {
+          "scanPurpose": "maintenance_before",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkState": "none",
+          "linkMethod": null,
+          "pair": {
+            "state": "OPEN",
+            "openedAt": {
+              "$firestoreTimestamp": "2026-10-22T09:00:00.000Z"
+            },
+            "ownerId": "owner-sample"
+          }
+        },
+        "reports/before-1": {
+          "userId": "owner-sample",
+          "deviceModel": "SM-A135F"
+        }
+      },
+      "httpStatus": 400,
+      "body": {
+        "error": {
+          "details": {
+            "reasonCode": "PAIR_VALIDITY_SETTING_ABSENT"
+          },
+          "message": "PAIR_VALIDITY_SETTING_ABSENT",
+          "status": "FAILED_PRECONDITION"
+        }
+      }
+    },
+    {
+      "id": "confirm.refused.session-defect-type-absent",
+      "function": "confirmMaintenanceAfterLink",
+      "note": "نوع «بعد» غائب في pending.",
+      "request": {
+        "data": {
+          "sessionId": "sess-after",
+          "beforeScanId": "before-1"
+        },
+        "authenticatedAs": {
+          "sign_in_provider": "google.com",
+          "uid": "owner-sample"
+        }
+      },
+      "seed": {
+        "scanSessions/sess-after": {
+          "ownerId": "owner-sample",
+          "status": "pending",
+          "purpose": "maintenance_after",
+          "expiresAt": {
+            "$firestoreTimestamp": "2026-10-22T13:00:00.000Z"
+          },
+          "scanId": null,
+          "deviceModel": null
+        },
+        "users/owner-sample": {
+          "plan": "shop_pro",
+          "protocolParts": {
+            "purposes": true,
+            "batteryBeforeAfter": true
+          }
+        },
+        "protocolSettings/current": {
+          "version": 2,
+          "openBeforeValidityHours": 72
+        },
+        "protocolPending/sess-after": {
+          "purposeSource": "selected"
+        },
+        "scanProtocol/before-1": {
+          "scanPurpose": "maintenance_before",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkState": "none",
+          "linkMethod": null,
+          "pair": {
+            "state": "OPEN",
+            "openedAt": {
+              "$firestoreTimestamp": "2026-10-22T09:00:00.000Z"
+            },
+            "ownerId": "owner-sample"
+          }
+        },
+        "reports/before-1": {
+          "userId": "owner-sample",
+          "deviceModel": "SM-A135F"
+        }
+      },
+      "httpStatus": 400,
+      "body": {
+        "error": {
+          "details": {
+            "reasonCode": "PAIR_SESSION_DEFECT_TYPE_ABSENT"
+          },
+          "message": "PAIR_SESSION_DEFECT_TYPE_ABSENT",
+          "status": "FAILED_PRECONDITION"
+        }
+      }
+    },
+    {
+      "id": "confirm.refused.before-not-found",
+      "function": "confirmMaintenanceAfterLink",
+      "note": "«قبل» غير موجودة.",
+      "request": {
+        "data": {
+          "sessionId": "sess-after",
+          "beforeScanId": "ghost"
+        },
+        "authenticatedAs": {
+          "sign_in_provider": "google.com",
+          "uid": "owner-sample"
+        }
+      },
+      "seed": {
+        "scanSessions/sess-after": {
+          "ownerId": "owner-sample",
+          "status": "pending",
+          "purpose": "maintenance_after",
+          "expiresAt": {
+            "$firestoreTimestamp": "2026-10-22T13:00:00.000Z"
+          },
+          "scanId": null,
+          "deviceModel": null
+        },
+        "users/owner-sample": {
+          "plan": "shop_pro",
+          "protocolParts": {
+            "purposes": true,
+            "batteryBeforeAfter": true
+          }
+        },
+        "protocolSettings/current": {
+          "version": 2,
+          "openBeforeValidityHours": 72
+        },
+        "protocolPending/sess-after": {
+          "purposeSource": "selected",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkMethod": null,
+          "linkConfirmedAt": null,
+          "linkConfirmedByTechnicianId": null
+        },
+        "scanProtocol/before-1": {
+          "scanPurpose": "maintenance_before",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkState": "none",
+          "linkMethod": null,
+          "pair": {
+            "state": "OPEN",
+            "openedAt": {
+              "$firestoreTimestamp": "2026-10-22T09:00:00.000Z"
+            },
+            "ownerId": "owner-sample"
+          }
+        },
+        "reports/before-1": {
+          "userId": "owner-sample",
+          "deviceModel": "SM-A135F"
+        }
+      },
+      "httpStatus": 404,
+      "body": {
+        "error": {
+          "details": {
+            "reasonCode": "BEFORE_NOT_FOUND"
+          },
+          "message": "BEFORE_NOT_FOUND",
+          "status": "NOT_FOUND"
+        }
+      }
+    },
+    {
+      "id": "confirm.refused.before-not-owned",
+      "function": "confirmMaintenanceAfterLink",
+      "note": "«قبل» لمحلّ آخر (pair.ownerId وتقريرها معاً: S8).",
+      "request": {
+        "data": {
+          "sessionId": "sess-after",
+          "beforeScanId": "before-1"
+        },
+        "authenticatedAs": {
+          "sign_in_provider": "google.com",
+          "uid": "owner-sample"
+        }
+      },
+      "seed": {
+        "scanSessions/sess-after": {
+          "ownerId": "owner-sample",
+          "status": "pending",
+          "purpose": "maintenance_after",
+          "expiresAt": {
+            "$firestoreTimestamp": "2026-10-22T13:00:00.000Z"
+          },
+          "scanId": null,
+          "deviceModel": null
+        },
+        "users/owner-sample": {
+          "plan": "shop_pro",
+          "protocolParts": {
+            "purposes": true,
+            "batteryBeforeAfter": true
+          }
+        },
+        "protocolSettings/current": {
+          "version": 2,
+          "openBeforeValidityHours": 72
+        },
+        "protocolPending/sess-after": {
+          "purposeSource": "selected",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkMethod": null,
+          "linkConfirmedAt": null,
+          "linkConfirmedByTechnicianId": null
+        },
+        "scanProtocol/before-1": {
+          "scanPurpose": "maintenance_before",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkState": "none",
+          "linkMethod": null,
+          "pair": {
+            "state": "OPEN",
+            "openedAt": {
+              "$firestoreTimestamp": "2026-10-22T09:00:00.000Z"
+            },
+            "ownerId": "owner-else"
+          }
+        },
+        "reports/before-1": {
+          "userId": "owner-else",
+          "deviceModel": "SM-A135F"
+        }
+      },
+      "httpStatus": 403,
+      "body": {
+        "error": {
+          "details": {
+            "reasonCode": "BEFORE_NOT_OWNED"
+          },
+          "message": "BEFORE_NOT_OWNED",
+          "status": "PERMISSION_DENIED"
+        }
+      }
+    },
+    {
+      "id": "confirm.refused.owner-mismatch.report-differs",
+      "function": "confirmMaintenanceAfterLink",
+      "note": "شذوذ (S8): pair.ownerId = المستدعي لكن userId في تقرير «قبل» لمحلّ آخر ⟵ PAIR_OWNER_MISMATCH (لا NOT_OWNED ولا قبول).",
+      "request": {
+        "data": {
+          "sessionId": "sess-after",
+          "beforeScanId": "before-1"
+        },
+        "authenticatedAs": {
+          "sign_in_provider": "google.com",
+          "uid": "owner-sample"
+        }
+      },
+      "seed": {
+        "scanSessions/sess-after": {
+          "ownerId": "owner-sample",
+          "status": "pending",
+          "purpose": "maintenance_after",
+          "expiresAt": {
+            "$firestoreTimestamp": "2026-10-22T13:00:00.000Z"
+          },
+          "scanId": null,
+          "deviceModel": null
+        },
+        "users/owner-sample": {
+          "plan": "shop_pro",
+          "protocolParts": {
+            "purposes": true,
+            "batteryBeforeAfter": true
+          }
+        },
+        "protocolSettings/current": {
+          "version": 2,
+          "openBeforeValidityHours": 72
+        },
+        "protocolPending/sess-after": {
+          "purposeSource": "selected",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkMethod": null,
+          "linkConfirmedAt": null,
+          "linkConfirmedByTechnicianId": null
+        },
+        "scanProtocol/before-1": {
+          "scanPurpose": "maintenance_before",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkState": "none",
+          "linkMethod": null,
+          "pair": {
+            "state": "OPEN",
+            "openedAt": {
+              "$firestoreTimestamp": "2026-10-22T09:00:00.000Z"
+            },
+            "ownerId": "owner-sample"
+          }
+        },
+        "reports/before-1": {
+          "userId": "owner-else",
+          "deviceModel": "SM-A135F"
+        }
+      },
+      "httpStatus": 400,
+      "body": {
+        "error": {
+          "details": {
+            "reasonCode": "PAIR_OWNER_MISMATCH"
+          },
+          "message": "PAIR_OWNER_MISMATCH",
+          "status": "FAILED_PRECONDITION"
+        }
+      }
+    },
+    {
+      "id": "confirm.refused.owner-mismatch.pair-differs",
+      "function": "confirmMaintenanceAfterLink",
+      "note": "شذوذ (S8): التقرير للمستدعي لكن pair.ownerId لمحلّ آخر ⟵ PAIR_OWNER_MISMATCH أيضاً.",
+      "request": {
+        "data": {
+          "sessionId": "sess-after",
+          "beforeScanId": "before-1"
+        },
+        "authenticatedAs": {
+          "sign_in_provider": "google.com",
+          "uid": "owner-sample"
+        }
+      },
+      "seed": {
+        "scanSessions/sess-after": {
+          "ownerId": "owner-sample",
+          "status": "pending",
+          "purpose": "maintenance_after",
+          "expiresAt": {
+            "$firestoreTimestamp": "2026-10-22T13:00:00.000Z"
+          },
+          "scanId": null,
+          "deviceModel": null
+        },
+        "users/owner-sample": {
+          "plan": "shop_pro",
+          "protocolParts": {
+            "purposes": true,
+            "batteryBeforeAfter": true
+          }
+        },
+        "protocolSettings/current": {
+          "version": 2,
+          "openBeforeValidityHours": 72
+        },
+        "protocolPending/sess-after": {
+          "purposeSource": "selected",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkMethod": null,
+          "linkConfirmedAt": null,
+          "linkConfirmedByTechnicianId": null
+        },
+        "scanProtocol/before-1": {
+          "scanPurpose": "maintenance_before",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkState": "none",
+          "linkMethod": null,
+          "pair": {
+            "state": "OPEN",
+            "openedAt": {
+              "$firestoreTimestamp": "2026-10-22T09:00:00.000Z"
+            },
+            "ownerId": "owner-else"
+          }
+        },
+        "reports/before-1": {
+          "userId": "owner-sample",
+          "deviceModel": "SM-A135F"
+        }
+      },
+      "httpStatus": 400,
+      "body": {
+        "error": {
+          "details": {
+            "reasonCode": "PAIR_OWNER_MISMATCH"
+          },
+          "message": "PAIR_OWNER_MISMATCH",
+          "status": "FAILED_PRECONDITION"
+        }
+      }
+    },
+    {
+      "id": "confirm.refused.before-pair-owner-absent",
+      "function": "confirmMaintenanceAfterLink",
+      "note": "pair بلا ownerId (شكل قديم أو مالك مجهول عند الفتح، S8) ⟵ PAIR_BEFORE_UNREADABLE: لا يُقرأ تطابقاً ولا يُرفض شذوذاً.",
+      "request": {
+        "data": {
+          "sessionId": "sess-after",
+          "beforeScanId": "before-1"
+        },
+        "authenticatedAs": {
+          "sign_in_provider": "google.com",
+          "uid": "owner-sample"
+        }
+      },
+      "seed": {
+        "scanSessions/sess-after": {
+          "ownerId": "owner-sample",
+          "status": "pending",
+          "purpose": "maintenance_after",
+          "expiresAt": {
+            "$firestoreTimestamp": "2026-10-22T13:00:00.000Z"
+          },
+          "scanId": null,
+          "deviceModel": null
+        },
+        "users/owner-sample": {
+          "plan": "shop_pro",
+          "protocolParts": {
+            "purposes": true,
+            "batteryBeforeAfter": true
+          }
+        },
+        "protocolSettings/current": {
+          "version": 2,
+          "openBeforeValidityHours": 72
+        },
+        "protocolPending/sess-after": {
+          "purposeSource": "selected",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkMethod": null,
+          "linkConfirmedAt": null,
+          "linkConfirmedByTechnicianId": null
+        },
+        "scanProtocol/before-1": {
+          "scanPurpose": "maintenance_before",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkState": "none",
+          "linkMethod": null,
+          "pair": {
+            "state": "OPEN",
+            "openedAt": {
+              "$firestoreTimestamp": "2026-10-22T09:00:00.000Z"
+            }
+          }
+        },
+        "reports/before-1": {
+          "userId": "owner-sample",
+          "deviceModel": "SM-A135F"
+        }
+      },
+      "httpStatus": 400,
+      "body": {
+        "error": {
+          "details": {
+            "reasonCode": "PAIR_BEFORE_UNREADABLE"
+          },
+          "message": "PAIR_BEFORE_UNREADABLE",
+          "status": "FAILED_PRECONDITION"
+        }
+      }
+    },
+    {
+      "id": "confirm.refused.before-wrong-purpose",
+      "function": "confirmMaintenanceAfterLink",
+      "note": "غرض «قبل» ليس maintenance_before.",
+      "request": {
+        "data": {
+          "sessionId": "sess-after",
+          "beforeScanId": "before-1"
+        },
+        "authenticatedAs": {
+          "sign_in_provider": "google.com",
+          "uid": "owner-sample"
+        }
+      },
+      "seed": {
+        "scanSessions/sess-after": {
+          "ownerId": "owner-sample",
+          "status": "pending",
+          "purpose": "maintenance_after",
+          "expiresAt": {
+            "$firestoreTimestamp": "2026-10-22T13:00:00.000Z"
+          },
+          "scanId": null,
+          "deviceModel": null
+        },
+        "users/owner-sample": {
+          "plan": "shop_pro",
+          "protocolParts": {
+            "purposes": true,
+            "batteryBeforeAfter": true
+          }
+        },
+        "protocolSettings/current": {
+          "version": 2,
+          "openBeforeValidityHours": 72
+        },
+        "protocolPending/sess-after": {
+          "purposeSource": "selected",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkMethod": null,
+          "linkConfirmedAt": null,
+          "linkConfirmedByTechnicianId": null
+        },
+        "scanProtocol/before-1": {
+          "scanPurpose": "maintenance_after",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkState": "none",
+          "linkMethod": null,
+          "pair": null
+        },
+        "reports/before-1": {
+          "userId": "owner-sample",
+          "deviceModel": "SM-A135F"
+        }
+      },
+      "httpStatus": 400,
+      "body": {
+        "error": {
+          "details": {
+            "reasonCode": "BEFORE_WRONG_PURPOSE"
+          },
+          "message": "BEFORE_WRONG_PURPOSE",
+          "status": "FAILED_PRECONDITION"
+        }
+      }
+    },
+    {
+      "id": "confirm.refused.before-wrong-defect-type",
+      "function": "confirmMaintenanceAfterLink",
+      "note": "نوع «قبل» ≠ نوع «بعد».",
+      "request": {
+        "data": {
+          "sessionId": "sess-after",
+          "beforeScanId": "before-1"
+        },
+        "authenticatedAs": {
+          "sign_in_provider": "google.com",
+          "uid": "owner-sample"
+        }
+      },
+      "seed": {
+        "scanSessions/sess-after": {
+          "ownerId": "owner-sample",
+          "status": "pending",
+          "purpose": "maintenance_after",
+          "expiresAt": {
+            "$firestoreTimestamp": "2026-10-22T13:00:00.000Z"
+          },
+          "scanId": null,
+          "deviceModel": null
+        },
+        "users/owner-sample": {
+          "plan": "shop_pro",
+          "protocolParts": {
+            "purposes": true,
+            "batteryBeforeAfter": true
+          }
+        },
+        "protocolSettings/current": {
+          "version": 2,
+          "openBeforeValidityHours": 72
+        },
+        "protocolPending/sess-after": {
+          "purposeSource": "selected",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkMethod": null,
+          "linkConfirmedAt": null,
+          "linkConfirmedByTechnicianId": null
+        },
+        "scanProtocol/before-1": {
+          "scanPurpose": "maintenance_before",
+          "defectType": "THERMAL",
+          "linkedScanId": null,
+          "linkState": "none",
+          "linkMethod": null,
+          "pair": {
+            "state": "OPEN",
+            "openedAt": {
+              "$firestoreTimestamp": "2026-10-22T09:00:00.000Z"
+            },
+            "ownerId": "owner-sample"
+          }
+        },
+        "reports/before-1": {
+          "userId": "owner-sample",
+          "deviceModel": "SM-A135F"
+        }
+      },
+      "httpStatus": 400,
+      "body": {
+        "error": {
+          "details": {
+            "reasonCode": "BEFORE_WRONG_DEFECT_TYPE"
+          },
+          "message": "BEFORE_WRONG_DEFECT_TYPE",
+          "status": "FAILED_PRECONDITION"
+        }
+      }
+    },
+    {
+      "id": "confirm.refused.before-unreadable",
+      "function": "confirmMaintenanceAfterLink",
+      "note": "pair على «قبل» بشكل لا يُقرأ (بلا openedAt).",
+      "request": {
+        "data": {
+          "sessionId": "sess-after",
+          "beforeScanId": "before-1"
+        },
+        "authenticatedAs": {
+          "sign_in_provider": "google.com",
+          "uid": "owner-sample"
+        }
+      },
+      "seed": {
+        "scanSessions/sess-after": {
+          "ownerId": "owner-sample",
+          "status": "pending",
+          "purpose": "maintenance_after",
+          "expiresAt": {
+            "$firestoreTimestamp": "2026-10-22T13:00:00.000Z"
+          },
+          "scanId": null,
+          "deviceModel": null
+        },
+        "users/owner-sample": {
+          "plan": "shop_pro",
+          "protocolParts": {
+            "purposes": true,
+            "batteryBeforeAfter": true
+          }
+        },
+        "protocolSettings/current": {
+          "version": 2,
+          "openBeforeValidityHours": 72
+        },
+        "protocolPending/sess-after": {
+          "purposeSource": "selected",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkMethod": null,
+          "linkConfirmedAt": null,
+          "linkConfirmedByTechnicianId": null
+        },
+        "scanProtocol/before-1": {
+          "scanPurpose": "maintenance_before",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkState": "none",
+          "linkMethod": null,
+          "pair": {
+            "state": "OPEN"
+          }
+        },
+        "reports/before-1": {
+          "userId": "owner-sample",
+          "deviceModel": "SM-A135F"
+        }
+      },
+      "httpStatus": 400,
+      "body": {
+        "error": {
+          "details": {
+            "reasonCode": "PAIR_BEFORE_UNREADABLE"
+          },
+          "message": "PAIR_BEFORE_UNREADABLE",
+          "status": "FAILED_PRECONDITION"
+        }
+      }
+    },
+    {
+      "id": "confirm.refused.before-already-paired.completed",
+      "function": "confirmMaintenanceAfterLink",
+      "note": "«قبل» اكتملت بـ«بعد» أخرى (pair.state = COMPLETED).",
+      "request": {
+        "data": {
+          "sessionId": "sess-after",
+          "beforeScanId": "before-1"
+        },
+        "authenticatedAs": {
+          "sign_in_provider": "google.com",
+          "uid": "owner-sample"
+        }
+      },
+      "seed": {
+        "scanSessions/sess-after": {
+          "ownerId": "owner-sample",
+          "status": "pending",
+          "purpose": "maintenance_after",
+          "expiresAt": {
+            "$firestoreTimestamp": "2026-10-22T13:00:00.000Z"
+          },
+          "scanId": null,
+          "deviceModel": null
+        },
+        "users/owner-sample": {
+          "plan": "shop_pro",
+          "protocolParts": {
+            "purposes": true,
+            "batteryBeforeAfter": true
+          }
+        },
+        "protocolSettings/current": {
+          "version": 2,
+          "openBeforeValidityHours": 72
+        },
+        "protocolPending/sess-after": {
+          "purposeSource": "selected",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkMethod": null,
+          "linkConfirmedAt": null,
+          "linkConfirmedByTechnicianId": null
+        },
+        "scanProtocol/before-1": {
+          "scanPurpose": "maintenance_before",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkState": "none",
+          "linkMethod": null,
+          "pair": {
+            "state": "COMPLETED",
+            "openedAt": {
+              "$firestoreTimestamp": "2026-10-22T09:00:00.000Z"
+            },
+            "ownerId": "owner-sample",
+            "completedByScanId": "after-x"
+          }
+        },
+        "reports/before-1": {
+          "userId": "owner-sample",
+          "deviceModel": "SM-A135F"
+        }
+      },
+      "httpStatus": 400,
+      "body": {
+        "error": {
+          "details": {
+            "reasonCode": "BEFORE_ALREADY_PAIRED"
+          },
+          "message": "BEFORE_ALREADY_PAIRED",
+          "status": "FAILED_PRECONDITION"
+        }
+      }
+    },
+    {
+      "id": "confirm.refused.before-already-paired.live-link",
+      "function": "confirmMaintenanceAfterLink",
+      "note": "«قبل» لها ربط حيّ من «بعد».",
+      "request": {
+        "data": {
+          "sessionId": "sess-after",
+          "beforeScanId": "before-1"
+        },
+        "authenticatedAs": {
+          "sign_in_provider": "google.com",
+          "uid": "owner-sample"
+        }
+      },
+      "seed": {
+        "scanSessions/sess-after": {
+          "ownerId": "owner-sample",
+          "status": "pending",
+          "purpose": "maintenance_after",
+          "expiresAt": {
+            "$firestoreTimestamp": "2026-10-22T13:00:00.000Z"
+          },
+          "scanId": null,
+          "deviceModel": null
+        },
+        "users/owner-sample": {
+          "plan": "shop_pro",
+          "protocolParts": {
+            "purposes": true,
+            "batteryBeforeAfter": true
+          }
+        },
+        "protocolSettings/current": {
+          "version": 2,
+          "openBeforeValidityHours": 72
+        },
+        "protocolPending/sess-after": {
+          "purposeSource": "selected",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkMethod": null,
+          "linkConfirmedAt": null,
+          "linkConfirmedByTechnicianId": null
+        },
+        "scanProtocol/before-1": {
+          "scanPurpose": "maintenance_before",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkState": "none",
+          "linkMethod": null,
+          "pair": {
+            "state": "OPEN",
+            "openedAt": {
+              "$firestoreTimestamp": "2026-10-22T09:00:00.000Z"
+            },
+            "ownerId": "owner-sample"
+          }
+        },
+        "reports/before-1": {
+          "userId": "owner-sample",
+          "deviceModel": "SM-A135F"
+        },
+        "scanProtocol/after-live": {
+          "scanPurpose": "maintenance_after",
+          "linkedScanId": "before-1",
+          "linkState": "active",
+          "linkMethod": "manual"
+        }
+      },
+      "httpStatus": 400,
+      "body": {
+        "error": {
+          "details": {
+            "reasonCode": "BEFORE_ALREADY_PAIRED"
+          },
+          "message": "BEFORE_ALREADY_PAIRED",
+          "status": "FAILED_PRECONDITION"
+        }
+      }
+    },
+    {
+      "id": "confirm.refused.before-expired",
+      "function": "confirmMaintenanceAfterLink",
+      "note": "«قبل» خارج نافذة المدّة (80 ساعة والمدّة 72).",
+      "request": {
+        "data": {
+          "sessionId": "sess-after",
+          "beforeScanId": "before-1"
+        },
+        "authenticatedAs": {
+          "sign_in_provider": "google.com",
+          "uid": "owner-sample"
+        }
+      },
+      "seed": {
+        "scanSessions/sess-after": {
+          "ownerId": "owner-sample",
+          "status": "pending",
+          "purpose": "maintenance_after",
+          "expiresAt": {
+            "$firestoreTimestamp": "2026-10-22T13:00:00.000Z"
+          },
+          "scanId": null,
+          "deviceModel": null
+        },
+        "users/owner-sample": {
+          "plan": "shop_pro",
+          "protocolParts": {
+            "purposes": true,
+            "batteryBeforeAfter": true
+          }
+        },
+        "protocolSettings/current": {
+          "version": 2,
+          "openBeforeValidityHours": 72
+        },
+        "protocolPending/sess-after": {
+          "purposeSource": "selected",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkMethod": null,
+          "linkConfirmedAt": null,
+          "linkConfirmedByTechnicianId": null
+        },
+        "scanProtocol/before-1": {
+          "scanPurpose": "maintenance_before",
+          "defectType": "BATTERY",
+          "linkedScanId": null,
+          "linkState": "none",
+          "linkMethod": null,
+          "pair": {
+            "state": "OPEN",
+            "openedAt": {
+              "$firestoreTimestamp": "2026-10-19T04:00:00.000Z"
+            },
+            "ownerId": "owner-sample"
+          }
+        },
+        "reports/before-1": {
+          "userId": "owner-sample",
+          "deviceModel": "SM-A135F"
+        }
+      },
+      "httpStatus": 400,
+      "body": {
+        "error": {
+          "details": {
+            "reasonCode": "BEFORE_EXPIRED"
+          },
+          "message": "BEFORE_EXPIRED",
+          "status": "FAILED_PRECONDITION"
+        }
+      }
+    },
+    {
+      "id": "setSessionPurpose.refused.defect-type-required",
+      "function": "setSessionPurpose",
+      "note": "maintenance_* بلا defectType.",
+      "request": {
+        "data": {
+          "sessionId": "sess-any",
+          "purpose": "maintenance_before"
+        },
+        "authenticatedAs": {
+          "sign_in_provider": "google.com",
+          "uid": "owner-sample"
+        }
+      },
+      "seed": {},
+      "httpStatus": 400,
+      "body": {
+        "error": {
+          "details": {
+            "reasonCode": "DEFECT_TYPE_REQUIRED"
+          },
+          "message": "DEFECT_TYPE_REQUIRED",
+          "status": "INVALID_ARGUMENT"
+        }
+      }
+    },
+    {
+      "id": "setSessionPurpose.refused.defect-type-invalid.other",
+      "function": "setSessionPurpose",
+      "note": "defectType خارج القائمة المغلقة («OTHER»).",
+      "request": {
+        "data": {
+          "sessionId": "sess-any",
+          "purpose": "maintenance_after",
+          "defectType": "OTHER"
+        },
+        "authenticatedAs": {
+          "sign_in_provider": "google.com",
+          "uid": "owner-sample"
+        }
+      },
+      "seed": {},
+      "httpStatus": 400,
+      "body": {
+        "error": {
+          "details": {
+            "reasonCode": "DEFECT_TYPE_INVALID"
+          },
+          "message": "DEFECT_TYPE_INVALID",
+          "status": "INVALID_ARGUMENT"
+        }
+      }
+    },
+    {
+      "id": "setSessionPurpose.refused.defect-type-invalid.lowercase",
+      "function": "setSessionPurpose",
+      "note": "حروف صغيرة: خارج القائمة (بحالة الأحرف نفسها).",
+      "request": {
+        "data": {
+          "sessionId": "sess-any",
+          "purpose": "maintenance_before",
+          "defectType": "battery"
+        },
+        "authenticatedAs": {
+          "sign_in_provider": "google.com",
+          "uid": "owner-sample"
+        }
+      },
+      "seed": {},
+      "httpStatus": 400,
+      "body": {
+        "error": {
+          "details": {
+            "reasonCode": "DEFECT_TYPE_INVALID"
+          },
+          "message": "DEFECT_TYPE_INVALID",
+          "status": "INVALID_ARGUMENT"
+        }
+      }
+    },
+    {
+      "id": "setSessionPurpose.refused.defect-type-invalid.null",
+      "function": "setSessionPurpose",
+      "note": "null مُرسَل مع maintenance_*: DEFECT_TYPE_INVALID (المُرسَل ≠ الغائب).",
+      "request": {
+        "data": {
+          "sessionId": "sess-any",
+          "purpose": "maintenance_before",
+          "defectType": null
+        },
+        "authenticatedAs": {
+          "sign_in_provider": "google.com",
+          "uid": "owner-sample"
+        }
+      },
+      "seed": {},
+      "httpStatus": 400,
+      "body": {
+        "error": {
+          "details": {
+            "reasonCode": "DEFECT_TYPE_INVALID"
+          },
+          "message": "DEFECT_TYPE_INVALID",
+          "status": "INVALID_ARGUMENT"
+        }
+      }
+    },
+    {
+      "id": "setSessionPurpose.refused.defect-type-not-applicable",
+      "function": "setSessionPurpose",
+      "note": "نوع مُرسَل مع normal.",
+      "request": {
+        "data": {
+          "sessionId": "sess-any",
+          "purpose": "normal",
+          "defectType": "BATTERY"
+        },
+        "authenticatedAs": {
+          "sign_in_provider": "google.com",
+          "uid": "owner-sample"
+        }
+      },
+      "seed": {},
+      "httpStatus": 400,
+      "body": {
+        "error": {
+          "details": {
+            "reasonCode": "DEFECT_TYPE_NOT_APPLICABLE"
+          },
+          "message": "DEFECT_TYPE_NOT_APPLICABLE",
+          "status": "INVALID_ARGUMENT"
+        }
+      }
+    },
+    {
+      "id": "setSessionPurpose.refused.purpose-invalid.battery-before",
+      "function": "setSessionPurpose",
+      "note": "battery_before لم تعد مما يُختار (قيمة قراءة تاريخية): SET_PURPOSE_INVALID.",
+      "request": {
+        "data": {
+          "sessionId": "sess-any",
+          "purpose": "battery_before",
+          "defectType": "BATTERY"
+        },
+        "authenticatedAs": {
+          "sign_in_provider": "google.com",
+          "uid": "owner-sample"
+        }
+      },
+      "seed": {},
+      "httpStatus": 400,
+      "body": {
+        "error": {
+          "details": {
+            "reasonCode": "SET_PURPOSE_INVALID"
+          },
+          "message": "SET_PURPOSE_INVALID",
+          "status": "INVALID_ARGUMENT"
+        }
+      }
+    },
+    {
+      "id": "setSessionPurpose.refused.part-not-enabled.purposes",
+      "function": "setSessionPurpose",
+      "note": "محلّ جزء purposes فيه غير مفعَّل (غائب ولو كان batteryBeforeAfter مفعَّلاً) ⟵ PURPOSE_PART_NOT_ENABLED (failed-precondition، الرسالة رمزه التقني) بلا أيّ كتابة؛ اسم الجزء الناقص (part=purposes) في سجلّ الخادم لا في الجسم.",
+      "request": {
+        "data": {
+          "sessionId": "sess-pick",
+          "purpose": "maintenance_before",
+          "defectType": "BATTERY"
+        },
+        "authenticatedAs": {
+          "sign_in_provider": "google.com",
+          "uid": "owner-sample"
+        }
+      },
+      "seed": {
+        "scanSessions/sess-pick": {
+          "ownerId": "owner-sample",
+          "status": "pending",
+          "purpose": "normal",
+          "code": "123456",
+          "createdAt": {
+            "$firestoreTimestamp": "2026-10-22T11:00:00.000Z"
+          },
+          "expiresAt": {
+            "$firestoreTimestamp": "2026-10-22T13:00:00.000Z"
+          }
+        },
+        "users/owner-sample": {
+          "plan": "shop_pro",
+          "protocolParts": {
+            "batteryBeforeAfter": true
+          }
+        },
+        "protocolPending/sess-pick": {
+          "purposeSource": "default",
+          "defectType": null,
+          "linkedScanId": null
+        }
+      },
+      "httpStatus": 400,
+      "body": {
+        "error": {
+          "details": {
+            "reasonCode": "PURPOSE_PART_NOT_ENABLED"
+          },
+          "message": "PURPOSE_PART_NOT_ENABLED",
+          "status": "FAILED_PRECONDITION"
+        }
+      }
+    },
+    {
+      "id": "setSessionPurpose.refused.part-not-enabled.battery-before-after",
+      "function": "setSessionPurpose",
+      "note": "purposes مفعَّل وbatteryBeforeAfter غائب، وغرض صيانة ⟵ PURPOSE_PART_NOT_ENABLED (part=batteryBeforeAfter في السجلّ) بلا أيّ كتابة؛ normal لهذا المحلّ مقبول.",
+      "request": {
+        "data": {
+          "sessionId": "sess-pick",
+          "purpose": "maintenance_after",
+          "defectType": "BATTERY"
+        },
+        "authenticatedAs": {
+          "sign_in_provider": "google.com",
+          "uid": "owner-sample"
+        }
+      },
+      "seed": {
+        "scanSessions/sess-pick": {
+          "ownerId": "owner-sample",
+          "status": "pending",
+          "purpose": "normal",
+          "code": "123456",
+          "createdAt": {
+            "$firestoreTimestamp": "2026-10-22T11:00:00.000Z"
+          },
+          "expiresAt": {
+            "$firestoreTimestamp": "2026-10-22T13:00:00.000Z"
+          }
+        },
+        "users/owner-sample": {
+          "plan": "shop_pro",
+          "protocolParts": {
+            "purposes": true
+          }
+        },
+        "protocolPending/sess-pick": {
+          "purposeSource": "default",
+          "defectType": null,
+          "linkedScanId": null
+        }
+      },
+      "httpStatus": 400,
+      "body": {
+        "error": {
+          "details": {
+            "reasonCode": "PURPOSE_PART_NOT_ENABLED"
+          },
+          "message": "PURPOSE_PART_NOT_ENABLED",
+          "status": "FAILED_PRECONDITION"
+        }
+      }
+    },
+    {
+      "id": "setSessionPurpose.refused.part-not-enabled.owner-absent",
+      "function": "setSessionPurpose",
+      "note": "مستند المالك غائب: حالة صريحة بالرمز نفسه PURPOSE_PART_NOT_ENABLED (owner=absent part=purposes في السجلّ)، لا نجاحاً ولا قيمة افتراضية (القاعدة 22)، بلا أيّ كتابة.",
+      "request": {
+        "data": {
+          "sessionId": "sess-pick",
+          "purpose": "maintenance_before",
+          "defectType": "BATTERY"
+        },
+        "authenticatedAs": {
+          "sign_in_provider": "google.com",
+          "uid": "owner-sample"
+        }
+      },
+      "seed": {
+        "scanSessions/sess-pick": {
+          "ownerId": "owner-sample",
+          "status": "pending",
+          "purpose": "normal",
+          "code": "123456",
+          "createdAt": {
+            "$firestoreTimestamp": "2026-10-22T11:00:00.000Z"
+          },
+          "expiresAt": {
+            "$firestoreTimestamp": "2026-10-22T13:00:00.000Z"
+          }
+        },
+        "protocolPending/sess-pick": {
+          "purposeSource": "default",
+          "defectType": null,
+          "linkedScanId": null
+        }
+      },
+      "httpStatus": 400,
+      "body": {
+        "error": {
+          "details": {
+            "reasonCode": "PURPOSE_PART_NOT_ENABLED"
+          },
+          "message": "PURPOSE_PART_NOT_ENABLED",
+          "status": "FAILED_PRECONDITION"
+        }
+      }
+    },
+    {
+      "id": "setSessionPurpose.success.normal-without-parts",
+      "function": "setSessionPurpose",
+      "note": "normal يبقى مقبولاً لمحلّ بلا الأجزاء كما كان قبل ق31 (لا قراءة لمستند المالك له): الردّ {sessionId, purpose, purposeSource: \"selected\"} وكتابتان: الغرض في الجلسة والمصدر في protocolPending.",
+      "request": {
+        "data": {
+          "sessionId": "sess-pick",
+          "purpose": "normal"
+        },
+        "authenticatedAs": {
+          "sign_in_provider": "google.com",
+          "uid": "owner-sample"
+        }
+      },
+      "seed": {
+        "scanSessions/sess-pick": {
+          "ownerId": "owner-sample",
+          "status": "pending",
+          "purpose": "normal",
+          "code": "123456",
+          "createdAt": {
+            "$firestoreTimestamp": "2026-10-22T11:00:00.000Z"
+          },
+          "expiresAt": {
+            "$firestoreTimestamp": "2026-10-22T13:00:00.000Z"
+          }
+        },
+        "users/owner-sample": {
+          "plan": "shop_pro"
+        },
+        "protocolPending/sess-pick": {
+          "purposeSource": "default",
+          "defectType": null,
+          "linkedScanId": null
+        }
+      },
+      "httpStatus": 200,
+      "body": {
+        "result": {
+          "sessionId": "sess-pick",
+          "purpose": "normal",
+          "purposeSource": "selected"
+        }
+      },
+      "transactionWrites": [
+        "update:scanSessions/sess-pick",
+        "set:protocolPending/sess-pick"
+      ],
+      "storeAfter": {
+        "protocolPending/sess-pick": {
+          "purposeSource": "selected",
+          "defectType": null,
+          "linkedScanId": null,
+          "linkMethod": null,
+          "linkConfirmedAt": null,
+          "linkConfirmedByTechnicianId": null
+        }
+      }
+    }
+  ]
+}

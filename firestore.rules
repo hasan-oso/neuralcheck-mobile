@@ -1,0 +1,74 @@
+// NeuralCheck Firestore security rules.
+//
+// Deploy with:
+//   firebase deploy --only firestore:rules
+//
+// This file covers the collections the Android client touches directly via
+// the Firebase SDK (no callable wrapper). Anything written exclusively by
+// Cloud Functions runs with admin privileges and bypasses these rules — we
+// don't need allow-rules for those write paths here, but we still allow the
+// owner to *read* their own records.
+
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ─────────────────────────────────────────────────────────────────────
+    // users/{uid} — the owner's profile + subscription state.
+    //
+    // Direct client writes:
+    //   - LoginViewModel: `update("fcmToken", ...)` after every successful
+    //     sign-in so push notifications can target this device.
+    //   - ShopSetupScreen → FirebaseAnalysisService.updateShopInfo:
+    //     `set({shopName, shopDescription, shopCity, shopPhone,
+    //     shopAddress, shopSlug, shopLogoUrl}, SetOptions.merge())`.
+    //
+    // Server-side writes (registerUser, redeemPromoCode, requestPayment
+    // etc.) come from Cloud Functions running with admin SDK and bypass
+    // these rules.
+    //
+    // The rules deliberately allow update on *the user's own document*
+    // without field whitelisting because the Android client only sets a
+    // small set of safe fields and any sensitive state (subscription,
+    // scansRemaining, plan) is mutated server-side. If we ever surface
+    // a field that must NOT be writable from the client (e.g. a manual
+    // admin override), gate it explicitly via a `request.resource.data
+    // .diff(resource.data).affectedKeys()` check here.
+    match /users/{userId} {
+      allow read:   if request.auth != null && request.auth.uid == userId;
+      allow create: if request.auth != null && request.auth.uid == userId;
+      allow update: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // ─────────────────────────────────────────────────────────────────────
+    // reports/{reportId} — read-only from the client. Created by
+    // analyzeDevice Cloud Function with `userId` set to the caller's uid.
+    // ScanHistoryScreen + HomeViewModel.fetchLastScan query
+    // `where userId == auth.uid` so the rule only needs to permit
+    // owner-scoped reads.
+    match /reports/{reportId} {
+      allow read: if request.auth != null
+                  && resource.data.userId == request.auth.uid;
+    }
+
+    // ─────────────────────────────────────────────────────────────────────
+    // payments/{paymentId} — read-only from the client. Created by the
+    // requestPayment Cloud Function. PaymentHistoryScreen reads the
+    // signed-in user's own records.
+    match /payments/{paymentId} {
+      allow read: if request.auth != null
+                  && resource.data.userId == request.auth.uid;
+    }
+
+    // ─────────────────────────────────────────────────────────────────────
+    // scanSessions/{sessionId} — owner reads it via a snapshot listener
+    // in GenerateSessionViewModel to track the customer device's progress.
+    // Customer side joins via the joinScanSession callable, not a direct
+    // client write, so we only need to grant read to the owner.
+    match /scanSessions/{sessionId} {
+      allow read: if request.auth != null
+                  && resource.data.ownerId == request.auth.uid;
+    }
+  }
+}
